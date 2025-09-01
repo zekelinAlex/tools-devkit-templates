@@ -7,9 +7,29 @@
     <FormActivationState>1</FormActivationState>
     <form shownavigationbar="false" headerdensity="HighWithControls" showImage="false">
       <tabs>
-        
+        <tab verticallayout="true" id="{1mainFormId}" IsUserDefined="1" name="generaltab"
+          labelid="{2mainFormId}">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{3mainFormId}"
+                  labelid="{4mainFormId}" name="generalsection">
+                  <labels>
+                    <label description="GENERAL" languagecode="1033" />
+                  </labels>
+                  <rows>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
       </tabs>
-      <header id="{7mainFormId}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+      <header id="{7mainFormId}" celllabelposition="Top" columns="111" labelwidth="115"
+        celllabelalignment="Left">
         <rows>
           <row>
             <cell id="{8mainFormId}" showlabel="false" labelid="{9mainFormId}">
@@ -30,7 +50,8 @@
           </row>
         </rows>
       </header>
-      <footer id="{14mainFormId}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+      <footer id="{14mainFormId}" celllabelposition="Top" columns="111" labelwidth="115"
+        celllabelalignment="Left">
         <rows>
           <row>
             <cell id="{15mainFormId}" showlabel="false" labelid="{16mainFormId}">
