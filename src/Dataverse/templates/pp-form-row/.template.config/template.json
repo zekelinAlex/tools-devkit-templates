@@ -41,8 +41,8 @@
     "FormId": { 
       "type": "parameter",
       "datatype": "string",
-      "isRequired": true, 
-      "defaultValue": "",
+      "isRequired": false, 
+      "defaultValue": "unknownFormId",
       "replaces": "formguididexample",
       "description": "Enter form Id" 
     },
@@ -123,9 +123,48 @@
       "datatype": "text",
       "replaces": "examplerowdisplayname",
       "isRequired": true
+    },
+    "TabId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "tabexampleid",
+      "description": "Enter form Id"
+    },
+    "TabNumber": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "tabnumberexample",
+      "description": "Enter tab number"
+    },
+    "ColumnNumber": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "columnnumberexample",
+      "description": "Enter column number"
+    },
+    "SectionNumber": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "GENERAL",
+      "replaces": "sectionnumberexample",
+      "description": "Enter section name"
+    },
+    "SectionId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "sectionidexample",
+      "description": "Enter section id"
     }
   },
-  
   "postActions": [
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",

@@ -2,7 +2,7 @@ $tabXmlPath = './.template.temp/section.xml'
 $tabId = "sectionidexample"
 $name = "sectionnameexample"
 
-if ($tabId -eq "unknownTabId") {
+if ($tabId -eq "unknown") {
     $tabId = [System.Guid]::NewGuid().ToString()
 }
 

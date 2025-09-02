@@ -51,7 +51,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "formguididexample",
+      "replaces": "tabexampleid",
       "description": "Enter form Id"
     },
     "TabNumber": {

@@ -1,6 +1,6 @@
 $tabXmlPath = './.template.temp/tab.xml'
 $tabId = "tabexampleid"
-$name = "examplerowdisplayname"
+$name = "exampletabdisplayname"
 
 if ($tabId -eq "unknownTabId") {
     $tabId = [System.Guid]::NewGuid().ToString()

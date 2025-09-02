@@ -66,7 +66,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknownTabId",
-      "replaces": "formguididexample",
+      "replaces": "tabexampleid",
       "description": "Enter form Id"
     },
     "LabelId": {
@@ -80,7 +80,7 @@
     "DisplayName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplerowdisplayname",
+      "replaces": "exampletabdisplayname",
       "isRequired": true
     }
   },

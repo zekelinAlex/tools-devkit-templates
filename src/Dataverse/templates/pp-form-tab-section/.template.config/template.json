@@ -51,7 +51,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "formguididexample",
+      "replaces": "tabexampleid",
       "description": "Enter form Id"
     },
     "TabNumber": {
@@ -75,7 +75,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "GENERAL",
-      "replaces": "generalsection",
+      "replaces": "sectionnameexample",
       "description": "Enter section name"
     },
     "SectionId": {
@@ -90,7 +90,6 @@
       "type": "generated",
       "generator": "guid",
       "isRequired": false,
-      "defaultValue": "unknown",
       "replaces": "sectionlabelexampleid",
       "description": "Enter section label id",
 			"parameters": {
