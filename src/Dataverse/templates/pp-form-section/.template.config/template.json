@@ -3,7 +3,7 @@
   "author": "NETWORG",
   "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Tabs.Sections",
   "name": "Power Platform: Tab Section",
-  "shortName": "pp-form-tab-section",
+  "shortName": "pp-form-section",
   "tags": {
     "language": "XML",
     "type": "item"
@@ -54,7 +54,7 @@
       "replaces": "tabexampleid",
       "description": "Enter form Id"
     },
-    "TabNumber": {
+    "TabIndex": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
@@ -62,7 +62,7 @@
       "replaces": "tabnumberexample",
       "description": "Enter tab number"
     },
-    "ColumnNumber": {
+    "ColumnIndex": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,

@@ -4,6 +4,7 @@ $tabNumber = "tabnumberexample"
 $columnNumber = "columnnumberexample"
 $sectionId = "sectionidexample"
 $sectionNumber = "sectionnumberexample"
+$rowNumber = "rownumberexample"
 $entityXmlPath
 
 if ($mainFormId -eq "unknownFormId") {
@@ -22,7 +23,7 @@ if ($mainFormId -eq "unknownFormId") {
     $entityXmlPath=(Resolve-Path './SolutionDeclarationsRoot/Entities/exampleentityname/FormXml/formtypeexample/{$mainFormId}.xml').Path
 }
 
-$rowPath = (Resolve-Path './.template.temp/row.xml').Path
+$rowPath = (Resolve-Path './.template.temp/cell.xml').Path
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 
@@ -103,19 +104,38 @@ if (-not $targetSection) {
     exit 1
 }
 
-$rowsNode = $targetSection.SelectSingleNode('./rows')
-if (-not $rowsNode) {
-    $rowsNode = $entityXml.CreateElement("rows")
-    $targetSection.AppendChild($rowsNode) | Out-Null
+$targetRow = $null
+
+if ($rowNumber -ne "unknown") {
+    $rows = $targetSection.SelectNodes('./rows/row')
+    if ($rows.Count -ge [int]$rowNumber) {
+        $targetRow = $rows[[int]$rowNumber - 1]
+    }
+} else {
+    $rows = $targetSection.SelectNodes('./rows/row')
+    if ($rows.Count -gt 0) {
+        $targetRow = $rows[$rows.Count - 1]
+    }
 }
 
-$rowRaw = Get-Content -Path $rowPath -Raw
-$wrapped = "<rows>$rowRaw</rows>"
-[xml]$newrowsXml = $wrapped
+if (-not $targetRow) {
+    Write-Error "Target row not found in the selected section"
+    exit 1
+}
 
-foreach ($row in $newrowsXml.rows.ChildNodes) {
-    $imported = $entityXml.ImportNode($row, $true)
-    $rowsNode.AppendChild($imported) | Out-Null
+$cellsNode = $targetRow.SelectSingleNode('./cells')
+if (-not $cellsNode) {
+    $cellsNode = $entityXml.CreateElement("cells")
+    $targetRow.AppendChild($cellsNode) | Out-Null
+}
+
+$cellRaw = Get-Content -Path $rowPath -Raw
+$wrapped = "<cells>$cellRaw</cells>"
+[xml]$newcellsXml = $wrapped
+
+foreach ($cell in $newcellsXml.cells.ChildNodes) {
+    $imported = $entityXml.ImportNode($cell, $true)
+    $cellsNode.AppendChild($imported) | Out-Null
 }
 
 $settings = New-Object System.Xml.XmlWriterSettings
