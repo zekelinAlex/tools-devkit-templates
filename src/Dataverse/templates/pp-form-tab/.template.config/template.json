@@ -15,7 +15,8 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "exampleentityname",
-      "isRequired": true
+      "isRequired": false,
+      "defaultValue": "unknown"
     },
     "SolutionRootPath": {
       "type": "parameter",
@@ -34,14 +35,19 @@
     "FormType": {
       "type": "parameter",
       "datatype": "choice",
-      "isRequired": true,
+      "isRequired": false,
       "replaces": "formtypeexample",
+      "defaultValue": "unknown",
       "choices": [
         {
           "choice": "main"
         },
         {
           "choice": "quick"
+        }
+        ,
+        {
+          "choice": "unknown"
         }
       ],
       "description": "Select a form type"
@@ -81,7 +87,8 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "exampletabdisplayname",
-      "isRequired": true
+      "defaultValue": "General",
+      "isRequired": false
     }
   },
   "postActions": [

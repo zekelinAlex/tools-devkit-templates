@@ -12,35 +12,45 @@
   "preferNameDirectory": false,
   "symbols": {
     "EntitySchemaName": {
-			"type": "parameter",
-			"datatype": "text",
+      "type": "parameter",
+      "datatype": "text",
       "replaces": "exampleentityname",
-      "isRequired": true
-		},
+      "isRequired": false,
+      "defaultValue": "unknown"
+    },
     "SolutionRootPath": {
-			"type": "parameter",
-			"datatype": "text",
-			"replaces": "SolutionDeclarationsRoot",
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
       "isRequired": true
-		},
-    "FormId": { 
+    },
+    "FormId": {
       "type": "parameter",
       "datatype": "string",
-      "isRequired": false, 
+      "isRequired": false,
       "defaultValue": "unknownFormId",
       "replaces": "formguididexample",
-      "description": "Enter form Id" 
+      "description": "Enter form Id"
     },
-    "FormType": { 
+    "FormType": {
       "type": "parameter",
       "datatype": "choice",
-      "isRequired": true, 
+      "isRequired": true,
       "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+
       "choices": [
-        { "choice": "main" },
-        { "choice": "quick" }
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "unknown"
+        }
       ],
-      "description": "Select a form type" 
+      "description": "Select a form type"
     },
     "AttributeLogicalName": {
       "displayName": "Logical name",
@@ -99,7 +109,9 @@
         "redirectStandardOutput": "false"
       },
       "manualInstructions": [
-        { "text": "Adding new row to form" }
+        {
+          "text": "Adding new row to form"
+        }
       ],
       "continueOnError": false,
       "description": "Adding new row to form"
@@ -112,7 +124,9 @@
         "redirectStandardOutput": "false"
       },
       "manualInstructions": [
-        { "text": "Removing Scripts" }
+        {
+          "text": "Removing Scripts"
+        }
       ],
       "continueOnError": false,
       "description": "Removing Scripts"

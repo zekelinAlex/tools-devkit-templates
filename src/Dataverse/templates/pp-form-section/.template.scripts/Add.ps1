@@ -1,24 +1,7 @@
-$mainFormId = "formguididexample"
 $tabId = "tabexampleid"
 $tabNumber = "tabnumberexample"
 $columnNumber = "columnnumberexample"
-$entityXmlPath
-
-if ($mainFormId -eq "unknownFormId") {
-    $formDirectory = './SolutionDeclarationsRoot/Entities/exampleentityname/FormXml/formtypeexample/'
-
-    $latestForm = Get-ChildItem -Path $formDirectory -Filter "*.xml" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-
-    if ($latestForm) {
-        $entityXmlPath = $latestForm.FullName
-    } else {
-        Write-Error "No XML forms found in directory: $formDirectory"
-
-        exit 1
-    }
-} else {
-    $entityXmlPath=(Resolve-Path './SolutionDeclarationsRoot/Entities/exampleentityname/FormXml/formtypeexample/{$mainFormId}.xml').Path
-}
+$entityXmlPath = .\.template.scripts\LocateForm.ps1
 
 $sectionPath = (Resolve-Path './.template.temp/section.xml').Path
 

@@ -15,7 +15,8 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "exampleentityname",
-      "isRequired": true
+      "isRequired": false,
+      "defaultValue": "unknown"
     },
     "SolutionRootPath": {
       "type": "parameter",
@@ -36,12 +37,17 @@
       "datatype": "choice",
       "isRequired": true,
       "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+
       "choices": [
         {
           "choice": "main"
         },
         {
           "choice": "quick"
+        },
+        {
+          "choice": "unknown"
         }
       ],
       "description": "Select a form type"
