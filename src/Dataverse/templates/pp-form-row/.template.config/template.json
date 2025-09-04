@@ -35,7 +35,7 @@
     "FormType": {
       "type": "parameter",
       "datatype": "choice",
-      "isRequired": true,
+      "isRequired": false,
       "replaces": "formtypeexample",
       "defaultValue": "unknown",
 
@@ -52,13 +52,7 @@
       ],
       "description": "Select a form type"
     },
-    "AttributeLogicalName": {
-      "displayName": "Logical name",
-      "type": "parameter",
-      "datatype": "text",
-      "replaces": "examplecustomerow",
-      "isRequired": true
-    },
+    
     "TabId": {
       "type": "parameter",
       "datatype": "string",
