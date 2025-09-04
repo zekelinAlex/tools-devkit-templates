@@ -82,6 +82,12 @@
       "description": "Name of the entity",
       "replaces": "entityexamplename"
     },
+    "ComponentId": {
+      "type": "parameter",
+      "datatype": "text",
+      "description": "Enter the component id",
+      "replaces": "appmodelcomponentidexample"
+    },
     "SolutionRootPath": {
 			"type": "parameter",
 			"datatype": "text",

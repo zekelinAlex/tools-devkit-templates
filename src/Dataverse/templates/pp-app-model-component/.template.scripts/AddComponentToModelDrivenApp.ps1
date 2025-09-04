@@ -7,7 +7,13 @@ $rootComponents = $File.SelectSingleNode("//AppModuleComponents")
 
 $newComponent = $File.CreateElement("AppModuleComponent")
 $newComponent.SetAttribute("type", 'entitytypeexample')
-$newComponent.SetAttribute("schemaName", 'entityexamplename')
+
+if ( "entitytypeexample" -eq "1") {
+    $newComponent.SetAttribute("schemaName", 'entityexamplename')
+}
+else {
+    $newComponent.SetAttribute("id", '{appmodelcomponentidexample}')
+}
 
 # Append the new component to the root components without writing output to console
 $null = $rootComponents.AppendChild($newComponent)
