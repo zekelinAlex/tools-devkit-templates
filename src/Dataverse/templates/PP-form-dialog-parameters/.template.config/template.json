@@ -41,6 +41,30 @@
       "replaces": "tabnumberexample",
       "description": "Enter tab number"
     },
+    "LookupTargetEntityLogicalName": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "targetentityexamplelogicalnaem",
+      "description": "Enter target entity logical name"
+    },
+    "LookupTargetEntityDefaultViewId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "exampledefaultviewid",
+      "description": "Enter target entity default view id"
+    },
+    "OptionSetName": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "optinsetexamplename",
+      "description": "Enter option set name"
+    },
     "TabFooterId": {
       "type": "generated",
       "generator": "guid",
@@ -48,6 +72,67 @@
       "parameters": {
         "defaultFormat": "d"
       }
+    },
+    "SetToTabFooter": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "defaultValue": "False",
+      "replaces": "settotabfooterchoice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ]
+    },
+    "ParameterType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": true,
+      "replaces": "parametertypechoice",
+      "choices": [
+        {
+          "choice": "OptionSet"
+        },
+        {
+          "choice": "Lookup"
+        }
+      ]
+    },
+    "ColumnIndex": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "columnnumberexample",
+      "description": "Enter column number"
+    },
+    "SectionIndex": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "sectionnumberexample",
+      "description": "Enter section Index"
+    },
+    "SectionId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "sectionidexample",
+      "description": "Enter section id"
+    },
+    "RowIndex": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "rownumberexample",
+      "description": "Enter section Index"
     }
   },
   "postActions": [

@@ -235,7 +235,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "sectionnumberexample",
-      "description": "Enter section Штвуч"
+      "description": "Enter section Index"
     },
     "RowIndex": {
       "type": "parameter",
@@ -243,7 +243,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "rownumberexample",
-      "description": "Enter section Штвуч"
+      "description": "Enter section Index"
     },
     "SectionId": {
       "type": "parameter",

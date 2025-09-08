@@ -7,7 +7,7 @@ $rowNumber = "rownumberexample"
 $formType = "formtypeexample"
 $entityXmlPath = .\.template.scripts\LocateForm.ps1
 
-if ($entityXmlPath -eq "unknown") {
+if ($formType -eq "unknown") {
     $folderName = Split-Path -Path $entityXmlPath -Parent | Split-Path -Leaf
 
     if ($folderName -eq "Dialogs") {

@@ -4,27 +4,16 @@ $columnNumber = "columnnumberexample"
 $sectionId = "sectionidexample"
 $sectionNumber = "sectionnumberexample"
 $rowNumber = "rownumberexample"
-$formType = "formtypeexample"
+$parameterType = "parametertypechoice"
 $entityXmlPath = .\.template.scripts\LocateForm.ps1
-
-if ($entityXmlPath -eq "unknown") {
-    $folderName = Split-Path -Path $entityXmlPath -Parent | Split-Path -Leaf
-
-    if ($folderName -eq "Dialogs") {
-        $formType = "dialog"
-    }
-    else {
-        $formType = $folderName
-    }
-}
 
 $parameterPath
 
-if ($formType -eq "dialog") {
-    $parameterPath = (Resolve-Path './.template.temp/dialogcell.xml').Path
+if ($parameterType -eq "OptionSet") {
+    $parameterPath = (Resolve-Path './.template.temp/optionset.xml').Path
 }
 else {
-    $parameterPath = (Resolve-Path './.template.temp/cell.xml').Path
+    $parameterPath = (Resolve-Path './.template.temp/lookup.xml').Path
 }
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
@@ -152,21 +141,20 @@ if (-not $targetRow) {
     exit 1
 }
 
+$controlNode = $targetRow.SelectSingleNode('./cell/control')
 
-
-$cellsNode = $targetRow.SelectSingleNode('./cells')
-if (-not $cellsNode) {
-    $cellsNode = $entityXml.CreateElement("cells")
-    $targetRow.AppendChild($cellsNode) | Out-Null
+if (-not $controlNode) {
+    Write-Error "Control node not found in the selected row"
+    exit 1
 }
 
 $cellRaw = Get-Content -Path $parameterPath -Raw
-$wrapped = "<cells>$cellRaw</cells>"
+$wrapped = "<control>$cellRaw</control>"
 [xml]$newcellsXml = $wrapped
 
 foreach ($cell in $newcellsXml.cells.ChildNodes) {
     $imported = $entityXml.ImportNode($cell, $true)
-    $cellsNode.AppendChild($imported) | Out-Null
+    $controlNode.AppendChild($imported) | Out-Null
 }
 
 $settings = New-Object System.Xml.XmlWriterSettings
