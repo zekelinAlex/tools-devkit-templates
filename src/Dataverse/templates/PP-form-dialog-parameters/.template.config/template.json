@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Parameters",
+  "name": "Power Platform: Parameters",
+  "shortName": "PP-form-dialog-parameters",
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "symbols": {
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "Enter form Id"
+    },
+    "TabId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "tabexampleid",
+      "description": "Enter form Id"
+    },
+    "TabIndex": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "tabnumberexample",
+      "description": "Enter tab number"
+    },
+    "TabFooterId": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "tabfooterexampleid",
+      "parameters": {
+        "defaultFormat": "d"
+      }
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Add.ps1\" ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new tab to form"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new tab to form"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Cleanup.ps1\"",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

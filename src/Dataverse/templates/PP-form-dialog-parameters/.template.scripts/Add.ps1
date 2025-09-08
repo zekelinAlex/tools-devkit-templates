@@ -18,13 +18,13 @@ if ($entityXmlPath -eq "unknown") {
     }
 }
 
-$rowPath
+$parameterPath
 
 if ($formType -eq "dialog") {
-    $rowPath = (Resolve-Path './.template.temp/dialogcell.xml').Path
+    $parameterPath = (Resolve-Path './.template.temp/dialogcell.xml').Path
 }
 else {
-    $rowPath = (Resolve-Path './.template.temp/cell.xml').Path
+    $parameterPath = (Resolve-Path './.template.temp/cell.xml').Path
 }
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
@@ -152,9 +152,15 @@ if (-not $targetRow) {
     exit 1
 }
 
-$cellsNode = $targetRow
 
-$cellRaw = Get-Content -Path $rowPath -Raw
+
+$cellsNode = $targetRow.SelectSingleNode('./cells')
+if (-not $cellsNode) {
+    $cellsNode = $entityXml.CreateElement("cells")
+    $targetRow.AppendChild($cellsNode) | Out-Null
+}
+
+$cellRaw = Get-Content -Path $parameterPath -Raw
 $wrapped = "<cells>$cellRaw</cells>"
 [xml]$newcellsXml = $wrapped
 

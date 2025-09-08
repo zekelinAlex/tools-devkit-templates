@@ -3,6 +3,8 @@
       <label description="examplerowdisplayname" languagecode="1033" />
     </labels>
     <control id="examplecustomerow" classid="{exampleclassid}" isunbound="isunboundchoice" isrequired="isrequiredchoice" uniqueid="{controluniqueidexample}">
-      
+      <parameters>
+        
+      </parameters>
     </control>
   </cell>
