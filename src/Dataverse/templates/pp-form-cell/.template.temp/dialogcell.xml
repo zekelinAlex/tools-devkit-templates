@@ -1,0 +1,8 @@
+<cell id="{idexample}" showlabel="true" >
+    <labels>
+      <label description="examplerowdisplayname" languagecode="1033" />
+    </labels>
+    <control id="examplecustomerow" classid="{exampleclassid}" isunbound="isunboundchoice" isrequired="isrequiredchoice" uniqueid="{controluniqueidexample}">
+      
+    </control>
+  </cell>

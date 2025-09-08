@@ -1,5 +1,6 @@
 $tabId = "tabexampleid"
 $tabNumber = "tabnumberexample"
+$setToTabFooter = "settotabfooterchoice"
 $entityXmlPath = .\.template.scripts\LocateForm.ps1
 
 $tabPath = (Resolve-Path './.template.temp/column.xml').Path
@@ -33,6 +34,25 @@ if ($tabId -ne "unknown" -and $tabNumber -ne "unknown") {
 if (-not $targetTab) {
     Write-Error "Target tab not found"
     exit 1
+}
+
+#Select tab footer
+if ($setToTabFooter -eq "True") {
+    $targetTabFooter = $targetTab.SelectSingleNode("//tabfooter[@id='$tabFooterId']")
+
+    if (-not $targetTabFooter) {
+        $tabFooters = $targetTab.SelectNodes("//tabfooter")
+        if ($tabFooters.Count -gt 0) {
+            $targetTabFooter = $tabFooters[$tabFooters.Count - 1]
+        }
+    }
+
+    if (-not $targetTabFooter) {
+        Write-Error "Target tab footer not found"
+        exit 1
+    }
+
+    $targetTab = $targetTabFooter
 }
 
 $columnsNode = $targetTab.SelectSingleNode('./columns')

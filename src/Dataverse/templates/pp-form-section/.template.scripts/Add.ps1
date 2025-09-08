@@ -36,17 +36,33 @@ if (-not $targetTab) {
     exit 1
 }
 
-# Find the target column within the target tab
+#Select tab footer
+if ($setToTabFooter -eq "True") {
+    $targetTabFooter = $targetTab.SelectSingleNode("//tabfooter[@id='$tabFooterId']")
+
+    if (-not $targetTabFooter) {
+        $tabFooters = $targetTab.SelectNodes("//tabfooter")
+        if ($tabFooters.Count -gt 0) {
+            $targetTabFooter = $tabFooters[$tabFooters.Count - 1]
+        }
+    }
+    
+    if (-not $targetTabFooter) {
+        Write-Error "Target tab footer not found"
+        exit 1
+    }
+
+    $targetTab = $targetTabFooter
+}
+
 $targetColumn = $null
 
 if ($columnNumber -ne "unknown") {
-    # Find column by number
     $columns = $targetTab.SelectNodes('./columns/column')
     if ($columns.Count -ge [int]$columnNumber) {
         $targetColumn = $columns[[int]$columnNumber - 1]
     }
 } else {
-    # Use the last column
     $columns = $targetTab.SelectNodes('./columns/column')
     if ($columns.Count -gt 0) {
         $targetColumn = $columns[$columns.Count - 1]
@@ -58,10 +74,8 @@ if (-not $targetColumn) {
     exit 1
 }
 
-# Find or create sections node within the target column
 $sectionsNode = $targetColumn.SelectSingleNode('./sections')
 if (-not $sectionsNode) {
-    # Create sections node if it doesn't exist
     $sectionsNode = $entityXml.CreateElement("sections")
     $targetColumn.AppendChild($sectionsNode) | Out-Null
 }

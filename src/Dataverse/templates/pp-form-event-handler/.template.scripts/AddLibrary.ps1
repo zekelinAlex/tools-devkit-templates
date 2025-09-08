@@ -1,5 +1,14 @@
-$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot\Entities\exampleentityname\FormXml\exampleformtype\{formguididexample}.xml').Path
+$entityXmlPath
 
+$formType = 'exampleformtype'
+
+if ($formType -eq "dialog") 
+{
+	$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot\Dialogs\{formguididexample}.xml').Path
+}
+else {
+	$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot\Entities\exampleentityname\FormXml\exampleformtype\{formguididexample}.xml').Path
+}
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 
 $formLibrariesNode = $entityXml.SelectSingleNode('//formLibraries')

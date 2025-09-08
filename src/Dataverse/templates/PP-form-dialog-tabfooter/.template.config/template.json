@@ -1,9 +1,9 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "NETWORG",
-  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Tabs.Columns",
-  "name": "Power Platform: Tab Column",
-  "shortName": "pp-form-column",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Tabs.TabFooter",
+  "name": "Power Platform: Tab Footer",
+  "shortName": "PP-form-dialog-tabfooter",
   "tags": {
     "language": "XML",
     "type": "item"
@@ -11,13 +11,6 @@
   "sourceName": "examplecustomentityattribute",
   "preferNameDirectory": false,
   "symbols": {
-    "EntitySchemaName": {
-      "type": "parameter",
-      "datatype": "text",
-      "replaces": "exampleentityname",
-      "isRequired": false,
-      "defaultValue": "unknown"
-    },
     "SolutionRootPath": {
       "type": "parameter",
       "datatype": "text",
@@ -31,43 +24,6 @@
       "defaultValue": "unknownFormId",
       "replaces": "formguididexample",
       "description": "Enter form Id"
-    },
-    "FormType": {
-      "type": "parameter",
-      "datatype": "choice",
-      "isRequired": false,
-      "replaces": "formtypeexample",
-      "defaultValue": "unknown",
-      "choices": [
-        {
-          "choice": "main"
-        },
-        {
-          "choice": "quick"
-        },
-        {
-          "choice": "dialog"
-        },
-        {
-          "choice": "unknown"
-        }
-      ],
-      "description": "Select a form type"
-    },
-    "SetToTabFooter": {
-      "type": "parameter",
-      "datatype": "choice",
-      "isRequired": false,
-      "defaultValue": "False",
-      "replaces": "settotabfooterchoice",
-      "choices": [
-        {
-          "choice": "True"
-        },
-        {
-          "choice": "False"
-        }
-      ]
     },
     "TabId": {
       "type": "parameter",
@@ -85,13 +41,13 @@
       "replaces": "tabnumberexample",
       "description": "Enter tab number"
     },
-    "ColumnWidth": {
-      "type": "parameter",
-      "datatype": "string",
-      "isRequired": false,
-      "defaultValue": "100",
-      "replaces": "columnwidthexample",
-      "description": "Enter column width"
+    "TabFooterId": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "tabfooterexampleid",
+      "parameters": {
+        "defaultFormat": "d"
+      }
     }
   },
   "postActions": [

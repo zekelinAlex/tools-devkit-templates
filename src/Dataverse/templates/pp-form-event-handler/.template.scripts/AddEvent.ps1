@@ -1,4 +1,14 @@
-﻿$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot\Entities\exampleentityname\FormXml\exampleformtype\{formguididexample}.xml').Path
+﻿$entityXmlPath
+
+$formType = 'exampleformtype'
+
+if ($formType -eq "dialog") 
+{
+	$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot\Dialogs\{formguididexample}.xml').Path
+}
+else {
+	$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot\Entities\exampleentityname\FormXml\exampleformtype\{formguididexample}.xml').Path
+}
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 
@@ -36,7 +46,7 @@ if (-not $eventNode ) {
 
 $webResourcesPath = (Resolve-Path 'SolutionDeclarationsRoot/WebResources').Path
 $pathToFunction = Get-ChildItem -Path $webResourcesPath -File | Where-Object { [System.IO.Path]::GetExtension($_.Name) -eq "" } | Select-Object -First 1 | ForEach-Object { $_.FullName }
-$libraryname =  [System.IO.Path]::GetFileNameWithoutExtension($pathToFunction)
+$libraryname = [System.IO.Path]::GetFileNameWithoutExtension($pathToFunction)
 
 $handlerNode = $entityXml.CreateElement('Handler')
 $handlerNode.SetAttribute('libraryName', "$libraryname")

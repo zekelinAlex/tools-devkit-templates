@@ -47,6 +47,10 @@
         }
         ,
         {
+          "choice": "dialog"
+        }
+        ,
+        {
           "choice": "unknown"
         }
       ],

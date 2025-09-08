@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dialog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LocalizedNames>
+    <LocalizedName description="Relate Account Dialog" languagecode="1033" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="Relate Account Dialog" languagecode="1033" />
+  </Descriptions>
+  <FormId>{formexampleId}</FormId>
+  <UniqueName></UniqueName>
+  <IsCustomizable>1</IsCustomizable>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsTabletEnabled>1</IsTabletEnabled>
+  <CanBeDeleted>1</CanBeDeleted>
+  <FormXml>
+    <forms type="dialog">
+      <form>
+        <formparameters />
+        <header id="{a13b01e6-f484-4a5b-afe4-67dd16fd9c55}">
+          <rows>
+            <row>
+              <cell id="{e672c2a0-24b8-42f3-bf1f-633f9aa6ef4b}">
+                <labels>
+                  <label description="" languagecode="1029" />
+                  <label description="Relationship form" languagecode="1033" />
+                </labels>
+                <control id="FormHeader" classid="{39354E4A-5015-4D74-8031-EA9EB73A1322}" isunbound="true">
+                  <parameters>
+                    <IsTitle>true</IsTitle>
+                  </parameters>
+                </control>
+              </cell>
+            </row>
+          </rows>
+        </header>
+        <tabs>
+          
+        </tabs>
+        <controlDescriptions />
+        <events>
+         
+        </events>
+      </form>
+    </forms>
+  </FormXml>
+</Dialog>

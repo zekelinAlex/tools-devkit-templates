@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <systemform>
-    <formid>{mainFormId}</formid>
+    <formid>{formexampleId}</formid>
     <IntroducedVersion>1.0.0.0</IntroducedVersion>
     <FormPresentation>1</FormPresentation>
     <FormActivationState>1</FormActivationState>
     <form shownavigationbar="false" headerdensity="HighWithControls" showImage="false">
       <tabs>
-        <tab verticallayout="true" id="{1mainFormId}" IsUserDefined="1" name="generaltab"
-          labelid="{2mainFormId}">
+        <tab verticallayout="true" id="{1formexampleId}" IsUserDefined="1" name="generaltab"
+          labelid="{2formexampleId}">
           <labels>
             <label description="General" languagecode="1033" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
-                <section showlabel="true" showbar="false" IsUserDefined="0" id="{3mainFormId}"
-                  labelid="{4mainFormId}" name="generalsection">
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{3formexampleId}"
+                  labelid="{4formexampleId}" name="generalsection">
                   <labels>
                     <label description="GENERAL" languagecode="1033" />
                   </labels>
@@ -28,21 +28,21 @@
           </columns>
         </tab>
       </tabs>
-      <header id="{7mainFormId}" celllabelposition="Top" columns="111" labelwidth="115"
+      <header id="{7formexampleId}" celllabelposition="Top" columns="111" labelwidth="115"
         celllabelalignment="Left">
         <rows>
           <row>
-            <cell id="{8mainFormId}" showlabel="false" labelid="{9mainFormId}">
+            <cell id="{8formexampleId}" showlabel="false" labelid="{9formexampleId}">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
             </cell>
-            <cell id="{10mainFormId}" showlabel="false" labelid="{11mainFormId}">
+            <cell id="{10formexampleId}" showlabel="false" labelid="{11formexampleId}">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
             </cell>
-            <cell id="{12mainFormId}" showlabel="false" labelid="{13mainFormId}">
+            <cell id="{12formexampleId}" showlabel="false" labelid="{13formexampleId}">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
@@ -50,21 +50,21 @@
           </row>
         </rows>
       </header>
-      <footer id="{14mainFormId}" celllabelposition="Top" columns="111" labelwidth="115"
+      <footer id="{14formexampleId}" celllabelposition="Top" columns="111" labelwidth="115"
         celllabelalignment="Left">
         <rows>
           <row>
-            <cell id="{15mainFormId}" showlabel="false" labelid="{16mainFormId}">
+            <cell id="{15formexampleId}" showlabel="false" labelid="{16formexampleId}">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
             </cell>
-            <cell id="{17mainFormId}" showlabel="false" labelid="{18mainFormId}">
+            <cell id="{17formexampleId}" showlabel="false" labelid="{18formexampleId}">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
             </cell>
-            <cell id="{19mainFormId}" showlabel="false" labelid="{20mainFormId}">
+            <cell id="{19formexampleId}" showlabel="false" labelid="{20formexampleId}">
               <labels>
                 <label description="" languagecode="1033" />
               </labels>
@@ -79,7 +79,7 @@
     <IsCustomizable>1</IsCustomizable>
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
-      <LocalizedName description="Generated Form" languagecode="1033" />
+      <LocalizedName description="formexamplename" languagecode="1033" />
     </LocalizedNames>
     <Descriptions>
       <Description description="Main form" languagecode="1033" />

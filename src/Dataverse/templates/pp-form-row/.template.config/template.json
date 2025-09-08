@@ -38,7 +38,6 @@
       "isRequired": false,
       "replaces": "formtypeexample",
       "defaultValue": "unknown",
-
       "choices": [
         {
           "choice": "main"
@@ -47,12 +46,29 @@
           "choice": "quick"
         },
         {
+          "choice": "dialog"
+        },
+        {
           "choice": "unknown"
         }
       ],
       "description": "Select a form type"
     },
-    
+    "SetToTabFooter": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "defaultValue": "False",
+      "replaces": "settotabfooterchoice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ]
+    },
     "TabId": {
       "type": "parameter",
       "datatype": "string",

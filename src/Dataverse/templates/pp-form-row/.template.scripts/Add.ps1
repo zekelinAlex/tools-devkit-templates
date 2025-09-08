@@ -38,6 +38,25 @@ if (-not $targetTab) {
     exit 1
 }
 
+#Select tab footer
+if ($setToTabFooter -eq "True") {
+    $targetTabFooter = $targetTab.SelectSingleNode("//tabfooter[@id='$tabFooterId']")
+
+    if (-not $targetTabFooter) {
+        $tabFooters = $targetTab.SelectNodes("//tabfooter")
+        if ($tabFooters.Count -gt 0) {
+            $targetTabFooter = $tabFooters[$tabFooters.Count - 1]
+        }
+    }
+    
+    if (-not $targetTabFooter) {
+        Write-Error "Target tab footer not found"
+        exit 1
+    }
+
+    $targetTab = $targetTabFooter
+}
+
 $targetColumn = $null
 
 if ($columnNumber -ne "unknown") {

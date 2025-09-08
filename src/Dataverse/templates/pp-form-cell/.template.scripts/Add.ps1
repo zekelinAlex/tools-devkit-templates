@@ -4,9 +4,28 @@ $columnNumber = "columnnumberexample"
 $sectionId = "sectionidexample"
 $sectionNumber = "sectionnumberexample"
 $rowNumber = "rownumberexample"
+$formType = "formtypeexample"
 $entityXmlPath = .\.template.scripts\LocateForm.ps1
 
-$rowPath = (Resolve-Path './.template.temp/cell.xml').Path
+if ($entityXmlPath -eq "unknown") {
+    $folderName = Split-Path -Path $entityXmlPath -Parent | Split-Path -Leaf
+
+    if ($folderName -eq "Dialogs") {
+        $formType = "dialog"
+    }
+    else {
+        $formType = $folderName
+    }
+}
+
+$rowPath
+
+if ($formType -eq "dialog") {
+    $rowPath = (Resolve-Path './.template.temp/dialogcell.xml').Path
+}
+else {
+    $rowPath = (Resolve-Path './.template.temp/cell.xml').Path
+}
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 
@@ -20,14 +39,17 @@ if ($tabId -ne "unknown" -and $tabNumber -ne "unknown") {
             $targetTab = $tabs[[int]$tabNumber - 1]
         }
     }
-} elseif ($tabId -ne "unknown") {
+}
+elseif ($tabId -ne "unknown") {
     $targetTab = $entityXml.SelectSingleNode("//tab[@id='$tabId']")
-} elseif ($tabNumber -ne "unknown") {
+}
+elseif ($tabNumber -ne "unknown") {
     $tabs = $entityXml.SelectNodes("//tab")
     if ($tabs.Count -ge [int]$tabNumber) {
         $targetTab = $tabs[[int]$tabNumber - 1]
     }
-} else {
+}
+else {
     $tabs = $entityXml.SelectNodes("//tab")
     if ($tabs.Count -gt 0) {
         $targetTab = $tabs[$tabs.Count - 1]
@@ -39,6 +61,25 @@ if (-not $targetTab) {
     exit 1
 }
 
+#Select tab footer
+if ($setToTabFooter -eq "True") {
+    $targetTabFooter = $targetTab.SelectSingleNode("//tabfooter[@id='$tabFooterId']")
+
+    if (-not $targetTabFooter) {
+        $tabFooters = $targetTab.SelectNodes("//tabfooter")
+        if ($tabFooters.Count -gt 0) {
+            $targetTabFooter = $tabFooters[$tabFooters.Count - 1]
+        }
+    }
+    
+    if (-not $targetTabFooter) {
+        Write-Error "Target tab footer not found"
+        exit 1
+    }
+
+    $targetTab = $targetTabFooter
+}
+
 $targetColumn = $null
 
 if ($columnNumber -ne "unknown") {
@@ -46,7 +87,8 @@ if ($columnNumber -ne "unknown") {
     if ($columns.Count -ge [int]$columnNumber) {
         $targetColumn = $columns[[int]$columnNumber - 1]
     }
-} else {
+}
+else {
     $columns = $targetTab.SelectNodes('./columns/column')
     if ($columns.Count -gt 0) {
         $targetColumn = $columns[$columns.Count - 1]
@@ -68,14 +110,17 @@ if ($sectionId -ne "unknown" -and $sectionNumber -ne "unknown") {
             $targetSection = $sections[[int]$sectionNumber - 1]
         }
     }
-} elseif ($sectionId -ne "unknown") {
+}
+elseif ($sectionId -ne "unknown") {
     $targetSection = $targetColumn.SelectSingleNode("./sections/section[@id='$sectionId']")
-} elseif ($sectionNumber -ne "unknown") {
+}
+elseif ($sectionNumber -ne "unknown") {
     $sections = $targetColumn.SelectNodes('./sections/section')
     if ($sections.Count -ge [int]$sectionNumber) {
         $targetSection = $sections[[int]$sectionNumber - 1]
     }
-} else {
+}
+else {
     $sections = $targetColumn.SelectNodes('./sections/section')
     if ($sections.Count -gt 0) {
         $targetSection = $sections[$sections.Count - 1]
@@ -94,7 +139,8 @@ if ($rowNumber -ne "unknown") {
     if ($rows.Count -ge [int]$rowNumber) {
         $targetRow = $rows[[int]$rowNumber - 1]
     }
-} else {
+}
+else {
     $rows = $targetSection.SelectNodes('./rows/row')
     if ($rows.Count -gt 0) {
         $targetRow = $rows[$rows.Count - 1]

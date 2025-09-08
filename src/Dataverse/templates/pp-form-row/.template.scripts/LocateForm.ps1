@@ -1,15 +1,20 @@
-$rootPath = './SolutionDeclarationsRoot/Entities'
+$entitiesRootPath = './SolutionDeclarationsRoot/Entities'
+$dialogsRootPath = './SolutionDeclarationsRoot/Dialogs'
 $formId = "formguididexample"
 
 if ( ('formtypeexample' -eq 'unknown') -and ('exampleentityname' -eq 'unknown') -and ('formguididexample' -eq 'unknownFormId') ) {
-    $targetDirs = Get-ChildItem -Path $RootPath -Recurse -Directory -ErrorAction SilentlyContinue |
+    $targetDirs = Get-ChildItem -Path $entitiesRootPath -Recurse -Directory -ErrorAction SilentlyContinue |
     Where-Object { $_.Name -in 'main', 'quickCreate' -and $_.Parent -and $_.Parent.Name -eq 'FormXml' }
 
+    #Entities
     $files = foreach ($dir in $targetDirs) {
         Get-ChildItem -Path $dir.FullName -File -Filter '*.xml' -ErrorAction SilentlyContinue
     }
 
-    if (-not $files) { throw "No XML files under '$RootPath' in FormXml\main or FormXml\quickCreate." }
+    #Dialogs
+    $files += Get-ChildItem -Path $dialogsRootPath -File -Filter '*.xml' -ErrorAction SilentlyContinue
+
+    if (-not $files) { throw "No XML files under '$entitiesRootPath' in FormXml\main or FormXml\quickCreate." }
 
     $latest = $files |
     Sort-Object @{ Expression = {
@@ -24,7 +29,8 @@ if ( ('formtypeexample' -eq 'unknown') -and ('exampleentityname' -eq 'unknown') 
 elseif ( ('formtypeexample' -eq 'unknown') -and ('exampleentityname' -eq 'unknown') ) {
     $targetName = if ([IO.Path]::GetExtension($formId) -ieq ".xml") { "{$formId}" } else { "{$formId}.xml" }
 
-    $matches = Get-ChildItem -Path $RootPath -Recurse -File -Filter $targetName -ErrorAction SilentlyContinue |
+    #Entities
+    $matches = Get-ChildItem -Path $entitiesRootPath -Recurse -File -Filter $targetName -ErrorAction SilentlyContinue |
     Where-Object {
         $_.Directory -ne $null -and
         $_.Directory.Name -in @('main', 'quickCreate') -and
@@ -32,7 +38,10 @@ elseif ( ('formtypeexample' -eq 'unknown') -and ('exampleentityname' -eq 'unknow
         $_.Directory.Parent.Name -eq 'FormXml'
     }
 
-    if (-not $matches) { throw "File '$targetName' not found under '$RootPath' in FormXml\main or FormXml\quickCreate." }
+    #Dialogs
+    $matches += Get-ChildItem -Path $dialogsRootPath -Filter "*.xml"
+
+    if (-not $matches) { throw "File '$targetName' not found under '$entitiesRootPath' in FormXml\main or FormXml\quickCreate." }
     if ($matches.Count -gt 1) {
         $matches | ForEach-Object { Write-Host " - $($_.FullName)" }
     }
@@ -41,7 +50,12 @@ elseif ( ('formtypeexample' -eq 'unknown') -and ('exampleentityname' -eq 'unknow
 elseif ($formId -eq "unknownFormId") {
     $formDirectory = './SolutionDeclarationsRoot/Entities/exampleentityname/FormXml/formtypeexample/'
 
-    $latestForm = Get-ChildItem -Path $formDirectory -Filter "*.xml" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+    #Entities
+    $collectedForms = Get-ChildItem -Path $formDirectory -Filter "*.xml"
+    #Dialogs
+    $collectedForms += Get-ChildItem -Path $dialogsRootPath -Filter "*.xml"
+
+    $latestForm = $collectedForms | Sort-Object LastWriteTime -Descending | Select-Object -First 1
 
     if ($latestForm) {
         $entityXmlPath = $latestForm.FullName
@@ -53,7 +67,13 @@ elseif ($formId -eq "unknownFormId") {
     }
 }
 else {
-    $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/exampleentityname/FormXml/formtypeexample/{formguididexample}.xml').Path
+    if('formtypeexample' -eq 'dialog') 
+    {
+        $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Dialogs/{formguididexample}.xml').Path
+    }
+    else {
+        $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/exampleentityname/FormXml/formtypeexample/{formguididexample}.xml').Path
+    }
 }
 
 if (-not $entityXmlPath) {

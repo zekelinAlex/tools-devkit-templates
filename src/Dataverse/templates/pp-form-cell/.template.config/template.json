@@ -69,7 +69,6 @@
       "isRequired": false,
       "replaces": "formtypeexample",
       "defaultValue": "unknown",
-
       "choices": [
         {
           "choice": "main"
@@ -78,10 +77,66 @@
           "choice": "quick"
         },
         {
+          "choice": "dialog"
+        },
+        {
           "choice": "unknown"
         }
       ],
       "description": "Select a form type"
+    },
+    "SetToTabFooter": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "defaultValue": "False",
+      "replaces": "settotabfooterchoice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ]
+    },
+    "isUnbound": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "defaultValue": "False",
+      "replaces": "isunboundchoice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ]
+    },
+    "isRequired": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "defaultValue": "False",
+      "replaces": "isrequiredchoice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ]
+    },
+    "controluniqueid": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "controluniqueidexample",
+      "parameters": {
+        "defaultFormat": "d"
+      }
     },
     "classid": {
       "type": "generated",
