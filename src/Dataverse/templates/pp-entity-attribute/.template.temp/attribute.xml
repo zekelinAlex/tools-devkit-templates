@@ -25,6 +25,8 @@
         <Type>file</Type>
     <!--#elseif (AttributeType == "Image") -->
         <Type>image</Type>
+    <!--#elseif (AttributeType == "OptionSet") -->
+        <Type>picklist</Type>
     <!--#endif -->
 
     <Name>examplecustomentityattribute</Name>
@@ -52,7 +54,7 @@
     <IsDataSourceSecret>0</IsDataSourceSecret>
     <AutoNumberFormat></AutoNumberFormat>
 
-    <!--#if (AttributeType == "Lookup" or AttributeType == "Customer" or AttributeType == "Owner") -->
+    <!--#if (AttributeType == "Lookup" or AttributeType == "Customer" or AttributeType == "Owner" or AttributeType == "OptionSet") -->
         <IsSearchable>0</IsSearchable>
     <!--#else -->
         <IsSearchable>1</IsSearchable>
@@ -61,6 +63,25 @@
     <IsFilterable>0</IsFilterable>
     <IsRetrievable>0</IsRetrievable>
     <IsLocalizable>0</IsLocalizable>
+    <!--#if (AttributeType == "OptionSet") -->
+    <AppDefaultValue>-1</AppDefaultValue>
+    <AppDefaultValue>-1</AppDefaultValue>
+    <optionset Name="exampleexistingentity_examplecustomentityattribute">
+      <OptionSetType>picklist</OptionSetType>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <ExternalTypeName></ExternalTypeName>
+      <displaynames>
+        <displayname description="ExampleEntityAttributeDisplayName" languagecode="1033" />
+      </displaynames>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+      <options>
+        
+      </options>
+    </optionset>
+    <!--#endif -->
 
     <!--#if (AttributeType == "SingleLineText") -->
         <MaxLength>100</MaxLength>
