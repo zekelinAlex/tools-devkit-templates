@@ -3,7 +3,7 @@
   "author": "NETWORG",
   "identity": "TALXIS.DevKit.Templates.Dataverse.BusinessProcessFlows.Stage.Step",
   "name": "Power Platform: BPF Stage Step",
-  "shortName": "bpf-stage-step",
+  "shortName": "pp-bpf-stage-step",
   "tags": {
     "language": "XML",
     "type": "item"
