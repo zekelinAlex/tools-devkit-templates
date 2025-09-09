@@ -6,7 +6,7 @@ $optionNumber = (Get-Random -Minimum 10000 -Maximum 99999) * 10000
 $attributeXmlPath = ".template.temp/attribute.xml"
 [xml]$attributeXml = Get-Content -Path $attributeXmlPath -Raw
 
-$options = "{option1},{option2},{option3}"
+$options = "optinsforoptionsetexample"
 $options = $options.Split(',', [System.StringSplitOptions]::RemoveEmptyEntries) | ForEach-Object { $_.Replace('{', '').Replace('}', '') }
 
 $optionsNode = $attributeXml.SelectSingleNode("//options")

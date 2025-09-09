@@ -67,6 +67,14 @@
       "replaces": "ExampleEntityAttributeDisplayName",
       "isRequired": true
     },
+    "OptionSetOptions": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "optinsforoptionsetexample",
+      "isRequired": "AttributeType == \"OptionSet\"",
+      "description": "Select options for the option set in format: {option1},{option2},{option3}",
+      "defaultValue": "{option1},{option2},{option3}"
+    },
     "Description": {
       "type": "parameter",
       "datatype": "text",
