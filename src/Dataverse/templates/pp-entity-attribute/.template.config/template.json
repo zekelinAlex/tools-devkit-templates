@@ -39,7 +39,8 @@
         { "choice": "Money" },
         { "choice": "DateTime" },
         { "choice": "Lookup" },
-        { "choice": "OptionSet" },
+        { "choice": "OptionSet (Local)" },
+        { "choice": "OptionSet (Global)" },
         { "choice": "Boolean" }
       ]
     },
@@ -71,7 +72,7 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "optinsforoptionsetexample",
-      "isRequired": "AttributeType == \"OptionSet\"",
+      "isRequired": "AttributeType == \"OptionSet (Local)\"",
       "description": "Select options for the option set in format: {option1},{option2},{option3}",
       "defaultValue": "{option1},{option2},{option3}"
     },
@@ -139,7 +140,7 @@
   "postActions": [
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-      "condition": "(AttributeType == \"OptionSet\")",
+      "condition": "(AttributeType == \"OptionSet (Local)\")",
       "args": {
         "executable": "pwsh",
         "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/SetOptionSetOptions.ps1\"",
