@@ -72,9 +72,8 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "optinsforoptionsetexample",
-      "isRequired": "AttributeType == \"OptionSet (Local)\"",
       "description": "Select options for the option set in format: {option1},{option2},{option3}",
-      "defaultValue": "{option1},{option2},{option3}"
+      "isRequired": "(AttributeType == \"OptionSet (Local)\" || AttributeType == \"OptionSet (Global)\")"
     },
     "Description": {
       "type": "parameter",
