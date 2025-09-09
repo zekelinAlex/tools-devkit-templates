@@ -3,7 +3,16 @@ $optionSetOptionXmlPath = (Resolve-Path '.template.temp/optionsetoption.xml').Pa
 
 $optionNumber = (Get-Random -Minimum 10000 -Maximum 99999) * 10000
 
-$attributeXmlPath = ".template.temp/attribute.xml"
+$attributeXmlPath 
+
+<!--#if (AttributeType == "OptionSet (Global)") -->
+    $attributeXmlPath = "SolutionDeclarationsRoot\OptionSets\examplecustomentityattribute.xml"
+<!--#endif -->
+
+<!--#if (AttributeType == "OptionSet (Local)") -->
+    $attributeXmlPath = ".template.temp/attribute.xml"
+<!--#endif -->
+
 [xml]$attributeXml = Get-Content -Path $attributeXmlPath -Raw
 
 $options = "optinsforoptionsetexample"
@@ -54,6 +63,22 @@ $writer = [System.Xml.XmlWriter]::Create($attributeXmlPath, $settings)
 $attributeXml.Save($writer)
 $writer.Close()
 
+<!--#if (AttributeType == "OptionSet (Global)") -->
+    # Resolve the relative path to an absolute path (to support other OSes)
+    $solutionPath = Resolve-Path -Path 'SolutionDeclarationsRoot/Other/Solution.xml'
 
+    # Load the XML file
+    [XML]$File = Get-Content -Path $solutionPath -Raw
+    $rootComponents = $File.SelectSingleNode("//RootComponents")
 
+    $newComponent = $File.CreateElement("RootComponent")
+    $newComponent.SetAttribute("type", '9')
+    $newComponent.SetAttribute("schemaName", 'examplecustomentityattribute')
+    $newComponent.SetAttribute("behavior", '0')
 
+    # Append the new component to the root components without writing output to console
+    $null = $rootComponents.AppendChild($newComponent)
+
+    # Save the updated XML back to the file
+    $File.Save($solutionPath)
+<!--#endif -->

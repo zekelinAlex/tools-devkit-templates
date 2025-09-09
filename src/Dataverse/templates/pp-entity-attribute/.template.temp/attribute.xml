@@ -25,7 +25,7 @@
         <Type>file</Type>
     <!--#elseif (AttributeType == "Image") -->
         <Type>image</Type>
-    <!--#elseif (AttributeType == "OptionSet") -->
+    <!--#elseif (AttributeType == "OptionSet (Local)" || AttributeType == "OptionSet (Global)") -->
         <Type>picklist</Type>
     <!--#endif -->
 
@@ -54,7 +54,7 @@
     <IsDataSourceSecret>0</IsDataSourceSecret>
     <AutoNumberFormat></AutoNumberFormat>
 
-    <!--#if (AttributeType == "Lookup" or AttributeType == "Customer" or AttributeType == "Owner" or AttributeType == "OptionSet (Local)") -->
+    <!--#if (AttributeType == "Lookup" or AttributeType == "Customer" or AttributeType == "Owner" or AttributeType == "OptionSet (Local)" or AttributeType == "OptionSet (Global)") -->
         <IsSearchable>0</IsSearchable>
     <!--#else -->
         <IsSearchable>1</IsSearchable>
@@ -64,7 +64,6 @@
     <IsRetrievable>0</IsRetrievable>
     <IsLocalizable>0</IsLocalizable>
     <!--#if (AttributeType == "OptionSet (Local)") -->
-    <AppDefaultValue>-1</AppDefaultValue>
     <AppDefaultValue>-1</AppDefaultValue>
     <optionset Name="exampleexistingentity_examplecustomentityattribute">
       <OptionSetType>picklist</OptionSetType>
@@ -81,6 +80,11 @@
         
       </options>
     </optionset>
+    <!--#endif -->
+
+    <!--#if (AttributeType == "OptionSet (Global)") -->
+    <AppDefaultValue>-1</AppDefaultValue>
+    <OptionSetName>examplecustomentityattribute</OptionSetName>
     <!--#endif -->
 
     <!--#if (AttributeType == "SingleLineText") -->
