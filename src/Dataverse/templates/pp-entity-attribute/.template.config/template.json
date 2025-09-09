@@ -131,6 +131,20 @@
   "postActions": [
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "condition": "(AttributeType == \"OptionSet\")",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/SetOptionSetOptions.ps1\"",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        { "text": "Setting option set options" }
+      ],
+      "continueOnError": false,
+      "description": "Setting option set options"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "args": {
         "executable": "pwsh",
         "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddAttributeToEntityXml.ps1\"",
@@ -156,20 +170,7 @@
       "continueOnError": false,
       "description": "Adding lookup relationship xml"
     },
-    {
-      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-      "condition": "(AttributeType == \"OptionSet\")",
-      "args": {
-        "executable": "pwsh",
-        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/SetOptionSetOptions.ps1\"",
-        "redirectStandardOutput": "false"
-      },
-      "manualInstructions": [
-        { "text": "Setting option set options" }
-      ],
-      "continueOnError": false,
-      "description": "Setting option set options"
-    },
+    
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "args": {
