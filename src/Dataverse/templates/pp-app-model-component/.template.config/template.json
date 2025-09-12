@@ -14,14 +14,14 @@
     "AppName": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Prefix for the user",
+      "description": "Name of the model-driven app where the component will be added",
       "replaces": "appexamplename",
       "fileRename": "appexamplename"
     },
     "EntityType": {
       "type": "parameter",
       "datatype": "choice",
-      "description": "Select attribute type",
+      "description": "Type of component to add to the model-driven app: Entity, View, Business Process Flow, Command for Form, Grid/subgrid, Chart, Form, or Sitemap",
       "defaultValue": "Entity",
       "choices": [
         { "choice": "Entity" },
@@ -74,18 +74,19 @@
             "value": "62"
           }
         ]
-      }
+      },
+      "description": "Component type ID automatically selected based on EntityType (determines component behavior in app)"
     },
     "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Name of the entity",
+      "description": "Logical name of the entity for the component (Example: account, contact, custom_entity)",
       "replaces": "entityexamplename"
     },
     "ComponentId": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Enter the component id",
+      "description": "GUID of the specific component to add to the app (Example: form ID, view ID, chart ID)",
       "replaces": "appmodelcomponentidexample"
     },
     "SolutionRootPath": {
@@ -93,7 +94,8 @@
 			"datatype": "text",
 			"defaultValue": ".",
 			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot"
+			"fileRename": "SolutionDeclarationsRoot",
+			"description": "Path to the solution root directory"
 		}
   },
   "sources": [

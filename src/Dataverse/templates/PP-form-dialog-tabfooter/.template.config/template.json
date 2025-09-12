@@ -15,7 +15,8 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "SolutionDeclarationsRoot",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Path to the solution root directory"
     },
     "FormId": {
       "type": "parameter",
@@ -23,7 +24,7 @@
       "isRequired": false,
       "defaultValue": "unknownFormId",
       "replaces": "formguididexample",
-      "description": "Enter form Id"
+      "description": "GUID of the specific form where the tab footer will be added"
     },
     "TabId": {
       "type": "parameter",
@@ -31,7 +32,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "tabexampleid",
-      "description": "Enter form Id"
+      "description": "GUID of the specific tab where the footer will be added"
     },
     "TabIndex": {
       "type": "parameter",
@@ -39,7 +40,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "tabnumberexample",
-      "description": "Enter tab number"
+      "description": "Index number of the tab (1-based) where the footer will be added"
     },
     "TabFooterId": {
       "type": "generated",
@@ -47,7 +48,8 @@
       "replaces": "tabfooterexampleid",
       "parameters": {
         "defaultFormat": "d"
-      }
+      },
+      "description": "Unique identifier for the tab footer (automatically generated GUID)"
     }
   },
   "postActions": [

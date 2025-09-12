@@ -16,7 +16,8 @@
       "datatype": "text",
       "defaultValue": ".",
       "replaces": "SolutionDeclarationsRoot",
-      "fileRename": "SolutionDeclarationsRoot"
+      "fileRename": "SolutionDeclarationsRoot",
+      "description": "Path to the solution root directory"
     },
     "RequiredLevel": {
       "type": "parameter",
@@ -35,13 +36,15 @@
       "datatype": "text",
       "replaces": "examplecustomentityattribute",
       "fileRename": "examplecustomentityattribute",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Logical name of the option set (Example: new_status, new_priority)"
     },
     "DisplayName": {
       "type": "parameter",
       "datatype": "text",
       "replaces": "ExampleEntityAttributeDisplayName",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Display name for the option set that will be shown to users"
     },
     "OptionSetOptions": {
       "type": "parameter",

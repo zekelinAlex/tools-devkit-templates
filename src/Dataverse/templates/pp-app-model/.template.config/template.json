@@ -14,14 +14,14 @@
     "PublisherPrefix": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Prefix for the user",
+      "description": "Publisher prefix for the app (Example: new, talxis) - used in naming conventions",
       "replaces": "userprefixexample",
       "fileRename": "userprefixexample"
     },
     "LogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Name of the app",
+      "description": "Logical name of the model-driven app (Example: customapp, salesapp)",
       "replaces": "appexamplename",
       "fileRename": "appexamplename"
     },
@@ -30,7 +30,8 @@
 			"datatype": "text",
 			"defaultValue": ".",
 			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot"
+			"fileRename": "SolutionDeclarationsRoot",
+			"description": "Path to the solution root directory"
 		}
   },
   "sources": [

@@ -16,18 +16,20 @@
       "datatype": "text",
       "replaces": "exampleentityname",
       "isRequired": false,
-      "defaultValue": "unknown"
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the cell will be created"
     },
     "SolutionRootPath": {
       "type": "parameter",
       "datatype": "text",
       "replaces": "SolutionDeclarationsRoot",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Path to the solution root directory"
     },
     "AttributeType": {
       "type": "parameter",
       "datatype": "choice",
-      "description": "Select attribute type",
+      "description": "Data type of the attribute: Text, MultilineText, WholeNumber, Decimal, Float, Currency, DateTime, or Lookup",
       "choices": [
         {
           "choice": "Text"
@@ -61,7 +63,7 @@
       "isRequired": false,
       "defaultValue": "unknownFormId",
       "replaces": "formguididexample",
-      "description": "Enter form Id"
+      "description": "GUID of the specific form where the cell will be added"
     },
     "FormType": {
       "type": "parameter",
@@ -83,7 +85,7 @@
           "choice": "unknown"
         }
       ],
-      "description": "Select a form type"
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
     },
     "SetToTabFooter": {
       "type": "parameter",
@@ -98,7 +100,8 @@
         {
           "choice": "False"
         }
-      ]
+      ],
+      "description": "Whether to add the cell to the tab footer (True) or to the main tab content (False)"
     },
     "isUnbound": {
       "type": "parameter",
@@ -113,7 +116,8 @@
         {
           "choice": "False"
         }
-      ]
+      ],
+      "description": "Whether the control is unbound (not connected to entity field) - True for custom controls, False for entity fields"
     },
     "isRequired": {
       "type": "parameter",
@@ -128,7 +132,8 @@
         {
           "choice": "False"
         }
-      ]
+      ],
+      "description": "Whether the field is required (True) or optional (False) for user input"
     },
     "controluniqueid": {
       "type": "generated",
@@ -136,7 +141,8 @@
       "replaces": "controluniqueidexample",
       "parameters": {
         "defaultFormat": "d"
-      }
+      },
+      "description": "Unique identifier for the control (automatically generated GUID)"
     },
     "classid": {
       "type": "generated",
@@ -178,32 +184,37 @@
             "value": "270BD3DB-D9AF-4782-9025-509E298DEC0A"
           }
         ]
-      }
+      },
+      "description": "Control class ID automatically selected based on AttributeType (determines control behavior)"
     },
     "RowId": {
       "type": "generated",
       "generator": "guid",
       "dataType": "string",
-      "replaces": "idexample"
+      "replaces": "idexample",
+      "description": "Unique identifier for the row containing the cell (automatically generated GUID)"
     },
     "LabelId": {
       "type": "generated",
       "generator": "guid",
       "dataType": "string",
-      "replaces": "labelidexample"
+      "replaces": "labelidexample",
+      "description": "Unique identifier for the cell label (automatically generated GUID)"
     },
     "AttributeLogicalName": {
       "displayName": "Logical name",
       "type": "parameter",
       "datatype": "text",
       "replaces": "examplecustomerow",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Logical name of the entity attribute/field that the cell will display"
     },
     "DisplayName": {
       "type": "parameter",
       "datatype": "text",
       "replaces": "examplerowdisplayname",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Display name for the cell label that will be shown to users"
     },
     "TabId": {
       "type": "parameter",
@@ -211,7 +222,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "tabexampleid",
-      "description": "Enter tab Id"
+      "description": "GUID of the specific tab where the cell will be added"
     },
     "TabIndex": {
       "type": "parameter",
@@ -219,7 +230,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "tabnumberexample",
-      "description": "Enter tab number"
+      "description": "Index number of the tab (1-based) where the cell will be added"
     },
     "ColumnIndex": {
       "type": "parameter",
@@ -227,7 +238,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "columnnumberexample",
-      "description": "Enter column number"
+      "description": "Index number of the column (1-based) within the tab where the cell will be added"
     },
     "SectionIndex": {
       "type": "parameter",
@@ -235,7 +246,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "sectionnumberexample",
-      "description": "Enter section Index"
+      "description": "Index number of the section (1-based) within the column where the cell will be added"
     },
     "RowIndex": {
       "type": "parameter",
@@ -243,7 +254,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "rownumberexample",
-      "description": "Enter section Index"
+      "description": "Index number of the row (1-based) within the section where the cell will be added"
     },
     "SectionId": {
       "type": "parameter",
@@ -251,7 +262,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "sectionidexample",
-      "description": "Enter section id"
+      "description": "GUID of the specific section where the cell will be added"
     }
   },
   "postActions": [

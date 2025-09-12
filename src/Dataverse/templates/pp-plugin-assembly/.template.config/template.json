@@ -13,19 +13,22 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "pluginguididexample",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Unique GUID identifier for the plugin assembly"
     },
     "PluginProjectRootPath": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "pluginprojectrootpathexample"
+      "replaces": "pluginprojectrootpathexample",
+      "description": "Path to the plugin project root directory containing the compiled assembly"
     },
     "SolutionRootPath": {
 			"type": "parameter",
 			"datatype": "text",
 			"defaultValue": ".",
 			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot"
+			"fileRename": "SolutionDeclarationsRoot",
+			"description": "Path to the solution root directory"
 		}
   },
   "postActions": [

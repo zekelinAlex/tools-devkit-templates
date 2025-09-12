@@ -16,7 +16,8 @@
 			"datatype": "text",
 			"defaultValue": ".",
 			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot"
+			"fileRename": "SolutionDeclarationsRoot",
+			"description": "Path to the solution root directory"
 		},
     "RoleId": {
 			"type": "parameter",
@@ -25,14 +26,16 @@
       "replaces": "roleidexample",
 			"parameters": {
 				"defaultFormat": "d"
-			}
+			},
+			"description": "Unique identifier for the security role (automatically generated GUID)"
     },
     "RoleName": {
       "type": "parameter",
 			"datatype": "text",
 			"defaultValue": ".",
       "replaces": "rolenameexample",
-      "fileRename": "ExampleSecurityRole"
+      "fileRename": "ExampleSecurityRole",
+			"description": "Name of the security role that will be displayed to users"
     }
   },
   "sources": [

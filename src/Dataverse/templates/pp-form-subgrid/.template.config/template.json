@@ -15,7 +15,8 @@
             "type": "parameter",
             "datatype": "text",
             "replaces": "SolutionDeclarationsRoot",
-            "isRequired": true
+            "isRequired": true,
+            "description": "Path to the solution root directory"
         },
         "CellId": {
             "type": "generated",
@@ -31,7 +32,7 @@
             "replaces": "subgridlabelexample",
             "isRequired": true,
             "displayName": "Subgrid Label Text",
-            "description": "Enter the descriptive label for the subgrid."
+            "description": "Display name for the subgrid section"
         },
         "ControlId": {
             "type": "generated",
@@ -54,7 +55,7 @@
                     "choice": "quick"
                 }
             ],
-            "description": "Select a form type"
+            "description": "Type of form where subgrid will be added: main (main form) or quick (quick create form)"
         },
         "FormId": {
             "type": "parameter",
@@ -62,7 +63,7 @@
             "isRequired": true,
             "defaultValue": "",
             "replaces": "formguididexample",
-            "description": "Enter form Id"
+            "description": "GUID of the specific form where the subgrid will be added"
         },
         "TargetEntityLogicalName": {
             "type": "parameter",
@@ -70,7 +71,7 @@
             "replaces": "targetentitytypeexample",
             "isRequired": true,
             "displayName": "Target Entity Logical Name",
-            "description": "Enter the logical name of the entity whose records will be displayed in the subgrid."
+            "description": "Entity whose records will be displayed in the subgrid (Example: contact, opportunity, custom_entity)"
         },
         "EntityLogicalName": {
             "type": "parameter",
@@ -78,7 +79,7 @@
             "replaces": "entitytypeexample",
             "isRequired": true,
             "displayName": "Entity Logical Name",
-            "description": "Enter the logical name of the entity where the subgrid should be created"
+            "description": "Entity where the subgrid will be added (Example: account, contact, custom_entity)"
         },
         "ViewId": {
             "type": "generated",

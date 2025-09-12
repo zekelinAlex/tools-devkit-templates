@@ -13,23 +13,27 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "exampleentity",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Entity that will trigger the plugin (Example: account, contact, custom_entity)"
     },
     "AssemblyId": {
       "type": "parameter",
       "datatype": "text",
       "replaces": "pluginguididexample",
-      "isRequired": true
+      "isRequired": true,
+      "description": "GUID of the plugin assembly (found in PluginAssembly.xml file)"
     },
     "PluginProjectName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplepluginprojectname"
+      "replaces": "examplepluginprojectname",
+      "description": "Name of the plugin project containing the plugin class"
     },
     "PluginName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplepluginname"
+      "replaces": "examplepluginname",
+      "description": "Name of the plugin class that will be executed"
     },
     "PluginStepId": {
       "type": "generated",
@@ -43,7 +47,7 @@
     "Stage": {
       "type": "parameter",
       "datatype": "choice",
-      "description": "Stage type",
+      "description": "When the plugin should execute: Pre-validation (before validation), Pre-operation (before save), or Post-operation (after save)",
       "defaultValue": "Pre-validation",
       "choices": [
         {
@@ -106,12 +110,13 @@
 			"datatype": "text",
 			"defaultValue": ".",
 			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot"
+			"fileRename": "SolutionDeclarationsRoot",
+			"description": "Path to the solution root directory"
 		},
     "SdkMessage": {
       "type": "parameter",
       "datatype": "choice",
-      "description": "Message type",
+      "description": "CRM operation that triggers the plugin: Create (new record), Update (modify record), Delete (remove record), etc.",
       "defaultValue": "Create",
       "replaces": "sdkmessageidexampletext",
       "choices": [
@@ -180,7 +185,7 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "jsonarraystringwhithentitiesList",
-      "description": "String in format: {entity1, entity2, entity3}"
+      "description": "Comma-separated list of entity fields that must change to trigger the plugin (leave empty to run on any field change)"
     }
   },
   "postActions": [

@@ -16,19 +16,20 @@
 			"datatype": "text",
 			"defaultValue": ".",
 			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot"
+			"fileRename": "SolutionDeclarationsRoot",
+			"description": "Path to the solution root directory"
 		},
     "AppName": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Prefix for the user",
+      "description": "Name of the app module where the sitemap will be modified",
       "replaces": "appexamplename",
       "fileRename": "appexamplename"
     },
     "GroupTitle": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Group Title",
+      "description": "Title of the group that will be created in the sitemap",
       "defaultValue": "NewTitle",
       "replaces": "grouptitleexample",
       "fileRename": "grouptitleexample"
@@ -36,7 +37,7 @@
     "AreaTitle": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Area Title",
+      "description": "Title of the area in the sitemap where the group will be added",
       "defaultValue": "NewTitle",
       "replaces": "areatitleexample",
       "fileRename": "areatitleexample"

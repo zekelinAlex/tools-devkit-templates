@@ -29,42 +29,48 @@
       "datatype": "text",
       "defaultValue": ".",
       "replaces": "SolutionDeclarationsRoot",
-      "fileRename": "SolutionDeclarationsRoot"
+      "fileRename": "SolutionDeclarationsRoot",
+      "description": "Path to the solution root directory"
     },
     "PublisherPrefix": {
       "type": "parameter",
       "datatype": "text",
       "replaces": "examplepublisher",
       "fileRename": "examplepublisher",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Publisher prefix for the ribbon button (Example: new, talxis)"
     },
     "ButtonLable": {
       "type": "parameter",
       "datatype": "text",
       "replaces": "examplebuttonlable",
       "fileRename": "examplebuttonlable",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Display label text for the ribbon button"
     },
     "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
       "replaces": "exampleentityname",
       "fileRename": "exampleentityname",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Logical name of the entity where the ribbon button will be added"
     },
     "Image32by32": {
       "type": "parameter",
       "datatype": "text",
       "defaultValue": "icon32pathdefault",
       "replaces": "icon32pathexample",
-      "fileRename": "icon32pathexample"
+      "fileRename": "icon32pathexample",
+      "description": "Path to the 32x32 pixel icon image for the ribbon button"
     },
     "Image16by16": {
       "type": "parameter",
       "datatype": "text",
       "defaultValue": "icon16pathdefault",
       "replaces": "icon16pathexample",
-      "fileRename": "icon16pathexample"
+      "fileRename": "icon16pathexample",
+      "description": "Path to the 16x16 pixel icon image for the ribbon button"
     },
     "Location": {
       "type": "parameter",
@@ -113,7 +119,8 @@
     },
     "ManualLocation": {
       "type": "parameter",
-      "datatype": "text"
+      "datatype": "text",
+      "description": "Custom location path for the ribbon button (used when Location is set to Manual)"
     }
   },
   "postActions": [

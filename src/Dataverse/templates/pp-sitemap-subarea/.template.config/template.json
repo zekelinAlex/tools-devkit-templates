@@ -14,7 +14,7 @@
     "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Name of the entity",
+      "description": "Logical name of the entity that the subarea will navigate to",
       "replaces": "entityexamplename"
     },
     "SolutionRootPath": {
@@ -22,12 +22,13 @@
 			"datatype": "text",
 			"defaultValue": ".",
 			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot"
+			"fileRename": "SolutionDeclarationsRoot",
+			"description": "Path to the solution root directory"
 		},
     "GroupTitle": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Group Title",
+      "description": "Title of the group in the sitemap where the subarea will be added",
       "defaultValue": "NewTitle",
       "replaces": "grouptitleexample",
       "fileRename": "grouptitleexample"
@@ -35,7 +36,7 @@
     "AreaTitle": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Area Title",
+      "description": "Title of the area in the sitemap where the subarea will be added",
       "defaultValue": "NewTitle",
       "replaces": "areatitleexample",
       "fileRename": "areatitleexample"
@@ -43,7 +44,7 @@
     "AppName": {
       "type": "parameter",
       "datatype": "text",
-      "description": "Prefix for the user",
+      "description": "Name of the app module where the sitemap will be modified",
       "replaces": "appexamplename",
       "fileRename": "appexamplename"
     }

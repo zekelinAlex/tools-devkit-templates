@@ -1,7 +1,7 @@
-$tabId = "tabexampleid"
+$tabId = "{tabexampleid}"
 $tabNumber = "tabnumberexample"
 $columnNumber = "columnnumberexample"
-$sectionId = "sectionidexample"
+$sectionId = "{sectionidexample}"
 $sectionNumber = "sectionnumberexample"
 $entityXmlPath = .\.template.scripts\LocateForm.ps1
 

@@ -16,13 +16,15 @@
 			"datatype": "text",
 			"defaultValue": ".",
 			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot"
+			"fileRename": "SolutionDeclarationsRoot",
+			"description": "Path to the solution root directory"
 		},
     "AppLogicalName": {
       "type": "parameter",
 			"datatype": "text",
 			"defaultValue": ".",
-      "replaces": "appexamplename"
+      "replaces": "appexamplename",
+			"description": "Logical name of the app module to which security roles will be assigned"
     },
     "SecurityRolesIds": {
       "type": "parameter",

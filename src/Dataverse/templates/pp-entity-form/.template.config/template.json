@@ -48,21 +48,24 @@
 					"choice": "dialog",
 					"description": "Dialog Form"
 				}
-			]
+			],
+			"description": "Type of form to create: main (full entity form), quickCreate (quick create form), or dialog (dialog form)"
 		},
 		"SolutionRootPath": {
 			"type": "parameter",
 			"datatype": "text",
 			"defaultValue": ".",
 			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot"
+			"fileRename": "SolutionDeclarationsRoot",
+			"description": "Path to the solution root directory"
 		},
 		"EntitySchemaName": {
 			"type": "parameter",
 			"datatype": "text",
 			"defaultValue": ".",
 			"replaces": "ItemFolderName",
-			"fileRename": "ItemFolderName"
+			"fileRename": "ItemFolderName",
+			"description": "Logical name of the entity for which the form will be created"
 		},
 		"FormName": {
 			"type": "parameter",
@@ -70,19 +73,23 @@
 			"isRequired": false,
 			"defaultValue": "Generated Form",
 			"replaces": "formexamplename",
-			"fileRename": "formexamplename"
+			"fileRename": "formexamplename",
+			"description": "Display name for the form that will be shown to users"
 		},
 		"AddMainForm": {
 			"type": "computed",
-			"value": "(FormType == \"main\")"
+			"value": "(FormType == \"main\")",
+			"description": "Automatically computed: True when FormType is main, False otherwise"
 		},
 		"AddQuickCreateForm": {
 			"type": "computed",
-			"value": "(FormType == \"quickCreate\")"
+			"value": "(FormType == \"quickCreate\")",
+			"description": "Automatically computed: True when FormType is quickCreate, False otherwise"
 		},
 		"AddDialogForm": {
 			"type": "computed",
-			"value": "(FormType == \"dialog\")"
+			"value": "(FormType == \"dialog\")",
+			"description": "Automatically computed: True when FormType is dialog, False otherwise"
 		},
 		//forms
 		"FormId": {
@@ -92,7 +99,8 @@
 			"fileRename": "formexampleId",
 			"parameters": {
 				"defaultFormat": "d"
-			}
+			},
+			"description": "Unique identifier for the form (automatically generated GUID)"
 		},
 		//Main Form IDs
 		"1formexampleId": {
@@ -101,7 +109,8 @@
 			"replaces": "1formexampleId",
 			"parameters": {
 				"defaultFormat": "d"
-			}
+			},
+			"description": "GUID for the main tab element (automatically generated)"
 		},
 		"2formexampleId": {
 			"type": "generated",

@@ -16,13 +16,15 @@
       "datatype": "text",
       "replaces": "exampleentityname",
       "isRequired": false,
-      "defaultValue": "unknown"
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the section will be created"
     },
     "SolutionRootPath": {
       "type": "parameter",
       "datatype": "text",
       "replaces": "SolutionDeclarationsRoot",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Path to the solution root directory"
     },
     "FormId": {
       "type": "parameter",
@@ -30,7 +32,7 @@
       "isRequired": false,
       "defaultValue": "unknownFormId",
       "replaces": "formguididexample",
-      "description": "Enter form Id"
+      "description": "GUID of the specific form where the section will be added"
     },
     "FormType": {
       "type": "parameter",
@@ -52,7 +54,7 @@
           "choice": "unknown"
         }
       ],
-      "description": "Select a form type"
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
     },
     "SetToTabFooter": {
       "type": "parameter",
@@ -67,7 +69,8 @@
         {
           "choice": "False"
         }
-      ]
+      ],
+      "description": "Whether to add the section to the tab footer (True) or to the main tab content (False)"
     },
     "TabId": {
       "type": "parameter",
@@ -75,7 +78,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "tabexampleid",
-      "description": "Enter form Id"
+      "description": "GUID of the specific tab where the section will be added"
     },
     "TabIndex": {
       "type": "parameter",
@@ -83,7 +86,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "tabnumberexample",
-      "description": "Enter tab number"
+      "description": "Index number of the tab (1-based) where the section will be added"
     },
     "ColumnIndex": {
       "type": "parameter",
@@ -91,7 +94,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "columnnumberexample",
-      "description": "Enter column number"
+      "description": "Index number of the column (1-based) within the tab where the section will be added"
     },
     "SectionName": {
       "type": "parameter",
@@ -99,7 +102,7 @@
       "isRequired": false,
       "defaultValue": "GENERAL",
       "replaces": "sectionnameexample",
-      "description": "Enter section name"
+      "description": "Display name for the section header"
     },
     "SectionId": {
       "type": "parameter",
@@ -107,7 +110,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "sectionidexample",
-      "description": "Enter section id"
+      "description": "Unique identifier for the section (GUID format)"
     },
     "SectionLabelId": {
       "type": "generated",

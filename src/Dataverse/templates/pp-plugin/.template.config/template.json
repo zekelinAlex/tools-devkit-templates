@@ -28,18 +28,21 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "examplepublisher",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Publisher name for the plugin project (used as author in PAC CLI)"
     },
     "Company": {
       "type": "parameter",
       "datatype": "text",
       "replaces": "exampleсompany",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Company name for the plugin project metadata"
     },
     "SigningKeyFilePath": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "signingkeyfilepathexample"
+      "replaces": "signingkeyfilepathexample",
+      "description": "Path to the signing key file for plugin assembly signing (optional)"
     }
   },
   "primaryOutputs": [

@@ -16,19 +16,22 @@
 			"datatype": "text",
 			"defaultValue": ".",
 			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot"
+			"fileRename": "SolutionDeclarationsRoot",
+			"description": "Path to the solution root directory"
 		},
     "EntityLogicalName": {
       "type": "parameter",
 			"datatype": "text",
 			"defaultValue": ".",
-      "replaces": "entityexamplename"
+      "replaces": "entityexamplename",
+			"description": "Logical name of the entity for which privileges will be created"
     },
     "RoleName": {
       "type": "parameter",
 			"datatype": "text",
 			"defaultValue": "eqweqweqwe",
-      "replaces": "securityrolenameexample"
+      "replaces": "securityrolenameexample",
+			"description": "Name of the security role to which privileges will be added"
     },
     "PrivilegeTypeAndLevel": {
       "type": "parameter",

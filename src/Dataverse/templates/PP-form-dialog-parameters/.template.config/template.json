@@ -15,7 +15,8 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "SolutionDeclarationsRoot",
-      "isRequired": true
+      "isRequired": true,
+      "description": "Path to the solution root directory"
     },
     "FormId": {
       "type": "parameter",
@@ -23,7 +24,7 @@
       "isRequired": false,
       "defaultValue": "unknownFormId",
       "replaces": "formguididexample",
-      "description": "Enter form Id"
+      "description": "GUID of the specific form where the parameters will be added"
     },
     "TabId": {
       "type": "parameter",
@@ -31,7 +32,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "tabexampleid",
-      "description": "Enter form Id"
+      "description": "GUID of the specific tab where the parameters will be added"
     },
     "TabIndex": {
       "type": "parameter",
@@ -39,7 +40,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "tabnumberexample",
-      "description": "Enter tab number"
+      "description": "Index number of the tab (1-based) where the parameters will be added"
     },
     "LookupTargetEntityLogicalName": {
       "type": "parameter",
@@ -47,7 +48,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "targetentityexamplelogicalnaem",
-      "description": "Enter target entity logical name"
+      "description": "Logical name of the target entity for lookup parameters (required when ParameterType is Lookup)"
     },
     "LookupTargetEntityDefaultViewId": {
       "type": "parameter",
@@ -55,7 +56,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "exampledefaultviewid",
-      "description": "Enter target entity default view id"
+      "description": "GUID of the default view for the lookup target entity (required when ParameterType is Lookup)"
     },
     "OptionSetName": {
       "type": "parameter",
@@ -63,7 +64,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "optinsetexamplename",
-      "description": "Enter option set name"
+      "description": "Name of the option set for option set parameters (required when ParameterType is OptionSet)"
     },
     "TabFooterId": {
       "type": "generated",
@@ -71,7 +72,8 @@
       "replaces": "tabfooterexampleid",
       "parameters": {
         "defaultFormat": "d"
-      }
+      },
+      "description": "Unique identifier for the tab footer (automatically generated GUID)"
     },
     "SetToTabFooter": {
       "type": "parameter",
@@ -86,7 +88,8 @@
         {
           "choice": "False"
         }
-      ]
+      ],
+      "description": "Whether to add the parameters to the tab footer (True) or to the main tab content (False)"
     },
     "ParameterType": {
       "type": "parameter",
@@ -100,7 +103,8 @@
         {
           "choice": "Lookup"
         }
-      ]
+      ],
+      "description": "Type of parameters to add: OptionSet (for option set controls) or Lookup (for lookup controls)"
     },
     "ColumnIndex": {
       "type": "parameter",
@@ -108,7 +112,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "columnnumberexample",
-      "description": "Enter column number"
+      "description": "Index number of the column (1-based) within the tab where the parameters will be added"
     },
     "SectionIndex": {
       "type": "parameter",
@@ -116,7 +120,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "sectionnumberexample",
-      "description": "Enter section Index"
+      "description": "Index number of the section (1-based) within the column where the parameters will be added"
     },
     "SectionId": {
       "type": "parameter",
@@ -124,7 +128,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "sectionidexample",
-      "description": "Enter section id"
+      "description": "GUID of the specific section where the parameters will be added"
     },
     "RowIndex": {
       "type": "parameter",
@@ -132,7 +136,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "rownumberexample",
-      "description": "Enter section Index"
+      "description": "Index number of the row (1-based) within the section where the parameters will be added"
     }
   },
   "postActions": [

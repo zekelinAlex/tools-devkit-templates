@@ -1,4 +1,4 @@
-$tabId = "tabexampleid"
+$tabId = "{tabexampleid}"
 $tabNumber = "tabnumberexample"
 $setToTabFooter = "settotabfooterchoice"
 $entityXmlPath = .\.template.scripts\LocateForm.ps1
