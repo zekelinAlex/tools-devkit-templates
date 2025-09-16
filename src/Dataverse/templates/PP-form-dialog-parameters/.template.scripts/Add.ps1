@@ -21,7 +21,7 @@ else {
 $targetTab = $null
 
 if ($tabId -ne "unknown" -and $tabNumber -ne "unknown") {
-    $targetTab = $entityXml.SelectSingleNode("//tab[@id='$tabId']")
+    $targetTab = $entityXml.SelectSingleNode("//tab[@id='{$tabId}']")
     if (-not $targetTab) {
         $tabs = $entityXml.SelectNodes("//tab")
         if ($tabs.Count -ge [int]$tabNumber) {
@@ -30,7 +30,7 @@ if ($tabId -ne "unknown" -and $tabNumber -ne "unknown") {
     }
 }
 elseif ($tabId -ne "unknown") {
-    $targetTab = $entityXml.SelectSingleNode("//tab[@id='$tabId']")
+    $targetTab = $entityXml.SelectSingleNode("//tab[@id='{$tabId}']")
 }
 elseif ($tabNumber -ne "unknown") {
     $tabs = $entityXml.SelectNodes("//tab")
@@ -52,7 +52,7 @@ if (-not $targetTab) {
 
 #Select tab footer
 if ($setToTabFooter -eq "True") {
-    $targetTabFooter = $targetTab.SelectSingleNode("//tabfooter[@id='$tabFooterId']")
+    $targetTabFooter = $targetTab.SelectSingleNode("//tabfooter[@id='{$tabFooterId}']")
 
     if (-not $targetTabFooter) {
         $tabFooters = $targetTab.SelectNodes("//tabfooter")
@@ -92,7 +92,7 @@ if (-not $targetColumn) {
 $targetSection = $null
 
 if ($sectionId -ne "unknown" -and $sectionNumber -ne "unknown") {
-    $targetSection = $targetColumn.SelectSingleNode("./sections/section[@id='$sectionId']")
+    $targetSection = $targetColumn.SelectSingleNode("./sections/section[@id='{$sectionId}']")
     if (-not $targetSection) {
         $sections = $targetColumn.SelectNodes('./sections/section')
         if ($sections.Count -ge [int]$sectionNumber) {
@@ -101,7 +101,7 @@ if ($sectionId -ne "unknown" -and $sectionNumber -ne "unknown") {
     }
 }
 elseif ($sectionId -ne "unknown") {
-    $targetSection = $targetColumn.SelectSingleNode("./sections/section[@id='$sectionId']")
+    $targetSection = $targetColumn.SelectSingleNode("./sections/section[@id='{$sectionId}']")
 }
 elseif ($sectionNumber -ne "unknown") {
     $sections = $targetColumn.SelectNodes('./sections/section')

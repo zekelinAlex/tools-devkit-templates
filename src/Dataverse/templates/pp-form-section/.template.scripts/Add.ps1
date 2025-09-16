@@ -1,4 +1,4 @@
-$tabId = "{tabexampleid}"
+$tabId = "tabexampleid"
 $tabNumber = "tabnumberexample"
 $columnNumber = "columnnumberexample"
 $entityXmlPath = .\.template.scripts\LocateForm.ps1
@@ -10,7 +10,7 @@ $sectionPath = (Resolve-Path './.template.temp/section.xml').Path
 $targetTab = $null
 
 if ($tabId -ne "unknown" -and $tabNumber -ne "unknown") {
-    $targetTab = $entityXml.SelectSingleNode("//tab[@id='$tabId']")
+    $targetTab = $entityXml.SelectSingleNode("//tab[@id='{$tabId}']")
     if (-not $targetTab) {
         $tabs = $entityXml.SelectNodes("//tab")
         if ($tabs.Count -ge [int]$tabNumber) {
@@ -18,7 +18,7 @@ if ($tabId -ne "unknown" -and $tabNumber -ne "unknown") {
         }
     }
 } elseif ($tabId -ne "unknown") {
-    $targetTab = $entityXml.SelectSingleNode("//tab[@id='$tabId']")
+    $targetTab = $entityXml.SelectSingleNode("//tab[@id='{$tabId}']")
 } elseif ($tabNumber -ne "unknown") {
     $tabs = $entityXml.SelectNodes("//tab")
     if ($tabs.Count -ge [int]$tabNumber) {
@@ -38,7 +38,7 @@ if (-not $targetTab) {
 
 #Select tab footer
 if ($setToTabFooter -eq "True") {
-    $targetTabFooter = $targetTab.SelectSingleNode("//tabfooter[@id='$tabFooterId']")
+    $targetTabFooter = $targetTab.SelectSingleNode("//tabfooter[@id='{$tabFooterId}']")
 
     if (-not $targetTabFooter) {
         $tabFooters = $targetTab.SelectNodes("//tabfooter")

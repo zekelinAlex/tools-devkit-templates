@@ -7,7 +7,7 @@ $entityXmlPath = .\.template.scripts\LocateForm.ps1
 $targetTab = $null
 
 if ($tabId -ne "unknown" -and $tabNumber -ne "unknown") {
-    $targetTab = $entityXml.SelectSingleNode("//tab[@id='$tabId']")
+    $targetTab = $entityXml.SelectSingleNode("//tab[@id='{$tabId}']")
     if (-not $targetTab) {
         $tabs = $entityXml.SelectNodes("//tab")
         if ($tabs.Count -ge [int]$tabNumber) {
@@ -15,7 +15,7 @@ if ($tabId -ne "unknown" -and $tabNumber -ne "unknown") {
         }
     }
 } elseif ($tabId -ne "unknown") {
-    $targetTab = $entityXml.SelectSingleNode("//tab[@id='$tabId']")
+    $targetTab = $entityXml.SelectSingleNode("//tab[@id='{$tabId}']")
 } elseif ($tabNumber -ne "unknown") {
     $tabs = $entityXml.SelectNodes("//tab")
     if ($tabs.Count -ge [int]$tabNumber) {
