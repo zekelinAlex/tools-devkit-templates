@@ -130,6 +130,43 @@ dotnet new pp-entity-attribute `
 --allow-scripts yes
 ```
 
+Create a global OptionSet:
+```console
+dotnet new pp-optionset-global `
+--output "src/Solutions.DataModel" `
+--RequiredLevel "required" `
+--LogicalName "${publisherPrefix}_paymentmethod" `
+--DisplayName "Payment Method" `
+--SolutionRootPath "Declarations" `
+--OptionSetOptions "Visa,Mastercard,Cash" `
+--allow-scripts yes
+
+Add global OptionSet to the table:
+```console
+dotnet new pp-entity-attribute `
+--output "src/Solutions.DataModel" `
+--EntitySchemaName "${publisherPrefix}_warehousetransaction" `
+--AttributeType "OptionSet (Global)" `
+--RequiredLevel "required" `
+--LogicalName "${publisherPrefix}_paymentmethod" `
+--DisplayName "Payment Method" `
+--GlobalOptionSetType "Existing" `
+--SolutionRootPath "Declarations" `
+--allow-scripts yes
+
+Create a local OptionSet:
+```console
+dotnet new pp-entity-attribute `
+--output "src/Solutions.DataModel" `
+--EntitySchemaName "${publisherPrefix}_warehouseitem" `
+--AttributeType "OptionSet (Local)" `
+--RequiredLevel "required" `
+--LogicalName "${publisherPrefix}_packagetype" `
+--DisplayName "Package Type" `
+--OptionSetOptions "Box,Bag,Envelope" `
+--SolutionRootPath "Declarations" `
+--allow-scripts yes
+
 ### UI
 Create a model-driven app:
 ```console
@@ -189,18 +226,103 @@ dotnet new pp-entity-form `
 --allow-scripts yes
 ```
 
-Create a row in the main form:
+#### Form design
+ Form Structure Hierarchy:",
+			 ┌──────────────────────────────────────────────────────────┐
+		     │ Form                                                     │
+			 │ ├─ Tab                                                   │
+			 │   ├─ Column                                              │
+			 │     ├─ Section                                           │
+			 │       ├─ Row                                             │
+			 │         ├─ Cell                                          │
+			 │           └─ Control                                     │
+			 └──────────────────────────────────────────────────────────┘
+
+
+Create a new tab in the form:
 ```console
-dotnet new pp-form-row `
---output "src/Solutions.UI" `
---AttributeType "WholeNumber" `
---EntitySchemaName "tom_availablequantity" `
---FormType "main" `
---DisplayName "Available Quantity" `
---EntityName "tom_warehouseitem" `
+dotnet new pp-form-tab  `
+--output "src/Solutions.UI"  `
+--FormType "main"  `
+--FormId $warehouseitemFormGuid `
+--EntitySchemaName "${publisherPrefix}_warehouseitem" `
+--SolutionRootPath "Declarations" `
+--RemoveDefaultTab "True" `
+--allow-scripts yes
+
+Create a new column in the specific tab:
+```console
+dotnet new pp-form-column  `
+--output "src/Solutions.UI"  `
+--FormType "main"  `
+--FormId $warehouseitemFormGuid `
+--EntitySchemaName "${publisherPrefix}_warehouseitem" `
+--SolutionRootPath "Declarations" `
+--SetToTabFooter "False" `
+--TabIndex 1 `
+--ColumnWidth "75"
+--allow-scripts yes
+
+Create a new section in the specific column:
+```console
+dotnet new pp-form-section  `
+--output "src/Solutions.UI"  `
+--FormType "main"  `
+--FormId $warehouseitemFormGuid `
+--EntitySchemaName "${publisherPrefix}_warehouseitem" `
+--SetToTabFooter "False" `
+--TabIndex 1 `
+--ColumnIndex 1 `
+--SectionName "GENERAL"
 --SolutionRootPath "Declarations" `
 --allow-scripts yes
-```
+
+Create a new row in the specific section:
+```console
+dotnet new pp-form-row  `
+--output "src/Solutions.UI"  `
+--FormType "main"  `
+--FormId $warehouseitemFormGuid `
+--EntitySchemaName "${publisherPrefix}_warehouseitem" `
+--SolutionRootPath "Declarations" `
+--SetToTabFooter "False" `
+--TabIndex 1 `
+--ColumnIndex 1 `
+--SectionIndex 1 `
+--allow-scripts yes
+
+Create a new cell in the specific row:
+```console
+dotnet new pp-form-cell  `
+--output "src/Solutions.UI"  `
+--RowIndex "1"  `
+--SetToTabFooter "False" `
+--TabIndex 1 `
+--ColumnIndex 1 `
+--SectionIndex 1 `
+--FormType "main"  `
+--DisplayName "Name"  `
+--FormId $warehouseitemFormGuid `
+--EntitySchemaName "${publisherPrefix}_warehouseitem" `
+--SolutionRootPath "Declarations" `
+--allow-scripts yes
+
+Create a new control in the specific cell:
+```console
+dotnet new pp-form-cell-control  `
+--output "src/Solutions.UI"  `
+--AttributeType "Text"  `
+--RowIndex "1"  `
+--SetToTabFooter "False" `
+--TabIndex 1 `
+--ColumnIndex 1 `
+--SectionIndex 1 
+--AttributeLogicalName "${publisherPrefix}_name"  `
+--FormType "main"  `
+--FormId $warehouseitemFormGuid `
+--EntitySchemaName "${publisherPrefix}_warehouseitem" `
+--SolutionRootPath "Declarations" `
+--allow-scripts yes
 
 Create a subgrid in the main form:
 ```console
