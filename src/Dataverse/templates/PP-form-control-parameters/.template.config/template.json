@@ -1,9 +1,9 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "NETWORG",
-  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Parameters",
-  "name": "Power Platform: Parameters",
-  "shortName": "PP-form-dialog-parameters",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.Parameters",
+  "name": "Power Platform: Control Parameters",
+  "shortName": "PP-form-control-parameters",
   "tags": {
     "language": "XML",
     "type": "item"
