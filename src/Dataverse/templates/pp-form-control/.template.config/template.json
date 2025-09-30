@@ -159,48 +159,48 @@
         "datatype": "string",
         "cases": [
           {
-            "condition": "(AttributeType == 'Text')",
+            "condition": "(ControlType == 'Text')",
             "value": "4273EDBD-AC1D-40d3-9FB2-095C621B552D"
           },
           {
-            "condition": "(AttributeType == 'MultilineText')",
+            "condition": "(ControlType == 'MultilineText')",
             "value": "E0DECE4B-6FC8-4a8f-A065-082708572369"
           },
           {
-            "condition": "(AttributeType == 'WholeNumber')",
+            "condition": "(ControlType == 'WholeNumber')",
             "value": "C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E"
           },
           {
-            "condition": "(AttributeType == 'Decimal')",
+            "condition": "(ControlType == 'Decimal')",
             "value": "C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E"
           },
           {
-            "condition": "(AttributeType == 'Float')",
+            "condition": "(ControlType == 'Float')",
             "value": "0D2C745A-E5A8-4c8f-BA63-C6D3BB604660"
           },
           {
-            "condition": "(AttributeType == 'Currency')",
+            "condition": "(ControlType == 'Currency')",
             "value": "533B9E00-756B-4312-95A0-DC888637AC78"
           },
           {
-            "condition": "(AttributeType == 'DateTime')",
+            "condition": "(ControlType == 'DateTime')",
             "value": "5B773807-9FB2-42db-97C3-7A91EFF8ADFF"
           },
           {
-            "condition": "(AttributeType == 'Lookup')",
+            "condition": "(ControlType == 'Lookup')",
             "value": "270BD3DB-D9AF-4782-9025-509E298DEC0A"
           },
           {
-            "condition": "(AttributeType == 'OptionSet')",
+            "condition": "(ControlType == 'OptionSet')",
             "value": "3EF39988-22BB-4F0B-BBBE-64B5A3748AEE"
           },
           {
-            "condition": "(AttributeType == 'SubGrid')",
+            "condition": "(ControlType == 'SubGrid')",
             "value": "E7A81278-8635-4D9E-8D4D-59480B391C5B"
           }
         ]
       },
-      "description": "Control class ID automatically selected based on AttributeType (determines control behavior)"
+      "description": "Control class ID automatically selected based on ControlType (determines control behavior)"
     },
     "RowId": {
       "type": "generated",
@@ -264,6 +264,22 @@
       "defaultValue": "unknown",
       "replaces": "sectionidexample",
       "description": "GUID of the specific section where the control will be added"
+    },
+    "RowSpan": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": "ControlType == \"SubGrid\"",
+      "defaultValue": "unknown",
+      "replaces": "examplerowspanvalue",
+      "description": "Row span of the subgrid control (only for subgrid control)"
+    },
+    "ColumnSpan": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": "ControlType == \"SubGrid\"",
+      "defaultValue": "unknown",
+      "replaces": "examplecolspanvalue",
+      "description": "Column span of the subgrid control (only for subgrid control)"
     }
   },
   "postActions": [

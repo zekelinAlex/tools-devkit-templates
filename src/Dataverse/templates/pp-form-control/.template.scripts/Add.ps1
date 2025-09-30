@@ -24,6 +24,7 @@ if ($formType -eq "dialog") {
     $controlPath = (Resolve-Path './.template.temp/dialogcontrol.xml').Path
 }
 else {
+    
     $controlPath = (Resolve-Path './.template.temp/control.xml').Path
 }
 
@@ -164,6 +165,15 @@ if ($existingCells.Count -gt 1) {
 }
 
 $targetCell = $existingCells[0]
+
+<!--#if (ControlType == "SubGrid") -->
+
+# Add attributes to the existing cell
+$targetCell.SetAttribute("rowspan", "examplerowspanvalue")
+$targetCell.SetAttribute("colspan", "examplecolspanvalue")
+$targetCell.SetAttribute("auto", "false")
+
+<!--#endif -->
 
 # Get content from controlPath and add it to the existing cell
 $cellRaw = Get-Content -Path $controlPath -Raw
