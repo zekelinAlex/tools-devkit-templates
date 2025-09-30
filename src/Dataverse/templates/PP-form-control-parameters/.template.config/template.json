@@ -3,7 +3,7 @@
   "author": "NETWORG",
   "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.Parameters",
   "name": "Power Platform: Control Parameters",
-  "shortName": "PP-form-control-parameters",
+  "shortName": "pp-form-parameters",
   "tags": {
     "language": "XML",
     "type": "item"
@@ -42,21 +42,21 @@
       "replaces": "tabnumberexample",
       "description": "Index number of the tab (1-based) where the parameters will be added"
     },
-    "LookupTargetEntityLogicalName": {
+    "TargetEntityLogicalName": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "targetentityexamplelogicalnaem",
-      "description": "Logical name of the target entity for lookup parameters (required when ParameterType is Lookup)"
+      "description": "Logical name of the target entity for lookup or subgrid parameters (required when ParameterType is Lookup or SubGrid)"
     },
-    "LookupTargetEntityDefaultViewId": {
+    "TargetEntityDefaultViewId": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "exampledefaultviewid",
-      "description": "GUID of the default view for the lookup target entity (required when ParameterType is Lookup)"
+      "description": "GUID of the default view for the lookup or subgrid target entity (required when ParameterType is Lookup or SubGrid)"
     },
     "OptionSetName": {
       "type": "parameter",

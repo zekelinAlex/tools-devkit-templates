@@ -1,9 +1,9 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "NETWORG",
-  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Cells.Controls",
-  "name": "Power Platform: Entity Form Cell Control",
-  "shortName": "pp-form-cell-control",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls",
+  "name": "Power Platform: Entity Form Control",
+  "shortName": "pp-form-control",
   "tags": {
     "language": "XML",
     "type": "item"
@@ -17,7 +17,7 @@
       "replaces": "exampleentityname",
       "isRequired": false,
       "defaultValue": "unknown",
-      "description": "Logical name of the entity for which the cell will be created"
+      "description": "Logical name of the entity for which the control will be created"
     },
     "SolutionRootPath": {
       "type": "parameter",
@@ -26,7 +26,7 @@
       "isRequired": true,
       "description": "Path to the solution root directory"
     },
-    "AttributeType": {
+    "ControlType": {
       "type": "parameter",
       "datatype": "choice",
       "isRequired": true,
@@ -58,6 +58,9 @@
         },
         {
           "choice": "OptionSet"
+        },
+        {
+          "choice": "SubGrid"
         }
       ]
     },
@@ -190,6 +193,10 @@
           {
             "condition": "(AttributeType == 'OptionSet')",
             "value": "3EF39988-22BB-4F0B-BBBE-64B5A3748AEE"
+          },
+          {
+            "condition": "(AttributeType == 'SubGrid')",
+            "value": "E7A81278-8635-4D9E-8D4D-59480B391C5B"
           }
         ]
       },
@@ -208,7 +215,7 @@
       "datatype": "text",
       "replaces": "examplecustomerow",
       "isRequired": true,
-      "description": "Logical name of the entity attribute/field that the cell will display"
+      "description": "Logical name of the entity attribute/field that the control will display"
     },
     "TabId": {
       "type": "parameter",
@@ -216,7 +223,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "tabexampleid",
-      "description": "GUID of the specific tab where the cell will be added"
+      "description": "GUID of the specific tab where the control will be added"
     },
     "TabIndex": {
       "type": "parameter",
@@ -224,7 +231,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "tabnumberexample",
-      "description": "Index number of the tab (1-based) where the cell will be added"
+      "description": "Index number of the tab (1-based) where the control will be added"
     },
     "ColumnIndex": {
       "type": "parameter",
@@ -232,7 +239,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "columnnumberexample",
-      "description": "Index number of the column (1-based) within the tab where the cell will be added"
+      "description": "Index number of the column (1-based) within the tab where the control will be added"
     },
     "SectionIndex": {
       "type": "parameter",
@@ -240,7 +247,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "sectionnumberexample",
-      "description": "Index number of the section (1-based) within the column where the cell will be added"
+      "description": "Index number of the section (1-based) within the column where the control will be added"
     },
     "RowIndex": {
       "type": "parameter",
@@ -248,7 +255,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "rownumberexample",
-      "description": "Index number of the row (1-based) within the section where the cell will be added"
+      "description": "Index number of the row (1-based) within the section where the control will be added"
     },
     "SectionId": {
       "type": "parameter",
@@ -256,7 +263,7 @@
       "isRequired": false,
       "defaultValue": "unknown",
       "replaces": "sectionidexample",
-      "description": "GUID of the specific section where the cell will be added"
+      "description": "GUID of the specific section where the control will be added"
     }
   },
   "postActions": [
@@ -269,11 +276,11 @@
       },
       "manualInstructions": [
         {
-          "text": "Adding new row to form"
+          "text": "Adding new control to form"
         }
       ],
       "continueOnError": false,
-      "description": "Adding new row to form"
+      "description": "Adding new control to form"
     },
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",

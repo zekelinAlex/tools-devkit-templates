@@ -31,7 +31,7 @@
     },
     "CreateGlobalOptionSet": {
       "type": "computed",
-			"value": "(AttributeType == \"OptionSet (Global)\") && GlobalOptionSetType == \"New\"",
+			"value": "(AttributeType == \"OptionSet (Global)\") && (GlobalOptionSetType == \"New\")",
       "description": "Automatically computed: True when AttributeType is New OptionSet (Global), False otherwise"
     },
     "EntitySchemaName": {
@@ -184,7 +184,7 @@
   "postActions": [
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-      "condition": "(AttributeType == \"OptionSet (Local)\" || (AttributeType == \"OptionSet (Global)\" && GlobalOptionSetType == \"New\")",
+      "condition": "(AttributeType == \"OptionSet (Local)\" || (AttributeType == \"OptionSet (Global)\" && (GlobalOptionSetType == \"New\"))",
       "args": {
         "executable": "pwsh",
         "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/SetOptionSetOptions.ps1\"",

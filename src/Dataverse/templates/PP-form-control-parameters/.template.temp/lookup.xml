@@ -1,9 +1,0 @@
-<parameters>
-  <TargetEntities>
-    <TargetEntity>
-      <EntityLogicalName>targetentityexamplelogicalnaem</EntityLogicalName>
-      <DefaultViewId>{exampledefaultviewid}</DefaultViewId>
-    </TargetEntity>
-  </TargetEntities>
-  <IsInlineNewEnabled>true</IsInlineNewEnabled>
-</parameters>

@@ -1,0 +1,23 @@
+<parameters>
+  <!--#if (ParameterType == "Lookup") -->
+  <TargetEntities>
+    <TargetEntity>
+      <EntityLogicalName>targetentityexamplelogicalnaem</EntityLogicalName>
+      <DefaultViewId>{exampledefaultviewid}</DefaultViewId>
+    </TargetEntity>
+  </TargetEntities>
+  <IsInlineNewEnabled>true</IsInlineNewEnabled>
+  <!--#elseif (ParameterType == "OptionSet") -->
+    <OptionSetName>optinsetexamplename</OptionSetName>
+  <!--#elseif (ParameterType == "SubGrid") -->
+  <RecordsPerPage>4</RecordsPerPage>
+  <AutoExpand>Fixed</AutoExpand>
+  <EnableQuickFind>false</EnableQuickFind>
+  <EnableViewPicker>false</EnableViewPicker>
+  <EnableChartPicker>true</EnableChartPicker>
+  <ChartGridMode>All</ChartGridMode>
+  <TargetEntityType>targetentityexamplelogicalnaem</TargetEntityType>
+  <ViewId>exampledefaultviewid</ViewId>
+  <ViewIds>exampledefaultviewid</ViewIds>
+  <!--#endif -->
+</parameters>
