@@ -45,7 +45,7 @@
     "TargetEntityLogicalName": {
       "type": "parameter",
       "datatype": "string",
-      "isRequired": false,
+      "isRequired": "ParameterType == \"Lookup\" || ParameterType == \"SubGrid\"",
       "defaultValue": "unknown",
       "replaces": "targetentityexamplelogicalnaem",
       "description": "Logical name of the target entity for lookup or subgrid parameters (required when ParameterType is Lookup or SubGrid)"
@@ -53,7 +53,7 @@
     "TargetEntityDefaultViewId": {
       "type": "parameter",
       "datatype": "string",
-      "isRequired": false,
+      "isRequired": "ParameterType == \"Lookup\" || ParameterType == \"SubGrid\"",
       "defaultValue": "unknown",
       "replaces": "exampledefaultviewid",
       "description": "GUID of the default view for the lookup or subgrid target entity (required when ParameterType is Lookup or SubGrid)"

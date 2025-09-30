@@ -8,7 +8,7 @@
   </TargetEntities>
   <IsInlineNewEnabled>true</IsInlineNewEnabled>
   <!--#elseif (ParameterType == "OptionSet") -->
-    <OptionSetName>optinsetexamplename</OptionSetName>
+  <OptionSetName>optinsetexamplename</OptionSetName>
   <!--#elseif (ParameterType == "SubGrid") -->
   <RecordsPerPage>4</RecordsPerPage>
   <AutoExpand>Fixed</AutoExpand>
