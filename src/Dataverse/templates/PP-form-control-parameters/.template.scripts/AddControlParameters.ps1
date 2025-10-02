@@ -4,17 +4,9 @@ $columnNumber = "columnnumberexample"
 $sectionId = "sectionidexample"
 $sectionNumber = "sectionnumberexample"
 $rowNumber = "rownumberexample"
-$parameterType = "parametertypechoice"
 $entityXmlPath = .\.template.scripts\LocateForm.ps1
 
-$parameterPath
-
-if ($parameterType -eq "OptionSet") {
-    $parameterPath = (Resolve-Path './.template.temp/optionset.xml').Path
-}
-else {
-    $parameterPath = (Resolve-Path './.template.temp/lookup.xml').Path
-}
+$parameterPath = (Resolve-Path './.template.temp/parameters.xml').Path
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 

@@ -1,4 +1,4 @@
-$formId = "formguididexample"
+$formId = "{formguididexample}"
 
 if ($formId -eq "unknownFormId") {
     $formDirectory = './SolutionDeclarationsRoot/Dialogs/'

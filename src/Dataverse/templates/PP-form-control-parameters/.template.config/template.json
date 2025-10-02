@@ -18,6 +18,36 @@
       "isRequired": true,
       "description": "Path to the solution root directory"
     },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
     "FormId": {
       "type": "parameter",
       "datatype": "string",
@@ -109,6 +139,9 @@
         },
         {
           "choice": "QuickFormCollection"
+        },
+        {
+          "choice": "Custom"
         }
       ],
       "description": "Type of parameters to add: OptionSet (for option set controls), Lookup (for lookup controls), SubGrid (for subgrid controls), Label (for label controls), TextBox (for text box controls), Number (for number controls), or QuickFormCollection (for quick form collection controls)"
@@ -145,6 +178,7 @@
       "replaces": "rownumberexample",
       "description": "Index number of the row (1-based) within the section where the parameters will be added"
     },
+    //Control parameters
     "EntityLogicalName": {
       "type": "parameter",
       "datatype": "string",
@@ -592,6 +626,783 @@
       "defaultValue": "defaultеtemplateexample",
       "replaces": "displayascustomer360tileexampletypeboolean",
       "description": "Display as customer 360 tile. (This parameter is applicable in QuickFormCollection controls)"
+    },
+    //Custom control parameters
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": "(ParameterType == \"Custom\")",
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "NameOfCustomControl": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": "(ParameterType == \"Custom\")",
+      "defaultValue": "unknown",
+      "replaces": "customcontrolnameexample",
+      "description": "Name of the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": "(ParameterType == \"Custom\")",
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "CustomControlApiKey": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "apikeyvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlLoadExternalDataOnLoad": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "loadexternaldataonloadvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlAggregateDistance": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "aggregatedistancevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlCompanyNumber": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "companynumbervalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlPinIcons": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "piniconsvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlMinimap": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "minimapvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlSelectableRows": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "selectablerowsvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlOptionsInput": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "optionsinputvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlPlaceholderMessage": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "placeholdermessagevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlAddressAttribute": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "addressattributevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlLatitude": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "latitudevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlLocality": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "localityvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlLongitude": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "longitudevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlEnabledActivityTypeEntities": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "enabledactivitytypeentitiesvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlData": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "datavalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlDatafieldname": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "datafieldnamevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlLanguage": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "languagevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlOptionsIconJSON": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "optionsiconjsonvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlBindingField": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "bindingfieldvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlPostalCode": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "postalcodevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlAdministrativeArea": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "administrativeareavalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlJurisdictionCode": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "jurisdictioncodevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlFetchXml": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "fetchxmlvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlBindAttribute": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "bindattributevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlDefaultViewId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "defaultviewidvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlFilterRelationshipName": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "filterrelationshipnamevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlDependentAttributeName": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "dependentattributenamevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlDependentAttributeType": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "dependentattributetypevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlAvailableViewIds": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "availableviewidsvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlAllowFilterOff": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "allowfilteroffvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlDisableQuickFind": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "disablequickfindvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlDisableViewPicker": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "disableviewpickervalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlCountry": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "countryvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlEnableNavigation": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "enablenavigationvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlProvider": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "providervalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlReliableVATPayer": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "reliablevatpayervalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlFullAddress": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "fulladdressvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlPreview": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "previewvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlMax": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "maxvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlCustomButtonIcon": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "custombuttoniconvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlEntityId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "entityidvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlHistoricalNames": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "historicalnamesvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlClusterOptions": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "clusteroptionsvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlMaxEmailCount": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "maxemailcountvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlFormattedPostalCode": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "formattedpostalcodevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlEnableClustering": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "enableclusteringvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlManualInput": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "manualinputvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlEnableFiltering": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "enablefilteringvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlRecordId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "recordidvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlGraphFilterQuery": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "graphfilterqueryvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlMinEmailCount": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "minemailcountvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlCardPayload": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "cardpayloadvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlHidePOI": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "hidepoivalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlCallFeature": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "callfeaturevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlInsolvency": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "insolvencyvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlUseColorBackground": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "usecolorbackgroundvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlName": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "namevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlUserInterfaceType": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "userinterfacetypevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlPlainPhone": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "plainphonevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlSublocality": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "sublocalityvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlMode": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "modevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlPlainEmail": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "plainemailvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlAdministrativearea": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "administrativeareavalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlStreetName": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "streetnamevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlEntityName": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "entitynamevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlCreateOnlySelected": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "createonlyselectedvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlUseChartForClustering": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "usechartforclusteringvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlAccountId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "accountidvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlVatNumber": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "vatnumbervalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlLockOnDisable": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "lockondisablevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlStreetNumber": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "streetnumbervalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlQuickForms": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "quickformsvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlEnableTypeFiltering": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "enabletypefilteringvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlLatitudeAttribute": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "latitudeattributevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlOpenFormWidth": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "openformwidthvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlSaveMode": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "savemodevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlFolderPath": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "folderpathvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlEnableDateFiltering": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "enabledatefilteringvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlFormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "formidvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlDefaultCountryCode": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "defaultcountrycodevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlCinNumber": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "cinnumbervalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlGroupConfigurationJSON": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "groupconfigurationjsonvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlVerificationFeature": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "verificationfeaturevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlHeight": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "heightvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlColumnsToBeShown": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "columnstobeshownvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlEnableHistoryPreview": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "enablehistorypreviewvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlPhoneNumber": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "phonenumbervalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlChangedAttributesToShow": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "changedattributestoshowvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlCustomButtonUrl": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "custombuttonurlvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlLongitudeAttribute": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "longitudeattributevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlEnableFieldCommunication": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "enablefieldcommunicationvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlRootFolderName": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "rootfoldernamevalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlRegion": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "regionvalueexample",
+      "description": "This parameter is used in custom control"
+    },
+    "CustomControlType": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "defaultеtemplateexample",
+      "replaces": "typevalueexample",
+      "description": "This parameter is used in custom control"
     }
   },
   "postActions": [
@@ -612,9 +1423,10 @@
     },
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "condition": "(ParameterType != \"Custom\")",
       "args": {
         "executable": "pwsh",
-        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Add.ps1\" ",
+        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddControlParameters.ps1\" ",
         "redirectStandardOutput": "false"
       },
       "manualInstructions": [
@@ -624,6 +1436,22 @@
       ],
       "continueOnError": false,
       "description": "Adding new parameters to form"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "condition": "(ParameterType == \"Custom\")",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddCustomControlParameters.ps1\" ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
     },
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",

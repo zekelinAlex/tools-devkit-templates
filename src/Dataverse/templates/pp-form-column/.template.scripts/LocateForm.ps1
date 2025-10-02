@@ -1,6 +1,6 @@
 $entitiesRootPath = './SolutionDeclarationsRoot/Entities'
 $dialogsRootPath = './SolutionDeclarationsRoot/Dialogs'
-$formId = "formguididexample"
+$formId = "{formguididexample}"
 
 if ( ('formtypeexample' -eq 'unknown') -and ('exampleentityname' -eq 'unknown') -and ('formguididexample' -eq 'unknownFormId') ) {
     $targetDirs = Get-ChildItem -Path $entitiesRootPath -Recurse -Directory -ErrorAction SilentlyContinue |
