@@ -636,7 +636,7 @@
       "replaces": "customcontrolformfactorexample",
       "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
     },
-    "NameOfCustomControl": {
+    "NameOfTheCustomControl": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": "(ParameterType == \"Custom\")",
