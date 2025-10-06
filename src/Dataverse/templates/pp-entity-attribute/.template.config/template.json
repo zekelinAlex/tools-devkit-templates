@@ -66,8 +66,7 @@
       "type": "parameter",
       "description": "Type of the option set: You can choose Existing if the option set already exists in the solution and you want to add attribute to it or New if you want to create a new option set",
       "datatype": "choice",
-      "isRequired": true,
-      "defaultValue": "AttributeType == \"OptionSet (Global)\"",
+      "isRequired": "AttributeType == \"OptionSet (Global)\"",
       "choices": [
         { "choice": "Existing" },
         { "choice": "New" }
