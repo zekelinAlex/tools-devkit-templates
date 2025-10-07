@@ -15,17 +15,28 @@ namespace TALXIS.DevKit.Templates.Builder.Builders
 
         internal void Build()
         {
-            ImputXmlParser imputXmlParser = new();
+            try
+            {
+                ImputXmlParser imputXmlParser = new();
 
-            imputXmlParser.ParseXml(_options);
+                imputXmlParser.ParseXml(_options);
 
-            SetBasePath(imputXmlParser.Header.TemplateShortName);
+                SetBasePath(imputXmlParser.Header.TemplateShortName);
 
-            GenerateTemplateDotJson(imputXmlParser);
+                GenerateTemplateDotJson(imputXmlParser);
 
-            GenerateTemplateScripts(imputXmlParser.Header.CustomControlName);
+                GenerateTemplateScripts(imputXmlParser.Header.CustomControlName);
 
-            GenerateTemplateTempFiles(imputXmlParser.Parameters);
+                GenerateTemplateTempFiles(imputXmlParser.Parameters);
+            }
+            catch (Exception ex)
+            {
+                Directory.Delete(_basePath, true);
+
+                Console.WriteLine($"Error building template: {ex.Message}");
+                throw;
+            }
+
         }
 
         private void GenerateTemplateDotJson(ImputXmlParser imputXmlParser)
@@ -52,6 +63,7 @@ namespace TALXIS.DevKit.Templates.Builder.Builders
 
             string content = File.ReadAllText(scriptPath);
             string modifiedContent = content.Replace("customcontrolnameexample", customControlName);
+
             File.WriteAllText(scriptPath, modifiedContent);
         }
 
@@ -79,6 +91,7 @@ namespace TALXIS.DevKit.Templates.Builder.Builders
             }
 
             xmlBuilder.AppendLine("</parameters>");
+            
             return xmlBuilder.ToString();
         }
 

@@ -82,7 +82,7 @@ public class TemplateParameterModel
             {
                 ["choice"] = enumValue.EnumValueName
             }).ToArray(),
-            ["description"] = combinedDescription
+            ["description"] = $"{param._parameterDescription} ({combinedDescription})"
         };
 
         if (param._parameterIsRequired == "true")

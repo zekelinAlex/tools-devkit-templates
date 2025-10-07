@@ -1,0 +1,310 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Donutchart",
+  "name": "Power Platform: DonutChart",
+  "shortName": "pp-customcontrol-donutchart",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_messageTemplate": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "messagetemplateexampletypesinglelinetext",
+      "fileRename": "messagetemplateexampletypesinglelinetext",
+      "description": "messageTemplate_desc"
+    },
+    "CustomControl_entityName": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "entitynameexampletypesinglelinetext",
+      "fileRename": "entitynameexampletypesinglelinetext",
+      "description": "entityName_desc",
+      "isRequired": true
+    },
+    "CustomControl_filter": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "filterexampletypesinglelinetext",
+      "fileRename": "filterexampletypesinglelinetext",
+      "description": "filter_desc"
+    },
+    "CustomControl_column": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "columnexampletypesinglelinetext",
+      "fileRename": "columnexampletypesinglelinetext",
+      "description": "column_desc"
+    },
+    "CustomControl_measurementunit": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "weight"
+        },
+        {
+          "choice": "distance"
+        },
+        {
+          "choice": "currency"
+        },
+        {
+          "choice": "percentage"
+        }
+      ],
+      "description": "measurementunit_desc (weight: weight; distance: distance; currency: currency; percentage: percentage)"
+    },
+    "measurementunitvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "measurementunitexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(measurementunit == \u0022weight\u0022)",
+            "value": "KG"
+          },
+          {
+            "condition": "(measurementunit == \u0022distance\u0022)",
+            "value": "M"
+          },
+          {
+            "condition": "(measurementunit == \u0022currency\u0022)",
+            "value": "K\u010C"
+          },
+          {
+            "condition": "(measurementunit == \u0022percentage\u0022)",
+            "value": "%"
+          }
+        ]
+      },
+      "description": "measurementunit_desc automatically selected based on measurementunit"
+    },
+    "CustomControl_achievedGoalTemplate": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "achievedgoaltemplateexampletypesinglelinetext",
+      "fileRename": "achievedgoaltemplateexampletypesinglelinetext",
+      "description": "achievedGoalTemplate_desc"
+    },
+    "CustomControl_labelsTooltip": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "labelstooltipexampletypesinglelinetext",
+      "fileRename": "labelstooltipexampletypesinglelinetext",
+      "description": "labelsTooltip_desc"
+    },
+    "CustomControl_action": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "sum"
+        },
+        {
+          "choice": "count"
+        },
+        {
+          "choice": "avg"
+        },
+        {
+          "choice": "max"
+        },
+        {
+          "choice": "min"
+        }
+      ],
+      "description": "action_desc (sum: sum; count: count; avg: avg; max: max; min: min)"
+    },
+    "actionvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "actionexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(action == \u0022sum\u0022)",
+            "value": "Sum"
+          },
+          {
+            "condition": "(action == \u0022count\u0022)",
+            "value": "Count"
+          },
+          {
+            "condition": "(action == \u0022avg\u0022)",
+            "value": "Avg"
+          },
+          {
+            "condition": "(action == \u0022max\u0022)",
+            "value": "Max"
+          },
+          {
+            "condition": "(action == \u0022min\u0022)",
+            "value": "Min"
+          }
+        ]
+      },
+      "description": "action_desc automatically selected based on action"
+    },
+    "CustomControl_levels": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "levelsexampletypesinglelinetext",
+      "fileRename": "levelsexampletypesinglelinetext",
+      "description": "levels_desc"
+    },
+    "CustomControl_Description": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "descriptionexampletypesinglelinetext",
+      "fileRename": "descriptionexampletypesinglelinetext",
+      "description": "Additional description"
+    },
+    "CustomControl_ActionLink": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "actionlinkexampletypesinglelinetext",
+      "fileRename": "actionlinkexampletypesinglelinetext",
+      "description": "Href for link"
+    },
+    "CustomControl_ActionLinkLabel": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "actionlinklabelexampletypesinglelinetext",
+      "fileRename": "actionlinklabelexampletypesinglelinetext",
+      "description": "Action Link Label"
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

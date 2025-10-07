@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="Multiple" static="true">bindingfieldexampletypemultiple</bindingField>
+  <collaborationWorkspaceId type="SingleLine.Text" static="true">collaborationworkspaceidexampletypesinglelinetext</collaborationWorkspaceId>
+  <formId type="SingleLine.Text" static="true">formidexampletypesinglelinetext</formId>
+  <entityLogicalName type="SingleLine.Text" static="true">entitylogicalnameexampletypesinglelinetext</entityLogicalName>
+  <recordId type="SingleLine.Text" static="true">recordidexampletypesinglelinetext</recordId>
+  <expandedToFullTab type="Enum" static="true">expandedtofulltabexampletypeenum</expandedToFullTab>
+</parameters>

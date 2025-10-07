@@ -1,0 +1,342 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Peoplegrid",
+  "name": "Power Platform: PeopleGrid",
+  "shortName": "pp-customcontrol-peoplegrid",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_BindingField": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "bindingfieldexampletypesinglelinetext",
+      "fileRename": "bindingfieldexampletypesinglelinetext",
+      "description": "Field is used for pcf binding and communication with client script on form.",
+      "isRequired": true
+    },
+    "CustomControl_EnableFieldCommunication": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "If true, contacts are saved from outside. ()"
+    },
+    "enablefieldcommunicationvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "enablefieldcommunicationexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(EnableFieldCommunication == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(EnableFieldCommunication == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "If true, contacts are saved from outside. automatically selected based on EnableFieldCommunication"
+    },
+    "CustomControl_CreateOnlySelected": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Only selected records will be created. ()"
+    },
+    "createonlyselectedvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "createonlyselectedexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(CreateOnlySelected == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(CreateOnlySelected == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Only selected records will be created. automatically selected based on CreateOnlySelected"
+    },
+    "CustomControl_LoadExternalDataOnLoad": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Fetches data from extarnal sources on load when true ()"
+    },
+    "loadexternaldataonloadvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "loadexternaldataonloadexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(LoadExternalDataOnLoad == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(LoadExternalDataOnLoad == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Fetches data from extarnal sources on load when true automatically selected based on LoadExternalDataOnLoad"
+    },
+    "CustomControl_SaveFormattedContactInformation": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Populate phone and email json fields. Enabled by default. ()"
+    },
+    "saveformattedcontactinformationvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "saveformattedcontactinformationexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(SaveFormattedContactInformation == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(SaveFormattedContactInformation == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Populate phone and email json fields. Enabled by default. automatically selected based on SaveFormattedContactInformation"
+    },
+    "CustomControl_AccountId": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "accountidexampletypesinglelinetext",
+      "fileRename": "accountidexampletypesinglelinetext",
+      "description": "Input account unique id.",
+      "isRequired": true
+    },
+    "CustomControl_JurisdictionCode": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "jurisdictioncodeexampletypesinglelinetext",
+      "fileRename": "jurisdictioncodeexampletypesinglelinetext",
+      "description": "Input jurisdiction code.",
+      "isRequired": true
+    },
+    "CustomControl_CompanyIdentificationNumber": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "cinnumberexampletypesinglelinetext",
+      "fileRename": "cinnumberexampletypesinglelinetext",
+      "description": "Input company identification number.",
+      "isRequired": true
+    },
+    "CustomControl_GroupConfigurationJSONDEPRECATED": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "groupconfigurationjsonexampletypesinglelinetext",
+      "fileRename": "groupconfigurationjsonexampletypesinglelinetext",
+      "description": "DEPRECATED"
+    },
+    "CustomControl_IsUserManagementEnabled": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Is User Management Enabled ()"
+    },
+    "isusermanagementenabledvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "isusermanagementenabledexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(IsUserManagementEnabled == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(IsUserManagementEnabled == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Is User Management Enabled automatically selected based on IsUserManagementEnabled"
+    },
+    "CustomControl_MaxContactsPerPage": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "maxcontactsperpageexampletypewholenone",
+      "fileRename": "maxcontactsperpageexampletypewholenone",
+      "description": "Specify how many contacts do you want on page? Default is 10."
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

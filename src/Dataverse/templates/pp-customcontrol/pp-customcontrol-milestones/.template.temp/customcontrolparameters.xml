@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <mode type="Enum" static="true">modeexampletypeenum</mode>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <id type="SingleLine.Text" static="true">idexampletypesinglelinetext</id>
+  <milestonesRelationship type="SingleLine.Text" static="true">milestonesrelationshipexampletypesinglelinetext</milestonesRelationship>
+  <activeInstancesRelationship type="SingleLine.Text" static="true">activeinstancesrelationshipexampletypesinglelinetext</activeInstancesRelationship>
+  <multipleChildRelationship type="SingleLine.Text" static="true">multiplechildrelationshipexampletypesinglelinetext</multipleChildRelationship>
+  <childEntityName type="SingleLine.Text" static="true">childentitynameexampletypesinglelinetext</childEntityName>
+  <childEntityIdField type="SingleLine.Text" static="true">childentityidfieldexampletypesinglelinetext</childEntityIdField>
+  <milestoneNameField type="SingleLine.Text" static="true">milestonenamefieldexampletypesinglelinetext</milestoneNameField>
+</parameters>

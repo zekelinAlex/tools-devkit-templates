@@ -1,0 +1,534 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Filepicker",
+  "name": "Power Platform: FilePicker",
+  "shortName": "pp-customcontrol-filepicker",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_BindingField": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "bindingfieldexampletypemultiple",
+      "fileRename": "bindingfieldexampletypemultiple",
+      "description": "A binding field to bind the control to.",
+      "isRequired": true
+    },
+    "CustomControl_Type": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Single"
+        },
+        {
+          "choice": "Multiple"
+        }
+      ],
+      "description": "Select multiple files (Single: Single; Multiple: Multiple)",
+      "isRequired": true
+    },
+    "typevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "typeexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(Type == \u0022Single\u0022)",
+            "value": "Single"
+          },
+          {
+            "condition": "(Type == \u0022Multiple\u0022)",
+            "value": "Multiple"
+          }
+        ]
+      },
+      "description": "Select multiple files automatically selected based on Type"
+    },
+    "CustomControl_Mode": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Path"
+        },
+        {
+          "choice": "List"
+        }
+      ],
+      "description": "Specifies whether to use sharepoint path for source input or not (Path: Path; List: List)",
+      "isRequired": true
+    },
+    "modevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "modeexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(Mode == \u0022Path\u0022)",
+            "value": "Path"
+          },
+          {
+            "condition": "(Mode == \u0022List\u0022)",
+            "value": "List"
+          }
+        ]
+      },
+      "description": "Specifies whether to use sharepoint path for source input or not automatically selected based on Mode"
+    },
+    "CustomControl_Provider": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "MicrosoftGraph"
+        },
+        {
+          "choice": "EnvironmentFileSystem"
+        }
+      ],
+      "description": "Specifies whether to use Microsoft Graph (default) or Dataverse storage. (MicrosoftGraph: MicrosoftGraph; EnvironmentFileSystem: EnvironmentFileSystem)"
+    },
+    "providervalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "providerexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(Provider == \u0022MicrosoftGraph\u0022)",
+            "value": "MicrosoftGraph"
+          },
+          {
+            "condition": "(Provider == \u0022EnvironmentFileSystem\u0022)",
+            "value": "EnvironmentFileSystem"
+          }
+        ]
+      },
+      "description": "Specifies whether to use Microsoft Graph (default) or Dataverse storage. automatically selected based on Provider"
+    },
+    "CustomControl_EnableGraphGroupCreate": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Specifies pcf is able to create group through graph api. ()"
+    },
+    "enablegraphgroupcreatevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "enablegraphgroupcreateexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(EnableGraphGroupCreate == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(EnableGraphGroupCreate == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Specifies pcf is able to create group through graph api. automatically selected based on EnableGraphGroupCreate"
+    },
+    "CustomControl_EnableGraphGroupTeamCreate": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Always"
+        },
+        {
+          "choice": "Never"
+        },
+        {
+          "choice": "User Selectable"
+        }
+      ],
+      "description": "Specifies pcf is allowed to create team from group through graph api. ()"
+    },
+    "enablegraphgroupteamcreatevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "enablegraphgroupteamcreateexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(EnableGraphGroupTeamCreate == \u0022Always\u0022)",
+            "value": "always"
+          },
+          {
+            "condition": "(EnableGraphGroupTeamCreate == \u0022Never\u0022)",
+            "value": "never"
+          },
+          {
+            "condition": "(EnableGraphGroupTeamCreate == \u0022User Selectable\u0022)",
+            "value": "userSelectable"
+          }
+        ]
+      },
+      "description": "Specifies pcf is allowed to create team from group through graph api. automatically selected based on EnableGraphGroupTeamCreate"
+    },
+    "CustomControl_HideAddNewFolder": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Do you want to hide New Folder button from commandbar? ()"
+    },
+    "hideaddnewfoldervalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "hideaddnewfolderexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(HideAddNewFolder == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(HideAddNewFolder == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Do you want to hide New Folder button from commandbar? automatically selected based on HideAddNewFolder"
+    },
+    "CustomControl_HideAddFromTemplate": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Do you want to hide Add From Template button from commandbar? ()"
+    },
+    "hideaddfromtemplatevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "hideaddfromtemplateexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(HideAddFromTemplate == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(HideAddFromTemplate == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Do you want to hide Add From Template button from commandbar? automatically selected based on HideAddFromTemplate"
+    },
+    "CustomControl_HideAddExistingFile": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Do you want to hide Add Existing button from commandbar? ()"
+    },
+    "hideaddexistingfilevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "hideaddexistingexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(HideAddExistingFile == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(HideAddExistingFile == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Do you want to hide Add Existing button from commandbar? automatically selected based on HideAddExistingFile"
+    },
+    "CustomControl_EntityName": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "entitynameexampletypesinglelinetext",
+      "fileRename": "entitynameexampletypesinglelinetext",
+      "description": "",
+      "isRequired": true
+    },
+    "CustomControl_EntityID": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "entityidexampletypesinglelinetext",
+      "fileRename": "entityidexampletypesinglelinetext",
+      "description": "",
+      "isRequired": true
+    },
+    "CustomControl_PathtoFolder": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "folderpathexampletypesinglelinetext",
+      "fileRename": "folderpathexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControl_ExpandqueryforCDS": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "cdsexpandqueryexampletypesinglelinetext",
+      "fileRename": "cdsexpandqueryexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControl_FilterqueryforGraph": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "graphfilterqueryexampletypesinglelinetext",
+      "fileRename": "graphfilterqueryexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControl_RootFolderNameoverride": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "rootfoldernameexampletypesinglelinetext",
+      "fileRename": "rootfoldernameexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControl_LockonDisabledefaulttrue": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": " ()"
+    },
+    "lockondisabledefaulttruevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "lockondisableexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(LockonDisabledefaulttrue == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(LockonDisabledefaulttrue == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": " automatically selected based on LockonDisabledefaulttrue"
+    },
+    "CustomControl_EventHandlers": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "eventhandlersexampletypesinglelinetext",
+      "fileRename": "eventhandlersexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControl_Inputmetadatatobeshown": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "columnstobeshownexampletypesinglelinetext",
+      "fileRename": "columnstobeshownexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControl_DefaultOpener": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Online"
+        },
+        {
+          "choice": "Desktop"
+        }
+      ],
+      "description": "Specifies whether to open online or desktop Office Application on double click (default Online) (Online: Online; Desktop: Desktop)"
+    },
+    "defaultopenervalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "defaultopenerexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(DefaultOpener == \u0022Online\u0022)",
+            "value": "Online"
+          },
+          {
+            "condition": "(DefaultOpener == \u0022Desktop\u0022)",
+            "value": "Desktop"
+          }
+        ]
+      },
+      "description": "Specifies whether to open online or desktop Office Application on double click (default Online) automatically selected based on DefaultOpener"
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

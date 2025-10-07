@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="Multiple" static="true">bindingfieldexampletypemultiple</bindingField>
+  <type type="Enum" static="true">typeexampletypeenum</type>
+  <mode type="Enum" static="true">modeexampletypeenum</mode>
+  <provider type="Enum" static="true">providerexampletypeenum</provider>
+  <enableGraphGroupCreate type="Enum" static="true">enablegraphgroupcreateexampletypeenum</enableGraphGroupCreate>
+  <enableGraphGroupTeamCreate type="Enum" static="true">enablegraphgroupteamcreateexampletypeenum</enableGraphGroupTeamCreate>
+  <hideAddNewFolder type="Enum" static="true">hideaddnewfolderexampletypeenum</hideAddNewFolder>
+  <hideAddFromTemplate type="Enum" static="true">hideaddfromtemplateexampletypeenum</hideAddFromTemplate>
+  <hideAddExisting type="Enum" static="true">hideaddexistingexampletypeenum</hideAddExisting>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <entityId type="SingleLine.Text" static="true">entityidexampletypesinglelinetext</entityId>
+  <folderPath type="SingleLine.Text" static="true">folderpathexampletypesinglelinetext</folderPath>
+  <cdsExpandQuery type="SingleLine.Text" static="true">cdsexpandqueryexampletypesinglelinetext</cdsExpandQuery>
+  <graphFilterQuery type="SingleLine.Text" static="true">graphfilterqueryexampletypesinglelinetext</graphFilterQuery>
+  <rootFolderName type="SingleLine.Text" static="true">rootfoldernameexampletypesinglelinetext</rootFolderName>
+  <lockOnDisable type="Enum" static="true">lockondisableexampletypeenum</lockOnDisable>
+  <eventHandlers type="SingleLine.Text" static="true">eventhandlersexampletypesinglelinetext</eventHandlers>
+  <columnsToBeShown type="SingleLine.Text" static="true">columnstobeshownexampletypesinglelinetext</columnsToBeShown>
+  <defaultOpener type="Enum" static="true">defaultopenerexampletypeenum</defaultOpener>
+</parameters>

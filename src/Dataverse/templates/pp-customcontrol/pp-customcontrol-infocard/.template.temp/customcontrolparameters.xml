@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="" static="true">bindingfieldexampletype</bindingField>
+  <mode type="Enum" static="true">modeexampletypeenum</mode>
+  <fetchXml type="SingleLine.Text" static="true">fetchxmlexampletypesinglelinetext</fetchXml>
+  <actionLink type="SingleLine.Text" static="true">actionlinkexampletypesinglelinetext</actionLink>
+  <editFormId type="SingleLine.Text" static="true">editformidexampletypesinglelinetext</editFormId>
+  <openFormWidth type="Whole.None" static="true">openformwidthexampletypewholenone</openFormWidth>
+</parameters>

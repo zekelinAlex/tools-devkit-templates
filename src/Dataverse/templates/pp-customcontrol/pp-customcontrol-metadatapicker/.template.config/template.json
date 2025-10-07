@@ -1,0 +1,436 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Metadatapicker",
+  "name": "Power Platform: MetadataPicker",
+  "shortName": "pp-customcontrol-metadatapicker",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_BindingField": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "bindingfieldexampletype",
+      "fileRename": "bindingfieldexampletype",
+      "description": "Binding field is used to output selected value based on chosen mode.",
+      "isRequired": true
+    },
+    "CustomControl_EntityLogicalName": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "entitylogicalnameexampletype",
+      "fileRename": "entitylogicalnameexampletype",
+      "description": "Target entity for which metadata will be fetched."
+    },
+    "CustomControl_AttributeLogicalName": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "attributelogicalnameexampletype",
+      "fileRename": "attributelogicalnameexampletype",
+      "description": "Target attribute for which metadata will be fetched."
+    },
+    "CustomControl_ApplyAppmoduleFilter": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Do you want to show only entities included in appmodule?. (True: Show only entities form appmodule.; False: Show all entities.)"
+    },
+    "applyappmodulefiltervalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "applyappmodulefilterexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(ApplyAppmoduleFilter == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(ApplyAppmoduleFilter == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Do you want to show only entities included in appmodule?. automatically selected based on ApplyAppmoduleFilter"
+    },
+    "CustomControl_ApplyEnvironmentEnabledLanguagesFilter": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Do you want to show only languages enabled for environment? (True: Show only languages on environment.; False: Show all languages.)"
+    },
+    "applyenvironmentenabledlanguagesfiltervalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "applyenvironmentenabledlanguagesfilterexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(ApplyEnvironmentEnabledLanguagesFilter == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(ApplyEnvironmentEnabledLanguagesFilter == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Do you want to show only languages enabled for environment? automatically selected based on ApplyEnvironmentEnabledLanguagesFilter"
+    },
+    "CustomControl_JSON": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "jsonexampletypemultiple",
+      "fileRename": "jsonexampletypemultiple",
+      "description": "Field to output metadata details. Used in modes other than Entity."
+    },
+    "CustomControl_Mode": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "All"
+        },
+        {
+          "choice": "Entity"
+        },
+        {
+          "choice": "Attributes"
+        },
+        {
+          "choice": "Operators"
+        },
+        {
+          "choice": "Relationships"
+        },
+        {
+          "choice": "Language"
+        }
+      ],
+      "description": "Select what pcf outputs. (All: Outputs data from all modes.; Entity: Outputs only entity logical name.; Attributes: Outputs entity logical name and attributes.; Operators: Outputs entity logical name and operators.; Relationships: Outputs entity logical name and relationships.; Language: Outputs language code.)"
+    },
+    "modevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "modeexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(Mode == \u0022All\u0022)",
+            "value": "0"
+          },
+          {
+            "condition": "(Mode == \u0022Entity\u0022)",
+            "value": "1"
+          },
+          {
+            "condition": "(Mode == \u0022Attributes\u0022)",
+            "value": "2"
+          },
+          {
+            "condition": "(Mode == \u0022Operators\u0022)",
+            "value": "3"
+          },
+          {
+            "condition": "(Mode == \u0022Relationships\u0022)",
+            "value": "4"
+          },
+          {
+            "condition": "(Mode == \u0022Language\u0022)",
+            "value": "5"
+          }
+        ]
+      },
+      "description": "Select what pcf outputs. automatically selected based on Mode"
+    },
+    "CustomControl_EnableBorder": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Enable border around picker. (True: True; False: False)"
+    },
+    "enablebordervalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "enableborderexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(EnableBorder == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(EnableBorder == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Enable border around picker. automatically selected based on EnableBorder"
+    },
+    "CustomControl_DisplayAttributesValidforCreate": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "All"
+        },
+        {
+          "choice": "Enabled"
+        },
+        {
+          "choice": "Disabled"
+        }
+      ],
+      "description": "Please specify if these attributes should be displayed for selection. (All: Does not filter based on this parameter.; Enabled: Retrieves attribute only if it is ValidForUpdateApi = 1.; Disabled: Retrieves attribute only if it is ValidForUpdateApi = 0.)"
+    },
+    "displayattributesvalidforcreatevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "displayedvalidforcreateattributesexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(DisplayAttributesValidforCreate == \u0022All\u0022)",
+            "value": "0"
+          },
+          {
+            "condition": "(DisplayAttributesValidforCreate == \u0022Enabled\u0022)",
+            "value": "1"
+          },
+          {
+            "condition": "(DisplayAttributesValidforCreate == \u0022Disabled\u0022)",
+            "value": "2"
+          }
+        ]
+      },
+      "description": "Please specify if these attributes should be displayed for selection. automatically selected based on DisplayAttributesValidforCreate"
+    },
+    "CustomControl_DisplayAttributesValidforUpdate": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "All"
+        },
+        {
+          "choice": "Enabled"
+        },
+        {
+          "choice": "Disabled"
+        }
+      ],
+      "description": "Please specify if these attributes should be displayed for selection. (All: Does not filter based on this parameter.; Enabled: Retrieves attribute only if it is ValidForUpdateApi = 1.; Disabled: Retrieves attribute only if it is ValidForUpdateApi = 0.)"
+    },
+    "displayattributesvalidforupdatevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "displayedvalidforupdateattributesexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(DisplayAttributesValidforUpdate == \u0022All\u0022)",
+            "value": "0"
+          },
+          {
+            "condition": "(DisplayAttributesValidforUpdate == \u0022Enabled\u0022)",
+            "value": "1"
+          },
+          {
+            "condition": "(DisplayAttributesValidforUpdate == \u0022Disabled\u0022)",
+            "value": "2"
+          }
+        ]
+      },
+      "description": "Please specify if these attributes should be displayed for selection. automatically selected based on DisplayAttributesValidforUpdate"
+    },
+    "CustomControl_DisplayAttributesValidforRead": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "All"
+        },
+        {
+          "choice": "Enabled"
+        },
+        {
+          "choice": "Disabled"
+        }
+      ],
+      "description": "Please specify if these attributes should be displayed for selection. (All: Does not filter based on this parameter.; Enabled: Retrieves attribute only if it is ValidForUpdateApi = 1.; Disabled: Retrieves attribute only if it is ValidForUpdateApi = 0.)"
+    },
+    "displayattributesvalidforreadvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "displayedvalidforreadattributesexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(DisplayAttributesValidforRead == \u0022All\u0022)",
+            "value": "0"
+          },
+          {
+            "condition": "(DisplayAttributesValidforRead == \u0022Enabled\u0022)",
+            "value": "1"
+          },
+          {
+            "condition": "(DisplayAttributesValidforRead == \u0022Disabled\u0022)",
+            "value": "2"
+          }
+        ]
+      },
+      "description": "Please specify if these attributes should be displayed for selection. automatically selected based on DisplayAttributesValidforRead"
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

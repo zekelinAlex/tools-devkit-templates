@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <phoneNumber type="" static="true">phonenumberexampletype</phoneNumber>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <recordId type="SingleLine.Text" static="true">recordidexampletypesinglelinetext</recordId>
+  <defaultCountryCode type="SingleLine.Text" static="true">defaultcountrycodeexampletypesinglelinetext</defaultCountryCode>
+  <placeholderMessage type="SingleLine.Text" static="true">placeholdermessageexampletypesinglelinetext</placeholderMessage>
+  <verificationFeature type="Enum" static="true">verificationfeatureexampletypeenum</verificationFeature>
+  <verificationDialogDisabled type="Enum" static="true">verificationdialogdisabledexampletypeenum</verificationDialogDisabled>
+  <enforceMobile type="Enum" static="true">enforcemobileexampletypeenum</enforceMobile>
+  <callFeature type="Enum" static="true">callfeatureexampletypeenum</callFeature>
+  <plainPhone type="" static="true">plainphoneexampletype</plainPhone>
+  <clickToCopyEnabled type="Enum" static="true">clicktocopyenabledexampletypeenum</clickToCopyEnabled>
+</parameters>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <View type="Enum" static="true">viewexampletypeenum</View>
+  <enableFilters type="Enum" static="true">enablefiltersexampletypeenum</enableFilters>
+  <enableResourceRequests type="Enum" static="true">enableresourcerequestsexampletypeenum</enableResourceRequests>
+  <resourceRequestFetchXML type="SingleLine.Text" static="true">resourcerequestfetchxmlexampletypesinglelinetext</resourceRequestFetchXML>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <entityId type="SingleLine.Text" static="true">entityidexampletypesinglelinetext</entityId>
+  <resourceQueryFetchXML type="SingleLine.Text" static="true">resourcequeryfetchxmlexampletypesinglelinetext</resourceQueryFetchXML>
+</parameters>

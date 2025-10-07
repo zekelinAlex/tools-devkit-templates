@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <data type="" static="true">dataexampletype</data>
+  <language type="Enum" static="true">languageexampletypeenum</language>
+  <height type="SingleLine.Text" static="true">heightexampletypesinglelinetext</height>
+  <minimap type="Enum" static="true">minimapexampletypeenum</minimap>
+  <preview type="Enum" static="true">previewexampletypeenum</preview>
+</parameters>

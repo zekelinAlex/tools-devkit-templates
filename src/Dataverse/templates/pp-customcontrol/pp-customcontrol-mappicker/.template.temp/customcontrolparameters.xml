@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="" static="true">bindingfieldexampletype</bindingField>
+  <countryCode type="SingleLine.Text" static="true">countrycodeexampletypesinglelinetext</countryCode>
+  <language type="SingleLine.Text" static="true">languageexampletypesinglelinetext</language>
+  <standaloneMode type="Enum" static="true">standalonemodeexampletypeenum</standaloneMode>
+  <prefillUserLocation type="Enum" static="true">prefilluserlocationexampletypeenum</prefillUserLocation>
+  <isSetMarkByClickDiabled type="Enum" static="true">issetmarkbyclickdiabledexampletypeenum</isSetMarkByClickDiabled>
+  <enableClustering type="Enum" static="true">enableclusteringexampletypeenum</enableClustering>
+  <aggregateDistance type="Decimal" static="true">aggregatedistanceexampletypedecimal</aggregateDistance>
+  <hidePOI type="Enum" static="true">hidepoiexampletypeenum</hidePOI>
+  <useChartForClustering type="Enum" static="true">usechartforclusteringexampletypeenum</useChartForClustering>
+  <enableFiltering type="Enum" static="true">enablefilteringexampletypeenum</enableFiltering>
+  <apiKey type="SingleLine.Text" static="true">apikeyexampletypesinglelinetext</apiKey>
+  <fetchXml type="SingleLine.Text" static="true">fetchxmlexampletypesinglelinetext</fetchXml>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <latitudeAttribute type="SingleLine.Text" static="true">latitudeattributeexampletypesinglelinetext</latitudeAttribute>
+  <longitudeAttribute type="SingleLine.Text" static="true">longitudeattributeexampletypesinglelinetext</longitudeAttribute>
+  <addressAttribute type="SingleLine.Text" static="true">addressattributeexampletypesinglelinetext</addressAttribute>
+  <cardPayload type="SingleLine.Text" static="true">cardpayloadexampletypesinglelinetext</cardPayload>
+  <pinIcons type="SingleLine.Text" static="true">piniconsexampletypesinglelinetext</pinIcons>
+  <clusterOptions type="SingleLine.Text" static="true">clusteroptionsexampletypesinglelinetext</clusterOptions>
+  <addressComponentsJSON type="SingleLine.Text" static="true">addresscomponentsjsonexampletypesinglelinetext</addressComponentsJSON>
+  <fullAddress type="SingleLine.Text" static="true">fulladdressexampletypesinglelinetext</fullAddress>
+  <country type="SingleLine.Text" static="true">countryexampletypesinglelinetext</country>
+  <administrativeArea type="SingleLine.Text" static="true">administrativeareaexampletypesinglelinetext</administrativeArea>
+  <locality type="SingleLine.Text" static="true">localityexampletypesinglelinetext</locality>
+  <sublocality type="SingleLine.Text" static="true">sublocalityexampletypesinglelinetext</sublocality>
+  <street type="SingleLine.Text" static="true">streetexampletypesinglelinetext</street>
+  <streetName type="SingleLine.Text" static="true">streetnameexampletypesinglelinetext</streetName>
+  <streetNumber type="SingleLine.Text" static="true">streetnumberexampletypesinglelinetext</streetNumber>
+  <postalCode type="SingleLine.Text" static="true">postalcodeexampletypesinglelinetext</postalCode>
+  <latitude type="Decimal" static="true">latitudeexampletypedecimal</latitude>
+  <longitude type="Decimal" static="true">longitudeexampletypedecimal</longitude>
+  <isManuallyCreatedAddress type="TwoOptions" static="true">ismanuallycreatedaddressexampletypetwooptions</isManuallyCreatedAddress>
+</parameters>

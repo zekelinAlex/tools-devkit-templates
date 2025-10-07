@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <objectTypeCode type="SingleLine.Text" static="true">objecttypecodeexampletypesinglelinetext</objectTypeCode>
+  <objectId type="SingleLine.Text" static="true">objectidexampletypesinglelinetext</objectId>
+</parameters>

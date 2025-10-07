@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <optionset type="OptionSet" static="true">optionsetexampletypeoptionset</optionset>
+  <icon1 type="SingleLine.Text" static="true">icon1exampletypesinglelinetext</icon1>
+  <icon2 type="SingleLine.Text" static="true">icon2exampletypesinglelinetext</icon2>
+  <icon3 type="SingleLine.Text" static="true">icon3exampletypesinglelinetext</icon3>
+  <icon4 type="SingleLine.Text" static="true">icon4exampletypesinglelinetext</icon4>
+  <icon5 type="SingleLine.Text" static="true">icon5exampletypesinglelinetext</icon5>
+  <iconsOptions type="SingleLine.Text" static="true">iconsoptionsexampletypesinglelinetext</iconsOptions>
+  <selectedColor type="SingleLine.Text" static="true">selectedcolorexampletypesinglelinetext</selectedColor>
+  <isNullable type="Enum" static="true">isnullableexampletypeenum</isNullable>
+  <isDoubleClickEnabled type="Enum" static="true">isdoubleclickenabledexampletypeenum</isDoubleClickEnabled>
+  <isClearingEnabled type="Enum" static="true">isclearingenabledexampletypeenum</isClearingEnabled>
+</parameters>

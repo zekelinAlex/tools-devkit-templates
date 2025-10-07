@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <standalone type="Enum" static="true">standaloneexampletypeenum</standalone>
+  <language type="Enum" static="true">languageexampletypeenum</language>
+  <manualInput type="Enum" static="true">manualinputexampletypeenum</manualInput>
+  <isManuallyCreatedAddress type="TwoOptions" static="true">ismanuallycreatedaddressexampletypetwooptions</isManuallyCreatedAddress>
+  <externalLogicTrigger type="TwoOptions" static="true">externallogictriggerexampletypetwooptions</externalLogicTrigger>
+  <type type="Enum" static="true">typeexampletypeenum</type>
+  <addressComponentsJSON type="SingleLine.Text" static="true">addresscomponentsjsonexampletypesinglelinetext</addressComponentsJSON>
+  <fullAddress type="SingleLine.Text" static="true">fulladdressexampletypesinglelinetext</fullAddress>
+  <country type="SingleLine.Text" static="true">countryexampletypesinglelinetext</country>
+  <countryISOCode type="SingleLine.Text" static="true">countryisocodeexampletypesinglelinetext</countryISOCode>
+  <administrativeArea type="SingleLine.Text" static="true">administrativeareaexampletypesinglelinetext</administrativeArea>
+  <locality type="SingleLine.Text" static="true">localityexampletypesinglelinetext</locality>
+  <sublocality type="SingleLine.Text" static="true">sublocalityexampletypesinglelinetext</sublocality>
+  <street type="SingleLine.Text" static="true">streetexampletypesinglelinetext</street>
+  <streetName type="SingleLine.Text" static="true">streetnameexampletypesinglelinetext</streetName>
+  <streetNumber type="SingleLine.Text" static="true">streetnumberexampletypesinglelinetext</streetNumber>
+  <postalCode type="SingleLine.Text" static="true">postalcodeexampletypesinglelinetext</postalCode>
+  <latitude type="Decimal" static="true">latitudeexampletypedecimal</latitude>
+  <longitude type="Decimal" static="true">longitudeexampletypedecimal</longitude>
+</parameters>

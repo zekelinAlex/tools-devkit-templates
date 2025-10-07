@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <schemaJSON type="Multiple" static="true">schemajsonexampletypemultiple</schemaJSON>
+  <mode type="Enum" static="true">modeexampletypeenum</mode>
+  <template type="Lookup.Simple" static="true">templateexampletypelookupsimple</template>
+  <survey type="Lookup.Simple" static="true">surveyexampletypelookupsimple</survey>
+  <title type="SingleLine.Text" static="true">titleexampletypesinglelinetext</title>
+  <description type="SingleLine.Text" static="true">descriptionexampletypesinglelinetext</description>
+  <isBoundToDialog type="Enum" static="true">isboundtodialogexampletypeenum</isBoundToDialog>
+</parameters>

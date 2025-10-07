@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <url type="" static="true">urlexampletype</url>
+  <type type="Enum" static="true">typeexampletypeenum</type>
+  <hoverText type="SingleLine.Text" static="true">hovertextexampletypesinglelinetext</hoverText>
+  <label type="SingleLine.Text" static="true">labelexampletypesinglelinetext</label>
+  <target type="SingleLine.Text" static="true">targetexampletypesinglelinetext</target>
+  <backgroundColor type="SingleLine.Text" static="true">backgroundcolorexampletypesinglelinetext</backgroundColor>
+  <textColor type="SingleLine.Text" static="true">textcolorexampletypesinglelinetext</textColor>
+  <alligment type="SingleLine.Text" static="true">alligmentexampletypesinglelinetext</alligment>
+  <width type="SingleLine.Text" static="true">widthexampletypesinglelinetext</width>
+</parameters>

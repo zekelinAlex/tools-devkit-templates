@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <enableFieldCommunication type="Enum" static="true">enablefieldcommunicationexampletypeenum</enableFieldCommunication>
+  <createOnlySelected type="Enum" static="true">createonlyselectedexampletypeenum</createOnlySelected>
+  <loadExternalDataOnLoad type="Enum" static="true">loadexternaldataonloadexampletypeenum</loadExternalDataOnLoad>
+  <saveFormattedContactInformation type="Enum" static="true">saveformattedcontactinformationexampletypeenum</saveFormattedContactInformation>
+  <accountId type="SingleLine.Text" static="true">accountidexampletypesinglelinetext</accountId>
+  <jurisdictionCode type="SingleLine.Text" static="true">jurisdictioncodeexampletypesinglelinetext</jurisdictionCode>
+  <cinNumber type="SingleLine.Text" static="true">cinnumberexampletypesinglelinetext</cinNumber>
+  <groupConfigurationJSON type="SingleLine.Text" static="true">groupconfigurationjsonexampletypesinglelinetext</groupConfigurationJSON>
+  <isUserManagementEnabled type="Enum" static="true">isusermanagementenabledexampletypeenum</isUserManagementEnabled>
+  <maxContactsPerPage type="Whole.None" static="true">maxcontactsperpageexampletypewholenone</maxContactsPerPage>
+</parameters>

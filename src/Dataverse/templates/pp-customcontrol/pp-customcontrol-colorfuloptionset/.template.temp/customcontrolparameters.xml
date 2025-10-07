@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <optionsInput type="OptionSet" static="true">optionsinputexampletypeoptionset</optionsInput>
+  <optionsIconJSON type="SingleLine.Text" static="true">optionsiconjsonexampletypesinglelinetext</optionsIconJSON>
+  <useColorBackground type="Enum" static="true">usecolorbackgroundexampletypeenum</useColorBackground>
+</parameters>

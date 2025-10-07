@@ -1,0 +1,286 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Codeeditor",
+  "name": "Power Platform: CodeEditor",
+  "shortName": "pp-customcontrol-codeeditor",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_CodeString": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "dataexampletype",
+      "fileRename": "dataexampletype",
+      "description": "Binding field containing a string of code",
+      "isRequired": true
+    },
+    "CustomControl_MarkupLanguage": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Liquid"
+        },
+        {
+          "choice": "XML"
+        },
+        {
+          "choice": "JavaScript"
+        },
+        {
+          "choice": "TypeScript"
+        },
+        {
+          "choice": "Swagger"
+        },
+        {
+          "choice": "HTML"
+        },
+        {
+          "choice": "CSS"
+        },
+        {
+          "choice": "JSON"
+        }
+      ],
+      "description": "Markup language options (Liquid: Yes; XML: Yes; JavaScript: Yes; TypeScript: Yes; Swagger: Yes; HTML: Yes; CSS: Yes; JSON: Yes)",
+      "isRequired": true
+    },
+    "markuplanguagevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "languageexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(MarkupLanguage == \u0022Liquid\u0022)",
+            "value": "liquid"
+          },
+          {
+            "condition": "(MarkupLanguage == \u0022XML\u0022)",
+            "value": "xml"
+          },
+          {
+            "condition": "(MarkupLanguage == \u0022JavaScript\u0022)",
+            "value": "javascript"
+          },
+          {
+            "condition": "(MarkupLanguage == \u0022TypeScript\u0022)",
+            "value": "typescript"
+          },
+          {
+            "condition": "(MarkupLanguage == \u0022Swagger\u0022)",
+            "value": "swagger"
+          },
+          {
+            "condition": "(MarkupLanguage == \u0022HTML\u0022)",
+            "value": "html"
+          },
+          {
+            "condition": "(MarkupLanguage == \u0022CSS\u0022)",
+            "value": "css"
+          },
+          {
+            "condition": "(MarkupLanguage == \u0022JSON\u0022)",
+            "value": "json"
+          }
+        ]
+      },
+      "description": "Markup language options automatically selected based on MarkupLanguage"
+    },
+    "CustomControl_EditorHeight": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "heightexampletypesinglelinetext",
+      "fileRename": "heightexampletypesinglelinetext",
+      "description": "Chose the height of the code editor"
+    },
+    "CustomControl_Minimap": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Yes"
+        },
+        {
+          "choice": "No"
+        }
+      ],
+      "description": "Enable side map for easier navigation (Yes: Yes; No: No)"
+    },
+    "minimapvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "minimapexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(Minimap == \u0022Yes\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(Minimap == \u0022No\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Enable side map for easier navigation automatically selected based on Minimap"
+    },
+    "CustomControl_Preview": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Yes"
+        },
+        {
+          "choice": "No"
+        }
+      ],
+      "description": "Enable preview (Yes: Yes; No: No)"
+    },
+    "previewvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "previewexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(Preview == \u0022Yes\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(Preview == \u0022No\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Enable preview automatically selected based on Preview"
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

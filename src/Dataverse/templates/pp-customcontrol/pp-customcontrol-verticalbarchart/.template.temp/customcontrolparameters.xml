@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <fetchXml type="SingleLine.Text" static="true">fetchxmlexampletypesinglelinetext</fetchXml>
+  <xAxis type="SingleLine.Text" static="true">xaxisexampletypesinglelinetext</xAxis>
+  <yAxis type="SingleLine.Text" static="true">yaxisexampletypesinglelinetext</yAxis>
+  <chartTitle type="SingleLine.Text" static="true">charttitleexampletypesinglelinetext</chartTitle>
+  <displayAsCard type="Enum" static="true">displayascardexampletypeenum</displayAsCard>
+  <actionLink type="SingleLine.Text" static="true">actionlinkexampletypesinglelinetext</actionLink>
+  <actionLinkLabel type="SingleLine.Text" static="true">actionlinklabelexampletypesinglelinetext</actionLinkLabel>
+</parameters>

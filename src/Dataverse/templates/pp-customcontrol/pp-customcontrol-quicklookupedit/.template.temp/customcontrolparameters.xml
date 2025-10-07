@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <entityId type="SingleLine.Text" static="true">entityidexampletypesinglelinetext</entityId>
+  <lookupEntity type="SingleLine.Text" static="true">lookupentityexampletypesinglelinetext</lookupEntity>
+  <lookupField type="SingleLine.Text" static="true">lookupfieldexampletypesinglelinetext</lookupField>
+  <lookupNavigationEntity type="SingleLine.Text" static="true">lookupnavigationentityexampletypesinglelinetext</lookupNavigationEntity>
+  <customButtonIcon type="SingleLine.Text" static="true">custombuttoniconexampletypesinglelinetext</customButtonIcon>
+  <customButtonUrl type="SingleLine.Text" static="true">custombuttonurlexampletypesinglelinetext</customButtonUrl>
+  <customButtonLabel type="SingleLine.Text" static="true">custombuttonlabelexampletypesinglelinetext</customButtonLabel>
+  <customButtonExpandQuery type="SingleLine.Text" static="true">custombuttonexpandqueryexampletypesinglelinetext</customButtonExpandQuery>
+  <formId type="SingleLine.Text" static="true">formidexampletypesinglelinetext</formId>
+</parameters>

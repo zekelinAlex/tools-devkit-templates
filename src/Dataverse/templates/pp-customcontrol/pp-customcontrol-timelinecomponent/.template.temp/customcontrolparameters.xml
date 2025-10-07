@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <enabledActivityTypeEntities type="SingleLine.Text" static="true">enabledactivitytypeentitiesexampletypesinglelinetext</enabledActivityTypeEntities>
+  <enableTypeFiltering type="SingleLine.Text" static="true">enabletypefilteringexampletypesinglelinetext</enableTypeFiltering>
+  <enableDateFiltering type="SingleLine.Text" static="true">enabledatefilteringexampletypesinglelinetext</enableDateFiltering>
+  <enableHasAttachmentFiltering type="SingleLine.Text" static="true">enablehasattachmentfilteringexampletypesinglelinetext</enableHasAttachmentFiltering>
+  <enableSorting type="SingleLine.Text" static="true">enablesortingexampletypesinglelinetext</enableSorting>
+  <UserInterfaceType type="Enum" static="true">userinterfacetypeexampletypeenum</UserInterfaceType>
+</parameters>

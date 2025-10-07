@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <sourceEntityName type="SingleLine.Text" static="true">sourceentitynameexampletypesinglelinetext</sourceEntityName>
+  <sourceRecordId type="SingleLine.Text" static="true">sourcerecordidexampletypesinglelinetext</sourceRecordId>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <strictCheck type="Whole.None" static="true">strictcheckexampletypewholenone</strictCheck>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <entityDisplayFieldName type="SingleLine.Text" static="true">entitydisplayfieldnameexampletypesinglelinetext</entityDisplayFieldName>
+  <targetRecordsFetchXmlFilter type="SingleLine.Text" static="true">targetrecordsfetchxmlfilterexampletypesinglelinetext</targetRecordsFetchXmlFilter>
+  <associationEntityName type="SingleLine.Text" static="true">associationentitynameexampletypesinglelinetext</associationEntityName>
+  <useCustomIntersectingEntity type="Enum" static="true">usecustomintersectingentityexampletypeenum</useCustomIntersectingEntity>
+  <intersectingEntitySourceLookup type="SingleLine.Text" static="true">intersectingentitysourcelookupexampletypesinglelinetext</intersectingEntitySourceLookup>
+  <intersectingEntityTargetLookup type="SingleLine.Text" static="true">intersectingentitytargetlookupexampletypesinglelinetext</intersectingEntityTargetLookup>
+  <promptDatefieldName type="SingleLine.Text" static="true">promptdatefieldnameexampletypesinglelinetext</promptDatefieldName>
+  <promptStatus type="Enum" static="true">promptstatusexampletypeenum</promptStatus>
+  <isDefaultField type="SingleLine.Text" static="true">isdefaultfieldexampletypesinglelinetext</isDefaultField>
+  <isDisabledField type="SingleLine.Text" static="true">isdisabledfieldexampletypesinglelinetext</isDisabledField>
+  <hiearchyParentFieldName type="SingleLine.Text" static="true">hiearchyparentfieldnameexampletypesinglelinetext</hiearchyParentFieldName>
+  <connectionType type="SingleLine.Text" static="true">connectiontypeexampletypesinglelinetext</connectionType>
+  <enabledLevels type="Whole.None" static="true">enabledlevelsexampletypewholenone</enabledLevels>
+  <expandLevels type="Whole.None" static="true">expandlevelsexampletypewholenone</expandLevels>
+  <onChangeEventName type="SingleLine.Text" static="true">onchangeeventnameexampletypesinglelinetext</onChangeEventName>
+</parameters>

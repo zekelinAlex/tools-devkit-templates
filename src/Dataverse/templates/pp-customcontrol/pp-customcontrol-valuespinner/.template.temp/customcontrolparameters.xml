@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <value type="" static="true">valueexampletype</value>
+  <stepSize type="Decimal" static="true">stepsizeexampletypedecimal</stepSize>
+  <minValue type="Decimal" static="true">minvalueexampletypedecimal</minValue>
+  <maxValue type="Decimal" static="true">maxvalueexampletypedecimal</maxValue>
+  <defaultValue type="Decimal" static="true">defaultvalueexampletypedecimal</defaultValue>
+</parameters>

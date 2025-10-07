@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <columns type="Multiple" static="true">columnsexampletypemultiple</columns>
+  <title type="SingleLine.Text" static="true">titleexampletypesinglelinetext</title>
+  <subtitle type="SingleLine.Text" static="true">subtitleexampletypesinglelinetext</subtitle>
+  <description type="SingleLine.Text" static="true">descriptionexampletypesinglelinetext</description>
+  <footerAttributes type="SingleLine.Text" static="true">footerattributesexampletypesinglelinetext</footerAttributes>
+</parameters>

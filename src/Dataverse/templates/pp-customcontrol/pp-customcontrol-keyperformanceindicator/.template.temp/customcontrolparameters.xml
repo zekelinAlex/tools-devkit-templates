@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <messageTemplate type="SingleLine.Text" static="true">messagetemplateexampletypesinglelinetext</messageTemplate>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <filter type="SingleLine.Text" static="true">filterexampletypesinglelinetext</filter>
+  <column type="SingleLine.Text" static="true">columnexampletypesinglelinetext</column>
+  <action type="Enum" static="true">actionexampletypeenum</action>
+  <additionalFilters type="SingleLine.Text" static="true">additionalfiltersexampletypesinglelinetext</additionalFilters>
+  <valueTemplate type="SingleLine.Text" static="true">valuetemplateexampletypesinglelinetext</valueTemplate>
+</parameters>

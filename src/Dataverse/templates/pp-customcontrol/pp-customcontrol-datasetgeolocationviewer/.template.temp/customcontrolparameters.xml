@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <language type="SingleLine.Text" static="true">languageexampletypesinglelinetext</language>
+  <apiKey type="SingleLine.Text" static="true">apikeyexampletypesinglelinetext</apiKey>
+  <fetchXml type="SingleLine.Text" static="true">fetchxmlexampletypesinglelinetext</fetchXml>
+  <latitudeAttribute type="SingleLine.Text" static="true">latitudeattributeexampletypesinglelinetext</latitudeAttribute>
+  <longitudeAttribute type="SingleLine.Text" static="true">longitudeattributeexampletypesinglelinetext</longitudeAttribute>
+  <addressAttribute type="SingleLine.Text" static="true">addressattributeexampletypesinglelinetext</addressAttribute>
+  <cardPayload type="SingleLine.Text" static="true">cardpayloadexampletypesinglelinetext</cardPayload>
+  <pinIcons type="SingleLine.Text" static="true">piniconsexampletypesinglelinetext</pinIcons>
+</parameters>

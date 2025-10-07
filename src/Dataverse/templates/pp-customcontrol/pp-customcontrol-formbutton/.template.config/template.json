@@ -1,0 +1,235 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Formbutton",
+  "name": "Power Platform: FormButton",
+  "shortName": "pp-customcontrol-formbutton",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_BindingField": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "bindingfieldexampletypesinglelinetext",
+      "fileRename": "bindingfieldexampletypesinglelinetext",
+      "description": "A binding field to bind the control to.",
+      "isRequired": true
+    },
+    "CustomControl_URL": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "urlexampletype",
+      "fileRename": "urlexampletype",
+      "description": "URL of the link"
+    },
+    "CustomControl_Type": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "URL"
+        },
+        {
+          "choice": "JavaScript Method"
+        }
+      ],
+      "description": "Define if you want to open a URL or execute a script. (URL: Enter a URL that will be opened after clicking on the button.; JavaScript Method: To use this option you need to attach method as OnChange event.)"
+    },
+    "typevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "typeexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(Type == \u0022URL\u0022)",
+            "value": "url"
+          },
+          {
+            "condition": "(Type == \u0022JavaScript Method\u0022)",
+            "value": "js"
+          }
+        ]
+      },
+      "description": "Define if you want to open a URL or execute a script. automatically selected based on Type"
+    },
+    "CustomControl_HoverText": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "hovertextexampletypesinglelinetext",
+      "fileRename": "hovertextexampletypesinglelinetext",
+      "description": "Enter the Hover Text"
+    },
+    "CustomControl_Label": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "labelexampletypesinglelinetext",
+      "fileRename": "labelexampletypesinglelinetext",
+      "description": "Enter the Field Label"
+    },
+    "CustomControl_Target": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "targetexampletypesinglelinetext",
+      "fileRename": "targetexampletypesinglelinetext",
+      "description": "Open Mode. Left default value _blank to open link in the new tab. Use _self to open link in the same tab."
+    },
+    "CustomControl_BackgroundColorHEX": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "backgroundcolorexampletypesinglelinetext",
+      "fileRename": "backgroundcolorexampletypesinglelinetext",
+      "description": "Enter the Button Background Color"
+    },
+    "CustomControl_TextColorHEX": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "textcolorexampletypesinglelinetext",
+      "fileRename": "textcolorexampletypesinglelinetext",
+      "description": "Enter the Button Text Color"
+    },
+    "CustomControl_Alligment": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "alligmentexampletypesinglelinetext",
+      "fileRename": "alligmentexampletypesinglelinetext",
+      "description": "Enter the Alligment (start/center/end)"
+    },
+    "CustomControl_Width": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "widthexampletypesinglelinetext",
+      "fileRename": "widthexampletypesinglelinetext",
+      "description": "Enter absolute width or relative (with %) to change default width"
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

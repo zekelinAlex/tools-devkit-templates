@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <messageTemplate type="SingleLine.Text" static="true">messagetemplateexampletypesinglelinetext</messageTemplate>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <filter type="SingleLine.Text" static="true">filterexampletypesinglelinetext</filter>
+  <column type="SingleLine.Text" static="true">columnexampletypesinglelinetext</column>
+  <measurementunit type="Enum" static="true">measurementunitexampletypeenum</measurementunit>
+  <achievedGoalTemplate type="SingleLine.Text" static="true">achievedgoaltemplateexampletypesinglelinetext</achievedGoalTemplate>
+  <labelsTooltip type="SingleLine.Text" static="true">labelstooltipexampletypesinglelinetext</labelsTooltip>
+  <action type="Enum" static="true">actionexampletypeenum</action>
+  <levels type="SingleLine.Text" static="true">levelsexampletypesinglelinetext</levels>
+  <description type="SingleLine.Text" static="true">descriptionexampletypesinglelinetext</description>
+  <actionLink type="SingleLine.Text" static="true">actionlinkexampletypesinglelinetext</actionLink>
+  <actionLinkLabel type="SingleLine.Text" static="true">actionlinklabelexampletypesinglelinetext</actionLinkLabel>
+</parameters>
