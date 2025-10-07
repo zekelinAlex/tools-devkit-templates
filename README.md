@@ -32,7 +32,7 @@ dotnet tool install --global PowerShell
 # Install the template package to your machine
 dotnet new install TALXIS.DevKit.Templates.Dataverse
 ```
-
+## Templates
 ### Solutions
 > [!NOTE]
 > Template commands are designed to be run in the folder where *.*proj is located.
@@ -166,6 +166,7 @@ dotnet new pp-entity-attribute `
 --OptionSetOptions "Box,Bag,Envelope" `
 --SolutionRootPath "Declarations" `
 --allow-scripts yes
+```
 
 ### UI
 Create a model-driven app:
@@ -249,6 +250,7 @@ dotnet new pp-form-tab  `
 --SolutionRootPath "Declarations" `
 --RemoveDefaultTab "True" `
 --allow-scripts yes
+```
 
 Create a new column in the specific tab:
 ```console
@@ -262,6 +264,7 @@ dotnet new pp-form-column  `
 --TabIndex 1 `
 --ColumnWidth "75"
 --allow-scripts yes
+```
 
 Create a new section in the specific column:
 ```console
@@ -276,6 +279,7 @@ dotnet new pp-form-section  `
 --SectionName "GENERAL"
 --SolutionRootPath "Declarations" `
 --allow-scripts yes
+```
 
 Create a new row in the specific section:
 ```console
@@ -290,6 +294,7 @@ dotnet new pp-form-row  `
 --ColumnIndex 1 `
 --SectionIndex 1 `
 --allow-scripts yes
+```
 
 Create a new cell in the specific row:
 ```console
@@ -306,6 +311,7 @@ dotnet new pp-form-cell  `
 --EntitySchemaName "${publisherPrefix}_warehouseitem" `
 --SolutionRootPath "Declarations" `
 --allow-scripts yes
+```
 
 Create a new control in the specific cell:
 ```console
@@ -321,17 +327,6 @@ dotnet new pp-form-cell-control  `
 --FormType "main"  `
 --FormId $warehouseitemFormGuid `
 --EntitySchemaName "${publisherPrefix}_warehouseitem" `
---SolutionRootPath "Declarations" `
---allow-scripts yes
-
-Create a subgrid in the main form:
-```console
-dotnet new pp-form-row `
---output "src/Solutions.UI" `
---SubgridLabel "Items list" `
---EntityLogicalName "tom_warehousetransactions" `
---FormType "main" `
---TargetEntityLogicalName "tom_warehouseitem" `
 --SolutionRootPath "Declarations" `
 --allow-scripts yes
 ```
@@ -392,6 +387,41 @@ dotnet new pp-plugin-assembly-steps `
 --AssemblyId "GUID to identifying your assembly" `
 --allow-scripts yes
 ```
+
+## Tools
+
+### Templates Builder
+
+The Templates Builder is a utility tool that helps you create custom .NET templates specifically for TALXIS custom controls. This tool reads a `ControlManifest.Input.xml` file and generates the necessary template files and configuration needed for a .NET template.
+
+#### How it works
+
+The Templates Builder reads a `ControlManifest.Input.xml` file (which contains the custom control definition) and generates the necessary template files and configuration needed for a .NET template. This allows you to:
+
+- Convert existing custom controls into reusable templates
+- Standardize custom control creation across your organization
+- Automate the scaffolding of custom control structures
+- Maintain consistency in custom control naming and structure
+
+#### Usage
+
+```console
+./TALXIS.DevKit.Templates.Builder.exe
+--PathToTheImputXmlFile "ControlManifest.Input.xml"  `
+--ResultFolderPath "C:\result" `
+--TemplateName "New Custom Control Template" `
+--TemplateIdentity "New.Custom.Control.Template" `
+--TemplateShortName "pp-customcontrol-template"
+```
+
+#### Parameters
+
+- `--PathToTheImputXmlFile` <span style="color: #ff6b6b; font-weight: bold;">[Required]</span>: Path to the `ControlManifest.Input.xml` file containing the custom control definition
+- `--ResultFolderPath`: Directory where the generated template files will be created
+- `--TemplateName`: Display name for the new template
+- `--TemplateIdentity`: Unique identifier for the template (used in template.json)
+- `--TemplateShortName`: Short name used when invoking the template with `dotnet new`
+
 > [!TIP]  
 > You can add component schema validation to your build process using [Power Platform MSBuild targets](https://github.com/TALXIS/tools-devkit-build).
 
