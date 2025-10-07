@@ -228,16 +228,20 @@ dotnet new pp-entity-form `
 ```
 
 #### Form design
- Form Structure Hierarchy:",
-			 ┌──────────────────────────────────────────────────────────┐
-		     │ Form                                                     │
-			 │ ├─ Tab                                                   │
-			 │   ├─ Column                                              │
-			 │     ├─ Section                                           │
-			 │       ├─ Row                                             │
-			 │         ├─ Cell                                          │
-			 │           └─ Control                                     │
-			 └──────────────────────────────────────────────────────────┘
+
+**Form Structure Hierarchy:**
+
+```
+┌──────────────────────────────────────────────────────────┐
+│ Form                                                     │
+│ ├─ Tab                                                   │
+│   ├─ Column                                              │
+│     ├─ Section                                           │
+│       ├─ Row                                             │
+│         ├─ Cell                                          │
+│           └─ Control                                     │
+└──────────────────────────────────────────────────────────┘
+```
 
 
 Create a new tab in the form:
@@ -388,6 +392,9 @@ dotnet new pp-plugin-assembly-steps `
 --allow-scripts yes
 ```
 
+> [!TIP]  
+> You can add component schema validation to your build process using [Power Platform MSBuild targets](https://github.com/TALXIS/tools-devkit-build).
+
 ## Tools
 
 ### Templates Builder
@@ -421,9 +428,6 @@ The Templates Builder reads a `ControlManifest.Input.xml` file (which contains t
 - `--TemplateName`: Display name for the new template
 - `--TemplateIdentity`: Unique identifier for the template (used in template.json)
 - `--TemplateShortName`: Short name used when invoking the template with `dotnet new`
-
-> [!TIP]  
-> You can add component schema validation to your build process using [Power Platform MSBuild targets](https://github.com/TALXIS/tools-devkit-build).
 
 ## Collaboration
 
