@@ -6,53 +6,62 @@
   "name": "TALXIS Script Library",
   "shortName": "pp-script-library",
   "tags": {
-    "language": "C#",
+    "language": "javascript",
     "type": "project"
   },
   "sourceName": "examplesourcename",
   "preferNameDirectory": true,
   "symbols": {
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
     "PublisherPrefix": {
       "type": "parameter",
-      "datatype": "string",
+      "datatype": "text",
       "replaces": "examplepublisherprefix",
-      "FileRename": "examplepublisherprefix",
-      "defaultValue": "talxis",
-      "description": "Publisher prefix for your solution"
+      "isRequired": true,
+      "description": "Publisher prefix for the script library"
     },
-    "ModuleName": {
+    "LibraryName": {
       "type": "parameter",
-      "datatype": "string",
-      "replaces": "ExampleModuleName",
-      "defaultValue": "MyModule",
-      "description": "Name of your script module"
-    },
-    "EntityName": {
-      "type": "parameter",
-      "datatype": "string",
-      "replaces": "exampleentityname",
-      "FileRename": "exampleentityname",
-      "defaultValue": "account",
-      "description": "Logical name of entity"
+      "datatype": "text",
+      "replaces": "examplelibraryname",
+      "isRequired": true,
+      "description": "Name of the script library"
     }
   },
-  "sources": [
-    {
-      "modifiers": [
-        {
-          "exclude": [
-            ".vs/**/*",
-            ".vscode/**/*",
-            "bin/**/*",
-            "obj/**/*",
-            "node_modules/**/*",
-            "dist/**/*"
-          ]
-        }
-      ]
-    }
-  ],
   "postActions": [
-    
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \"AddPackageReferences.ps1\""
+      },
+      "manualInstructions": [
+        {
+          "text": "Run 'powershell.exe -ExecutionPolicy Bypass -File AddPackageReferences.ps1' to add required PackageReferences to project file."
+        }
+      ],
+      "description": "Add TALXIS SDK PackageReferences to project file"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Cleanup.ps1\"",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing template files"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing template files"
+    }
   ]
 }

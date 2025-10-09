@@ -1,14 +1,4 @@
-﻿$entityXmlPath
-
-$formType = 'exampleformtype'
-
-if ($formType -eq "dialog") 
-{
-	$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot\Dialogs\{formguididexample}.xml').Path
-}
-else {
-	$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot\Entities\exampleentityname\FormXml\exampleformtype\{formguididexample}.xml').Path
-}
+﻿$entityXmlPath = .\.template.scripts\LocateForm.ps1
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 
@@ -32,7 +22,7 @@ if (-not $eventNode ) {
 	$eventNode = $entityXml.CreateElement('event')
 	$eventNode.SetAttribute('name', $eventName)
 	$eventNode.SetAttribute('application', 'false')
-	$eventNode.SetAttribute('active', 'false')
+	$eventNode.SetAttribute('active', 'true')
 	if ($eventName -eq 'onchange') {
 		$eventNode.SetAttribute('attribute', $attributeName)
 	}
@@ -44,12 +34,9 @@ if (-not $eventNode ) {
 
 }
 
-$webResourcesPath = (Resolve-Path 'SolutionDeclarationsRoot/WebResources').Path
-$pathToFunction = Get-ChildItem -Path $webResourcesPath -File | Where-Object { [System.IO.Path]::GetExtension($_.Name) -eq "" } | Select-Object -First 1 | ForEach-Object { $_.FullName }
-$libraryname = [System.IO.Path]::GetFileNameWithoutExtension($pathToFunction)
-
+# Create a new handler element
 $handlerNode = $entityXml.CreateElement('Handler')
-$handlerNode.SetAttribute('libraryName', "$libraryname")
+$handlerNode.SetAttribute('library', 'examplelibraryname.js')
 $handlerNode.SetAttribute('functionName', 'examplefunctionname')
 $handlerNode.SetAttribute('passExecutionContext', 'true')
 $handlerNode.SetAttribute('enabled', 'true')

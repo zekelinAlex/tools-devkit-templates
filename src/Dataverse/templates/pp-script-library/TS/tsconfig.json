@@ -1,0 +1,12 @@
+﻿{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "outDir": "build",
+        "outFile": "build/examplepublisherprefix_examplelibraryname.js",
+        "target": "es6",
+        "sourceMap": true,
+        "moduleResolution": "Node",
+        "module": "AMD",
+        "declaration": true
+    }
+}

@@ -1,14 +1,5 @@
-$entityXmlPath
+$entityXmlPath = .\.template.scripts\LocateForm.ps1
 
-$formType = 'exampleformtype'
-
-if ($formType -eq "dialog") 
-{
-	$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot\Dialogs\{formguididexample}.xml').Path
-}
-else {
-	$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot\Entities\exampleentityname\FormXml\exampleformtype\{formguididexample}.xml').Path
-}
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 
 $formLibrariesNode = $entityXml.SelectSingleNode('//formLibraries')
@@ -17,9 +8,8 @@ if (-not $formLibrariesNode) {
 	$formLibrariesNode = $entityXml.SelectSingleNode('//formLibraries')
 }
 
-$webResourcesPath = (Resolve-Path 'SolutionDeclarationsRoot/WebResources').Path
-$pathToFunction  = Get-ChildItem -Path $webResourcesPath -File | Where-Object { [System.IO.Path]::GetExtension($_.Name) -eq "" } | Select-Object -First 1 | ForEach-Object { $_.FullName }
-$libraryname  = [System.IO.Path]::GetFileNameWithoutExtension($pathToFunction)
+# If formLibraries already contains the library, skip adding it
+$libraryName = 'examplelibraryname.js'
 $existingLibrary = $formLibrariesNode.SelectSingleNode("Library[@name='$libraryName']")
 
 if (-not $existingLibrary) {
