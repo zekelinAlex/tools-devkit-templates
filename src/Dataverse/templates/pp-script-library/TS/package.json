@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "@types/xrm": "^9.0.72"
+    "@types/xrm": "^9.0.87"
   },
   "devDependencies": {
-    "typescript": "^3.9.10"
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "build": "tsc -p .",

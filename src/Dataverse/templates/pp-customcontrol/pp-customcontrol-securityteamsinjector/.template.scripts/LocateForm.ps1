@@ -26,8 +26,8 @@ if ( ('formtypeexample' -eq 'unknown') -and ('exampleentityname' -eq 'unknown') 
 
     $entityXmlPath = $latest.FullName
 }
-elseif ( ('formtypeexample' -eq 'unknown') -and ('exampleentityname' -eq 'unknown') ) {
-    $targetName = if ([IO.Path]::GetExtension($formId) -ieq ".xml") { "{$formId}" } else { "$formId.xml" }
+elseif ( ('formtypeexample' -eq 'unknown') -or ('exampleentityname' -eq 'unknown') ) {
+    $targetName = if ([IO.Path]::GetExtension($formId) -ieq ".xml") { "$formId" } else { "$formId.xml" }
 
     #Entities
     $matches = Get-ChildItem -Path $entitiesRootPath -Recurse -File -Filter $targetName -ErrorAction SilentlyContinue |
