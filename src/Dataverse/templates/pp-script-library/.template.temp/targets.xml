@@ -1,0 +1,28 @@
+<Project>
+  <Target Name="CopyReferencedAssemblies" AfterTargets="Rebuild;Build">
+    <PropertyGroup>
+      <ReferencedAssembliesFolder>$(SolutionDir)build\.referencedAssemblies</ReferencedAssembliesFolder>
+    </PropertyGroup>
+    
+    <!-- Get the paths to the DLL files from NuGet packages -->
+    <ItemGroup>
+      <CrmSdkProxy Include="$(NuGetPackageRoot)microsoft.crmsdk.coreassemblies\9.0.*\lib\net462\Microsoft.Crm.Sdk.Proxy.dll" />
+      <CrmSdk Include="$(NuGetPackageRoot)microsoft.crmsdk.coreassemblies\9.0.*\lib\net462\Microsoft.Xrm.Sdk.dll" />
+      <CrmSdkWorkflow Include="$(NuGetPackageRoot)microsoft.crmsdk.workflow\9.0.*\lib\net462\Microsoft.Xrm.Sdk.Workflow.dll" />
+      <NewtonsoftJson Include="$(NuGetPackageRoot)newtonsoft.json\13.0.*\lib\net45\Newtonsoft.Json.dll" />
+    </ItemGroup>
+    
+    <!-- Create the destination directory -->
+    <MakeDir Directories="$(ReferencedAssembliesFolder)" />
+    
+    <!-- Copy the DLL files -->
+    <Copy SourceFiles="@(CrmSdkProxy)" DestinationFolder="$(ReferencedAssembliesFolder)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(CrmSdk)" DestinationFolder="$(ReferencedAssembliesFolder)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(CrmSdkWorkflow)" DestinationFolder="$(ReferencedAssembliesFolder)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(NewtonsoftJson)" DestinationFolder="$(ReferencedAssembliesFolder)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="ApplyVersioningForSolution" AfterTargets="SolutionBuildTargetIntro" Condition="Exists('$(ProjectDir)Declarations\Other\Solution.xml')">
+    <!-- Skip versioning for CDS projects as they don't generate DLL files -->
+    <Message Text="Skipping versioning for CDS project - no DLL file to read version from" Importance="Normal" />
+  </Target>
+</Project>
