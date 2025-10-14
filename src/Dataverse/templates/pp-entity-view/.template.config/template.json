@@ -11,41 +11,54 @@
   "sourceName": "customentity",
   "preferNameDirectory": false,
   "symbols": {
-    "Prefix": {
+    "SolutionRootPath": {
       "type": "parameter",
       "datatype": "text",
-      "defaultValue": "ntg",
-      "replaces": "ntg",
-      "fileRename": "ntg"
+      "defaultValue": ".",
+      "replaces": "SolutionDeclarationsRoot",
+      "fileRename": "SolutionDeclarationsRoot",
+      "description": "Path to the solution root directory"
     },
-    "QueryType": {
+    "DisplayName": {
       "type": "parameter",
-      "description": "Select query type.",
-      "datatype": "choice",
-      "replaces": "queryType",
-      "choices": [
-        {
-          "choice": "0",
-          "displayName": "Standard",
-          "description": "Standard public view (query type = 0)"
-        },
-        {
-          "choice": "2",
-          "displayName": "Subgrid",
-          "description": "Subgrid view (query type = 2)"
-        }
-      ],
-      "defaultValue": "0"
+      "datatype": "text",
+      "defaultValue": "Generated",
+      "replaces": "viewexamplename",
+      "description": "Display name of the view"
     },
-    //views
-    "customViewId": {
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "exampleexistingentity",
+      "fileRename": "exampleexistingentity",
+      "description": "Schema name of the entity including publisher prefix (Example: new_customentity)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "fileRename": "examplepublisherprefix",
+      "description": "Publisher prefix of the entity"
+    },
+    "CustomViewIdgenerated": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "customViewId",
-      "fileRename": "customViewId",
+      "condition": "(CustomViewId == \"\")",
+      "replaces": "customViewIdexample",
+      "fileRename": "customViewIdexample",
       "parameters": {
         "defaultFormat": "d"
       }
+    },
+    "ViewId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "customViewIdexample",
+      "replaces": "customViewIdexample",
+      "description": "GUID of the specific view where the cell will be added"
     }
   }
 }

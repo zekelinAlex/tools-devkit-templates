@@ -42,4 +42,11 @@ foreach ($target in $targetsXml.Project.Target) {
 # Save the updated project file
 $xml.Save($projectFile.FullName)
 
-Write-Host "Successfully added targets to $($projectFile.Name)"
+# Re-open the project file as plain text and remove empty xmlns attributes
+$textContent = Get-Content -Path $projectFile.FullName -Raw
+$updatedTextContent = $textContent -replace 'xmlns=""',''
+
+if ($updatedTextContent -ne $textContent) {
+    Set-Content -Path $projectFile.FullName -Value $updatedTextContent -Encoding utf8
+}
+

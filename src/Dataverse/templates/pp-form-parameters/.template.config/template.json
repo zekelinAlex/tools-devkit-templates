@@ -175,7 +175,6 @@
       "replaces": "rownumberexample",
       "description": "Index number of the row (1-based) within the section where the parameters will be added"
     },
-    //Control parameters
     "EntityLogicalName": {
       "type": "parameter",
       "datatype": "string",
