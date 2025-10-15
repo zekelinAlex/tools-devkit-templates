@@ -117,14 +117,14 @@
       "type": "parameter",
       "datatype": "choice",
       "isRequired": false,
-      "defaultValue": "False",
+      "defaultValue": "true",
       "replaces": "isunboundchoice",
       "choices": [
         {
-          "choice": "True"
+          "choice": "true"
         },
         {
-          "choice": "False"
+          "choice": "false"
         }
       ],
       "description": "Whether the control is unbound (not connected to entity field) - True for custom controls, False for entity fields"
@@ -133,14 +133,14 @@
       "type": "parameter",
       "datatype": "choice",
       "isRequired": false,
-      "defaultValue": "False",
+      "defaultValue": "false",
       "replaces": "isrequiredchoice",
       "choices": [
         {
-          "choice": "True"
+          "choice": "true"
         },
         {
-          "choice": "False"
+          "choice": "false"
         }
       ],
       "description": "Whether the field is required (True) or optional (False) for user input"

@@ -1,4 +1,4 @@
-﻿﻿$ribbonXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/exampleentityname/RibbonDiff.xml').Path
+$ribbonXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/exampleentityname/RibbonDiff.xml').Path
 $commanddefinitionPath = (Resolve-Path './.template.temp/commanddefinition.xml').Path
 $loclbelsPath = (Resolve-Path './.template.temp/loclbels.xml').Path
 $customactionPath = (Resolve-Path './.template.temp/customaction.xml').Path
@@ -28,4 +28,3 @@ Add-XmlContent -parentXml $ribbonXml -nodeName "LocLabels" -contentPath $loclbel
 Add-XmlContent -parentXml $ribbonXml -nodeName "CustomActions" -contentPath $customactionPath
 
 $ribbonXml.Save($ribbonXmlPath)
-

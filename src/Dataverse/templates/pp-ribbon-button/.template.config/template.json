@@ -121,6 +121,22 @@
       "type": "parameter",
       "datatype": "text",
       "description": "Custom location path for the ribbon button (used when Location is set to Manual)"
+    },
+    "LibraryLogicalName": {
+      "isRequired": true,
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "libraryexamplelogicalname",
+      "fileRename": "libraryexamplelogicalname",
+      "description": "Logical name of the library where the ribbon button will be added"
+    },
+    "FunctionName": {
+      "isRequired": true,
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "functioexamplenname",
+      "fileRename": "functioexamplenname",
+      "description": "Logical name of the function where the ribbon button will be added"
     }
   },
   "postActions": [

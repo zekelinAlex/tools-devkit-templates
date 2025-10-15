@@ -61,24 +61,28 @@ if (-not $targetTab) {
     exit 1
 }
 
+<!--#if (SetToTabFooter == "True") -->
+
 #Select tab footer
-if ($setToTabFooter -eq "True") {
-    $targetTabFooter = $targetTab.SelectSingleNode("//tabfooter[@id='{$tabFooterId}']")
+$targetTabFooter = $null
 
-    if (-not $targetTabFooter) {
-        $tabFooters = $targetTab.SelectNodes("//tabfooter")
-        if ($tabFooters.Count -gt 0) {
-            $targetTabFooter = $tabFooters[$tabFooters.Count - 1]
-        }
-    }
-    
-    if (-not $targetTabFooter) {
-        Write-Error "Target tab footer not found"
-        exit 1
-    }
+if (-not $targetTabFooter) {
+    $tabFooters = $targetTab.SelectNodes("./tabfooter")
 
-    $targetTab = $targetTabFooter
+    if ($tabFooters -and $tabFooters.Count -gt 0) {
+        $targetTabFooter = $tabFooters[$tabFooters.Count - 1]
+    }
 }
+
+if (-not $targetTabFooter) {
+    Write-Error "Target tab footer not found"
+    exit 1
+}
+
+$targetTab = $targetTabFooter
+<!--#endif -->
+
+<!--#if (SetToTabFooter != "True") -->
 
 $targetColumn = $null
 
@@ -131,6 +135,11 @@ if (-not $targetSection) {
     Write-Error "Target section not found in the selected column"
     exit 1
 }
+<!--#endif -->
+
+<!--#if (SetToTabFooter == "True") -->
+$targetSection = $targetTabFooter
+<!--#endif -->
 
 $targetRow = $null
 

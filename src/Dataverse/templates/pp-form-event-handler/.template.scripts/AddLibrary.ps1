@@ -1,5 +1,10 @@
 $entityXmlPath = .\.template.scripts\LocateForm.ps1
 
+# Exit early without error if the parent directory is named 'Dialogs'
+$parentDir = Split-Path -Parent -Path $entityXmlPath
+$parentName = Split-Path -Leaf -Path $parentDir
+if ($parentName -eq 'Dialogs') { exit 0 }
+
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 
 $formLibrariesNode = $entityXml.SelectSingleNode('//formLibraries')

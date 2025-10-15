@@ -28,7 +28,7 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "exampleentityname",
-      "isRequired": true
+      "isRequired": false
     },
     "SolutionRootPath": {
       "type": "parameter",
@@ -40,7 +40,7 @@
       "type": "parameter",
       "datatype": "choice",
       "isRequired": false,
-      "replaces": "exampleformtype",
+      "replaces": "formtypeexample",
       "defaultValue": "unknown",
       "choices": [
         {
@@ -58,7 +58,7 @@
       ],
       "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
     },
-    "FormGUIDId": {
+    "FormId": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": true,
@@ -82,7 +82,7 @@
       }
     },
     "HandlerUniqueId": {
-      "type": "parameter",
+      "type": "generated",
       "generator": "guid",
       "replaces": "examplehandleruniqueid",
       "parameters": {
@@ -98,7 +98,8 @@
       "choices": [
         { "choice": "onload" },
         { "choice": "onsave" },
-        { "choice": "onchange" }
+        { "choice": "onchange" },
+        { "choice": "onclick" }
       ]
     },
     "FunctionName": {
