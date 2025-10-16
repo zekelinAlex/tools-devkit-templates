@@ -1,6 +1,5 @@
 <parameters>
   <!--#if (ParameterType == "Lookup") -->
-  <DefaultViewId>{defaultviewidexampletypeformguidtype}</DefaultViewId>
   <FilterRelationshipName>filterrelationshipnameexampletypestring</FilterRelationshipName>
   <DependentAttributeName>dependentattributenameexampletypestring</DependentAttributeName>
   <DependentAttributeType>dependentattributetypeexampletypestring</DependentAttributeType>
@@ -13,16 +12,21 @@
   <DisableQuickFind>disablequickfindexampletypeboolean</DisableQuickFind>
   <DisableViewPicker>disableViewpickerexampletypeboolean</DisableViewPicker>
   <AvailableViewIds>availableviewidsexampletypestring</AvailableViewIds>
+  <!--#if (FormType != "dialog" ) -->
   <EntityLogicalName>entitylogicalnameexampletypestring</EntityLogicalName>
+  <DefaultViewId>{defaultviewidexampletypeformguidtype}</DefaultViewId>
+  <!--#endif -->
   <IsInlineNewEnabled>isinlinenewenabledexampletypeboolean</IsInlineNewEnabled>
   <InlineViewIds>inlineviewidsexampletypestring</InlineViewIds>
   <UnboundLookupTypes>unboundlookuptypesexampletypestring</UnboundLookupTypes>
   <UnboundLookupBrowse>unboundlookupbrowseexampletypeboolean</UnboundLookupBrowse>
   <UnboundLookupControlType>unboundlookupcontroltypeexampletypestring</UnboundLookupControlType>
   <ShowAsBreadcrumbControl>showasbreadcrumbcontrolexampletypeboolean</ShowAsBreadcrumbControl>
-    <!--#if ( LookupType == "unbound" ) -->
+    <!--#if ( LookupType == "unbound"  || FormType == "dialog" ) -->
     <TargetEntities>
       <TargetEntity>
+        <DefaultViewId>{defaultviewidexampletypeformguidtype}</DefaultViewId>
+        <EntityLogicalName>entitylogicalnameexampletypestring</EntityLogicalName>
         <IsDeDupLookup>isdeduplookupexampletypeboolean</IsDeDupLookup>
         <UnboundLookupStyle>unboundlookupstyleexampletypestring</UnboundLookupStyle>
       </TargetEntity>

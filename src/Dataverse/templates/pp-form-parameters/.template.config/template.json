@@ -29,7 +29,7 @@
     "FormType": {
       "type": "parameter",
       "datatype": "choice",
-      "isRequired": false,
+      "isRequired": true,
       "replaces": "formtypeexample",
       "defaultValue": "unknown",
       "choices": [
@@ -41,9 +41,6 @@
         },
         {
           "choice": "dialog"
-        },
-        {
-          "choice": "unknown"
         }
       ],
       "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
