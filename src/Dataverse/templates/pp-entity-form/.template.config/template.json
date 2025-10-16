@@ -14,15 +14,21 @@
 			"modifiers": [
 				{
 					"condition": "(!AddMainForm)",
-					"exclude": ["SolutionDeclarationsRoot/Entities/ItemFolderName/FormXml/main/*"]
+					"exclude": [
+						"SolutionDeclarationsRoot/Entities/ItemFolderName/FormXml/main/*"
+					]
 				},
 				{
 					"condition": "(!AddQuickCreateForm)",
-					"exclude": ["SolutionDeclarationsRoot/Entities/ItemFolderName/FormXml/quick/*"]
+					"exclude": [
+						"SolutionDeclarationsRoot/Entities/ItemFolderName/FormXml/quick/*"
+					]
 				},
 				{
 					"condition": "(!AddDialogForm)",
-					"exclude": ["SolutionDeclarationsRoot/Dialogs/*"]
+					"exclude": [
+						"SolutionDeclarationsRoot/Dialogs/*"
+					]
 				}
 			]
 		}
@@ -42,8 +48,7 @@
 				{
 					"choice": "quickCreate",
 					"description": "Quick Create Form"
-				}
-				,
+				},
 				{
 					"choice": "dialog",
 					"description": "Dialog Form"
@@ -66,6 +71,14 @@
 			"replaces": "ItemFolderName",
 			"fileRename": "ItemFolderName",
 			"description": "Logical name of the entity for which the form will be created"
+		},
+		"DialogUniqueName": {
+			"type": "parameter",
+			"datatype": "text",
+			"isRequired": false,
+			"defaultValue": "unknown",
+			"replaces": "dialogexampleuniquename",
+			"description": "Unique name for the dialog that will be shown to users"
 		},
 		"FormName": {
 			"type": "parameter",
@@ -95,6 +108,7 @@
 		"FormId": {
 			"type": "parameter",
 			"generator": "guid",
+			"defaultValue": "unknown",
 			"replaces": "formexampleId",
 			"fileRename": "formexampleId",
 			"parameters": {
@@ -383,29 +397,33 @@
 			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
 			"args": {
 				"executable": "pwsh",
-				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddFormToSolutionXml.ps1\"",
+				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/SetFormId.ps1\"",
 				"redirectStandardOutput": "false"
 			},
-			"manualInstructions": [{ "text": "Adding form to solution.xml" }],
+			"manualInstructions": [
+				{
+					"text": "Setting form ID"
+				}
+			],
 			"continueOnError": false,
-			"description": "Adding form to solution.xml"
+			"description": "Setting form ID"
 		},
 		{
 			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
 			"args": {
-			  "executable": "pwsh",
-			  "condition": "(FormType == 'dialog')",
-			  "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddToCustomizationsXml.ps1\" ",
-			  "redirectStandardOutput": "false"
+				"executable": "pwsh",
+				"condition": "(FormType == 'dialog')",
+				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddToCustomizationsXml.ps1\" ",
+				"redirectStandardOutput": "false"
 			},
 			"manualInstructions": [
-			  {
-				"text": "Adding new dialog to Customizations.xml"
-			  }
+				{
+					"text": "Adding new dialog to Customizations.xml"
+				}
 			],
 			"continueOnError": false,
 			"description": "Adding new dialog to Customizations.xml"
-		  },
+		},
 		{
 			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
 			"condition": "(AddDialogForm)",
@@ -414,7 +432,11 @@
 				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/SetVariables.ps1\"",
 				"redirectStandardOutput": "false"
 			},
-			"manualInstructions": [{ "text": "Setting variables for new form" }],
+			"manualInstructions": [
+				{
+					"text": "Setting variables for new form"
+				}
+			],
 			"continueOnError": false,
 			"description": "Setting variables for new form"
 		},
@@ -425,7 +447,11 @@
 				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Cleanup.ps1\"",
 				"redirectStandardOutput": "false"
 			},
-			"manualInstructions": [{ "text": "Removing Scripts" }],
+			"manualInstructions": [
+				{
+					"text": "Removing Scripts"
+				}
+			],
 			"continueOnError": false,
 			"description": "Removing Scripts"
 		}

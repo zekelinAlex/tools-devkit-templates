@@ -47,7 +47,7 @@ elseif ( ('formtypeexample' -eq 'unknown') -or ('exampleentityname' -eq 'unknown
     }
     $entityXmlPath = $matches[0].FullName
 }
-elseif ($formId -eq "unknownFormId") {
+elseif ($formId -eq "{unknownFormId}") {
     $formDirectory = './SolutionDeclarationsRoot/Entities/exampleentityname/FormXml/formtypeexample/'
 
     #Entities

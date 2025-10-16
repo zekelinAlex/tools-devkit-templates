@@ -36,7 +36,7 @@ if (-not $eventNode ) {
 
 # Create a new handler element
 $handlerNode = $entityXml.CreateElement('Handler')
-$handlerNode.SetAttribute('libraryName', 'examplelibraryname.js')
+$handlerNode.SetAttribute('libraryName', '$webresource:examplelibraryname.js')
 $handlerNode.SetAttribute('functionName', 'examplefunctionname')
 $handlerNode.SetAttribute('passExecutionContext', 'true')
 $handlerNode.SetAttribute('enabled', 'true')

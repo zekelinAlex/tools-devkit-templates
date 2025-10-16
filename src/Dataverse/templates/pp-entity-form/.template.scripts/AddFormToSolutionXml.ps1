@@ -1,4 +1,9 @@
-﻿# Resolve the relative path to an absolute path (to support other OSes)
+﻿param(
+    [Parameter(Mandatory=$true)]
+    [string]$formId
+)
+
+# Resolve the relative path to an absolute path (to support other OSes)
 $solutionPath = Resolve-Path -Path 'SolutionDeclarationsRoot/Other/Solution.xml'
 
 # Load the XML file
@@ -7,7 +12,7 @@ $rootComponents = $File.SelectSingleNode("//RootComponents")
 
 $newComponent = $File.CreateElement("RootComponent")
 $newComponent.SetAttribute("type", '60')
-$newComponent.SetAttribute("id", '{formexampleId}')
+$newComponent.SetAttribute("id", "$formId")
 <!--#if (FormType != "dialog") -->
 $newComponent.SetAttribute("behavior", '0')
 <!--#endif -->

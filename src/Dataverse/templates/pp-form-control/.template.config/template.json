@@ -67,6 +67,21 @@
         }
       ]
     },
+    "isReadOnly": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "false",
+      "replaces": "isreadonlyexamplechoice",
+      "description": "Whether the control is read-only (True) or writable (False)",
+      "choices": [
+        {
+          "choice": "true"
+        },
+        {
+          "choice": "false"
+        }
+      ]
+    },
     "FormId": {
       "type": "parameter",
       "datatype": "string",
