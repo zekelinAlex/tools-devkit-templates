@@ -45,7 +45,7 @@
     "CustomViewIdgenerated": {
       "type": "generated",
       "generator": "guid",
-      "condition": "(CustomViewId == \"\")",
+      "condition": "(ViewId == \"\")",
       "replaces": "customViewIdexample",
       "fileRename": "customViewIdexample",
       "parameters": {

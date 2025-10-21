@@ -26,6 +26,14 @@
       "replaces": "appexamplename",
       "fileRename": "appexamplename"
     },
+    "GroupDisplayName": {
+      "type": "parameter",
+      "datatype": "text",
+      "description": "Display name of the group that will be created in the sitemap",
+      "defaultValue": "New Group",
+      "replaces": "groupdisplaynameexample",
+      "fileRename": "groupdisplaynameexample"
+    },
     "GroupTitle": {
       "type": "parameter",
       "datatype": "text",

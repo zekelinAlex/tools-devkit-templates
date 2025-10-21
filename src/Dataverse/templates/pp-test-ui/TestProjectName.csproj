@@ -26,6 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Data\a pen warehouse item of quantity 5.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\a printer warehouse item of quantity 5.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="reqnroll.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
