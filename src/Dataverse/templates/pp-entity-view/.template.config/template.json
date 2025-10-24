@@ -42,23 +42,46 @@
       "fileRename": "examplepublisherprefix",
       "description": "Publisher prefix of the entity"
     },
-    "CustomViewIdgenerated": {
-      "type": "generated",
-      "generator": "guid",
-      "condition": "(ViewId == \"\")",
-      "replaces": "customViewIdexample",
-      "fileRename": "customViewIdexample",
-      "parameters": {
-        "defaultFormat": "d"
-      }
-    },
     "ViewId": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
+      "defaultValue": "unknown",
       "defaultValue": "customViewIdexample",
       "replaces": "customViewIdexample",
       "description": "GUID of the specific view where the cell will be added"
     }
-  }
+  },
+	"postActions": [
+		{
+			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+			"args": {
+				"executable": "pwsh",
+				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/SetFormId.ps1\"",
+				"redirectStandardOutput": "false"
+			},
+			"manualInstructions": [
+				{
+					"text": "Setting form ID"
+				}
+			],
+			"continueOnError": false,
+			"description": "Setting form ID"
+		},
+		{
+			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+			"args": {
+				"executable": "pwsh",
+				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Cleanup.ps1\"",
+				"redirectStandardOutput": "false"
+			},
+			"manualInstructions": [
+				{
+					"text": "Removing Scripts"
+				}
+			],
+			"continueOnError": false,
+			"description": "Removing Scripts"
+		}
+	]
 }
