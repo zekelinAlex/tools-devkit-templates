@@ -5,7 +5,7 @@
       <Title description="examplebuttonlable" languagecode="1033" />
     </Titles>
   </LocLabel>
-  <LocLabel Id="examplepublisher.exampleentityname.Button.examplebuttonlable.LabelText">
+  <LocLabel Id="examplepublisher.exampleentityname.Button.examplebuttonlogicalname.LabelText">
     <Titles>
       <Title description="examplebuttonlable" languagecode="1033" />
     </Titles>
