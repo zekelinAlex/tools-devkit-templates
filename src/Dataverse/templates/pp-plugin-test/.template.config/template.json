@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.PluginTest",
+  "name": "Power Platform: Plugin Test",
+  "shortName": "pp-plugin-test",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "sourceName": "exampleplugintestprojectname",
+  "sources": [
+    {
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        "*/**/[Bb]in/**",
+        "*/**/[Oo]bj/**",
+        "**/**/[Bb]in/**",
+        "**/**/[Oo]bj/**",
+        ".template.config/**/*"
+      ]
+    }
+  ],
+  "preferNameDirectory": true,
+  "symbols": {
+    "PluginProjectPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "examplepluginprojectpath",
+      "defaultValue": "unknown",
+      "description": "Path to the plugin project csproj file (default: unknown)"
+    },
+    "PluginTestProjectName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleplugintestprojectname",
+      "defaultValue": "Plugins.Tests",
+      "description": "Name of the plugin test project (default: Plugins.Tests)"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/SetUp.ps1\"",
+        "redirectStandardOutput": "false"
+      }
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Cleanup.ps1\"",
+        "redirectStandardOutput": "false"
+      }
+    }
+  ]
+}
