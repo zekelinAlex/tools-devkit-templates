@@ -1,14 +1,13 @@
 dotnet new mstest --framework net462 -n "exampleplugintestprojectname"
 
-
 if ("examplepluginprojectpath" -ne "unknown") {
     dotnet add "exampleplugintestprojectname" reference "examplepluginprojectpath"
 }
 
+dotnet remove "exampleplugintestprojectname" package MSTest
 dotnet add "exampleplugintestprojectname" package XrmMockup365
 dotnet add "exampleplugintestprojectname" package MSTest.TestAdapter
 dotnet add "exampleplugintestprojectname" package MSTest.TestFramework
-dotnet remove "exampleplugintestprojectname" package MSTest
 
 $pkgRoot = "$env:USERPROFILE\.nuget\packages\xrmmockup365"
 
@@ -43,55 +42,20 @@ $toInsert = @(
 $newContent = $beforeEnd + $toInsert + $afterEnd
 $newContent | Set-Content $csproj
 
-$ver  = "9.0.2.59"
-$root = "$env:USERPROFILE\.nuget\packages\microsoft.crmsdk.coreassemblies\$ver\lib\net462"
-$dst  = "exampleplugintestprojectname\Metadata"
+./.template.scripts\RestoreNugetPackages.ps1
 
-Copy-Item "$root\Microsoft.Xrm.Sdk.dll"       -Destination $dst -Force
-Copy-Item "$root\Microsoft.Crm.Sdk.Proxy.dll" -Destination $dst -Force
+Remove-Item "exampleplugintestprojectname\Metadata\MetadataGenerator365.exe.config" -Recurse -Force
 
-$toolingRoot = "$env:USERPROFILE\.nuget\packages\microsoft.crmsdk.xrmtooling.coreassembly"
-$toolingVer  = (Get-ChildItem $toolingRoot | Sort-Object Name -Descending | Select-Object -First 1).Name
-$toolingLib  = Join-Path $toolingRoot "$toolingVer\lib\net462"
-Copy-Item (Join-Path $toolingLib "Microsoft.Xrm.Tooling.Connector.dll") -Destination $dst -Force
+$metadataConfigFile = ".template.temp\MetadataGenerator365.exe.config"
+$metadataFolder = "exampleplugintestprojectname\Metadata"
 
-# Newtonsoft.Json
-$newtonRoot = "$env:USERPROFILE\.nuget\packages\newtonsoft.json"
-if (Test-Path $newtonRoot) {
-  $newtonVer = (Get-ChildItem $newtonRoot | Sort-Object Name -Descending | Select-Object -First 1).Name
-  $newtonLib = Join-Path $newtonRoot "$newtonVer\lib\net45"
-  if (Test-Path (Join-Path $newtonLib "Newtonsoft.Json.dll")) {
-    Copy-Item (Join-Path $newtonLib "Newtonsoft.Json.dll") -Destination $dst -Force
-  }
-}
+Copy-Item -Path $metadataConfigFile -Destination $metadataFolder -Force
 
-# ADAL
-$adalRoot = "$env:USERPROFILE\.nuget\packages\microsoft.identitymodel.clients.activedirectory"
-if (Test-Path $adalRoot) {
-  $adalVer = (Get-ChildItem $adalRoot | Sort-Object Name -Descending | Select-Object -First 1).Name
-  $adalLibs = @(
-    Join-Path $adalRoot "$adalVer\lib\net461",
-    Join-Path $adalRoot "$adalVer\lib\net45"
-  )
-  foreach ($p in $adalLibs) {
-    $adalDll = Join-Path $p "Microsoft.IdentityModel.Clients.ActiveDirectory.dll"
-    if (Test-Path $adalDll) {
-      Copy-Item $adalDll -Destination $dst -Force
-      break
-    }
-  }
-}
+Remove-Item "exampleplugintestprojectname\Test1.cs" -Recurse -Force
 
-$adalRoot = "$env:USERPROFILE\.nuget\packages\microsoft.identitymodel.clients.activedirectory"
-$adalVer  = "3.19.8"
-$libPaths = @(
-  Join-Path $adalRoot "$adalVer\lib\net461",
-  Join-Path $adalRoot "$adalVer\lib\net45"
-)
-$adalDll = $null
-foreach ($p in $libPaths) {
-  $candidate = Join-Path $p "Microsoft.IdentityModel.Clients.ActiveDirectory.dll"
-  if (Test-Path $candidate) { $adalDll = $candidate; break }
-}
-if (-not $adalDll) { throw "ADAL dll not found in $adalRoot" }
-Copy-Item $adalDll -Destination $dst -Force
+Copy-Item -Path ".template.temp\TestBase.cs" -Destination "exampleplugintestprojectname" -Force
+
+cd "exampleplugintestprojectname\Metadata\"
+./MetadataGenerator*.exe
+cd ..\..\
+
