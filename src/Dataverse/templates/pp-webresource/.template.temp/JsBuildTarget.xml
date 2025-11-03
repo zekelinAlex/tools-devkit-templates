@@ -1,0 +1,13 @@
+<BuildTarget>
+<PropertyGroup>
+    <TsProjectDir>$(MSBuildThisFileDirectory)TS</TsProjectDir>
+    <TsOutFile>$(TsProjectDir)\build\examplepublisher_fileexamplename.js</TsOutFile>
+    <WebResourceOutFile>$(MSBuildThisFileDirectory)Declarations\WebResources\examplepublisher_examplepublisher_fileexamplename.js</WebResourceOutFile>
+  </PropertyGroup>
+  <Target Name="BuildTypeScript" BeforeTargets="Build">
+    <Message Text="Building TypeScript project in $(TsProjectDir)" Importance="High" />
+    <Exec Command="npm ci" WorkingDirectory="$(TsProjectDir)" Condition="!Exists('$(TsProjectDir)\node_modules')" />
+    <Exec Command="npm run build" WorkingDirectory="$(TsProjectDir)" />
+    <Copy SourceFiles="$(TsOutFile)" DestinationFiles="$(WebResourceOutFile)" SkipUnchangedFiles="true" />
+  </Target>
+</BuildTarget>

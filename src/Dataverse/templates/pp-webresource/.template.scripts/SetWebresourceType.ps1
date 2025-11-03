@@ -9,7 +9,10 @@ switch ($extension) {
     '.htm' { $type = 1 }
     '.html' { $type = 1 }
     '.css' { $type = 2 }
-    '.js' { $type = 3 }
+    '.js' { 
+        $type = 3 
+        .template.scripts\AddBuildTarget.ps1
+    }
     '.xml' { $type = 4 }
     '.png' { $type = 5 }
     '.jpg' { $type = 6 }

@@ -35,22 +35,6 @@ if (-not $itemGroup) {
     $xml.Project.AppendChild($itemGroup) | Out-Null
 }
 
-if (-not $existingSolutionRef) {
-    $solutionRef = $xml.CreateElement("PackageReference", $xml.Project.NamespaceURI)
-    $solutionRef.SetAttribute("Include", "TALXIS.SDK.BuildTargets.CDS.Solution")
-    $solutionRef.SetAttribute("Version", "2.0.*")
-
-    $itemGroup.AppendChild($solutionRef) | Out-Null
-}
-
-if (-not $existingTypeScriptRef) {
-    $typeScriptRef = $xml.CreateElement("PackageReference", $xml.Project.NamespaceURI)
-    $typeScriptRef.SetAttribute("Include", "TALXIS.SDK.BuildTargets.CDS.TypeScriptCommon")
-    $typeScriptRef.SetAttribute("Version", "2.1.*")
-
-    $itemGroup.AppendChild($typeScriptRef) | Out-Null
-}
-
 if (-not $existingCoreAssemblies) {
     $coreAssembliesRef = $xml.CreateElement("PackageReference", $xml.Project.NamespaceURI)
     $coreAssembliesRef.SetAttribute("Include", "Microsoft.CrmSdk.CoreAssemblies")
