@@ -134,29 +134,23 @@ if (-not $targetRow) {
     exit 1
 }
 
-# Find existing cell in the target row
 $existingCell = $targetRow.SelectSingleNode('./cell')
 if (-not $existingCell) {
     Write-Error "No existing cell found in the target row"
     exit 1
 }
 
-# Add parameters to control node in existing cell
 $controlNode = $existingCell.SelectSingleNode('./control')
 if ($controlNode -and $parameterPath) {
-    # Load parameter content
     [xml]$parameterXml = Get-Content -Path $parameterPath -Raw
     
-    # Create parameters wrapper node
     $parametersNode = $entityXml.CreateElement("parameters")
     
-    # Import parameter nodes into the parameters wrapper
     foreach ($paramNode in $parameterXml.parameters.ChildNodes) {
         $importedParam = $entityXml.ImportNode($paramNode, $true)
         $parametersNode.AppendChild($importedParam) | Out-Null
     }
     
-    # Add parameters wrapper to control
     $controlNode.AppendChild($parametersNode) | Out-Null
 }
 else {
