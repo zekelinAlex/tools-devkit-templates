@@ -7,39 +7,26 @@
     <JetsCoreDir>$(MSBuildProjectDirectory)\jest-core</JetsCoreDir>
     <WebResPath>examplescriptlibrarypath</WebResPath>
 
-
     <EnableJestJUnit>false</EnableJestJUnit>
     <JestJUnitOutput>$(MSBuildProjectDirectory)\TestResults\jest-junit.xml</JestJUnitOutput>
   </PropertyGroup>
 
-  <Target Name="NpmInstallForJest" BeforeTargets="Build">
-    <Message Text="Node: " Importance="high" />
-    <Exec Command="node -v" StandardOutputImportance="high" />
-    <Message Text="NPM: " Importance="high" />
-    <Exec Command="npm -v" StandardOutputImportance="high" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+  </ItemGroup>
 
-    <Message Text="Installing npm packages (Jest)" Importance="high" />
-    <Exec Command="npm install" WorkingDirectory="$(MSBuildProjectDirectory)" ContinueOnError="true"
-      StandardOutputImportance="high" StandardErrorImportance="high" />
-
-    <Message Text="Checking Jest presence..." Importance="high" />
-    <Exec Command="npx jest --version" WorkingDirectory="$(MSBuildProjectDirectory)"
-      ContinueOnError="false" StandardOutputImportance="high" StandardErrorImportance="high" />
-  </Target>
+  <ItemGroup>
+    <Compile Remove="MSTestSettings.cs" />
+  </ItemGroup>
 
   <Target Name="RunJest" BeforeTargets="VSTest">
     <Message Text="Running Jest tests..." Importance="high" />
-    <PropertyGroup>
-      <JestCmd Condition="'$(EnableJestJUnit)' == 'true'">npx jest --runInBand --ci
-        --reporters=default --reporters=jest-junit</JestCmd>
-      <JestCmd Condition="'$(EnableJestJUnit)' != 'true'">npx jest --runInBand --ci</JestCmd>
-    </PropertyGroup>
-    <Exec Command="$(JestCmd)"
+    <Exec
+      Command="npx jest --runInBand --ci --env=jsdom --verbose"
       WorkingDirectory="$(MSBuildProjectDirectory)"
-      EnvironmentVariables="JETS_CORE=$(JetsCoreDir);WEBRES_PATH=$(WebResPath);JEST_JUNIT_OUTPUT=$(JestJUnitOutput)"
+      EnvironmentVariables="JETS_CORE=$(JetsCoreDir);WEBRES_PATH=$(WebResPath)"
       ContinueOnError="false"
       StandardOutputImportance="high"
       StandardErrorImportance="high" />
   </Target>
-
 </Project>
