@@ -429,6 +429,100 @@ The Templates Builder reads a `ControlManifest.Input.xml` file (which contains t
 - `--TemplateIdentity`: Unique identifier for the template (used in template.json)
 - `--TemplateShortName`: Short name used when invoking the template with `dotnet new`
 
+### Power Platform: Script Test Template
+
+This template creates a test project for Power Platform JavaScript/TypeScript web resources using Jest. It provides a complete testing infrastructure with Xrm API mocks, helper functions, and integration with .NET test framework.
+
+## Overview
+
+The `pp-script-test` template generates a test project configured for testing Dataverse web resources (form scripts, ribbon commands, etc.). It includes:
+
+- Jest test framework with jsdom environment
+- Xrm API mocks for Dataverse client-side API
+- Helper functions for creating test objects (forms, attributes, controls)
+- Web resource loader utility for testing your scripts
+- .NET project integration for running tests via `dotnet test`
+- Automatic npm package installation
+
+### Basic Usage
+
+Create a script test project:
+
+```console
+dotnet new pp-script-test `
+--output "tests/Script.Tests" `
+--ScriptTestProjectName "Script.Tests" `
+--ScriptLibraryPath "../src/Scripts.Warehouse" `
+--allow-scripts yes
+```
+
+The template creates:
+
+1. **.NET Test Project** - A .NET 8.0 project confiured to run Jest tests via `dotnet test`
+2. **Jest Confiuration** - `jest.config.js` configured for jsdom environment
+3. **Packae Configuration** - `package.json` with Jest dependencies
+4. **jest-core Directory** - Reusable core library containing:
+   - Xrm API mocks (`setupXrm.js`)
+   - Helper functions (`helpers.js`)
+   - Main export (`index.js`)
+5. **Tests Directory** - Sample test structure with utilities
+6. **Web Resource Loader** - Utility for loading and testing web resources
+
+## Project Structure
+
+```
+Script.Tests/
+├── jest-core/
+│   ├── index.js          # Main export for jest-core
+│   ├── setupXrm.js       # Xrm API mock setup
+│   ├── helpers.js        # Helper functions for test objects
+│   └── package.json      # jest-core package definition
+├── tests/
+│   └── utils/
+│       └── loadWebRes.js  # Web resource loader utility
+├── jest.config.js        # Jest configuration
+├── package.json          # Project npm dependencies
+└── Script.Tests.csproj   # .NET project file
+```
+
+### Basic Test Example
+
+Create a test file in the `tests` directory (e.g., `tests/myScript.test.js`):
+
+```javascript
+const { setupXrm, resetXrmMocks, makeForm, makeAttr, makeControl } = require('../jest-core');
+const { loadWebResource } = require('./utils/loadWebRes');
+
+describe('My Form Script', () => {
+  beforeEach(() => {
+    setupXrm();
+  });
+
+  afterEach(() => {
+    resetXrmMocks();
+  });
+
+  test('should set field value on form load', () => {
+    // Arrange
+    const nameAttr = makeAttr('');
+    const nameControl = makeControl();
+    const formContext = makeForm(
+      { name: nameAttr },
+      { name: nameControl }
+    );
+
+    // Load your web resource
+    const webRes = loadWebResource('path/to/your/script.js');
+    
+    // Act - Call your function
+    webRes.onFormLoad(formContext);
+
+    // Assert
+    expect(nameAttr.setValue).toHaveBeenCalledWith('Default Value');
+  });
+});
+```
+
 ## Collaboration
 
 We are happy to collaborate with developers and contributors interested in enhancing Power Platform development processes. If you have feedback, suggestions, or would like to contribute, please feel free to submit issues or pull requests.
