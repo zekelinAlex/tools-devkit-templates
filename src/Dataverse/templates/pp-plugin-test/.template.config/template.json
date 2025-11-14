@@ -9,82 +9,8 @@
     "type": "item"
   },
   "sourceName": "exampleplugintestprojectname",
-  "sources": [
-    {
-      "exclude": [
-        "**/[Bb]in/**",
-        "**/[Oo]bj/**",
-        "*/**/[Bb]in/**",
-        "*/**/[Oo]bj/**",
-        "**/**/[Bb]in/**",
-        "**/**/[Oo]bj/**",
-        ".template.config/**/*"
-      ]
-    }
-  ],
   "preferNameDirectory": true,
-  "symbols": {
-    "PluginProjectPath": {
-      "type": "parameter",
-      "isRequired": true,
-      "datatype": "text",
-      "replaces": "examplepluginprojectpath",
-      "defaultValue": "unknown",
-      "description": "Path to the plugin project csproj file (default: unknown)"
-    },
-    "PluginTestProjectName": {
-      "type": "parameter",
-      "isRequired": true,
-      "datatype": "text",
-      "replaces": "exampleplugintestprojectname",
-      "defaultValue": "Plugins.Tests",
-      "description": "Name of the plugin test project (default: Plugins.Tests)"
-    },
-    "AppId": {
-      "type": "parameter",
-      "isRequired": true,
-      "datatype": "text",
-      "replaces": "exampleappid",
-      "description": ""
-    },
-    "ClientSecret": {
-      "type": "parameter",
-      "isRequired": true,
-      "datatype": "text",
-      "replaces": "exampleclientsecret",
-      "description": ""
-    },
-    "TenadId": {
-      "type": "parameter",
-      "isRequired": true,
-      "datatype": "text",
-      "replaces": "exampletenadid",
-      "description": ""
-    },
-    "Solutions": {
-      "type": "parameter",
-      "isRequired": true,
-      "datatype": "text",
-      "replaces": "examplesolutionsfortests",
-      "description": "shoud be if format (SolutionsDataModel,SolutionsLogic,SolutionsSecurity,SolutionsUI)"
-    },
-    "Url": {
-      "type": "parameter",
-      "isRequired": true,
-      "datatype": "text",
-      "replaces": "exampleappurl",
-      "description": ""
-    }
-  },
   "postActions": [
-    {
-      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-      "args": {
-        "executable": "pwsh",
-        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/NamespaceSetUp.ps1\"",
-        "redirectStandardOutput": "false"
-      }
-    },
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "args": {
