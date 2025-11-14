@@ -523,7 +523,7 @@ describe('My Form Script', () => {
 });
 ```
 
-### pp-plugin-test — template for Dataverse/Dynamics 365 plugin tests
+### Power Platform: Plugin Test Template
 
 - FakeXrmEasy v2 documentation: `https://dynamicsvalue.github.io/fake-xrm-easy-docs/`
 
