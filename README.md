@@ -523,6 +523,60 @@ describe('My Form Script', () => {
 });
 ```
 
+### pp-plugin-test — template for Dataverse/Dynamics 365 plugin tests
+
+- FakeXrmEasy v2 documentation: `https://dynamicsvalue.github.io/fake-xrm-easy-docs/`
+
+### What's included
+- **`FakeXrmEasyTestBase.cs`**: a base class that:
+  - creates an `IXrmFakedContext` via `MiddlewareBuilder` (`.AddCrud()`, `.UseCrud()`, `.UseMessages()`);
+  - sets the license via `SetLicense(...)` (default is `Commercial`);
+  - provides an `IOrganizationService` via `_context.GetOrganizationService()`.
+
+### How to use `FakeXrmEasyTestBase.cs`
+Inherit from the base class and use `_context` to seed data and `_service` to invoke the Organization Service.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Xrm.Sdk;
+
+namespace Plugins.Tests
+{
+    [TestClass]
+    public class AccountPluginTests : FakeXrmEasyTestBase
+    {
+        [TestMethod]
+        public void Creates_account_successfully()
+        {
+            // Arrange: seed in-memory data
+            var account = new Entity("account")
+            {
+                Id = Guid.NewGuid(),
+                ["name"] = "Test Account"
+            };
+            _context.Initialize(new List<Entity> { account });
+
+            // Act: use IOrganizationService from the base
+            var createdId = _service.Create(new Entity("contact"));
+
+            // Assert: verify with context storage
+            var created = _context.Data["contact"][createdId];
+            Assert.IsNotNull(created);
+        }
+    }
+}
+```
+
+### Important notes and dependencies
+- **FakeXrmEasy license dependency**: calling `SetLicense(...)` is required before `.Build()`. If needed, replace `Commercial` with `RPL_1_5` or `NonCommercial` according to your usage terms.
+- **Message executors dependency**: if you need custom message executors, uncomment in the base class
+  `.AddFakeMessageExecutors(typeof(FakeXrmEasyTestBase).Assembly)` before `.UseMessages()`.
+  - Dependency: custom executors become available only after their assembly is added.
+  - Activation: `.UseMessages()` enables the message pipeline.
+
+
 ## Collaboration
 
 We are happy to collaborate with developers and contributors interested in enhancing Power Platform development processes. If you have feedback, suggestions, or would like to contribute, please feel free to submit issues or pull requests.
