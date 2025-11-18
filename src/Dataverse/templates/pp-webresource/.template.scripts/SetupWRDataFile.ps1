@@ -25,3 +25,4 @@ $fileNewNoExtName = "examplepublisher_$fileName"
 $destinationPath = Join-Path $destinationFolder $fileNewNoExtName
 
 Copy-Item -Path $filePath -Destination $destinationPath
+

@@ -3,6 +3,27 @@ $destinationFolder = "SolutionDeclarationsRoot\WebResources"
 $fileName = [System.IO.Path]::GetFileName($filePath)
 $baseName = [System.IO.Path]::GetFileNameWithoutExtension($fileName)
 
+# Update JsBuildTarget.xml by replacing placeholder with the actual file name
+$jsBuildTargetPath = ".template.temp\JsBuildTarget.xml"
+if (Test-Path -Path $jsBuildTargetPath) {
+$jsBuildContent = Get-Content -Path $jsBuildTargetPath -Raw
+$jsBuildContent = $jsBuildContent -replace "libraryexamplename", $baseName
+Set-Content -Path $jsBuildTargetPath -Value $jsBuildContent
+
+
+$relativePath = "webresourcefilepathexample"
+
+$path = (Resolve-Path $relativePath).Path
+$root = (Split-Path $path -Parent)         
+$root = (Split-Path $root -Parent)   
+$root = (Split-Path $root -Parent)        
+$csproj = Get-ChildItem -Path $root -Filter *.csproj -File | Select-Object -First 1
+
+
+$jsBuildContent = Get-Content -Path $jsBuildTargetPath -Raw
+$jsBuildContent = $jsBuildContent -replace "csprojfilepathexample", $csproj.FullName
+Set-Content -Path $jsBuildTargetPath -Value $jsBuildContent
+}
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $ppRootDir = Split-Path -Parent $scriptDir
 $jsBuildTargetPath = Join-Path $ppRootDir ".template.temp\JsBuildTarget.xml"

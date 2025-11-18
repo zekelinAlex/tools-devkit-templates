@@ -12,20 +12,6 @@
   "sourceName": "examplesourcename",
   "preferNameDirectory": true,
   "symbols": {
-    "SolutionRootPath": {
-      "type": "parameter",
-      "datatype": "text",
-      "replaces": "SolutionDeclarationsRoot",
-      "isRequired": true,
-      "description": "Path to the solution root directory"
-    },
-    "PublisherPrefix": {
-      "type": "parameter",
-      "datatype": "text",
-      "replaces": "examplepublisherprefix",
-      "isRequired": true,
-      "description": "Publisher prefix for the script library"
-    },
     "LibraryName": {
       "type": "parameter",
       "datatype": "text",
@@ -33,41 +19,5 @@
       "isRequired": true,
       "description": "Name of the script library"
     }
-  },
-  "postActions": [
-
-    {
-			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-			"args": {
-				"executable": "pwsh",
-				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddPackageReferences.ps1\"",
-				"redirectStandardOutput": "false"
-			},
-      "description": "Add TALXIS SDK PackageReferences to project file"
-		},
-    {
-			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-			"args": {
-				"executable": "pwsh",
-				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddTargetsImport.ps1\"",
-				"redirectStandardOutput": "false"
-			},
-      "description": "Add TALXIS SDK PackageReferences to project file"
-		},
-    {
-      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-      "args": {
-        "executable": "pwsh",
-        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Cleanup.ps1\"",
-        "redirectStandardOutput": "false"
-      },
-      "manualInstructions": [
-        {
-          "text": "Removing template files"
-        }
-      ],
-      "continueOnError": false,
-      "description": "Removing template files"
-    }
-  ]
+  }
 }

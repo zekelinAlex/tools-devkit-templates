@@ -429,6 +429,60 @@ The Templates Builder reads a `ControlManifest.Input.xml` file (which contains t
 - `--TemplateIdentity`: Unique identifier for the template (used in template.json)
 - `--TemplateShortName`: Short name used when invoking the template with `dotnet new`
 
+### Power Platform: Script Library template
+
+A .NET project template for building Dataverse script libraries with TypeScript. It scaffolds a `net462` class library project that executes an npm/TypeScript build during MSBuild and outputs a single AMD bundle for use as a web resource.
+
+### What you get
+- A .NET SDK project targeting `net462`
+- TypeScript workspace under `TS/` with:
+  - `tsconfig.json` configured to emit a single bundle to `TS/build/<LibraryName>.js`
+  - `package.json` with `typescript` and `@types/xrm`
+  - npm scripts: `build` and `start` (watch)
+- MSBuild target that runs `npm install` and `npm run build` automatically on `Build` 
+
+### Prerequisites
+- .NET SDK 6+ (`dotnet --version`)
+- Node.js and npm (`node -v`, `npm -v`)
+
+
+### Create a new project
+```bash
+dotnet new pp-script-library -n UI.Scripts --LibraryName MyCompany.Scripts
+```
+### Build and develop
+- Build with MSBuild (this will run npm automatically):
+  ```bash
+  dotnet build
+  ```
+- Develop with watch mode (run inside `TS/`):
+  ```bash
+  npm install
+  npm run start
+  ```
+  Then build the .NET project (optional) to copy outputs to the project output directory.
+
+### Outputs
+After building, you will find:
+- `TS/build/<LibraryName>.js`
+- `TS/build/<LibraryName>.js.map`
+- `TS/build/<LibraryName>.d.ts`
+
+### Use in Dataverse
+- Upload `TS/build/<LibraryName>.js` as a Script (JavaScript) Web Resource.
+
+### Troubleshooting
+- If `npm` is not found during `dotnet build`, ensure Node.js is installed and on PATH.
+- To force a clean TypeScript build:
+  ```bash
+  cd TS
+  rm -rf node_modules build
+  npm install
+  npm run build
+  ```
+- If watch mode does not re-emit, verify `tsconfig.json` paths and that files are saved.
+
+
 ### Power Platform: Script Test Template
 
 This template creates a test project for Power Platform JavaScript/TypeScript web resources using Jest. It provides a complete testing infrastructure with Xrm API mocks, helper functions, and integration with .NET test framework.

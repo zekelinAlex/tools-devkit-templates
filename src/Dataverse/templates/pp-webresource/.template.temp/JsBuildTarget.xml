@@ -1,13 +1,17 @@
 <BuildTarget>
-<PropertyGroup>
-    <TsProjectDir>$(MSBuildThisFileDirectory)TS</TsProjectDir>
-    <TsOutFile>$(TsProjectDir)\build\examplepublisher_fileexamplename.js</TsOutFile>
-    <WebResourceOutFile>$(MSBuildThisFileDirectory)Declarations\WebResources\examplepublisher_examplepublisher_fileexamplename.js</WebResourceOutFile>
+  <PropertyGroup >
+    <UiScriptsProject>csprojfilepathexample</UiScriptsProject>
+    <UiScriptsDir>$([System.IO.Path]::GetDirectoryName('$(UiScriptsProject)'))\</UiScriptsDir>
+    <UiScriptBuiltFile>$(UiScriptsDir)TS\build\libraryexamplename.js</UiScriptBuiltFile>
+    <WebResourcesDir>$(SolutionRootPath)\WebResources\</WebResourcesDir>
+    <RenamedUiScript>$(WebResourcesDir)examplepublisher_libraryexamplename.js</RenamedUiScript>
   </PropertyGroup>
-  <Target Name="BuildTypeScript" BeforeTargets="Build">
-    <Message Text="Building TypeScript project in $(TsProjectDir)" Importance="High" />
-    <Exec Command="npm ci" WorkingDirectory="$(TsProjectDir)" Condition="!Exists('$(TsProjectDir)\node_modules')" />
-    <Exec Command="npm run build" WorkingDirectory="$(TsProjectDir)" />
-    <Copy SourceFiles="$(TsOutFile)" DestinationFiles="$(WebResourceOutFile)" SkipUnchangedFiles="true" />
+  <Target Name="BuildUiScriptsAndCopyUdppMain" BeforeTargets="CoreCompile" >
+    <MSBuild Projects="$(UiScriptsProject)" Targets="Build" Properties="Configuration=$(Configuration)" />
+    <Error Text="libraryexamplename.js not found at $(UiScriptBuiltFile) after building UI.Scripts" Condition="!Exists('$(UiScriptBuiltFile)')" />
+    <MakeDir Directories="$(WebResourcesDir)" />
+    <Copy SourceFiles="$(UiScriptBuiltFile)"
+          DestinationFiles="$(RenamedUiScript)"
+          SkipUnchangedFiles="true" />
   </Target>
 </BuildTarget>
