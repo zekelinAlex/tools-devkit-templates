@@ -3,7 +3,7 @@
   "author": "NETWORG",
   "identity": "TALXIS.DevKit.Templates.Dataverse.PackageDeployerPackage",
   "name": "Power Platform: Package Deployer Package",
-  "shortName": "pp-talxis-pdpackage",
+  "shortName": "pp-package",
   "classifications": ["Dataverse", "Power Platform"],
   "tags": {
     "language": "XML"
