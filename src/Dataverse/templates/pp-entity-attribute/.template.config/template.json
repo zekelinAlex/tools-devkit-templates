@@ -27,7 +27,7 @@
       "defaultValue": ".",
       "replaces": "SolutionDeclarationsRoot",
       "fileRename": "SolutionDeclarationsRoot",
-      "description": "Path to the solution root directory"
+      "description": "Folder under the project folder where solution components will be placed. Use the folder name only, not the full path. Use '.' if you want to place components directly in the project folder."
     },
     "CreateGlobalOptionSet": {
       "type": "computed",
@@ -41,7 +41,7 @@
       "fileRename": "exampleexistingentity",
       "replaces": "exampleexistingentity",
       "isRequired": true,
-      "description": "Schema name of the entity including publisher prefix (Example: new_customentity)"
+      "description": "Typically, a Pascal cased version of the logical name. For example, Account"
     },
     "AttributeType": {
       "type": "parameter",
@@ -74,7 +74,7 @@
     },
     "RequiredLevel": {
       "type": "parameter",
-      "description": "Whether the attribute is required (required) or optional (none) for user input",
+      "description": "Select required level",
       "datatype": "choice",
       "replaces": "attributerequiredlevel",
       "choices": [
@@ -83,14 +83,22 @@
       ],
       "defaultValue": "required"
     },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "description": "Use the same publisher prefix as defined in Other/Solution.xml of the solution where this attribute is introduced to the system.",
+      "datatype": "text",
+      "replaces": "examplepublisherprefix",
+      "fileRename": "examplepublisherprefix",
+      "isRequired": true
+    },
     "LogicalName": {
-      "displayName": "Logical name",
+      "displayName": "Logical name (without publisher prefix)",
+      "description": "All lower-case version of the schema name. For example, account",
       "type": "parameter",
       "datatype": "text",
       "replaces": "examplecustomentityattribute",
       "fileRename": "examplecustomentityattribute",
-      "isRequired": true,
-      "description": "Logical name of the attribute (Example: new_customfield)"
+      "isRequired": true
     },
     "DisplayName": {
       "type": "parameter",

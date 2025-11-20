@@ -19,6 +19,14 @@
       "fileRename": "SolutionDeclarationsRoot",
       "description": "Path to the solution root directory"
     },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "examplepublisherprefix",
+      "fileRename": "examplepublisherprefix",
+      "isRequired": true,
+      "description": "The publisher prefix to be used for the custom OptionSet name (Example: tom, new)"
+    },
     "RequiredLevel": {
       "type": "parameter",
       "description": "Select required level",

@@ -1,4 +1,4 @@
-﻿<optionset Name="examplecustomentityattribute" localizedName="ExampleEntityAttributeDisplayName" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+﻿<optionset Name="examplepublisherprefix_examplecustomentityattribute" localizedName="ExampleEntityAttributeDisplayName" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <OptionSetType>picklist</OptionSetType>
   <IsGlobal>1</IsGlobal>
   <IntroducedVersion>1.0</IntroducedVersion>

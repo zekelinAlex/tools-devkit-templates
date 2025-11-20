@@ -13,7 +13,7 @@
     <CascadeUnshare>NoCascade</CascadeUnshare>
     <CascadeRollupView>NoCascade</CascadeRollupView>
     <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-    <ReferencingAttributeName>examplecustomentityattribute</ReferencingAttributeName>
+    <ReferencingAttributeName>examplepublisherprefix_examplecustomentityattribute</ReferencingAttributeName>
     <RelationshipDescription>
         <Descriptions>
             <Description description="" languagecode="1033" />
@@ -24,7 +24,7 @@
             <NavPaneDisplayOption>UseCollectionName</NavPaneDisplayOption>
             <NavPaneArea>Details</NavPaneArea>
             <NavPaneOrder>10000</NavPaneOrder>
-            <NavigationPropertyName>examplecustomentityattribute</NavigationPropertyName>
+            <NavigationPropertyName>examplepublisherprefix_examplecustomentityattribute</NavigationPropertyName>
             <RelationshipRoleType>1</RelationshipRoleType>
         </EntityRelationshipRole>
         <EntityRelationshipRole>
