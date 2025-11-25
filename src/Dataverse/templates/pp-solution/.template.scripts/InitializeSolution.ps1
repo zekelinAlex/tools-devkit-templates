@@ -14,6 +14,16 @@ $csproj = Get-ChildItem -Path . -Filter *.cdsproj | Select-Object -First 1
 $propertyGroup = $xml.Project.PropertyGroup | Where-Object { $_.SolutionRootPath } | Select-Object -First 1
 $propertyGroup.SolutionRootPath = 'Declarations'
 
+# Add the PublisherPrefix to the .cdsproj file
+$newElement = $xml.CreateElement('PublisherPrefix', $xml.Project.NamespaceURI)
+$newElement.InnerText = 'examplepublisherprefix'
+$propertyGroup.AppendChild($newElement) > $null
+
+#Versioning the solution
+$newElement = $xml.CreateElement('Version', $xml.Project.NamespaceURI)
+$newElement.InnerText = '1.0.0'
+$propertyGroup.AppendChild($newElement) > $null
+
 # Add the missing project type ID to make dotnet accept the custom project type
 $newElement = $xml.CreateElement('DefaultProjectTypeGuid', $xml.Project.NamespaceURI)
 $newElement.InnerText = 'FAE04EC0-301F-11D3-BF4B-00C04F79EFBC'
@@ -29,8 +39,11 @@ $comment = $xml.CreateComment(' Override the default Publish target to prevent e
 $xml.Project.AppendChild($comment) > $null
 $xml.Project.AppendChild($targetElement) > $null
 
-# Save the updated XML back to the .cdsproj file
 $xml.Save($csproj.FullName)
+$csprojFullName = $csproj.FullName
+$content = Get-Content $csprojFullName -Raw
+$content = $content -replace '<PackageReference Include="Microsoft.PowerApps.MSBuild.Solution" Version="1.*" />', '<PackageReference Include="TALXIS.DevKit.Build.Dataverse.Solution" Version="0.0.0.1" />'
+Set-Content -Path $csprojFullName -Value $content -NoNewline
 
 # Find the Solution.xml file and read it as XML
 $solutionXml = Get-ChildItem -Path . -Filter Solution.xml -Recurse | Select-Object -First 1

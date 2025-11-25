@@ -15,6 +15,12 @@
   </Target>
 
   <ItemGroup>
+    <PackageReference Include="TALXIS.DevKit.Build.Dataverse.ScriptLibrary"
+      Version="0.0.0.1"
+      PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="TS\build\**\*.*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
