@@ -22,18 +22,38 @@ $projectName = [System.IO.Path]::GetFileNameWithoutExtension($csprojFile.Name)
 $newAssemblyName = $projectName -replace '\.', ''
 $ProjectPath = $csprojFile.FullName
 
-# --- 5. Load .csproj as XML ---
-[xml]$csproj = Get-Content $ProjectPath -Raw
+# --- 5. Update the Sdk in the .csproj text ---
+$csprojText = Get-Content $ProjectPath -Raw
+$csprojText = $csprojText -replace '<Project Sdk="Microsoft.NET.Sdk">', '<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.1">'
+Set-Content -Path $ProjectPath -Value $csprojText
+
+# --- 6. Load .csproj as XML ---
+[xml]$csproj = $csprojText
 $namespaceUri = $csproj.DocumentElement.NamespaceURI
 
-# --- 6. Find or create a PropertyGroup ---
+# --- 7. Find or create the first PropertyGroup ---
+$firstPropertyGroup = $csproj.Project.PropertyGroup | Select-Object -First 1
+if (-not $firstPropertyGroup) {
+    $firstPropertyGroup = $csproj.CreateElement("PropertyGroup", $namespaceUri)
+    $csproj.Project.PrependChild($firstPropertyGroup) | Out-Null
+}
+$projectTypeElement = $firstPropertyGroup.ProjectType
+if (-not $projectTypeElement) {
+    $projectTypeElement = $csproj.CreateElement("ProjectType", $namespaceUri)
+    $projectTypeElement.InnerText = "Plugin"
+    $firstPropertyGroup.AppendChild($projectTypeElement) | Out-Null
+} else {
+    $projectTypeElement.InnerText = "Plugin"
+}
+
+# --- 8. Find or create a PropertyGroup ---
 $propertyGroup = $csproj.Project.PropertyGroup | Where-Object { $_.AssemblyName -or $_.TargetFramework }
 if (-not $propertyGroup) {
     $propertyGroup = $csproj.CreateElement("PropertyGroup", $namespaceUri)
     $csproj.Project.AppendChild($propertyGroup) | Out-Null
 }
 
-# --- 7. Remove existing AssemblyName and PackageId ---
+# --- 9. Remove existing AssemblyName and PackageId ---
 $csproj.Project.PropertyGroup.AssemblyName | ForEach-Object {
     $_.ParentNode.RemoveChild($_) | Out-Null
 }
@@ -44,20 +64,20 @@ $csproj.Project.PropertyGroup.Company | ForEach-Object {
     $_.ParentNode.RemoveChild($_) | Out-Null
 }
 
-# --- 8. Add new AssemblyName and PackageId ---
+# --- 10. Add new AssemblyName and PackageId ---
 $assemblyNameElement = $csproj.CreateElement("AssemblyName", $namespaceUri)
 $assemblyNameElement.InnerText = $newAssemblyName
 $propertyGroup.AppendChild($assemblyNameElement) | Out-Null
 
-# --- 9. Add new PackageId ---
+# --- 11. Add new PackageId ---
 $packageIdElement = $csproj.CreateElement("PackageId", $namespaceUri)
 $packageIdElement.InnerText = $newAssemblyName
 $propertyGroup.AppendChild($packageIdElement) | Out-Null
 
-# --- 10. Add new Company ---
+# --- 12. Add new Company ---
 $companyElement = $csproj.CreateElement("Company", $namespaceUri)
 $companyElement.InnerText = $company
 $propertyGroup.AppendChild($companyElement) | Out-Null
 
-# --- 11. Save changes back to the .csproj file ---
+# --- 13. Save changes back to the .csproj file ---
 $csproj.Save($ProjectPath)
