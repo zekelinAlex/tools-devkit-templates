@@ -1,0 +1,34 @@
+<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.1">
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <SolutionRootPath>Declarations</SolutionRootPath>
+    <ProjectType>Solution</ProjectType>
+    <EnableDefaultItems>false</EnableDefaultItems>
+  </PropertyGroup>
+  <PropertyGroup Label="Dataverse solution metadata">
+    <PublisherName>examplepublisher</PublisherName>
+    <PublisherPrefix>examplepublisherprefix</PublisherPrefix>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <!--
+    Solution Packager overrides, un-comment to use: SolutionPackagerType (Managed, Unmanaged, Both)
+    Solution Localization Control, if you want to enabled localization of your solution, un-comment SolutionPackageEnableLocalization and set the value to true. - Requires use of -loc flag on Solution Clone or Sync
+  -->
+  <!--
+  <PropertyGroup>
+    <SolutionPackageType>Managed</SolutionPackageType>
+    <SolutionPackageEnableLocalization>false</SolutionPackageEnableLocalization>
+  </PropertyGroup>
+  -->
+  <!-- Override the default Publish target to prevent errors when running publish on .sln file -->
+  <Target Name="Publish" />
+
+
+
+
+
+
+  
+
+</Project>
