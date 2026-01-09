@@ -100,7 +100,7 @@
   },
   "primaryOutputs": [
     {
-      "path": "SolutionLogicalNameExample.cdsproj"
+      "path": "SolutionLogicalNameExample.csproj"
     }
   ],
   "postActions": [

@@ -5,7 +5,7 @@ $optionNumber = (Get-Random -Minimum 10000 -Maximum 99999) * 10000
 
 $attributeXmlPath 
 
-$attributeXmlPath = "SolutionDeclarationsRoot\OptionSets\examplecustomentityattribute.xml"
+$attributeXmlPath = "SolutionDeclarationsRoot\OptionSets\examplepublisherprefix_examplecustomentityattribute.xml"
 
 [xml]$attributeXml = Get-Content -Path $attributeXmlPath -Raw
 
@@ -65,7 +65,7 @@ $rootComponents = $File.SelectSingleNode("//RootComponents")
 
 $newComponent = $File.CreateElement("RootComponent")
 $newComponent.SetAttribute("type", '9')
-$newComponent.SetAttribute("schemaName", 'examplecustomentityattribute')
+$newComponent.SetAttribute("schemaName", 'examplepublisherprefix_examplecustomentityattribute')
 $newComponent.SetAttribute("behavior", '0')
 
 # Append the new component to the root components without writing output to console
