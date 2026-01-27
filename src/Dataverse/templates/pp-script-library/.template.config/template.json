@@ -16,7 +16,7 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "examplelibraryname",
-      "isRequired": true,
+      "isRequired": false,
       "description": "Name of the script library"
     }
   }

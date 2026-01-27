@@ -22,9 +22,14 @@ $projectName = [System.IO.Path]::GetFileNameWithoutExtension($csprojFile.Name)
 $newAssemblyName = $projectName -replace '\.', ''
 $ProjectPath = $csprojFile.FullName
 
-# --- 5. Update the Sdk in the .csproj text ---
+# --- 5. Update the Sdk in the .csproj text and remove unwanted elements ---
 $csprojText = Get-Content $ProjectPath -Raw
-$csprojText = $csprojText -replace '<Project Sdk="Microsoft.NET.Sdk">', '<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.1">'
+$csprojText = $csprojText -replace '<Project Sdk="Microsoft\.NET\.Sdk">', '<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.1">'
+$csprojText = $csprojText -replace '\s*<PackageReference Include="Microsoft\.PowerApps\.MSBuild\.Plugin"[^>]*/>\s*', ''
+$csprojText = $csprojText -replace '\s*<Import[^>]*Project="\$\(PowerAppsTargetsPath\)\\Microsoft\.PowerApps\.VisualStudio\.Plugin\.targets"[^>]*/>\s*', ''
+$csprojText = $csprojText -replace '\s*<Import[^>]*Project="\$\(PowerAppsTargetsPath\)\\Microsoft\.PowerApps\.VisualStudio\.Plugin\.props"[^>]*/>\s*', ''
+$csprojText = $csprojText -replace '\s*<ProjectTypeGuids>[^<]*</ProjectTypeGuids>\s*', ''
+$csprojText = $csprojText -replace '\s*<PowerAppsTargetsPath>[^<]*</PowerAppsTargetsPath>\s*', ''
 Set-Content -Path $ProjectPath -Value $csprojText
 
 # --- 6. Load .csproj as XML ---
