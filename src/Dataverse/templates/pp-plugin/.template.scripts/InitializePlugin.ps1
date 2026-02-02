@@ -86,3 +86,8 @@ $propertyGroup.AppendChild($companyElement) | Out-Null
 
 # --- 13. Save changes back to the .csproj file ---
 $csproj.Save($ProjectPath)
+
+# --- 14. Copy the PluginBase.cs file to the project ---
+if ("pluginbasetypeexample" -eq "TALXIS") {
+    Copy-Item ".template.temp\\PluginBase.cs" -Destination . -Force
+}

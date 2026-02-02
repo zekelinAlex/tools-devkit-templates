@@ -38,6 +38,17 @@
       "isRequired": true,
       "description": "Company name for the plugin project metadata"
     },
+    "PluginBaseType": {
+      "type": "parameter",
+      "description": "Select the type of PluginBase class to use",
+      "datatype": "choice",
+      "replaces": "pluginbasetypeexample",
+      "choices": [
+        { "choice": "Microsoft" },
+        { "choice": "TALXIS" }
+      ],
+      "defaultValue": "Microsoft"
+    },
     "SigningKeyFilePath": {
       "type": "parameter",
       "datatype": "text",
