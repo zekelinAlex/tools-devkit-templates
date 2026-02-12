@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "mcp__Desktop_Commander__read_file",
+      "Bash(ls -la \"C:\\\\Users\\\\azeke\\\\souce\\\\repos\\\\talxis-projects\\\\WorkProjects\\\\tools-devkit-templates\\\\src\\\\Dataverse\\\\templates\\\\pp-customcontrol\\\\pp-customcontrol-generic\\\\.template.config\"\" && ls -la \"C:Usersazekesoucerepostalxis-projectsWorkProjectstools-devkit-templatessrcDataversetemplatespp-customcontrolpp-customcontrol-generic.template.scripts\"\")",
+      "Bash(git mv:*)"
+    ]
+  }
+}
