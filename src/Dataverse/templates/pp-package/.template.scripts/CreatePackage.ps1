@@ -14,7 +14,7 @@ $content = $content -replace '    </PackageReference>', ''
 Set-Content -Path $csproj -Value $content -NoNewline
 
 $csprojText = Get-Content $csproj -Raw
-$csprojText = $csprojText -replace '<Project Sdk="Microsoft.NET.Sdk">', '<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.1">'
+$csprojText = $csprojText -replace '<Project Sdk="Microsoft.NET.Sdk">', '<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.9">'
 Set-Content -Path $csproj -Value $csprojText
 
 [xml]$csproj = $csprojText
