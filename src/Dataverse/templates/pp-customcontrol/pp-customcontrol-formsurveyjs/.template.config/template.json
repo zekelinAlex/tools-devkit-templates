@@ -1,0 +1,250 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Formsurveyjs",
+  "name": "Power Platform: FormSurveyJS",
+  "shortName": "pp-customcontrol-formsurveyjs",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_SchemaData": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "schemajsonexampletypemultiple",
+      "fileRename": "schemajsonexampletypemultiple",
+      "description": "Designer: Contains the JSON schema that defines the survey. Input: Contains the survey result in a form of key/value pairs.",
+      "isRequired": true
+    },
+    "CustomControl_Mode": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Field Designer"
+        },
+        {
+          "choice": "Template Designer"
+        },
+        {
+          "choice": "Survey Designer"
+        },
+        {
+          "choice": "Client Input"
+        }
+      ],
+      "description": "Select a mode for the control. ()",
+      "isRequired": true
+    },
+    "modevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "modeexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(Mode == \u0022Field Designer\u0022)",
+            "value": "0"
+          },
+          {
+            "condition": "(Mode == \u0022Template Designer\u0022)",
+            "value": "1"
+          },
+          {
+            "condition": "(Mode == \u0022Survey Designer\u0022)",
+            "value": "2"
+          },
+          {
+            "condition": "(Mode == \u0022Client Input\u0022)",
+            "value": "3"
+          }
+        ]
+      },
+      "description": "Select a mode for the control. automatically selected based on Mode"
+    },
+    "CustomControl_Template": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "templateexampletypelookupsimple",
+      "fileRename": "templateexampletypelookupsimple",
+      "description": "Field containing Template lookup. Applicable only to Form Designer mode."
+    },
+    "CustomControl_Form": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "surveyexampletypelookupsimple",
+      "fileRename": "surveyexampletypelookupsimple",
+      "description": "Field containing Form lookup. Applicable only to Client Input mode."
+    },
+    "CustomControl_Title": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "titleexampletypesinglelinetext",
+      "fileRename": "titleexampletypesinglelinetext",
+      "description": "Field containing title of the record. Applicable to all modes expect Client Input."
+    },
+    "CustomControl_Description": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "descriptionexampletypesinglelinetext",
+      "fileRename": "descriptionexampletypesinglelinetext",
+      "description": "Field containing description of the record. Applicable to all modes expect Client Input."
+    },
+    "CustomControl_IsBoundToDialog": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Field Designer"
+        },
+        {
+          "choice": "Template Designer"
+        }
+      ],
+      "description": "Targets only Client Input mode. If set to true, the PCF will output the response to its binding field just like it does on main forms. If not set, it will assume it exists as a standalone full page PCF or on WebPage and handle the response sending by itself via WebAPI. ()"
+    },
+    "isboundtodialogvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "isboundtodialogexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(IsBoundToDialog == \u0022Field Designer\u0022)",
+            "value": "false"
+          },
+          {
+            "condition": "(IsBoundToDialog == \u0022Template Designer\u0022)",
+            "value": "true"
+          }
+        ]
+      },
+      "description": "Targets only Client Input mode. If set to true, the PCF will output the response to its binding field just like it does on main forms. If not set, it will assume it exists as a standalone full page PCF or on WebPage and handle the response sending by itself via WebAPI. automatically selected based on IsBoundToDialog"
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

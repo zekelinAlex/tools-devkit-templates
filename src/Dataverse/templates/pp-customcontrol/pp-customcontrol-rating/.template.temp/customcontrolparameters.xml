@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <ratingvalue type="Whole.None" static="true">ratingvalueexampletypewholenone</ratingvalue>
+  <maxvalue type="Whole.None" static="true">maxvalueexampletypewholenone</maxvalue>
+  <icon type="SingleLine.Text" static="true">iconexampletypesinglelinetext</icon>
+  <unselectedicon type="SingleLine.Text" static="true">unselectediconexampletypesinglelinetext</unselectedicon>
+  <color type="SingleLine.Text" static="true">colorexampletypesinglelinetext</color>
+</parameters>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <data type="SingleLine.Text" static="true">dataexampletypesinglelinetext</data>
+  <displayAsCard type="Enum" static="true">displayascardexampletypeenum</displayAsCard>
+</parameters>

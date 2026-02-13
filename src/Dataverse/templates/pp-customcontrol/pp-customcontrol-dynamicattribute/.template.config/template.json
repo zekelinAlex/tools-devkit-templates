@@ -1,0 +1,251 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Dynamicattribute",
+  "name": "Power Platform: DynamicAttribute",
+  "shortName": "pp-customcontrol-dynamicattribute",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_BindingField": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "bindingfieldexampletype",
+      "fileRename": "bindingfieldexampletype",
+      "description": "Serialized value for control",
+      "isRequired": true
+    },
+    "CustomControl_AttributeDefinition": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "attributedefinitionexampletypelookupsimple",
+      "fileRename": "attributedefinitionexampletypelookupsimple",
+      "description": ""
+    },
+    "CustomControl_TextFieldOutput": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "textfieldexampletypesinglelinetext",
+      "fileRename": "textfieldexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControl_IntegerFieldOutput": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "integerfieldexampletypewholenone",
+      "fileRename": "integerfieldexampletypewholenone",
+      "description": ""
+    },
+    "CustomControl_DecimalFieldOutput": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "decimalfieldexampletypedecimal",
+      "fileRename": "decimalfieldexampletypedecimal",
+      "description": ""
+    },
+    "CustomControl_OptionSetLookupFieldOutput": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "optionsetfieldexampletypelookupsimple",
+      "fileRename": "optionsetfieldexampletypelookupsimple",
+      "description": ""
+    },
+    "CustomControl_BooleanFieldOutput": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "booleanfieldexampletypetwooptions",
+      "fileRename": "booleanfieldexampletypetwooptions",
+      "description": ""
+    },
+    "CustomControl_DateTimeUserLocalFieldOutput": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "datetimeuserlocalfieldexampletypedateandtimedateandtime",
+      "fileRename": "datetimeuserlocalfieldexampletypedateandtimedateandtime",
+      "description": ""
+    },
+    "CustomControl_DateTimeTimeZoneindependentFieldOutput": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "datetimetzifieldexampletypedateandtimedateandtime",
+      "fileRename": "datetimetzifieldexampletypedateandtimedateandtime",
+      "description": ""
+    },
+    "CustomControl_DateFieldOutput": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "datefieldexampletypedateandtimedateonly",
+      "fileRename": "datefieldexampletypedateandtimedateonly",
+      "description": ""
+    },
+    "CustomControl_StaticMetadata": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "metadataexampletypemultiple",
+      "fileRename": "metadataexampletypemultiple",
+      "description": "Static data with prefetched attribute definition object for PCF in Grid"
+    },
+    "CustomControl_AutoFocus": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "If field should be auto focused on render ()"
+    },
+    "autofocusvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "autofocusexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(AutoFocus == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(AutoFocus == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "If field should be auto focused on render automatically selected based on AutoFocus"
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

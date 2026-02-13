@@ -1,0 +1,291 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Optionseticons",
+  "name": "Power Platform: OptionSetIcons",
+  "shortName": "pp-customcontrol-optionseticons",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_OptionSetField": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "optionsetexampletypeoptionset",
+      "fileRename": "optionsetexampletypeoptionset",
+      "description": "Select Optionset (5 values max)",
+      "isRequired": true
+    },
+    "CustomControl_Icon1": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "icon1exampletypesinglelinetext",
+      "fileRename": "icon1exampletypesinglelinetext",
+      "description": "Icon #1, list here  https://developer.microsoft.com/en-us/fabric#/styles/web/icons#fabric-icons-tool"
+    },
+    "CustomControl_Icon2": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "icon2exampletypesinglelinetext",
+      "fileRename": "icon2exampletypesinglelinetext",
+      "description": "Icon #2, list here  https://developer.microsoft.com/en-us/fabric#/styles/web/icons#fabric-icons-tool"
+    },
+    "CustomControl_Icon3": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "icon3exampletypesinglelinetext",
+      "fileRename": "icon3exampletypesinglelinetext",
+      "description": "Icon #3, list here  https://developer.microsoft.com/en-us/fabric#/styles/web/icons#fabric-icons-tool"
+    },
+    "CustomControl_Icon4": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "icon4exampletypesinglelinetext",
+      "fileRename": "icon4exampletypesinglelinetext",
+      "description": "Icon #4, list here  https://developer.microsoft.com/en-us/fabric#/styles/web/icons#fabric-icons-tool"
+    },
+    "CustomControl_Icon5": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "icon5exampletypesinglelinetext",
+      "fileRename": "icon5exampletypesinglelinetext",
+      "description": "Icon #5, list here  https://developer.microsoft.com/en-us/fabric#/styles/web/icons#fabric-icons-tool"
+    },
+    "CustomControl_IconsOptions": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "iconsoptionsexampletypesinglelinetext",
+      "fileRename": "iconsoptionsexampletypesinglelinetext",
+      "description": "Array with additional options for icons"
+    },
+    "CustomControl_SelectedIconColor": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "selectedcolorexampletypesinglelinetext",
+      "fileRename": "selectedcolorexampletypesinglelinetext",
+      "description": "Selected Icon Color"
+    },
+    "CustomControl_IsNullabledefaulttrue": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Do you want to enable nullability? (True: Nullability Enabled; False: Nullability Disabled)"
+    },
+    "isnullabledefaulttruevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "isnullableexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(IsNullabledefaulttrue == \u0022True\u0022)",
+            "value": "0"
+          },
+          {
+            "condition": "(IsNullabledefaulttrue == \u0022False\u0022)",
+            "value": "1"
+          }
+        ]
+      },
+      "description": "Do you want to enable nullability? automatically selected based on IsNullabledefaulttrue"
+    },
+    "CustomControl_isDoubleClickEnableddefaulttrue": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Do you want to use a doubleClick? (True: crossButton Enabled; False: crossButton Disabled)"
+    },
+    "isdoubleclickenableddefaulttruevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "isdoubleclickenabledexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(isDoubleClickEnableddefaulttrue == \u0022True\u0022)",
+            "value": "0"
+          },
+          {
+            "condition": "(isDoubleClickEnableddefaulttrue == \u0022False\u0022)",
+            "value": "1"
+          }
+        ]
+      },
+      "description": "Do you want to use a doubleClick? automatically selected based on isDoubleClickEnableddefaulttrue"
+    },
+    "CustomControl_isClearingEnableddefaulttrue": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Is enable to use the crossButton? (True: crossButton Enabled; False: crossButton Disabled)"
+    },
+    "isclearingenableddefaulttruevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "isclearingenabledexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(isClearingEnableddefaulttrue == \u0022True\u0022)",
+            "value": "0"
+          },
+          {
+            "condition": "(isClearingEnableddefaulttrue == \u0022False\u0022)",
+            "value": "1"
+          }
+        ]
+      },
+      "description": "Is enable to use the crossButton? automatically selected based on isClearingEnableddefaulttrue"
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

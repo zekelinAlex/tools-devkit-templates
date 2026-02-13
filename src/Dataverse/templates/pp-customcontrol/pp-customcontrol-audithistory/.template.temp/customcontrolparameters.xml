@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <entityId type="SingleLine.Text" static="true">entityidexampletypesinglelinetext</entityId>
+  <changedAttributesToShow type="SingleLine.Text" static="true">changedattributestoshowexampletypesinglelinetext</changedAttributesToShow>
+  <relatedRecordsQuery type="SingleLine.Text" static="true">relatedrecordsqueryexampletypesinglelinetext</relatedRecordsQuery>
+  <enableFiltering type="Enum" static="true">enablefilteringexampletypeenum</enableFiltering>
+  <enableHistoryPreview type="Enum" static="true">enablehistorypreviewexampletypeenum</enableHistoryPreview>
+  <EnableNavigation type="Enum" static="true">enablenavigationexampletypeenum</EnableNavigation>
+  <EnableQuickFind type="Enum" static="true">enablequickfindexampletypeenum</EnableQuickFind>
+  <Height type="SingleLine.Text" static="true">heightexampletypesinglelinetext</Height>
+</parameters>

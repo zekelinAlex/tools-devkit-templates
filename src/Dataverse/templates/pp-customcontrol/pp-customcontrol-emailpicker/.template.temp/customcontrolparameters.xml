@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <data type="SingleLine.Text" static="true">dataexampletypesinglelinetext</data>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <recordId type="SingleLine.Text" static="true">recordidexampletypesinglelinetext</recordId>
+  <contactSuggestionFetchXml type="SingleLine.Text" static="true">contactsuggestionfetchxmlexampletypesinglelinetext</contactSuggestionFetchXml>
+  <accountSuggestionFetchXml type="SingleLine.Text" static="true">accountsuggestionfetchxmlexampletypesinglelinetext</accountSuggestionFetchXml>
+  <minEmailCount type="Whole.None" static="true">minemailcountexampletypewholenone</minEmailCount>
+  <maxEmailCount type="Whole.None" static="true">maxemailcountexampletypewholenone</maxEmailCount>
+  <minVerifiedCount type="Whole.None" static="true">minverifiedcountexampletypewholenone</minVerifiedCount>
+  <verificationFeature type="Enum" static="true">verificationfeatureexampletypeenum</verificationFeature>
+  <emailEdit type="Enum" static="true">emaileditexampletypeenum</emailEdit>
+  <emailSuggestions type="Enum" static="true">emailsuggestionsexampletypeenum</emailSuggestions>
+  <clickToCopyEnabled type="Enum" static="true">clicktocopyenabledexampletypeenum</clickToCopyEnabled>
+  <plainEmail type="" static="true">plainemailexampletype</plainEmail>
+</parameters>

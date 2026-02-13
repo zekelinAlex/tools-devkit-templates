@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <binding type="SingleLine.Text" static="true">bindingexampletypesinglelinetext</binding>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <recordId type="SingleLine.Text" static="true">recordidexampletypesinglelinetext</recordId>
+  <scopeEntityName type="SingleLine.Text" static="true">scopeentitynameexampletypesinglelinetext</scopeEntityName>
+  <scopeRecordId type="SingleLine.Text" static="true">scoperecordidexampletypesinglelinetext</scopeRecordId>
+  <scopeMode type="Enum" static="true">scopemodeexampletypeenum</scopeMode>
+  <outputSelectedTagInstances type="Enum" static="true">outputselectedtaginstancesexampletypeenum</outputSelectedTagInstances>
+  <compactMode type="Enum" static="true">compactmodeexampletypeenum</compactMode>
+  <enableNavigation type="Enum" static="true">enablenavigationexampletypeenum</enableNavigation>
+  <AutoFocus type="TwoOptions" static="true">autofocusexampletypetwooptions</AutoFocus>
+</parameters>

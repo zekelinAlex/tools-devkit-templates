@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <value type="" static="true">valueexampletype</value>
+  <queryEntity type="SingleLine.Text" static="true">queryentityexampletypesinglelinetext</queryEntity>
+  <showEntityPicker type="SingleLine.Text" static="true">showentitypickerexampletypesinglelinetext</showEntityPicker>
+  <showCommandBar type="SingleLine.Text" static="true">showcommandbarexampletypesinglelinetext</showCommandBar>
+</parameters>

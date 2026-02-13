@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <value type="Multiple" static="true">valueexampletypemultiple</value>
+  <fileAttribute type="SingleLine.Text" static="true">fileattributeexampletypesinglelinetext</fileAttribute>
+  <htmlAttribute type="Multiple" static="true">htmlattributeexampletypemultiple</htmlAttribute>
+</parameters>

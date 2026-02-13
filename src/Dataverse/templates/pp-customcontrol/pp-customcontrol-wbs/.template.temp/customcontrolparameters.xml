@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <mode type="Enum" static="true">modeexampletypeenum</mode>
+  <objectId type="SingleLine.Text" static="true">objectidexampletypesinglelinetext</objectId>
+  <objectName type="SingleLine.Text" static="true">objectnameexampletypesinglelinetext</objectName>
+  <ganttItemFieldName type="SingleLine.Text" static="true">ganttitemfieldnameexampletypesinglelinetext</ganttItemFieldName>
+  <groupTasksByFields type="SingleLine.Text" static="true">grouptasksbyfieldsexampletypesinglelinetext</groupTasksByFields>
+</parameters>

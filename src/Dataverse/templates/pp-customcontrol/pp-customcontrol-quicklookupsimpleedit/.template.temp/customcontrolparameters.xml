@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="Lookup.Simple" static="true">bindingfieldexampletypelookupsimple</bindingField>
+  <customButtonIcon type="SingleLine.Text" static="true">custombuttoniconexampletypesinglelinetext</customButtonIcon>
+  <customButtonUrl type="SingleLine.Text" static="true">custombuttonurlexampletypesinglelinetext</customButtonUrl>
+  <customButtonLabel type="SingleLine.Text" static="true">custombuttonlabelexampletypesinglelinetext</customButtonLabel>
+  <customButtonExpandQuery type="SingleLine.Text" static="true">custombuttonexpandqueryexampletypesinglelinetext</customButtonExpandQuery>
+  <enableCopyButton type="SingleLine.Text" static="true">enablecopybuttonexampletypesinglelinetext</enableCopyButton>
+  <formId type="SingleLine.Text" static="true">formidexampletypesinglelinetext</formId>
+  <data type="SingleLine.Text" static="true">dataexampletypesinglelinetext</data>
+  <openFormWidth type="Whole.None" static="true">openformwidthexampletypewholenone</openFormWidth>
+</parameters>

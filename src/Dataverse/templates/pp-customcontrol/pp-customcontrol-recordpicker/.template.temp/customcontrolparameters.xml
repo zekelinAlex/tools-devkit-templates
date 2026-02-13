@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <accountId type="SingleLine.Text" static="true">accountidexampletypesinglelinetext</accountId>
+  <jurisdictionCode type="SingleLine.Text" static="true">jurisdictioncodeexampletypesinglelinetext</jurisdictionCode>
+  <cinNumber type="SingleLine.Text" static="true">cinnumberexampletypesinglelinetext</cinNumber>
+  <enableCommandBar type="Enum" static="true">enablecommandbarexampletypeenum</enableCommandBar>
+</parameters>

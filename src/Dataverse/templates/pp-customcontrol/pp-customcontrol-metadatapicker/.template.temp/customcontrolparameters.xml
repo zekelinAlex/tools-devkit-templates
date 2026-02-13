@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="" static="true">bindingfieldexampletype</bindingField>
+  <entityLogicalName type="" static="true">entitylogicalnameexampletype</entityLogicalName>
+  <attributeLogicalName type="" static="true">attributelogicalnameexampletype</attributeLogicalName>
+  <applyAppmoduleFilter type="Enum" static="true">applyappmodulefilterexampletypeenum</applyAppmoduleFilter>
+  <applyEnvironmentEnabledLanguagesFilter type="Enum" static="true">applyenvironmentenabledlanguagesfilterexampletypeenum</applyEnvironmentEnabledLanguagesFilter>
+  <json type="Multiple" static="true">jsonexampletypemultiple</json>
+  <mode type="Enum" static="true">modeexampletypeenum</mode>
+  <enableBorder type="Enum" static="true">enableborderexampletypeenum</enableBorder>
+  <displayedValidForCreateAttributes type="Enum" static="true">displayedvalidforcreateattributesexampletypeenum</displayedValidForCreateAttributes>
+  <displayedValidForUpdateAttributes type="Enum" static="true">displayedvalidforupdateattributesexampletypeenum</displayedValidForUpdateAttributes>
+  <displayedValidForReadAttributes type="Enum" static="true">displayedvalidforreadattributesexampletypeenum</displayedValidForReadAttributes>
+</parameters>

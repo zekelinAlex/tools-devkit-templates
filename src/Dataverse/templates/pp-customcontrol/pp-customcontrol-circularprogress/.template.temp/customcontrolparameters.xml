@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <sampleProperty type="SingleLine.Text" static="true">samplepropertyexampletypesinglelinetext</sampleProperty>
+  <value type="SingleLine.Text" static="true">valueexampletypesinglelinetext</value>
+  <icon type="SingleLine.Text" static="true">iconexampletypesinglelinetext</icon>
+  <label type="SingleLine.Text" static="true">labelexampletypesinglelinetext</label>
+  <size type="SingleLine.Text" static="true">sizeexampletypesinglelinetext</size>
+</parameters>

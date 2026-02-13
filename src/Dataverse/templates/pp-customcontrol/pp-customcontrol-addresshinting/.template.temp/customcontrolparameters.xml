@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <fullAddress type="SingleLine.Text" static="true">fulladdressexampletypesinglelinetext</fullAddress>
+  <addressLanguage type="Enum" static="true">addresslanguageexampletypeenum</addressLanguage>
+  <addressId type="SingleLine.Text" static="true">addressidexampletypesinglelinetext</addressId>
+  <country type="SingleLine.Text" static="true">countryexampletypesinglelinetext</country>
+  <countryIsoAlpha2Code type="SingleLine.Text" static="true">countryisoalpha2codeexampletypesinglelinetext</countryIsoAlpha2Code>
+  <administrativeArea type="SingleLine.Text" static="true">administrativeareaexampletypesinglelinetext</administrativeArea>
+  <locality type="SingleLine.Text" static="true">localityexampletypesinglelinetext</locality>
+  <subLocality type="SingleLine.Text" static="true">sublocalityexampletypesinglelinetext</subLocality>
+  <street type="SingleLine.Text" static="true">streetexampletypesinglelinetext</street>
+  <streetNumber type="SingleLine.Text" static="true">streetnumberexampletypesinglelinetext</streetNumber>
+  <formattedPostalCode type="SingleLine.Text" static="true">formattedpostalcodeexampletypesinglelinetext</formattedPostalCode>
+  <latitude type="Decimal" static="true">latitudeexampletypedecimal</latitude>
+  <longitude type="Decimal" static="true">longitudeexampletypedecimal</longitude>
+  <plusCode type="SingleLine.Text" static="true">pluscodeexampletypesinglelinetext</plusCode>
+  <manualInput type="TwoOptions" static="true">manualinputexampletypetwooptions</manualInput>
+  <rawAddressJSON type="SingleLine.Text" static="true">rawaddressjsonexampletypesinglelinetext</rawAddressJSON>
+  <geospatialExpandQuery type="SingleLine.Text" static="true">geospatialexpandqueryexampletypesinglelinetext</geospatialExpandQuery>
+  <enableManualInputOption type="Enum" static="true">enablemanualinputoptionexampletypeenum</enableManualInputOption>
+</parameters>

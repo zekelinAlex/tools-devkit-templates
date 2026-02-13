@@ -1,0 +1,203 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Fileexplorer",
+  "name": "Power Platform: FileExplorer",
+  "shortName": "pp-customcontrol-fileexplorer",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_BindingField": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "bindingfieldexampletypemultiple",
+      "fileRename": "bindingfieldexampletypemultiple",
+      "description": "A binding field to bind the control to.",
+      "isRequired": true
+    },
+    "CustomControl_CollaborationWorkspaceHeaderID": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "collaborationworkspaceidexampletypesinglelinetext",
+      "fileRename": "collaborationworkspaceidexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControl_FormID": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "formidexampletypesinglelinetext",
+      "fileRename": "formidexampletypesinglelinetext",
+      "description": "Form id where File Explorer is binded. Required if you want to be able to download reference document."
+    },
+    "CustomControl_EntityLogicalName": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "entitylogicalnameexampletypesinglelinetext",
+      "fileRename": "entitylogicalnameexampletypesinglelinetext",
+      "description": "If not provided, it is taken from context. Useful for dialogs where context does not contain this information."
+    },
+    "CustomControl_RecordId": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "recordidexampletypesinglelinetext",
+      "fileRename": "recordidexampletypesinglelinetext",
+      "description": "If not provided, it is taken from context. Useful for dialogs where context does not contain this information."
+    },
+    "CustomControl_ExpandedToFullTab": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Is FileExplorer as first component expanded to full tab in form xml definition? If yes, this option calculated fixed high and scrolls through it instead of the form. ()"
+    },
+    "expandedtofulltabvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "expandedtofulltabexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(ExpandedToFullTab == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(ExpandedToFullTab == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Is FileExplorer as first component expanded to full tab in form xml definition? If yes, this option calculated fixed high and scrolls through it instead of the form. automatically selected based on ExpandedToFullTab"
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

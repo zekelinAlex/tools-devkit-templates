@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <webResource type="SingleLine.Text" static="true">webresourceexampletypesinglelinetext</webResource>
+  <displayContent type="TwoOptions" static="true">displaycontentexampletypetwooptions</displayContent>
+</parameters>

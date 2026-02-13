@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <openStateToggle type="TwoOptions" static="true">openstatetoggleexampletypetwooptions</openStateToggle>
+  <useDarkMode type="Enum" static="true">usedarkmodeexampletypeenum</useDarkMode>
+</parameters>

@@ -1,0 +1,307 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Tagpicker",
+  "name": "Power Platform: TagPicker",
+  "shortName": "pp-customcontrol-tagpicker",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_Binding": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "bindingexampletypesinglelinetext",
+      "fileRename": "bindingexampletypesinglelinetext",
+      "description": "Binding field of the PCF.",
+      "isRequired": true
+    },
+    "CustomControl_EntityName": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "entitynameexampletypesinglelinetext",
+      "fileRename": "entitynameexampletypesinglelinetext",
+      "description": "Name of entity related to tag instances. Use on dialog or in nested pcf."
+    },
+    "CustomControl_RecordId": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "recordidexampletypesinglelinetext",
+      "fileRename": "recordidexampletypesinglelinetext",
+      "description": "Id of record related to tag instances. Use on dialog or in nested pcf."
+    },
+    "CustomControl_ScopeEntityName": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "scopeentitynameexampletypesinglelinetext",
+      "fileRename": "scopeentitynameexampletypesinglelinetext",
+      "description": "Scope tags to entity name."
+    },
+    "CustomControl_ScopeRecordId": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "scoperecordidexampletypesinglelinetext",
+      "fileRename": "scoperecordidexampletypesinglelinetext",
+      "description": "Scope tags to record id."
+    },
+    "CustomControl_ScopeMode": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Strict"
+        },
+        {
+          "choice": "Loose"
+        }
+      ],
+      "description": "Strict or loose. Loose fetches tags without scope even when you provide scopeRecordId. Strict scopes only tags fully matching the scope. ()"
+    },
+    "scopemodevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "scopemodeexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(ScopeMode == \u0022Strict\u0022)",
+            "value": "strict"
+          },
+          {
+            "condition": "(ScopeMode == \u0022Loose\u0022)",
+            "value": "loose"
+          }
+        ]
+      },
+      "description": "Strict or loose. Loose fetches tags without scope even when you provide scopeRecordId. Strict scopes only tags fully matching the scope. automatically selected based on ScopeMode"
+    },
+    "CustomControl_OutputSelectedTagInstances": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Do you want to output selected tags to the binding field? ()"
+    },
+    "outputselectedtaginstancesvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "outputselectedtaginstancesexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(OutputSelectedTagInstances == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(OutputSelectedTagInstances == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Do you want to output selected tags to the binding field? automatically selected based on OutputSelectedTagInstances"
+    },
+    "CustomControl_CompactMode": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Display the pcf compactly to fit into grid cell. ()"
+    },
+    "compactmodevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "compactmodeexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(CompactMode == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(CompactMode == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Display the pcf compactly to fit into grid cell. automatically selected based on CompactMode"
+    },
+    "CustomControl_EnableNavigation": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": "Should tag be clickable to open form for renaming and color changing? ()"
+    },
+    "enablenavigationvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "enablenavigationexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(EnableNavigation == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(EnableNavigation == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": "Should tag be clickable to open form for renaming and color changing? automatically selected based on EnableNavigation"
+    },
+    "CustomControl_AutoFocus": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "autofocusexampletypetwooptions",
+      "fileRename": "autofocusexampletypetwooptions",
+      "description": "For VirtualDataset CellCustomizers. Whether the control should set focus on itself once it renders."
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

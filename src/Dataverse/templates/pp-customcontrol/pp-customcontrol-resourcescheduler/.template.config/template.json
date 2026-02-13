@@ -1,0 +1,280 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.CustomControl.Resourcescheduler",
+  "name": "Power Platform: ResourceScheduler",
+  "shortName": "pp-customcontrol-resourcescheduler",
+  "sourceName": "examplecustomentityattribute",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "symbols": {
+    "CustomControl_View": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "Hour"
+        },
+        {
+          "choice": "day"
+        },
+        {
+          "choice": "week"
+        },
+        {
+          "choice": "month"
+        },
+        {
+          "choice": "year"
+        }
+      ],
+      "description": "Default view (Hour: hour; day: day; week: week; month: Month; year: Month)",
+      "isRequired": true
+    },
+    "viewvalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "viewexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(View == \u0022Hour\u0022)",
+            "value": "hour"
+          },
+          {
+            "condition": "(View == \u0022day\u0022)",
+            "value": "day"
+          },
+          {
+            "condition": "(View == \u0022week\u0022)",
+            "value": "week"
+          },
+          {
+            "condition": "(View == \u0022month\u0022)",
+            "value": "month"
+          },
+          {
+            "condition": "(View == \u0022year\u0022)",
+            "value": "year"
+          }
+        ]
+      },
+      "description": "Default view automatically selected based on View"
+    },
+    "CustomControl_EnablefiltersdefaultFalse": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": " ()"
+    },
+    "enablefiltersdefaultfalsevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "enablefiltersexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(EnablefiltersdefaultFalse == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(EnablefiltersdefaultFalse == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": " automatically selected based on EnablefiltersdefaultFalse"
+    },
+    "CustomControl_EnableResourceRequestsPaneldefaultFalse": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "True"
+        },
+        {
+          "choice": "False"
+        }
+      ],
+      "description": " ()"
+    },
+    "enableresourcerequestspaneldefaultfalsevalue": {
+      "type": "generated",
+      "generator": "switch",
+      "replaces": "enableresourcerequestsexampletypeenum",
+      "parameters": {
+        "datatype": "string",
+        "cases": [
+          {
+            "condition": "(EnableResourceRequestsPaneldefaultFalse == \u0022True\u0022)",
+            "value": "true"
+          },
+          {
+            "condition": "(EnableResourceRequestsPaneldefaultFalse == \u0022False\u0022)",
+            "value": "false"
+          }
+        ]
+      },
+      "description": " automatically selected based on EnableResourceRequestsPaneldefaultFalse"
+    },
+    "CustomControl_ResourceRequestFetchXML": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "resourcerequestfetchxmlexampletypesinglelinetext",
+      "fileRename": "resourcerequestfetchxmlexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControl_EntityName": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "entitynameexampletypesinglelinetext",
+      "fileRename": "entitynameexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControl_EntityId": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "entityidexampletypesinglelinetext",
+      "fileRename": "entityidexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControl_ResourceFetchFilter": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "defaulttemplateexample",
+      "replaces": "resourcequeryfetchxmlexampletypesinglelinetext",
+      "fileRename": "resourcequeryfetchxmlexampletypesinglelinetext",
+      "description": ""
+    },
+    "CustomControlFormFactor": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "customcontrolformfactorexample",
+      "description": "Form factor for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "ControlId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "defaultValue": "unknown",
+      "replaces": "controlDescriptionIdexample",
+      "description": "Control ID for the custom control. (This parameter is applicable in Custom control parameters)"
+    },
+    "PublisherPrefix": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "examplepublisherprefix",
+      "description": "Publisher prefix for the custom control"
+    },
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "SolutionDeclarationsRoot",
+      "isRequired": true,
+      "description": "Path to the solution root directory"
+    },
+    "EntitySchemaName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "exampleentityname",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "description": "Logical name of the entity for which the control will be created"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "replaces": "formtypeexample",
+      "defaultValue": "unknown",
+      "choices": [
+        {
+          "choice": "main"
+        },
+        {
+          "choice": "quick"
+        },
+        {
+          "choice": "dialog"
+        },
+        {
+          "choice": "unknown"
+        }
+      ],
+      "description": "Type of form: main (main form), quick (quick create), dialog (dialog form), or unknown (auto-detect)"
+    },
+    "FormId": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": false,
+      "defaultValue": "unknownFormId",
+      "replaces": "formguididexample",
+      "description": "GUID of the specific form where the parameters will be added"
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/RemoveUnusedNodes.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing unused nodes"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing unused nodes"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/AddCustomControlParameters.ps1\u0022 ",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Adding new parameters to custom control"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Adding new parameters to custom control"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \u0022./.template.scripts/Cleanup.ps1\u0022",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        {
+          "text": "Removing Scripts"
+        }
+      ],
+      "continueOnError": false,
+      "description": "Removing Scripts"
+    }
+  ]
+}

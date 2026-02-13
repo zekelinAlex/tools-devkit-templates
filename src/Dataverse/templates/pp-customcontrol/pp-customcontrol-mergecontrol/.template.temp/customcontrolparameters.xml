@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <Entity1 type="SingleLine.Text" static="true">entity1exampletypesinglelinetext</Entity1>
+  <Entity2 type="SingleLine.Text" static="true">entity2exampletypesinglelinetext</Entity2>
+  <EntityType type="SingleLine.Text" static="true">entitytypeexampletypesinglelinetext</EntityType>
+  <UpdatedContentList type="SingleLine.Text" static="true">updatedcontentlistexampletypesinglelinetext</UpdatedContentList>
+  <MasterRecord type="SingleLine.Text" static="true">masterrecordexampletypesinglelinetext</MasterRecord>
+</parameters>

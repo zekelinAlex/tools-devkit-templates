@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="" static="true">bindingfieldexampletype</bindingField>
+  <attributeDefinition type="Lookup.Simple" static="true">attributedefinitionexampletypelookupsimple</attributeDefinition>
+  <textField type="SingleLine.Text" static="true">textfieldexampletypesinglelinetext</textField>
+  <integerField type="Whole.None" static="true">integerfieldexampletypewholenone</integerField>
+  <decimalField type="Decimal" static="true">decimalfieldexampletypedecimal</decimalField>
+  <optionsetField type="Lookup.Simple" static="true">optionsetfieldexampletypelookupsimple</optionsetField>
+  <booleanField type="TwoOptions" static="true">booleanfieldexampletypetwooptions</booleanField>
+  <datetimeUserLocalField type="DateAndTime.DateAndTime" static="true">datetimeuserlocalfieldexampletypedateandtimedateandtime</datetimeUserLocalField>
+  <datetimeTZIField type="DateAndTime.DateAndTime" static="true">datetimetzifieldexampletypedateandtimedateandtime</datetimeTZIField>
+  <dateField type="DateAndTime.DateOnly" static="true">datefieldexampletypedateandtimedateonly</dateField>
+  <metadata type="Multiple" static="true">metadataexampletypemultiple</metadata>
+  <autoFocus type="Enum" static="true">autofocusexampletypeenum</autoFocus>
+</parameters>

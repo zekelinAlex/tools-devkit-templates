@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <name type="SingleLine.Text" static="true">nameexampletypesinglelinetext</name>
+  <historicalNames type="Multiple" static="true">historicalnamesexampletypemultiple</historicalNames>
+  <companyNumber type="SingleLine.Text" static="true">companynumberexampletypesinglelinetext</companyNumber>
+  <vatNumber type="SingleLine.Text" static="true">vatnumberexampletypesinglelinetext</vatNumber>
+  <reliableVATPayer type="OptionSet" static="true">reliablevatpayerexampletypeoptionset</reliableVATPayer>
+  <insolvency type="OptionSet" static="true">insolvencyexampletypeoptionset</insolvency>
+  <jurisdictionCode type="SingleLine.Text" static="true">jurisdictioncodeexampletypesinglelinetext</jurisdictionCode>
+  <locality type="SingleLine.Text" static="true">localityexampletypesinglelinetext</locality>
+  <sublocality type="SingleLine.Text" static="true">sublocalityexampletypesinglelinetext</sublocality>
+  <region type="SingleLine.Text" static="true">regionexampletypesinglelinetext</region>
+  <postalCode type="SingleLine.Text" static="true">postalcodeexampletypesinglelinetext</postalCode>
+  <formattedPostalCode type="SingleLine.Text" static="true">formattedpostalcodeexampletypesinglelinetext</formattedPostalCode>
+  <country type="SingleLine.Text" static="true">countryexampletypesinglelinetext</country>
+  <administrativeArea type="SingleLine.Text" static="true">administrativeareaexampletypesinglelinetext</administrativeArea>
+  <streetName type="SingleLine.Text" static="true">streetnameexampletypesinglelinetext</streetName>
+  <streetNumber type="SingleLine.Text" static="true">streetnumberexampletypesinglelinetext</streetNumber>
+  <fullAddress type="SingleLine.Text" static="true">fulladdressexampletypesinglelinetext</fullAddress>
+  <latitude type="Decimal" static="true">latitudeexampletypedecimal</latitude>
+  <longitude type="Decimal" static="true">longitudeexampletypedecimal</longitude>
+  <manualInput type="TwoOptions" static="true">manualinputexampletypetwooptions</manualInput>
+</parameters>

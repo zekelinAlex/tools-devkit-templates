@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="TwoOptions" static="true">bindingfieldexampletypetwooptions</bindingField>
+  <label type="SingleLine.Text" static="true">labelexampletypesinglelinetext</label>
+</parameters>

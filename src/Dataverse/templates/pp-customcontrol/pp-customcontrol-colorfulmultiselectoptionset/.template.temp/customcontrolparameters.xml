@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <optionset type="MultiSelectOptionSet" static="true">optionsetexampletypemultiselectoptionset</optionset>
+  <optionsIconJSON type="SingleLine.Text" static="true">optionsiconjsonexampletypesinglelinetext</optionsIconJSON>
+  <useColorBackground type="Enum" static="true">usecolorbackgroundexampletypeenum</useColorBackground>
+</parameters>

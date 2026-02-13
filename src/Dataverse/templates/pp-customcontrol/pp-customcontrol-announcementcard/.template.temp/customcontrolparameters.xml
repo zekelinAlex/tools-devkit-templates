@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <heading type="SingleLine.Text" static="true">headingexampletypesinglelinetext</heading>
+  <iconName type="SingleLine.Text" static="true">iconnameexampletypesinglelinetext</iconName>
+  <description type="SingleLine.Text" static="true">descriptionexampletypesinglelinetext</description>
+  <actionLink type="SingleLine.Text" static="true">actionlinkexampletypesinglelinetext</actionLink>
+  <actionLinkText type="SingleLine.Text" static="true">actionlinktextexampletypesinglelinetext</actionLinkText>
+</parameters>

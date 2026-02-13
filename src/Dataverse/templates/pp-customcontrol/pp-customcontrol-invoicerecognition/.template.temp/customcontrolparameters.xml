@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <entityId type="SingleLine.Text" static="true">entityidexampletypesinglelinetext</entityId>
+  <url type="SingleLine.Text" static="true">urlexampletypesinglelinetext</url>
+  <hostUrl type="SingleLine.Text" static="true">hosturlexampletypesinglelinetext</hostUrl>
+  <authToken type="SingleLine.Text" static="true">authtokenexampletypesinglelinetext</authToken>
+  <overwriteDefaultMappings type="SingleLine.Text" static="true">overwritedefaultmappingsexampletypesinglelinetext</overwriteDefaultMappings>
+  <additionalMappings type="SingleLine.Text" static="true">additionalmappingsexampletypesinglelinetext</additionalMappings>
+</parameters>

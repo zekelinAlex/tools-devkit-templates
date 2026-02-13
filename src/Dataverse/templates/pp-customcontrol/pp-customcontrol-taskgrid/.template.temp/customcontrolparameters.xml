@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <fetchXml type="Multiple" static="true">fetchxmlexampletypemultiple</fetchXml>
+  <entityName type="SingleLine.Text" static="true">entitynameexampletypesinglelinetext</entityName>
+  <recordId type="SingleLine.Text" static="true">recordidexampletypesinglelinetext</recordId>
+  <selfReferenceParentScope type="Enum" static="true">selfreferenceparentscopeexampletypeenum</selfReferenceParentScope>
+  <baseConfig type="Multiple" static="true">baseconfigexampletypemultiple</baseConfig>
+  <Height type="SingleLine.Text" static="true">heightexampletypesinglelinetext</Height>
+</parameters>

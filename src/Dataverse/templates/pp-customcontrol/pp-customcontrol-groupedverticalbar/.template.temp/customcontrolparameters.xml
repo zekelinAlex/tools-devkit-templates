@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <bindingField type="SingleLine.Text" static="true">bindingfieldexampletypesinglelinetext</bindingField>
+  <fetchXml type="SingleLine.Text" static="true">fetchxmlexampletypesinglelinetext</fetchXml>
+  <groupBy type="SingleLine.Text" static="true">groupbyexampletypesinglelinetext</groupBy>
+  <aggregateOn type="SingleLine.Text" static="true">aggregateonexampletypesinglelinetext</aggregateOn>
+</parameters>
