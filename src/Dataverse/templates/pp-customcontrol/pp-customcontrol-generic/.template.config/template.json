@@ -24,7 +24,7 @@
       "isRequired": false,
       "defaultValue": "[]",
       "replaces": "customcontrolparametersexample",
-      "description": "JSON array of parameter objects. Each object: {\"name\": \"paramName\", \"type\": \"Whole.None\", \"value\": \"fieldname\"}. Example: [{\"name\": \"quantity\", \"type\": \"Whole.None\", \"value\": \"udpp_availablequantity\"}]"
+      "description": "Custom array of parameter objects.. Example: [{name:param_name }, {type:param_type},{value:param_value}]"
     },
     "FieldLogicalName": {
       "type": "parameter",
