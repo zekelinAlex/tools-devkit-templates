@@ -41,6 +41,6 @@ public class TemplateHeaderModel
     {
         var convertedName = Regex.Replace(basicName.ToLower(), @"[^a-zA-Z0-9]", "");
 
-        return $"pp-customcontrol-{convertedName}";
+        return $"pp-control-custom-{convertedName}";
     }
 }

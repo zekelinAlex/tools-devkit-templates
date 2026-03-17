@@ -370,7 +370,7 @@ dotnet new pp-plugin `
 
 Add new assembly:
 ```console
-dotnet new pp-plugin-assembly-steps `
+dotnet new pp-plugin-assembly-step `
 --output "src/Solutions.Logic" `
 --PluginProjectRootPath "..\\Plugins.Warehouse" `
 --SolutionRootPath "Declarations" `
@@ -379,7 +379,7 @@ dotnet new pp-plugin-assembly-steps `
 
 Add new step to the assembly:
 ```console
-dotnet new pp-plugin-assembly-steps `
+dotnet new pp-plugin-assembly-step `
 --output "src/Solutions.Logic" `
 --PrimaryEntity "tom_warehousetransaction" `
 --PluginProjectName "Plugins.Warehouse" `
@@ -418,7 +418,7 @@ The Templates Builder reads a `ControlManifest.Input.xml` file (which contains t
 --ResultFolderPath "C:\result" `
 --TemplateName "New Custom Control Template" `
 --TemplateIdentity "New.Custom.Control.Template" `
---TemplateShortName "pp-customcontrol-template"
+--TemplateShortName "pp-control-custom-template"
 ```
 
 #### Parameters
@@ -489,7 +489,7 @@ This template creates a test project for Power Platform JavaScript/TypeScript we
 
 ## Overview
 
-The `pp-script-test` template generates a test project configured for testing Dataverse web resources (form scripts, ribbon commands, etc.). It includes:
+The `pp-test-script` template generates a test project configured for testing Dataverse web resources (form scripts, ribbon commands, etc.). It includes:
 
 - Jest test framework with jsdom environment
 - Xrm API mocks for Dataverse client-side API
@@ -503,7 +503,7 @@ The `pp-script-test` template generates a test project configured for testing Da
 Create a script test project:
 
 ```console
-dotnet new pp-script-test `
+dotnet new pp-test-script `
 --output "tests/Script.Tests" `
 --ScriptTestProjectName "Script.Tests" `
 --ScriptLibraryPath "../src/Scripts.Warehouse" `
