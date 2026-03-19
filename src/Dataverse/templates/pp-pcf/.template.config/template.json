@@ -10,24 +10,22 @@
   },
   "sourceName": "examplesourcename",
   "preferNameDirectory": true,
-  "postActions": [
-    {
-      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-      "args": {
-        "executable": "pwsh",
-        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/CreatePCF.ps1\""
-      }
+  "symbols": {
+    "Name": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "pcfnameexample",
+      "fileRename": "pcfnameexample",
+      "isRequired": true,
+      "description": ""
     },
-    {
-			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-			"args": {
-				"executable": "pwsh",
-				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Cleanup.ps1\"",
-				"redirectStandardOutput": "false"
-			},
-			"manualInstructions": [{ "text": "Removing Scripts" }],
-			"continueOnError": false,
-			"description": "Removing Scripts"
-		}
-  ]
+    "Namespace": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "pcfnamespaceexample",
+      "fileRename": "pcfnamespaceexample",
+      "isRequired": true,
+      "description": ""
+    }
+  }
 }
