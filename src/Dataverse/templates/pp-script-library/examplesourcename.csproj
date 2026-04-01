@@ -1,4 +1,4 @@
-<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.16">
+<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.13">
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
     <ProjectType>ScriptLibrary</ProjectType>
