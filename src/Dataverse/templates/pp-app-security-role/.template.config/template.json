@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.SecurityRole.Role.App",
   "name": "Power Platform: RoleApp",
   "shortName": "pp-app-security-role",
+  "description": "Assigns security role GUIDs (JSON array) to a Model-Driven App module. Use after pp-app-model and pp-security-role to grant access.",
   "classifications": ["Dataverse", "Power Platform"],
   "sourceName": "Role-App",
   "tags": {

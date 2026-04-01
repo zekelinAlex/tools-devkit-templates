@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.Solution",
   "name": "Power Platform: Solution",
   "shortName": "pp-solution",
+  "description": "Creates a Dataverse solution project: .csproj (TALXIS.DevKit.Build.Sdk, ProjectType=Solution, PublisherName, PublisherPrefix, Version=1.0.0.0). PAC CLI runs solution init as post-action. A repo typically has multiple solution projects with separate concerns (data model, logic, security, UI).",
   "tags": {
     "language": "C#",
     "type": "project"

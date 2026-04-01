@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Rows",
   "name": "Power Platform: Entity Form Rows",
   "shortName": "pp-form-row",
+  "description": "HIERARCHY: inside Section (pp-form-section) -> contains Cells (pp-form-cell). Generates empty <row> element. One horizontal line of fields.",
   "tags": {
     "language": "XML",
     "type": "item"

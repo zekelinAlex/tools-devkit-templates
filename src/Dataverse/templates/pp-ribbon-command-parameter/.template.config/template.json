@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.RibbonCommandParameter",
   "name": "Power Platform: Ribbon Command Parameter",
   "shortName": "pp-ribbon-command-parameter",
+  "description": "Adds a parameter to a ribbon command. Types: CrmParameter(SelectedControl), CrmParameter(PrimaryControl), StringParameter. Injected into command definition in RibbonDiff.xml.",
   "tags": {
     "language": "XML",
     "type": "item"

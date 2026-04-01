@@ -5,6 +5,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.ScriptLibrary",
   "name": "TALXIS Script Library",
   "shortName": "pp-script-library",
+  "description": "Creates a TypeScript web resource library: .csproj (ProjectType=ScriptLibrary) + TS/tsconfig.json (outFile=single AMD .js, es6, @types/xrm) + TS/package.json (@types/xrm, typescript). Individual TS files in TS/scripts/ compile to one JS file. That output is picked up by pp-webresource build target.",
   "tags": {
     "language": "javascript",
     "type": "project"

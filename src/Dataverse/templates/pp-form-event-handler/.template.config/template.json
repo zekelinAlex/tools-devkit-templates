@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.UI.FormEventHandler",
   "name": "Power Platform: Form Event Handler",
   "shortName": "pp-form-event-handler",
+  "description": "Registers a JS event handler on a form. No source files \u2014 script-only. Events: onload, onsave, onchange, onclick. Required: FormId, LibraryName, FunctionName, EventType. Injects handler + library reference into form XML.",
   "tags": {
     "language": "XML",
     "type": "item"

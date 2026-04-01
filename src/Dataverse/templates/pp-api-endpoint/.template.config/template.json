@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.Custom.API.Endpoint",
   "name": "Power Platform: Custom API Endpoint",
   "shortName": "pp-api-endpoint",
+  "description": "Creates a Dataverse Custom API: customapi.xml + customapirequestparameter.xml (string input) + customapiresponseproperty.xml (string output). Use when you need a callable Dataverse action/function via SDK or Web API.",
   "classifications": ["Dataverse", "Power Platform"],
   "sourceName": "pp-api-endpoint",
   "tags": {

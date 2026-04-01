@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.Sitemap,Area",
   "name": "Power Platform: Site Map Area Group ",
   "shortName": "pp-sitemap-group",
+  "description": "Adds <Group> to a sitemap area: Id, ResourceId, IsProfile=false, <Titles LCID=1033>. Organizes subareas. Add subareas with pp-sitemap-subarea.",
   "classifications": ["Dataverse", "Power Platform"],
   "sourceName": "Sitemap-Area-Group",
   "tags": {

@@ -5,6 +5,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.ScriptTest",
   "name": "TALXIS Script Test",
   "shortName": "pp-test-script",
+  "description": "Creates a Jest test project for Dataverse script libraries: .csproj (MSTest wrapper) + jest.config.js (jsdom) + package.json + MSTestSettings.cs (parallel). Includes jest-core/ with full Xrm mocks: makeAttr/makeLookup/makeControl/makeUI/makeForm/makeExecutionContext/makeGridControl/setupXrm/resetXrmMocks + loadWebRes.js (isolated VM context).",
   "tags": {
     "language": "C#",
     "type": "item"

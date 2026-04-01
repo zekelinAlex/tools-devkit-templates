@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.Sitemap.Area",
   "name": "Power Platform: Site Map Area",
   "shortName": "pp-sitemap-area",
+  "description": "Adds <Area> to app sitemap: Id, ResourceId, DescriptionResourceId, ShowGroups=true. Top-level navigation container. Add groups inside with pp-sitemap-group.",
   "classifications": ["Dataverse", "Power Platform"],
   "sourceName": "Sitemap-Area",
   "tags": {

@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Tabs.Sections",
   "name": "Power Platform: Tab Section",
   "shortName": "pp-form-section",
+  "description": "HIERARCHY: inside Column (pp-form-column) -> contains Rows (pp-form-row). Generates <section> with showlabel, showbar, name, labelid. Labeled grouping of fields.",
   "tags": {
     "language": "XML",
     "type": "item"

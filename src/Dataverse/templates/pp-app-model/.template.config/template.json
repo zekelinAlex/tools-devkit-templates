@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.ModelDrivenApp",
   "name": "Power Platform: ModelDriven App",
   "shortName": "pp-app-model",
+  "description": "Creates a Model-Driven App: AppModule.xml (form factor, client, roles) + AppModuleSiteMap.xml (navigation structure). Build navigation with pp-sitemap-area -> pp-sitemap-group -> pp-sitemap-subarea after.",
   "classifications": ["Dataverse", "Power Platform"],
   "sourceName": "App-ModelDriven",
   "tags": {

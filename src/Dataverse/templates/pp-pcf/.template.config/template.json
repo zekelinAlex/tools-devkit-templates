@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.PCF",
   "name": "Power Platform: PCF",
   "shortName": "pp-pcf",
+  "description": "Scaffolds a PCF control project: ControlManifest.Input.xml + index.ts (StandardControl with init/updateView/getOutputs/destroy) + .csproj (TALXIS.DevKit.Build.Sdk) + tsconfig.json + package.json (pcf-scripts) + eslint.config.mjs + pcfconfig.json. Required: Name, Namespace.",
   "classifications": ["Dataverse", "Power Platform"],
   "tags": {
     "language": "XML"

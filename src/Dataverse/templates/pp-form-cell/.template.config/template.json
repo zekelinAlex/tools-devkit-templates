@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Cells",
   "name": "Power Platform: Entity Form Cells",
   "shortName": "pp-form-cell",
+  "description": "HIERARCHY: inside Row (pp-form-row) -> wraps Control (pp-form-control). Generates cell.xml (standard) + dialogcell.xml (dialog). Direct container for a single field label + control.",
   "tags": {
     "language": "XML",
     "type": "item"

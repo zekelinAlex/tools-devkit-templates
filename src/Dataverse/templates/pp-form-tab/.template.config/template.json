@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Tabs",
   "name": "Power Platform: Form Tab",
   "shortName": "pp-form-tab",
+  "description": "HIERARCHY: inside Form (pp-entity-form / pp-entity) -> contains Columns (pp-form-column). Generates <tab verticallayout=true> with name, labelid, empty <columns>. Top-level form container. Can remove default tab via parameter.",
   "tags": {
     "language": "XML",
     "type": "item"

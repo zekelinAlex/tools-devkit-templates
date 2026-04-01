@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.Sitemap.Area.Group.SubArea",
   "name": "Power Platform: Site Map Area Group SubArea",
   "shortName": "pp-sitemap-subarea",
+  "description": "Adds <SubArea> to a sitemap group: Id, Entity reference, Client=All/Outlook/Web, AvailableOffline=true, PassParams=false, Sku=All. Leaf navigation item linking to an entity list.",
   "classifications": ["Dataverse", "Power Platform"],
   "sourceName": "Sitemap-Area-Group-SubArea",
   "tags": {

@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Parameters",
   "name": "Power Platform: Form Parameters",
   "shortName": "pp-form-parameter",
+  "description": "Adds a typed parameter to a form. No source files \u2014 script-only. Types: UniqueId, SafeString, Integer, Boolean, Double, Long, Object. Required: FormId, ParameterLogicalName, ParameterType.",
   "tags": {
     "language": "XML",
     "type": "item"

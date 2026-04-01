@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.View",
   "name": "Power Platform: View",
   "shortName": "pp-entity-view",
+  "description": "Adds a SavedQuery (view) XML for an existing entity. Includes fetchxml, grid layout, column definitions. queryType=64. Use when adding a new list view to an entity.",
   "tags": {
     "language": "XML",
     "type": "item"

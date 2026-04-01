@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.CodeApp",
   "name": "Power Platform: Code App",
   "shortName": "pp-app-code",
+  "description": "Creates a code-based Power App project: .csproj (net462, ProjectType=CodeApp) + power.config.json (appId, displayName, environment, build paths). Use when building a .NET code app for Power Platform.",
   "classifications": ["Dataverse", "Power Platform"],
   "sourceName": "CodeAppExample",
   "tags": {

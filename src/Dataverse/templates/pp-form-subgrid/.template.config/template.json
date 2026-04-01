@@ -4,6 +4,7 @@
     "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Subgrid",
     "name": "Power Platform: Form Subgrid",
     "shortName": "pp-form-subgrid",
+  "description": "Adds a subgrid to a form showing related entity records. Generates row > cell > control. Params: TargetEntityLogicalName, ViewId, RecordsPerPage, EnableQuickFind, EnableViewPicker, EnableChartPicker. Required: FormId, FormType(main/quick), EntityLogicalName, SubgridLabel.",
     "tags": {
         "language": "XML",
         "type": "item"

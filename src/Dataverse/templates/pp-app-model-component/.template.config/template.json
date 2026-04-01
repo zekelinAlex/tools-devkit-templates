@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.ModelDrivenApp.Component",
   "name": "Power Platform: ModelDriven App Component",
   "shortName": "pp-app-model-component",
+  "description": "Adds a component to an existing Model-Driven App manifest. Supported types: Entity(1), View(26), BPF(29), CommandForm(48), Chart(59), Form(60), Sitemap(62). Use when linking an existing solution component to an app.",
   "classifications": ["Dataverse", "Power Platform"],
   "sourceName": "App-ModelDriven-component",
   "tags": {

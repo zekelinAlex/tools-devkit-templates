@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.RibbonButton",
   "name": "Power Platform: Ribbon Button",
   "shortName": "pp-ribbon-button",
+  "description": "Adds a ribbon button: commanddefinition.xml (JavaScriptFunction + $webresource ref) + customaction.xml (location, icons 16x32, sequence, TemplateAlias) + loclbels.xml (Alt, LabelText, ToolTipTitle, ToolTipDescription, LCID 1033). Injected into entity RibbonDiff.xml.",
   "tags": {
     "language": "XML",
     "type": "item"

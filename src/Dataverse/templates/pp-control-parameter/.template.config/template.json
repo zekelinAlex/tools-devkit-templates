@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Controls.Parameters",
   "name": "Power Platform: Control Parameters",
   "shortName": "pp-control-parameter",
+  "description": "Adds XML parameter definitions to a form control. Supports type-specific params: Lookup (filters, views, MRU), OptionSet, SubGrid (records per page, pickers), TextBox, Number, Label, QuickFormCollection. Run inside an existing entity form.",
   "tags": {
     "language": "XML",
     "type": "item"

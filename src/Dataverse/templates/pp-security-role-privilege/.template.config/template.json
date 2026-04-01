@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.SecurityRole.RolePrivilege",
   "name": "Power Platform: RolePrivilege",
   "shortName": "pp-security-role-privilege",
+  "description": "Adds privileges to an existing security role. Script-only. Generates privilege XML entries (Create/Read/Update/Delete/Assign/Share + level) injected into the target role file.",
   "classifications": ["Dataverse", "Power Platform"],
   "sourceName": "Role-Privilege",
   "tags": {

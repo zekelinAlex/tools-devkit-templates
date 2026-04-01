@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.Plugin.Steps",
   "name": "Power Platform: Plugin Steps",
   "shortName": "pp-plugin-assembly-step",
+  "description": "Creates SdkMessageProcessingStep XML: PluginTypeName (assembly-qualified), SdkMessageId, PrimaryEntity, Stage, Rank, EventHandlerTypeCode=4602, filtering attributes. Generates SdkMessageProcessingSteps/{GUID}.xml. CHAIN: Step 3 \u2014 run after pp-plugin-assembly. One step per plugin class per message.",
   "tags": {
     "language": "C#",
     "type": "project"

@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Tabs.Columns",
   "name": "Power Platform: Tab Column",
   "shortName": "pp-form-column",
+  "description": "HIERARCHY: inside Tab (pp-form-tab) -> contains Sections (pp-form-section). Generates <column> with percentage width. Divides tab horizontally.",
   "tags": {
     "language": "XML",
     "type": "item"

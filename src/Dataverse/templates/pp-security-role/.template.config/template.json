@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.SecurityRole",
   "name": "Power Platform: Security Role",
   "shortName": "pp-security-role",
+  "description": "Creates a security role XML: <Role id, name, IsCustomizable=1, IsAutoAssigned=0, empty RolePrivileges>. Add privileges with pp-security-role-privilege. Assign to app with pp-app-security-role. Create one role file per user persona.",
   "classifications": ["Dataverse", "Power Platform"],
   "sourceName": "Security-Role",
   "tags": {

@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.RibbonButtonHide",
   "name": "Power Platform: Ribbon Button Hide",
   "shortName": "pp-ribbon-button-hide",
+  "description": "Hides an existing ribbon button via HideCustomAction XML. Generates customactionstohide.xml with conditional blocks per button type (e.g. NewRecord at Mscrm.HomepageGrid.{entity}.NewRecord). Injected into entity RibbonDiff.xml.",
   "tags": {
     "language": "XML",
     "type": "item"

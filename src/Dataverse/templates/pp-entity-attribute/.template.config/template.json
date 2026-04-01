@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.Entity.Attribute",
   "name": "Power Platform: Entity Attribute",
   "shortName": "pp-entity-attribute",
+  "description": "Adds a column to an existing entity. Types: Text, MultilineText, WholeNumber, Decimal, Float, Money, DateTime, Boolean, Lookup, OptionSet(Local/Global). Generates attribute.xml + LookupRelationship.xml (for Lookup) + optionset XML (for new Global OptionSet). Required: EntitySchemaName, PublisherPrefix, LogicalName, DisplayName.",
   "tags": {
     "language": "XML",
     "type": "item"

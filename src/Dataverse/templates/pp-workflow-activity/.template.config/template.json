@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.WorkflowActivities",
   "name": "Power Platform: Workflow Activities",
   "shortName": "pp-workflow-activity",
+  "description": "Creates WorkflowActivityBase.cs: abstract CodeActivity with sealed Execute() that initializes IWorkflowContext, two IOrganizationService instances (user + system context), ITracingService, then calls virtual Execute() for subclass implementation. Use for custom Dynamics 365 workflow steps.",
   "tags": {
     "language": "C#",
     "type": "project"

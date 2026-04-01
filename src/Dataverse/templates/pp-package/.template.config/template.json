@@ -4,6 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.PackageDeployerPackage",
   "name": "Power Platform: Package Deployer Package",
   "shortName": "pp-package",
+  "description": "Scaffolds a Package Deployer project. Script-only \u2014 generates PkgAssets/ with ImportConfig.xml (solution import order) + manifest.ppkg.json. Use when packaging multiple solutions for deployment.",
   "classifications": ["Dataverse", "Power Platform"],
   "tags": {
     "language": "XML"
