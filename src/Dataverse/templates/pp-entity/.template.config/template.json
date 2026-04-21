@@ -154,7 +154,7 @@
 		},
 		"PublisherPrefix": {
 			"type": "parameter",
-			"description": "Use the same publisher prefix as defined in Other/Solution.xml of the solution where this entity is first introduced to the system.",
+			"description": "Use the same publisher prefix as defined in Other/Solution.xml of the solution where this entity is first introduced to the system. Required when IsSystemEntity is false.",
 			"datatype": "text",
 			"replaces": "examplepublisherprefix",
 			"fileRename": "examplepublisherprefix",
@@ -172,7 +172,7 @@
 		},
 		"LogicalNamePlural": {
 			"displayName": "Logical name in the plural form (entity set name) (without publisher prefix)",
-			"description": "All lower-case version of the collection schema name. For example, salesorders",
+			"description": "All lower-case version of the collection schema name. For example, salesorders. Required when Behavior is 'New'.",
 			"type": "parameter",
 			"datatype": "text",
 			"replaces": "examplecustomentities",
@@ -188,7 +188,7 @@
 		},
 		"DisplayNamePlural": {
 			"type": "parameter",
-			"description": "Human-readable name in the plural form. For example, Sales Orders",
+			"description": "Human-readable name in the plural form. For example, Sales Orders. Required when Behavior is 'New'.",
 			"datatype": "text",
 			"replaces": "ExampleEntityPluralDisplayName",
 			"isRequired": "(Behavior == \"New\")"
