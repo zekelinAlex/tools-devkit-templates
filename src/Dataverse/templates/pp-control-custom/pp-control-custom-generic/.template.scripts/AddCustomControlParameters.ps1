@@ -39,21 +39,26 @@ if (-not $controlDescriptionNode) {
     $controlDescriptionsNode.AppendChild($controlDescriptionNode) | Out-Null
 }
 
-# Create default customControl (without formFactor) if it doesn't exist yet
+# Create default customControl (without formFactor) referencing the field's OOB classid.
+# This entry is required for the PCF to actually activate on the form.
 $defaultCustomControlNode = $controlDescriptionNode.SelectSingleNode("./customControl[not(@formFactor)]")
 if (-not $defaultCustomControlNode) {
-    $defaultCustomControlNode = $entityXml.CreateElement("customControl")
-    $defaultCustomControlNode.SetAttribute("id", "{$([guid]::NewGuid().ToString('d'))}")
-    $controlDescriptionNode.AppendChild($defaultCustomControlNode) | Out-Null
+    if ($controlNode -and $controlNode.GetAttribute("classid")) {
+        $defaultCustomControlNode = $entityXml.CreateElement("customControl")
+        $defaultCustomControlNode.SetAttribute("id", $controlNode.GetAttribute("classid"))
+        $controlDescriptionNode.AppendChild($defaultCustomControlNode) | Out-Null
 
-    $defaultParametersNode = $entityXml.CreateElement("parameters")
-    $defaultCustomControlNode.AppendChild($defaultParametersNode) | Out-Null
+        $defaultParametersNode = $entityXml.CreateElement("parameters")
+        $defaultCustomControlNode.AppendChild($defaultParametersNode) | Out-Null
 
-    $datafieldnameNode = $entityXml.CreateElement("datafieldname")
-    $datafieldnameNode.InnerText = $fieldLogicalName
-    $defaultParametersNode.AppendChild($datafieldnameNode) | Out-Null
+        $datafieldnameNode = $entityXml.CreateElement("datafieldname")
+        $datafieldnameNode.InnerText = $fieldLogicalName
+        $defaultParametersNode.AppendChild($datafieldnameNode) | Out-Null
 
-    Write-Host "Added default customControl with datafieldname='$fieldLogicalName'"
+        Write-Host "Added default customControl id='$($controlNode.GetAttribute('classid'))' for '$fieldLogicalName'"
+    } else {
+        Write-Warning "Cannot add default customControl: classid not found on control for '$fieldLogicalName'"
+    }
 }
 
 # Create formFactor-specific customControl

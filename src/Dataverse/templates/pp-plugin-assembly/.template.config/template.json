@@ -29,7 +29,7 @@
 			"defaultValue": ".",
 			"replaces": "SolutionDeclarationsRoot",
 			"fileRename": "SolutionDeclarationsRoot",
-			"description": "Path to the solution root directory"
+			"description": "Folder under the project folder where solution components will be placed. Use the folder name only, not the full path. Use '.' if you want to place components directly in the project folder."
 		}
   },
   "postActions": [

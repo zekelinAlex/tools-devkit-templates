@@ -30,7 +30,9 @@
       "datatype": "text",
       "defaultValue": ".",
       "replaces": "SolutionDeclarationsRoot",
-      "fileRename": "SolutionDeclarationsRoot"
+      "fileRename": "SolutionDeclarationsRoot",
+      "isRequired": false
+      
     },
     "PublisherPrefix": {
       "type": "parameter",

@@ -21,7 +21,7 @@ var entityLogicalName = Args[1];
 var outputPath = Args.Count > 2 ? Args[2] : Directory.GetCurrentDirectory();
 
 // ── Load Entity.xml ───────────────────────────────────────────────────────────
-var entityXmlPath = Path.Combine(solutionPath, "Declarations", "Entities", entityLogicalName, "Entity.xml");
+var entityXmlPath = Path.Combine(solutionPath, "SolutionDeclarationsRoot", "Entities", entityLogicalName, "Entity.xml");
 if (!File.Exists(entityXmlPath))
 {
     Console.Error.WriteLine($"Entity.xml not found: {entityXmlPath}");
@@ -107,7 +107,7 @@ foreach (var attr in entityNode.Element("attributes").Elements("attribute"))
     if (globalRef != null && !string.IsNullOrEmpty(globalRef.Value))
     {
         info.IsGlobalOptionSet = true;
-        var globalPath = Path.Combine(solutionPath, "Declarations", "OptionSets", globalRef.Value + ".xml");
+        var globalPath = Path.Combine(solutionPath, "SolutionDeclarationsRoot", "OptionSets", globalRef.Value + ".xml");
         if (File.Exists(globalPath))
         {
             var gDoc = XDocument.Load(globalPath);

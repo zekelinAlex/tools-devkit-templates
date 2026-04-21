@@ -471,7 +471,8 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "SolutionDeclarationsRoot",
-      "isRequired": true,
+      "defaultValue": ".",
+      "isRequired": false,
       "description": "Path to the solution root directory"
     },
     "EntitySchemaName": {

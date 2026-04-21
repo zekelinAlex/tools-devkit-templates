@@ -21,7 +21,16 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "entityexamplelogicalname"
-    }
+    },
+    "SolutionRootPath": {
+			"type": "parameter",
+			"datatype": "text",
+			"defaultValue": ".",
+			"replaces": "SolutionDeclarationsRoot",
+			"fileRename": "SolutionDeclarationsRoot",
+			"description": "Folder under the project folder where solution components will be placed. Use the folder name only, not the full path. Use '.' if you want to place components directly in the project folder.",
+      "isRequired": false
+		}
   },
   "postActions": [
     {

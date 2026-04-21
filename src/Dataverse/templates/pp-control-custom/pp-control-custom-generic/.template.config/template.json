@@ -61,7 +61,8 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "SolutionDeclarationsRoot",
-      "isRequired": true,
+      "defaultValue": ".",
+      "isRequired": false,
       "description": "Path to the solution root directory"
     },
     "EntitySchemaName": {
@@ -139,21 +140,6 @@
       "args": {
         "executable": "pwsh",
         "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddCustomControlParameters.ps1\" ",
-        "redirectStandardOutput": "false"
-      },
-      "manualInstructions": [
-        {
-          "text": "Adding new parameters to custom control"
-        }
-      ],
-      "continueOnError": false,
-      "description": "Adding new parameters to custom control"
-    },
-    {
-      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-      "args": {
-        "executable": "pwsh",
-        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddEntityToSolutionXml.ps1\" ",
         "redirectStandardOutput": "false"
       },
       "manualInstructions": [

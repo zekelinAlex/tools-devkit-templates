@@ -35,7 +35,8 @@
       "type": "parameter",
       "datatype": "text",
       "replaces": "SolutionDeclarationsRoot",
-      "isRequired": true
+      "defaultValue": ".",
+      "isRequired": false
     },
     "FormType": {
       "type": "parameter",

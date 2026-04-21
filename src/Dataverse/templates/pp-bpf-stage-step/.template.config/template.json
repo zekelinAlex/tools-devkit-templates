@@ -30,7 +30,8 @@
       "datatype": "text",
       "defaultValue": ".",
       "replaces": "SolutionDeclarationsRoot",
-      "fileRename": "SolutionDeclarationsRoot"
+      "fileRename": "SolutionDeclarationsRoot",
+      "isRequired": false
     },
     "FormId": {
       "type": "parameter",
