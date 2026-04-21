@@ -3,7 +3,7 @@
   "author": "NETWORG",
   "identity": "TALXIS.DevKit.Templates.Dataverse.UI.Tabs.TabFooter",
   "name": "Power Platform: Tab Footer",
-  "shortName": "PP-form-dialog-tabfooter",
+  "shortName": "pp-form-dialog-tabfooter",
   "description": "Injects a <tabfooter> XML element into a Dataverse dialog form tab. Use when you need a footer area at the bottom of a dialog tab.",
   "tags": {
     "language": "XML",

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xrm.Sdk;
 using System;
 
-namespace TALXIS.SDK.Libraries.Plugins.CDS
+namespace SolutionLogicalNameExample
 {
     /// <summary>
     /// Base implementation for a plug-in. 

@@ -3,7 +3,7 @@
   "appId": "appexampleId",
   "appDisplayName": "appexampleDisplayName",
   "region": "prod",
-  "environmentId": "envexampleid",
+  "environmentId": null,
   "description": "",
   "buildPath": "./dist",
   "buildEntryPoint": "index.html",

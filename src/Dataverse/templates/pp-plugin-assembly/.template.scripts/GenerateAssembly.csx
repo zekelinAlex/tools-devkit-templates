@@ -18,9 +18,9 @@ string csprojFileName = Path.GetFileNameWithoutExtension(csprojPath);
 
 XmlDocument csprojDoc = new XmlDocument();
 csprojDoc.Load(csprojPath);
-string assemblyName = csprojDoc.SelectSingleNode("//Project/PropertyGroup/AssemblyName")?.InnerText ?? csprojFileName;
-string fileVersion = csprojDoc.SelectSingleNode("//Project/PropertyGroup/FileVersion")?.InnerText ?? "1.0.0.0";
-string xmlPath = Path.Combine(Directory.GetCurrentDirectory(), $"SolutionDeclarationsRoot//PluginAssemblies//{assemblyName}-{pluginAssemblyId.ToUpper()}//{assemblyName}.dll.data.xml");
+string assemblyName = csprojDoc.SelectNodes("//Project/PropertyGroup/AssemblyName").Cast<XmlNode>().LastOrDefault()?.InnerText ?? csprojFileName;
+string fileVersion = csprojDoc.SelectNodes("//Project/PropertyGroup/FileVersion").Cast<XmlNode>().LastOrDefault()?.InnerText ?? "1.0.0.0";
+string xmlPath = Path.Combine(Directory.GetCurrentDirectory(), $"Declarations//PluginAssemblies//{assemblyName}-{pluginAssemblyId.ToUpper()}//{assemblyName}.dll.data.xml");
 
 string dllPath = Path.Combine(pluginRootPath, "bin", "Debug", "net462", "publish", $"{assemblyName}.dll");
 if (!File.Exists(dllPath)) throw new FileNotFoundException("Build not found", dllPath);
@@ -83,8 +83,6 @@ foreach (var className in classList)
 }
 
 pluginDoc.Save(xmlPath);
-
-File.Copy(dllPath, $"{Path.GetDirectoryName(xmlPath)}\\{assemblyName}.dll");
 
 XmlDocument solutionDoc = new XmlDocument();
 XmlElement solutionRoot = solutionDoc.CreateElement("RootComponent");

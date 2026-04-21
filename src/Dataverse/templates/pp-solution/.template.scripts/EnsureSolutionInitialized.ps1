@@ -15,6 +15,21 @@ foreach ($file in $requiredFiles) {
     }
 }
 
+# Find the Solution.xml file and read it as XML
+$solutionXml = Get-ChildItem -Path . -Filter Solution.xml -Recurse | Select-Object -First 1
+[xml]$xml = Get-Content $solutionXml.FullName -Raw
+
+# Find the UniqueName element and sanitize it
+$uniqueName = $xml.ImportExportXml.SolutionManifest.UniqueName
+$sanitized = [regex]::Replace($uniqueName, '[^a-zA-Z0-9]', '')
+$xml.ImportExportXml.SolutionManifest.UniqueName = $sanitized
+
+# Switch solution type to both to support packing managed solutions using SolutionPackager
+$xml.ImportExportXml.SolutionManifest.Managed = 2
+
+# Save the updated XML back to the file
+$xml.Save($solutionXml.FullName)
+
 if ($missing.Count -eq 0) {
     Write-Host "Solution artifacts already present (Customizations.xml, Relationships.xml, Solution.xml). Skipping InitializeSolution."
     return

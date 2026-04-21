@@ -5,7 +5,6 @@ $author = "examplepublisher"
 $company = "exampleсompany"
 
 # --- 1. Initialize the plugin project ---
-pac plugin init --signing-key-file-path $signingKey --outputDirectory $outputDir --author $author
 cd $outputDir
 
 # --- 2. Remove the auto-generated source file ---
@@ -24,7 +23,7 @@ $ProjectPath = $csprojFile.FullName
 
 # --- 5. Update the Sdk in the .csproj text and remove unwanted elements ---
 $csprojText = Get-Content $ProjectPath -Raw
-$csprojText = $csprojText -replace '<Project Sdk="Microsoft\.NET\.Sdk">', '<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.13">'
+$csprojText = $csprojText -replace '<Project Sdk="Microsoft\.NET\.Sdk">', '<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.14">'
 $csprojText = $csprojText -replace '\s*<PackageReference Include="Microsoft\.PowerApps\.MSBuild\.Plugin"[^>]*/>\s*', ''
 $csprojText = $csprojText -replace '\s*<Import[^>]*Project="\$\(PowerAppsTargetsPath\)\\Microsoft\.PowerApps\.VisualStudio\.Plugin\.targets"[^>]*/>\s*', ''
 $csprojText = $csprojText -replace '\s*<Import[^>]*Project="\$\(PowerAppsTargetsPath\)\\Microsoft\.PowerApps\.VisualStudio\.Plugin\.props"[^>]*/>\s*', ''
