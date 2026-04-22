@@ -1,10 +1,10 @@
 <attribute PhysicalName="examplepublisherprefix_examplecustomentityattribute">
-    <!--#if (AttributeType == "SingleLineText") -->
-        <Type>string</Type>
-    <!--#elseif (AttributeType == "MultipleLinesOfText") -->
-        <Type>memo</Type>
+    <!--#if (AttributeType == "Text") -->
+        <Type>ntext</Type>
+    <!--#elseif (AttributeType == "MultilineText") -->
+        <Type>nvarchar</Type>
     <!--#elseif (AttributeType == "TwoOptions") -->
-        <Type>boolean</Type>
+        <Type>bit</Type>
     <!--#elseif (AttributeType == "WholeNumber") -->
         <Type>int</Type>
     <!--#elseif (AttributeType == "FloatingPoint") -->
@@ -87,9 +87,11 @@
     <OptionSetName>examplepublisherprefix_examplecustomentityattribute</OptionSetName>
     <!--#endif -->
 
-    <!--#if (AttributeType == "SingleLineText") -->
-        <MaxLength>100</MaxLength>
-    <!--#elseif (AttributeType == "MultipleLinesOfText") -->
+    <!--#if (AttributeType == "Text") -->
+        <Format>text</Format>
+        <MaxLength>1000</MaxLength>
+        <Length>2000</Length>
+    <!--#elseif (AttributeType == "MultilineText") -->
         <MaxLength>2000</MaxLength>
     <!--#elseif (AttributeType == "TwoOptions") -->
         <DefaultValue>false</DefaultValue>

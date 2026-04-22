@@ -1,4 +1,4 @@
-﻿﻿# Resolve the relative path to an absolute path (to support other OSes)
+﻿# Resolve the relative path to an absolute path (to support other OSes)
 $entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot/Entities/exampleexistingentity/Entity.xml').Path
 $attributeXmlPath = (Resolve-Path '.template.temp/attribute.xml').Path
 
