@@ -5,11 +5,11 @@ $optionNumber = (Get-Random -Minimum 10000 -Maximum 99999) * 10000
 
 $attributeXmlPath 
 
-<!--#if (AttributeType == "OptionSet (Global)") -->
+<!--#if (AttributeType == "OptionSet(Global)") -->
     $attributeXmlPath = "SolutionDeclarationsRoot\OptionSets\examplecustomentityattribute.xml"
 <!--#endif -->
 
-<!--#if (AttributeType == "OptionSet (Local)") -->
+<!--#if (AttributeType == "OptionSet(Local)") -->
     $attributeXmlPath = ".template.temp/attribute.xml"
 <!--#endif -->
 
@@ -63,7 +63,7 @@ $writer = [System.Xml.XmlWriter]::Create($attributeXmlPath, $settings)
 $attributeXml.Save($writer)
 $writer.Close()
 
-<!--#if (AttributeType == "OptionSet (Global)") -->
+<!--#if (AttributeType == "OptionSet(Global)") -->
     # Resolve the relative path to an absolute path (to support other OSes)
     $solutionPath = Resolve-Path -Path 'SolutionDeclarationsRoot/Other/Solution.xml'
 

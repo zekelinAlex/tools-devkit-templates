@@ -17,7 +17,7 @@
       "defaultValue": "defaulttemplateexample",
       "replaces": "optionsetexampletypeoptionset",
       "fileRename": "optionsetexampletypeoptionset",
-      "description": "Select Optionset (5 values max)",
+      "description": "Select OptionSet(5 values max)",
       "isRequired": true
     },
     "CustomControl_Icon1": {

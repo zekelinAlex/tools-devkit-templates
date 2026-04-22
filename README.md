@@ -146,7 +146,7 @@ Add global OptionSet to the table:
 dotnet new pp-entity-attribute `
 --output "src/Solutions.DataModel" `
 --EntitySchemaName "${publisherPrefix}_warehousetransaction" `
---AttributeType "OptionSet (Global)" `
+--AttributeType "OptionSet(Global)" `
 --RequiredLevel "required" `
 --LogicalName "${publisherPrefix}_paymentmethod" `
 --DisplayName "Payment Method" `
@@ -159,7 +159,7 @@ Create a local OptionSet:
 dotnet new pp-entity-attribute `
 --output "src/Solutions.DataModel" `
 --EntitySchemaName "${publisherPrefix}_warehouseitem" `
---AttributeType "OptionSet (Local)" `
+--AttributeType "OptionSet(Local)" `
 --RequiredLevel "required" `
 --LogicalName "${publisherPrefix}_packagetype" `
 --DisplayName "Package Type" `

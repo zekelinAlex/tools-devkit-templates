@@ -140,7 +140,7 @@
           "choice": "QuickFormCollection"
         }
       ],
-      "description": "Type of parameters to add: OptionSet (for option set controls), Lookup (for lookup controls), SubGrid (for subgrid controls), Label (for label controls), TextBox (for text box controls), Number (for number controls), or QuickFormCollection (for quick form collection controls)"
+      "description": "Type of parameters to add: OptionSet(for option set controls), Lookup (for lookup controls), SubGrid (for subgrid controls), Label (for label controls), TextBox (for text box controls), Number (for number controls), or QuickFormCollection (for quick form collection controls)"
     },
     "ColumnIndex": {
       "type": "parameter",

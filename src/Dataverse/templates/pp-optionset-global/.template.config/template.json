@@ -2,9 +2,9 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "NETWORG",
   "identity": "TALXIS.DevKit.Templates.Dataverse.Optionset.Global",
-  "name": "Power Platform: Optionset (Global)",
+  "name": "Power Platform: OptionSet(Global)",
   "shortName": "pp-optionset-global",
-  "description": "Creates a global OptionSet (picklist, IsGlobal=1): optionset XML + optionsetoption.xml. Options populated from comma-separated list. Reference from entity attributes using pp-entity-attribute with AttributeType=OptionSet(Global).",
+  "description": "Creates a global OptionSet(picklist, IsGlobal=1): optionset XML + optionsetoption.xml. Options populated from comma-separated list. Reference from entity attributes using pp-entity-attribute with AttributeType=OptionSet(Global).",
   "tags": {
     "language": "XML",
     "type": "item"
