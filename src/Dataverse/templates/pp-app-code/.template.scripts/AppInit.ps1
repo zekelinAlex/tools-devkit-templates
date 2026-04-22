@@ -1,1 +1,0 @@
-﻿npx degit microsoft/PowerAppsCodeApps/templates/starter ../codeappexample --force
