@@ -1,6 +1,6 @@
 $solutionRootPath = "SolutionDeclarationsRoot"
 
-if ($solutionRootPath -eq ".") { return }
+if ($solutionRootPath -ne ".") { return }
 
 $projectRoot = (Get-Location).Path
 
