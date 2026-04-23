@@ -639,11 +639,11 @@ We are happy to collaborate with developers and contributors interested in enhan
 
 #### Using your local version of templates
 
-Run the following terminal command in the folder `src/Dataverse/templates`:
+Use the provided VS Code task to build the project and update the local templates:
 
-```
-dotnet new install "." --force
-```
+1. Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P)
+2. Search for "Tasks: Run Task" and select it
+3. Choose "Update local templates" from the list
 
 ## Contact us
 
