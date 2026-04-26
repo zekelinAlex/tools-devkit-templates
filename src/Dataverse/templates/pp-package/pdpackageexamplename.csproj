@@ -1,4 +1,4 @@
-<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.14">
+<Project Sdk="TALXIS.DevKit.Build.Sdk/0.0.0.15">
   <PropertyGroup>
     <ProjectType>PDPackage</ProjectType>
     <TargetFramework>net472</TargetFramework>
