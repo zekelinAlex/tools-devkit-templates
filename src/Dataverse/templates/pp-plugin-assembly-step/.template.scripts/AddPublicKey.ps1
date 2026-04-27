@@ -2,7 +2,7 @@ $xmlPath = ".template.temp/{pluginstepexampleid}.xml"
 $PluginProjectName = "examplepluginprojectname"
 $plaginBuildName = $PluginProjectName.Replace(".", "")
 $pluginguidIdExampleToUpper = "pluginguididexample".ToUpper()
-$xmlPluginPath = "SolutionDeclarationsRoot\PluginAssemblies/${plaginBuildName}-${pluginguidIdExampleToUpper}/${plaginBuildName}.dll.data.xml"
+$xmlPluginPath = "SolutionDeclarationsRoot/PluginAssemblies/${plaginBuildName}-${pluginguidIdExampleToUpper}/${plaginBuildName}.dll.data.xml"
 
 if (-not (Test-Path $xmlPluginPath)) {
     throw "Plugin file not found in the path: $xmlPluginPath"

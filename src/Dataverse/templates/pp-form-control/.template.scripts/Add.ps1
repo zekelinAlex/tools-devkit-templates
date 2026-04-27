@@ -5,7 +5,7 @@ $sectionId = "sectionidexample"
 $sectionNumber = "sectionnumberexample"
 $rowNumber = "rownumberexample"
 $formType = "formtypeexample"
-$entityXmlPath = .\.template.scripts\LocateForm.ps1
+$entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 if ($formType -eq "unknown") {
     $folderName = Split-Path -Path $entityXmlPath -Parent | Split-Path -Leaf

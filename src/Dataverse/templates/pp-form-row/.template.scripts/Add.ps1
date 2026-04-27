@@ -3,7 +3,7 @@ $tabNumber = "tabnumberexample"
 $columnNumber = "columnnumberexample"
 $sectionId = "sectionidexample"
 $sectionNumber = "sectionnumberexample"
-$entityXmlPath = .\.template.scripts\LocateForm.ps1
+$entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 $rowPath = (Resolve-Path './.template.temp/row.xml').Path
 

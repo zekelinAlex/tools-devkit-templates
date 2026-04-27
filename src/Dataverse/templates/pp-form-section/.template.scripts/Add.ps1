@@ -1,7 +1,7 @@
 $tabId = "tabexampleid"
 $tabNumber = "tabnumberexample"
 $columnNumber = "columnnumberexample"
-$entityXmlPath = .\.template.scripts\LocateForm.ps1
+$entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 $sectionPath = (Resolve-Path './.template.temp/section.xml').Path
 
