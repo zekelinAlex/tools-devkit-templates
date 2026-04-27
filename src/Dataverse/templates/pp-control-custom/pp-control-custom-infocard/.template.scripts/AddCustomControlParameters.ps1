@@ -1,4 +1,4 @@
-$entityXmlPath = .\.template.scripts\LocateForm.ps1
+$entityXmlPath = ./.template.scripts/LocateForm.ps1
 $controlDescriptionId = "controlDescriptionIdexample"
 $customControlFormFactor="customcontrolformfactorexample"
 $customControlName="examplepublisherprefix_TALXIS.PCF.InfoCard"

@@ -1,4 +1,4 @@
-$entityXmlPath = .\.template.scripts\LocateForm
+$entityXmlPath = ./.template.scripts/LocateForm
 
 $tabPath = (Resolve-Path './.template.temp/tab.xml').Path
 

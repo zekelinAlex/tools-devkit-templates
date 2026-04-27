@@ -1,30 +1,36 @@
 ﻿$lowercasename = "entityexamplelogicalname"
 $capitalizedname = $lowercasename.Substring(0,1).ToUpper() + $lowercasename.Substring(1)
+$modelSolutionPath = (Resolve-Path "modelsolutionexamplepath").Path
 
-$targetGenerated = "src\generated"
+$targetGenerated = Join-Path "src" "generated"
 $targetIndexTs = Join-Path $targetGenerated "index.ts"
 
 if (-not (Test-Path $targetIndexTs)) 
 {
     New-Item -ItemType Directory -Path $targetGenerated -Force | Out-Null
 
-    Copy-Item ".template.temp\models" -Destination $targetGenerated -Recurse -Force
-    Copy-Item ".template.temp\index.ts" -Destination $targetGenerated -Force
+    Copy-Item (Join-Path ".template.temp" "models") -Destination $targetGenerated -Recurse -Force
+    Copy-Item (Join-Path ".template.temp" "index.ts") -Destination $targetGenerated -Force
 }
 
-.\.template.scripts\ReplacePlaceholder.ps1 -FilePath "src\generated\services\capitalizedentitylogicalnameexamplesService.ts" -Placeholder "lowercaseentitylogicalnameexample" -Replacement $lowercasename
-.\.template.scripts\ReplacePlaceholder.ps1 -FilePath "src\generated\services\capitalizedentitylogicalnameexamplesService.ts" -Placeholder "capitalizedentitylogicalnameexample" -Replacement $capitalizedname
+& (Join-Path $PSScriptRoot 'ReplacePlaceholder.ps1') -FilePath (Join-Path "src" "generated" "services" "capitalizedentitylogicalnameexamplesService.ts") -Placeholder "lowercaseentitylogicalnameexample" -Replacement $lowercasename
+& (Join-Path $PSScriptRoot 'ReplacePlaceholder.ps1') -FilePath (Join-Path "src" "generated" "services" "capitalizedentitylogicalnameexamplesService.ts") -Placeholder "capitalizedentitylogicalnameexample" -Replacement $capitalizedname
 
-Start-Process dotnet-script -ArgumentList '".\.template.scripts\GenerateModel.csx" -- "modelsolutionexamplepath" "entityexamplelogicalname" "src\generated\models"' -NoNewWindow -Wait
+$generateModelScript = Join-Path $PSScriptRoot "GenerateModel.csx"
+$generatedModelsPath = Join-Path "src" "generated" "models"
+Start-Process dotnet-script -ArgumentList "`"$generateModelScript`" -- `"$modelSolutionPath`" `"entityexamplelogicalname`" `"$generatedModelsPath`"" -NoNewWindow -Wait
 
 $modelIndexString = "export * as "+ $capitalizedname + "sModel from './models/"+ $capitalizedname + "sModel';"
 $serviceIndexString = "export * from './services/" + $capitalizedname + "sService';"
 
-.\.template.scripts\InsertAfterTarget.ps1 -TargetString "// Models" -SettingString $modelIndexString -FilePath "src\generated\index.ts"
-.\.template.scripts\InsertAfterTarget.ps1 -TargetString "// Services" -SettingString $serviceIndexString -FilePath "src\generated\index.ts"
+$generatedIndexTs = Join-Path "src" "generated" "index.ts"
+& (Join-Path $PSScriptRoot 'InsertAfterTarget.ps1') -TargetString "// Models" -SettingString $modelIndexString -FilePath $generatedIndexTs
+& (Join-Path $PSScriptRoot 'InsertAfterTarget.ps1') -TargetString "// Services" -SettingString $serviceIndexString -FilePath $generatedIndexTs
 
-.\.template.scripts\AddDataSource.ps1
+& (Join-Path $PSScriptRoot 'AddDataSource.ps1')
 
-.\.template.scripts\AddDataSourceInfo.ps1 -SolutionPath "modelsolutionexamplepath" -EntityLogicalName "entityexamplelogicalname" -FilePath ".power\schemas\appschemas\dataSourcesInfo.ts"
+& (Join-Path $PSScriptRoot 'AddDataSourceInfo.ps1') -SolutionPath $modelSolutionPath -EntityLogicalName "entityexamplelogicalname" -FilePath (Join-Path ".power" "schemas" "appschemas" "dataSourcesInfo.ts")
 
-Start-Process dotnet-script -ArgumentList '".\.template.scripts\GenerateSchema.csx" -- "modelsolutionexamplepath" "entityexamplelogicalname" ".power\schemas\dataverse"' -NoNewWindow -Wait
+$generateSchemaScript = Join-Path $PSScriptRoot "GenerateSchema.csx"
+$dataverseSchemasPath = Join-Path ".power" "schemas" "dataverse"
+Start-Process dotnet-script -ArgumentList "`"$generateSchemaScript`" -- `"$modelSolutionPath`" `"entityexamplelogicalname`" `"$dataverseSchemasPath`"" -NoNewWindow -Wait

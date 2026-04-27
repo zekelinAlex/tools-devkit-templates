@@ -1,4 +1,4 @@
-$entityXmlPath = .\.template.scripts\LocateForm
+$entityXmlPath = ./.template.scripts/LocateForm
 $paramName = "nameexample"
 $paramType = "typeexample"
 

@@ -4,7 +4,7 @@ $columnNumber = "columnnumberexample"
 $sectionId = "sectionidexample"
 $sectionNumber = "sectionnumberexample"
 $rowNumber = "rownumberexample"
-$entityXmlPath = .\.template.scripts\LocateForm.ps1
+$entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 $parameterPath = (Resolve-Path './.template.temp/parameters.xml').Path
 

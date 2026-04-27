@@ -1,6 +1,6 @@
 $tabId = "tabexampleid"
 $tabNumber = "tabnumberexample"
-$entityXmlPath = .\.template.scripts\LocateForm.ps1
+$entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 

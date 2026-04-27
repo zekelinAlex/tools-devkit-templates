@@ -1,7 +1,7 @@
 $tabId = "tabexampleid"
 $tabNumber = "tabnumberexample"
 $setToTabFooter = "settotabfooterchoice"
-$entityXmlPath = .\.template.scripts\LocateForm.ps1
+$entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 $tabPath = (Resolve-Path './.template.temp/column.xml').Path
 

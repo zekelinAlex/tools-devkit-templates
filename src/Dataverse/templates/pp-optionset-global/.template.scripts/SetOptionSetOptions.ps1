@@ -5,7 +5,7 @@ $optionNumber = (Get-Random -Minimum 10000 -Maximum 99999) * 10000
 
 $attributeXmlPath 
 
-$attributeXmlPath = "SolutionDeclarationsRoot\OptionSets\examplepublisherprefix_examplecustomentityattribute.xml"
+$attributeXmlPath = "SolutionDeclarationsRoot/OptionSets/examplepublisherprefix_examplecustomentityattribute.xml"
 
 [xml]$attributeXml = Get-Content -Path $attributeXmlPath -Raw
 

@@ -1,4 +1,21 @@
-$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot\AppModuleSiteMaps\appexamplename\AppModuleSiteMap.xml').Path
+$entityXmlRelativePaths = @(
+    'SolutionDeclarationsRoot/AppModuleSiteMaps/appexamplename/AppModuleSiteMap.xml'
+    'SolutionDeclarationsRoot/AppModuleSiteMaps/appexamplename/AppModuleSiteMap_managed.xml'
+)
+
+$entityXmlPath = $null
+foreach ($candidatePath in $entityXmlRelativePaths) {
+    $resolvedPath = Resolve-Path $candidatePath -ErrorAction SilentlyContinue
+    if ($resolvedPath) {
+        $entityXmlPath = $resolvedPath.Path
+        break
+    }
+}
+
+if (-not $entityXmlPath) {
+    exit 1
+}
+
 $groupPath = (Resolve-Path '.template.temp/group.xml').Path
 
 

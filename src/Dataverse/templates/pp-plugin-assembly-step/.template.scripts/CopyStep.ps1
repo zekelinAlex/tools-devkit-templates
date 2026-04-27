@@ -1,5 +1,5 @@
-$sourcePath = ".\.template.temp\{pluginstepexampleid}.xml"
-$targetDir = ".\SolutionDeclarationsRoot\SdkMessageProcessingSteps"
+$sourcePath = "./.template.temp/{pluginstepexampleid}.xml"
+$targetDir = "./SolutionDeclarationsRoot/SdkMessageProcessingSteps"
 
 mkdir "SolutionDeclarationsRoot/SdkMessageProcessingSteps"
 

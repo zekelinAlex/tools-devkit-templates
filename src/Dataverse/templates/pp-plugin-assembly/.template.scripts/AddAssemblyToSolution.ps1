@@ -1,5 +1,5 @@
-$sourceFile = ".template.temp\RootComponent.xml"
-$destinationFile = "SolutionDeclarationsRoot\Other\Solution.xml"
+$sourceFile = ".template.temp/RootComponent.xml"
+$destinationFile = "SolutionDeclarationsRoot/Other/Solution.xml"
 
 [xml]$sourceXml = Get-Content $sourceFile
 [xml]$destinationXml = Get-Content $destinationFile

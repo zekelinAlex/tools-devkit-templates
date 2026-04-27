@@ -1,7 +1,7 @@
 $removeDefaultTab = "removefefaulttabchoice"
 if ($removeDefaultTab -eq "True") {
     $mainFormId = "formguididexample"
-    $entityXmlPath = .\.template.scripts\LocateForm
+    $entityXmlPath = ./.template.scripts/LocateForm
 
     if ($mainFormId -eq "unknownFormId") {
         $formDirectory = './SolutionDeclarationsRoot/Entities/exampleentityname/FormXml/formtypeexample/'

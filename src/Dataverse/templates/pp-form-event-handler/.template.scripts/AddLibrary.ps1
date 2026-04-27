@@ -1,4 +1,4 @@
-$entityXmlPath = .\.template.scripts\LocateForm.ps1
+$entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 # Exit early without error if the parent directory is named 'Dialogs'
 $parentDir = Split-Path -Parent -Path $entityXmlPath
