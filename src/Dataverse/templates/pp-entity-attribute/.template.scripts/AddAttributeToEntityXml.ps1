@@ -1,13 +1,29 @@
-﻿# Resolve the relative path to an absolute path (to support other OSes)
+# Resolve the relative path to an absolute path (to support other OSes)
 $entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot/Entities/exampleexistingentity/Entity.xml').Path
 $attributeXmlPath = (Resolve-Path '.template.temp/attribute.xml').Path
 
 [XML]$entityXmlFile = Get-Content -Path $entityXmlPath -Raw
 [XML]$attributeXmlFile = Get-Content -Path $attributeXmlPath -Raw
 
-# Add attribute to entity
-$importedNode = $entityXmlFile.ImportNode($attributeXmlFile.attribute, $true)
-$entityXmlFile.Entity.EntityInfo.entity.attributes.AppendChild($importedNode) | Out-Null
+# Collect <attribute> nodes from the source file.
+$root = $attributeXmlFile.DocumentElement
+if ($root.LocalName -eq 'attribute') {
+    $attributeNodes = @($root)
+} else {
+    $attributeNodes = @($root.SelectNodes('attribute'))
+}
+
+if ($attributeNodes.Count -eq 0) {
+    Write-Error "No <attribute> elements found in $attributeXmlPath"
+    exit 1
+}
+
+# Add each attribute to entity
+$attributesContainer = $entityXmlFile.Entity.EntityInfo.entity.attributes
+foreach ($attrNode in $attributeNodes) {
+    $importedNode = $entityXmlFile.ImportNode($attrNode, $true)
+    $attributesContainer.AppendChild($importedNode) | Out-Null
+}
 
 # Configure XmlWriter settings to avoid unwanted whitespace
 $settings = New-Object System.Xml.XmlWriterSettings

@@ -4,7 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.Entity.Attribute",
   "name": "Power Platform: Entity Attribute",
   "shortName": "pp-entity-attribute",
-  "description": "Adds a column to an existing entity. Types: Text, MultilineText, WholeNumber, Decimal, Float, Money, DateTime, Boolean, Lookup, OptionSet(Local/Global). Generates attribute.xml + LookupRelationship.xml (for Lookup) + optionset XML (for new Global OptionSet). Required: EntitySchemaName, PublisherPrefix, LogicalName, DisplayName.",
+  "description": "Adds a column to an existing entity. Types: Text, MultilineText, WholeNumber, Decimal, Float, Currency, DateTime, Boolean, Lookup, OptionSet(Local/Global). Generates attribute.xml + LookupRelationship.xml (for Lookup) + optionset XML (for new Global OptionSet). Required: EntitySchemaName, PublisherPrefix, LogicalName, DisplayName.",
   "tags": {
     "language": "XML",
     "type": "item"
@@ -46,7 +46,7 @@
     },
     "AttributeType": {
       "type": "parameter",
-      "description": "Data type of the attribute: Text, JsonText (Elastic tables only), MultilineText, WholeNumber, Decimal, Float, Money, DateTime, Lookup, OptionSet(Local), OptionSet(Global), or Boolean",
+      "description": "Data type of the attribute: Text, JsonText (Elastic tables only), MultilineText, WholeNumber, Decimal, Float, Currency, DateTime, Lookup, OptionSet(Local), OptionSet(Global), or Boolean",
       "datatype": "choice",
       "isRequired": true,
       "choices": [
@@ -56,7 +56,7 @@
         { "choice": "WholeNumber" },
         { "choice": "Decimal" },
         { "choice": "Float" },
-        { "choice": "Money" },
+        { "choice": "Currency" },
         { "choice": "DateTime" },
         { "choice": "Lookup" },
         { "choice": "OptionSet(Local)" },
@@ -135,7 +135,7 @@
       "datatype": "int",
       "defaultValue": 2,
       "isRequired": "false",
-      "description": "Number of decimal places for decimal/money attributes (default: 2)"
+      "description": "Number of decimal places for decimal/Currency attributes (default: 2)"
     },
     "MinValue": {
       "type": "parameter",
