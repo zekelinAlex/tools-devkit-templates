@@ -9,7 +9,7 @@
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "__talxis-solution-logical-name__",
+  "sourceName": "__talxis-plugin-project__",
   "sources": [
     {
       "exclude": [
@@ -60,7 +60,7 @@
   },
   "primaryOutputs": [
     {
-      "path": "__talxis-solution-logical-name__.csproj"
+      "path": "__talxis-plugin-project__.csproj"
     }
   ],
   "postActions": [

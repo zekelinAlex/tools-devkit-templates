@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/__talxis-solution-logical-name__.csproj",
+                "${workspaceFolder}/__talxis-workflow-activity-project__.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -20,7 +20,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/__talxis-solution-logical-name__.csproj",
+                "${workspaceFolder}/__talxis-workflow-activity-project__.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
