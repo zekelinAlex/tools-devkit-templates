@@ -1,8 +1,8 @@
 <tabs>
-  <tab verticallayout="true" id="{stageexampleid}" name="StageStep3" locklevel="0" expanded="true"
+  <tab verticallayout="true" id="{__stage-id__}" name="StageStep3" locklevel="0" expanded="true"
     visible="false" labelid="{1mainId}">
     <labels>
-      <label description="stageexamplename" languagecode="1033" />
+      <label description="__stage-name__" languagecode="1033" />
     </labels>
     <columns>
       <column width="100%">
@@ -10,7 +10,7 @@
           <section showbar="false" columns="1" id="{2mainId}" name="StageStep3_section1"
             labelid="{3mainId}">
             <labels>
-              <label description="stageexamplename" languagecode="1033" />
+              <label description="__stage-name__" languagecode="1033" />
             </labels>
             <rows>
 

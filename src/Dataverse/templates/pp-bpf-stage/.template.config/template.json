@@ -36,33 +36,33 @@
     "FormId": {
       "type": "parameter",
       "generator": "text",
-      "replaces": "mainFormIdexample",
-      "fileRename": "mainFormIdexample"
+      "replaces": "__form-id__",
+      "fileRename": "__form-id__"
     },
     "BPFLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplebpfname",
-      "fileRename": "examplebpfname",
+      "replaces": "__bpf-logical-name__",
+      "fileRename": "__bpf-logical-name__",
       "isRequired": true
     },
-    "PrimaryEntity": {
+    "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "primaryentityexample",
-      "fileRename": "primaryentityexample"
+      "replaces": "__entity-logical-name__",
+      "fileRename": "__entity-logical-name__"
     },
     "StageName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "stageexamplename",
-      "fileRename": "stageexamplename"
+      "replaces": "__stage-name__",
+      "fileRename": "__stage-name__"
     },
     "StageId": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "stageexampleid",
-      "fileRename": "stageexampleid",
+      "replaces": "__stage-id__",
+      "fileRename": "__stage-id__",
       "parameters": {
         "defaultFormat": "d"
       }

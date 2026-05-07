@@ -23,7 +23,7 @@
     "RoleId": {
 			"type": "generated",
       "generator": "guid",
-      "replaces": "roleidexample",
+      "replaces": "__role-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			},
@@ -33,8 +33,8 @@
       "type": "parameter",
 			"datatype": "text",
 			"defaultValue": ".",
-      "replaces": "rolenameexample",
-      "fileRename": "ExampleSecurityRole",
+      "replaces": "__role-name__",
+      "fileRename": "__role-name__",
 			"description": "Name of the security role that will be displayed to users"
     }
   },

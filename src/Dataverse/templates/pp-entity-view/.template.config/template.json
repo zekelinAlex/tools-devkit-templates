@@ -24,36 +24,51 @@
       "type": "parameter",
       "datatype": "text",
       "defaultValue": "Generated",
-      "replaces": "viewexamplename",
+      "replaces": "__display-name__",
       "description": "Display name of the view"
     },
-    "EntitySchemaName": {
+    "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
       "isRequired": true,
-      "replaces": "exampleexistingentity",
-      "fileRename": "exampleexistingentity",
-      "description": "Schema name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
+      "replaces": "__entity-logical-name__",
+      "fileRename": "__entity-logical-name__",
+      "description": "Logical name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
     },
     "PublisherPrefix": {
       "type": "parameter",
       "datatype": "text",
-      "isRequired": true,
-      "replaces": "examplepublisherprefix",
-      "fileRename": "examplepublisherprefix",
+      "defaultValue": "__publisher-prefix-default-value__",
+      "replaces": "__publisher-prefix__",
+      "fileRename": "__publisher-prefix__",
       "description": "Publisher prefix of the entity"
     },
     "ViewId": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "someexampleid",
-      "fileRename": "someexampleid",
+      "replaces": "__view-id__",
+      "fileRename": "__view-id__",
       "parameters": {
         "defaultFormat": "d"
       }
     }
   },
 	"postActions": [
+    {
+			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+			"args": {
+				"executable": "pwsh",
+				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Init.ps1\"",
+				"redirectStandardOutput": "false"
+			},
+			"manualInstructions": [
+				{
+					"text": "Set missing metadata values in template files and renaming files if necessary"
+				}
+			],
+			"condition": "(PublisherPrefix == \"__publisher-prefix-default-value__\")",
+			"description": "Setting missing metadata values in template files and renaming files if necessary"
+		},
 		{
 			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
 			"args": {

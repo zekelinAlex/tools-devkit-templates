@@ -7,7 +7,7 @@ $rootComponents = $File.SelectSingleNode("//RootComponents")
 
 $newComponent = $File.CreateElement("RootComponent")
 $newComponent.SetAttribute("type", '10421')
-$newComponent.SetAttribute("schemaName", 'customizationexampleprefix_customapiexamplename')
+$newComponent.SetAttribute("schemaName", '__publisher-prefix_____api-logical-name__')
 $newComponent.SetAttribute("behavior", '0')
 
 # Append the new component to the root components without writing output to console

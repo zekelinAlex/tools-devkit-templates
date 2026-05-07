@@ -1,4 +1,4 @@
-$ButtonLabel = "examplebuttonlable"
+$ButtonLabel = "__button-label__"
 
 $commanddefinitionPath = (Resolve-Path './.template.temp/commanddefinition.xml').Path
 $loclbelsPath = (Resolve-Path './.template.temp/loclbels.xml').Path

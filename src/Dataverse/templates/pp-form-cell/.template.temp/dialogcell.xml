@@ -1,5 +1,5 @@
-<cell id="{idexample}" showlabel="true">
+<cell id="{__row-id__}" showlabel="true">
   <labels>
-    <label description="examplerowdisplayname" languagecode="1033" />
+    <label description="__display-name__" languagecode="1033" />
   </labels>
 </cell>

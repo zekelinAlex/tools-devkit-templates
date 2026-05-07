@@ -9,16 +9,16 @@
     <Version>1.0</Version>
     <Managed>2</Managed>
     <Publisher>
-      <UniqueName>examplepublisher</UniqueName>
+      <UniqueName>__publisher-name__</UniqueName>
       <LocalizedNames>
-        <LocalizedName description="examplepublisher" languagecode="1033" />
+        <LocalizedName description="__publisher-name__" languagecode="1033" />
       </LocalizedNames>
       <Descriptions>
-        <Description description="examplepublisher" languagecode="1033" />
+        <Description description="__publisher-name__" languagecode="1033" />
       </Descriptions>
       <EMailAddress xsi:nil="true"></EMailAddress>
       <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
-      <CustomizationPrefix>examplepublisherprefix</CustomizationPrefix>
+      <CustomizationPrefix>__publisher-prefix__</CustomizationPrefix>
       <CustomizationOptionValuePrefix>36171</CustomizationOptionValuePrefix>
       <Addresses>
         <Address>

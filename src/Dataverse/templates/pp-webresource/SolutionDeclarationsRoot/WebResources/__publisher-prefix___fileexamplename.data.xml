@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{wridexample}</WebResourceId>
+  <Name>__publisher-prefix___fileexamplename</Name>
+  <DisplayName>fileexampledisplayname</DisplayName>
+  <WebResourceType>wrtypeexample</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/__publisher-prefix___fileexamplenamewridexamplecapital</FileName>
+</WebResource>

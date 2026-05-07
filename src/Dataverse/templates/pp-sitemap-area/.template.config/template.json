@@ -25,16 +25,16 @@
       "datatype": "text",
       "description": "Name of the app module including publisher prefix (e.g., udpp_warehouseapp)",
       "isRequired": true,
-      "replaces": "appexamplename",
-      "fileRename": "appexamplename"
+      "replaces": "__app-name__",
+      "fileRename": "__app-name__"
     },
     "AreaTitle": {
       "type": "parameter",
       "datatype": "text",
       "description": "Title of the area that will be created in the sitemap",
       "defaultValue": "NewTitle",
-      "replaces": "areatitleexample",
-      "fileRename": "areatitleexample"
+      "replaces": "__area-title__",
+      "fileRename": "__area-title__"
     }
   },
   "sources": [

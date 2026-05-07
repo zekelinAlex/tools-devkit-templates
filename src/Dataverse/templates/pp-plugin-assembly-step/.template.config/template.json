@@ -10,7 +10,7 @@
     "type": "project"
   },
   "symbols": {
-    "PrimaryEntity": {
+    "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
       "replaces": "__primary-entity__",

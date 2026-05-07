@@ -1,6 +1,6 @@
-<tab verticallayout="true" id="{tabexampleid}" IsUserDefined="1" name="exampletabname" labelid="{labelexampleid}">
+<tab verticallayout="true" id="{__tab-id__}" IsUserDefined="1" name="exampletabname" labelid="{__label-id__}">
   <labels>
-    <label description="exampletabdisplayname" languagecode="1033" />
+    <label description="__display-name__" languagecode="1033" />
   </labels>
   <columns></columns>
 </tab>

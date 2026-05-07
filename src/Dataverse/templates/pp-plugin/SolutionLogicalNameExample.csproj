@@ -2,11 +2,11 @@
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>signingkeyfilepathexample</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>__signing-key-file-path__</AssemblyOriginatorKeyFile>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
     <ProjectType>Plugin</ProjectType>
-    <Company>exampleсompany</Company>
+    <Company>__company__</Company>
   </PropertyGroup>
   <!--
     NuGet pack and restore as MSBuild targets reference:
@@ -14,8 +14,8 @@
   -->
   <PropertyGroup>
     <Version>$(FileVersion)</Version>
-    <Authors>examplepublisher</Authors>
-    <Company>exampleсompany</Company>
+    <Authors>__publisher-name__</Authors>
+    <Company>__company__</Company>
     <Description>This is a sample nuget package which contains a Dataverse plugin and its runtime dependencies like Newtonsoft.Json</Description>
   </PropertyGroup>
   <ItemGroup>

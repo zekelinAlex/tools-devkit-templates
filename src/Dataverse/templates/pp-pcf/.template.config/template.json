@@ -15,16 +15,16 @@
     "Name": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "pcfnameexample",
-      "fileRename": "pcfnameexample",
+      "replaces": "__name__",
+      "fileRename": "__name__",
       "isRequired": true,
       "description": ""
     },
     "Namespace": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "pcfnamespaceexample",
-      "fileRename": "pcfnamespaceexample",
+      "replaces": "__namespace__",
+      "fileRename": "__namespace__",
       "isRequired": true,
       "description": ""
     }

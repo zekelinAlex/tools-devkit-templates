@@ -6,8 +6,8 @@ $XmlFilePath = ".template.temp\parameters.xml"
 
 [xml]$xmlDoc = Get-Content $XmlFilePath -Raw
     
-$nodesToRemove = $xmlDoc.SelectNodes("//*[normalize-space(text())='defaultеtemplateexample']")
-$nodesToRemove += $xmlDoc.SelectNodes("//*[normalize-space(text())='{defaultеtemplateexample}']")
+$nodesToRemove = $xmlDoc.SelectNodes("//*[normalize-space(text())='__resolve-email-address__']")
+$nodesToRemove += $xmlDoc.SelectNodes("//*[normalize-space(text())='{__resolve-email-address__}']")
     
 for ($i = $nodesToRemove.Count - 1; $i -ge 0; $i--) {
     $node = $nodesToRemove[$i]

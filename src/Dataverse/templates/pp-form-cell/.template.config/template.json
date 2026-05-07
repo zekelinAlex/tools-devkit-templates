@@ -12,13 +12,13 @@
   "sourceName": "examplecustomentityattribute",
   "preferNameDirectory": false,
   "symbols": {
-    "EntitySchemaName": {
+    "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampleentityname",
+      "replaces": "__entity-logical-name__",
       "isRequired": false,
       "defaultValue": "unknown",
-      "description": "Schema name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
+      "description": "Logical name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
     },
     "SolutionRootPath": {
       "type": "parameter",
@@ -33,14 +33,14 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknownFormId",
-      "replaces": "formguididexample",
+      "replaces": "__form-id__",
       "description": "GUID of the specific form where the cell will be added"
     },
     "FormType": {
       "type": "parameter",
       "datatype": "choice",
       "isRequired": false,
-      "replaces": "formtypeexample",
+      "replaces": "__form-type__",
       "defaultValue": "unknown",
       "choices": [
         {
@@ -78,20 +78,20 @@
       "type": "generated",
       "generator": "guid",
       "dataType": "string",
-      "replaces": "idexample",
+      "replaces": "__row-id__",
       "description": "Unique identifier for the row containing the cell (automatically generated GUID)"
     },
     "LabelId": {
       "type": "generated",
       "generator": "guid",
       "dataType": "string",
-      "replaces": "labelidexample",
+      "replaces": "__label-id__",
       "description": "Unique identifier for the cell label (automatically generated GUID)"
     },
     "DisplayName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplerowdisplayname",
+      "replaces": "__display-name__",
       "isRequired": true,
       "description": "Display name for the cell label that will be shown to users"
     },
@@ -100,7 +100,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabexampleid",
+      "replaces": "__tab-id__",
       "description": "GUID of the specific tab where the cell will be added"
     },
     "TabIndex": {
@@ -108,7 +108,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabnumberexample",
+      "replaces": "__tab-index__",
       "description": "Index number of the tab (1-based) where the cell will be added"
     },
     "ColumnIndex": {
@@ -116,7 +116,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "columnnumberexample",
+      "replaces": "__column-index__",
       "description": "Index number of the column (1-based) within the tab where the cell will be added"
     },
     "SectionIndex": {
@@ -124,7 +124,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "sectionnumberexample",
+      "replaces": "__section-index__",
       "description": "Index number of the section (1-based) within the column where the cell will be added"
     },
     "RowIndex": {
@@ -132,7 +132,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "rownumberexample",
+      "replaces": "__row-index__",
       "description": "Index number of the row (1-based) within the section where the cell will be added"
     },
     "SectionId": {
@@ -140,7 +140,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "sectionidexample",
+      "replaces": "__section-id__",
       "description": "GUID of the specific section where the cell will be added"
     }
   },

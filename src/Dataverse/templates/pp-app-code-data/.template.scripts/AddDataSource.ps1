@@ -1,6 +1,6 @@
 $filePath = "power.config.json"
 
-$lowercasename = "entityexamplelogicalname"
+$lowercasename = "__entity-logical-name__"
 $noPrefixName = $lowercasename.Split('_')[1]  + "s"
 
 if (-not (Test-Path $filePath)) {

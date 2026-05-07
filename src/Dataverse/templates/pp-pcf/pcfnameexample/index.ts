@@ -1,6 +1,6 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 
-export class pcfnameexample implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class __name__ implements ComponentFramework.StandardControl<IInputs, IOutputs> {
     /**
      * Empty constructor.
      */

@@ -1,7 +1,7 @@
-<section showlabel="true" showbar="false" IsUserDefined="0" id="{sectionidexample}"
-  labelid="{sectionlabelexampleid}" name="examplesectionname">
+<section showlabel="true" showbar="false" IsUserDefined="0" id="{__section-id__}"
+  labelid="{__section-label-id__}" name="examplesectionname">
   <labels>
-    <label description="sectionnameexample" languagecode="1033" />
+    <label description="__section-name__" languagecode="1033" />
   </labels>
   <rows>
   </rows>

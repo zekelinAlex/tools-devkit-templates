@@ -1,4 +1,4 @@
-﻿# Resolve the relative path to an absolute path (to support other OSes)
+# Resolve the relative path to an absolute path (to support other OSes)
 $solutionPath = Resolve-Path -Path 'SolutionDeclarationsRoot/Other/Relationships.xml'
 
 # Load the XML file
@@ -6,7 +6,7 @@ $solutionPath = Resolve-Path -Path 'SolutionDeclarationsRoot/Other/Relationships
 $rootComponents = $File.SelectSingleNode("//EntityRelationships")
 
 $newComponent = $File.CreateElement("EntityRelationship")
-$newComponent.SetAttribute("Name", 'bpf_primaryentityexample_examplepublisher_examplebpfname')
+$newComponent.SetAttribute("Name", 'bpf___entity-logical-name_____publisher-prefix_____bpf-name__')
 
 $null = $rootComponents.AppendChild($newComponent)
 

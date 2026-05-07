@@ -6,7 +6,7 @@ $optionNumber = (Get-Random -Minimum 10000 -Maximum 99999) * 10000
 $attributeXmlPath 
 
 <!--#if (AttributeType == "OptionSet(Global)") -->
-    $attributeXmlPath = "SolutionDeclarationsRoot/OptionSets\examplecustomentityattribute.xml"
+    $attributeXmlPath = "SolutionDeclarationsRoot/OptionSets\__logical-name__.xml"
 <!--#endif -->
 
 <!--#if (AttributeType == "OptionSet(Local)") -->
@@ -15,7 +15,7 @@ $attributeXmlPath
 
 [xml]$attributeXml = Get-Content -Path $attributeXmlPath -Raw
 
-$options = "optinsforoptionsetexample"
+$options = "__option-set-options__"
 $options = $options.Split(',', [System.StringSplitOptions]::RemoveEmptyEntries) | ForEach-Object { $_.Replace('{', '').Replace('}', '') }
 
 $optionsNode = $attributeXml.SelectSingleNode("//options")
@@ -73,7 +73,7 @@ $writer.Close()
 
     $newComponent = $File.CreateElement("RootComponent")
     $newComponent.SetAttribute("type", '9')
-    $newComponent.SetAttribute("schemaName", 'examplecustomentityattribute')
+    $newComponent.SetAttribute("schemaName", '__logical-name__')
     $newComponent.SetAttribute("behavior", '0')
 
     # Append the new component to the root components without writing output to console

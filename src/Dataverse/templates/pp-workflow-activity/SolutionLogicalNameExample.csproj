@@ -2,7 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>__signing-key-file-path__</AssemblyOriginatorKeyFile>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
     <ProjectType>WorkflowActivity</ProjectType>
@@ -10,7 +11,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <Version>$(FileVersion)</Version>
-    <Authors>examplepublisher</Authors>
+    <Authors>__publisher-name__</Authors>
     <Company>NETWORG</Company>
   </PropertyGroup>
   <ItemGroup>

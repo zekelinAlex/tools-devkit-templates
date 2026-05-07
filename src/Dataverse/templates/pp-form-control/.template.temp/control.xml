@@ -1,5 +1,5 @@
 <!--#if (ControlType == "SubGrid") -->
-<control indicationOfSubgrid="true" id="examplecustomerow" classid="{exampleclassid}" />
+<control indicationOfSubgrid="true" id="__attribute-logical-name__" classid="{__classid__}" />
 <!--#else -->
-<control id="examplecustomerow" classid="{exampleclassid}" datafieldname="examplecustomerow" disabled="isreadonlyexamplechoice" />
+<control id="__attribute-logical-name__" classid="{__classid__}" datafieldname="__attribute-logical-name__" disabled="__is-read-only__" />
 <!--#endif -->

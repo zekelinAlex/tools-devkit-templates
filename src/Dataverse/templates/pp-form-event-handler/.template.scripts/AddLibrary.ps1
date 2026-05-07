@@ -14,13 +14,13 @@ if (-not $formLibrariesNode) {
 }
 
 # If formLibraries already contains the library, skip adding it
-$libraryName = 'examplelibraryname.js'
+$libraryName = '__library-name__.js'
 $existingLibrary = $formLibrariesNode.SelectSingleNode("Library[@name='$libraryName']")
 
 if (-not $existingLibrary) {
 	$libraryNode = $entityXml.CreateElement('Library')
 	$libraryNode.SetAttribute('name', $libraryName)
-	$libraryNode.SetAttribute('libraryUniqueId', '{examplelibraryuniqueid}')
+	$libraryNode.SetAttribute('libraryUniqueId', '{__library-unique-id__}')
 	$formLibrariesNode.AppendChild($libraryNode) | Out-Null
 }
 

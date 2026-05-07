@@ -2,6 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net462</TargetFramework>
     <ProjectType>ScriptLibrary</ProjectType>
-    <ScriptLibraryName>examplelibraryname</ScriptLibraryName>
+    <ScriptLibraryName>__library-name__</ScriptLibraryName>
   </PropertyGroup>
 </Project>

@@ -1,5 +1,5 @@
 
-$relativePath = "webresourcefilepathexample"
+$relativePath = "__web-resource-item-path__"
 
 $path = (Resolve-Path $relativePath).Path
 $root = (Split-Path $path -Parent)         

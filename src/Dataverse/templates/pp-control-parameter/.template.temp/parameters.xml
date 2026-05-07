@@ -1,78 +1,78 @@
 <parameters>
   <!--#if (ParameterType == "Lookup") -->
-  <FilterRelationshipName>filterrelationshipnameexampletypestring</FilterRelationshipName>
-  <DependentAttributeName>dependentattributenameexampletypestring</DependentAttributeName>
-  <DependentAttributeType>dependentattributetypeexampletypestring</DependentAttributeType>
-  <AutoResolve>autoresolveexampletypeboolean</AutoResolve>
-  <ResolveEmailAddress>resolveemailaddressexampletypeboolean</ResolveEmailAddress>
-  <DefaultViewReadOnly>defaultviewreadonlyexampletypeboolean</DefaultViewReadOnly>
-  <ViewPickerReadOnly>viewpickerreadonlyexampletypeboolean</ViewPickerReadOnly>
-  <AllowFilterOff>allowfilteroffexampletypeboolean</AllowFilterOff>
-  <DisableMru>disablemruexampletypeboolean</DisableMru>
-  <DisableQuickFind>disablequickfindexampletypeboolean</DisableQuickFind>
-  <DisableViewPicker>disableViewpickerexampletypeboolean</DisableViewPicker>
-  <AvailableViewIds>availableviewidsexampletypestring</AvailableViewIds>
+  <FilterRelationshipName>__filter-relationship-name__</FilterRelationshipName>
+  <DependentAttributeName>__dependent-attribute-name__</DependentAttributeName>
+  <DependentAttributeType>__dependent-attribute-type__</DependentAttributeType>
+  <AutoResolve>__auto-resolve__</AutoResolve>
+  <ResolveEmailAddress>__resolve-email-address__</ResolveEmailAddress>
+  <DefaultViewReadOnly>__default-view-read-only__</DefaultViewReadOnly>
+  <ViewPickerReadOnly>__view-picker-read-only__</ViewPickerReadOnly>
+  <AllowFilterOff>__allow-filter-off__</AllowFilterOff>
+  <DisableMru>__disable-mru__</DisableMru>
+  <DisableQuickFind>__disable-quick-find__</DisableQuickFind>
+  <DisableViewPicker>__disable-view-picker__</DisableViewPicker>
+  <AvailableViewIds>__available-view-ids__</AvailableViewIds>
   <!--#if (FormType != "dialog" ) -->
-  <EntityLogicalName>entitylogicalnameexampletypestring</EntityLogicalName>
-  <DefaultViewId>{defaultviewidexampletypeformguidtype}</DefaultViewId>
+  <EntityLogicalName>__entity-logical-name__</EntityLogicalName>
+  <DefaultViewId>{__default-view-id__}</DefaultViewId>
   <!--#endif -->
-  <IsInlineNewEnabled>isinlinenewenabledexampletypeboolean</IsInlineNewEnabled>
-  <InlineViewIds>inlineviewidsexampletypestring</InlineViewIds>
-  <UnboundLookupTypes>unboundlookuptypesexampletypestring</UnboundLookupTypes>
-  <UnboundLookupBrowse>unboundlookupbrowseexampletypeboolean</UnboundLookupBrowse>
-  <UnboundLookupControlType>unboundlookupcontroltypeexampletypestring</UnboundLookupControlType>
-  <ShowAsBreadcrumbControl>showasbreadcrumbcontrolexampletypeboolean</ShowAsBreadcrumbControl>
+  <IsInlineNewEnabled>__is-inline-new-enabled__</IsInlineNewEnabled>
+  <InlineViewIds>__inline-view-ids__</InlineViewIds>
+  <UnboundLookupTypes>__unbound-lookup-types__</UnboundLookupTypes>
+  <UnboundLookupBrowse>__unbound-lookup-browse__</UnboundLookupBrowse>
+  <UnboundLookupControlType>__unbound-lookup-control-type__</UnboundLookupControlType>
+  <ShowAsBreadcrumbControl>__show-as-breadcrumb-control__</ShowAsBreadcrumbControl>
     <!--#if ( LookupType == "unbound"  || FormType == "dialog" ) -->
     <TargetEntities>
       <TargetEntity>
-        <DefaultViewId>{defaultviewidexampletypeformguidtype}</DefaultViewId>
-        <EntityLogicalName>entitylogicalnameexampletypestring</EntityLogicalName>
-        <IsDeDupLookup>isdeduplookupexampletypeboolean</IsDeDupLookup>
-        <UnboundLookupStyle>unboundlookupstyleexampletypestring</UnboundLookupStyle>
+        <DefaultViewId>{__default-view-id__}</DefaultViewId>
+        <EntityLogicalName>__entity-logical-name__</EntityLogicalName>
+        <IsDeDupLookup>__is-de-dup-lookup__</IsDeDupLookup>
+        <UnboundLookupStyle>__unbound-lookup-style__</UnboundLookupStyle>
       </TargetEntity>
     </TargetEntities>
     <!--#endif -->
   <!--#elseif (ParameterType == "OptionSet") -->
-  <DefaultValue>defaultvalueexampletypestring</DefaultValue>
-  <OptionSetName>optionsetnameexampletypestring</OptionSetName>
-  <OptionSetId>{optionsetidexampletypeformguidtype}</OptionSetId>
+  <DefaultValue>__default-value__</DefaultValue>
+  <OptionSetName>__option-set-name__</OptionSetName>
+  <OptionSetId>{__option-set-id__}</OptionSetId>
   <!--#elseif (ParameterType == "SubGrid") -->
-  <RecordsPerPage>recordsperpageexampletypeinteger</RecordsPerPage>
-  <AutoExpand>autoexpandeexampletypegridresizetype</AutoExpand>
-  <EnableQuickFind>enablequickfindexampletypeboolean</EnableQuickFind>
-  <EnableViewPicker>enableViewpickerexampletypeboolean</EnableViewPicker>
-  <EnableChartPicker>enablechartpickerexampletypeboolean</EnableChartPicker>
-  <ChartGridMode>chartgridmodeexampletypestring</ChartGridMode>
-  <TargetEntityType>targetentitytypeexampletypestring</TargetEntityType>
-  <ViewId>{viewidexampletypeformguidtype}</ViewId>
-  <ViewIds>{viewidexampletypeformguidtype}</ViewIds>
-  <IsUserView>isuserviewexampletypeboolean</IsUserView>
-  <IsUserChart>isuserchartexampletypeboolean</IsUserChart>
-  <RelationshipName>relationshipnameexampletypestring</RelationshipName>
-  <RelationshipRoleOrdinal>relationshiproleordinalexampletyperelationshiproleordinaltype</RelationshipRoleOrdinal>
-  <MaxRowsBeforeScroll>maxrowsbeforescrollexampletypeinteger</MaxRowsBeforeScroll>
-  <EnableJumpBar>enablejumpbarexampletypeboolean</EnableJumpBar>
-  <EnableViewPicker>enableViewpickerexampletypeboolean</EnableViewPicker>
-  <VisualizationId>visualizationidexampletypestring</VisualizationId>
-  <EnableContextualActions>enablecontextualactionsexampletypeboolean</EnableContextualActions>
-  <TeamTemplateId>{teamtemplateidexampletypeformguidtype}</TeamTemplateId>
-  <GridUIMode>griduimodeexampletypestring</GridUIMode>
-  <ReferencePanelSubgridIconUrl>referencepanelsubgridiconurlexampletypestring</ReferencePanelSubgridIconUrl>
-  <HeaderColorCode>headercolorcodeexampletypestring</HeaderColorCode>
+  <RecordsPerPage>__records-per-page__</RecordsPerPage>
+  <AutoExpand>__auto-expand__</AutoExpand>
+  <EnableQuickFind>__enable-quick-find__</EnableQuickFind>
+  <EnableViewPicker>__enable-view-picker__</EnableViewPicker>
+  <EnableChartPicker>__enable-chart-picker__</EnableChartPicker>
+  <ChartGridMode>__chart-grid-mode__</ChartGridMode>
+  <TargetEntityType>__target-entity-type__</TargetEntityType>
+  <ViewId>{__view-id__}</ViewId>
+  <ViewIds>{__view-id__}</ViewIds>
+  <IsUserView>__is-user-view__</IsUserView>
+  <IsUserChart>__is-user-chart__</IsUserChart>
+  <RelationshipName>__relationship-name__</RelationshipName>
+  <RelationshipRoleOrdinal>__relationship-role-ordinal__</RelationshipRoleOrdinal>
+  <MaxRowsBeforeScroll>__max-rows-before-scroll__</MaxRowsBeforeScroll>
+  <EnableJumpBar>__enable-jump-bar__</EnableJumpBar>
+  <EnableViewPicker>__enable-view-picker__</EnableViewPicker>
+  <VisualizationId>__visualization-id__</VisualizationId>
+  <EnableContextualActions>__enable-contextual-actions__</EnableContextualActions>
+  <TeamTemplateId>{__team-template-id__}</TeamTemplateId>
+  <GridUIMode>__grid-ui-mode__</GridUIMode>
+  <ReferencePanelSubgridIconUrl>__reference-panel-subgrid-icon-url__</ReferencePanelSubgridIconUrl>
+  <HeaderColorCode>__header-color-code__</HeaderColorCode>
   <!--#elseif (ParameterType == "Label") -->
-  <IsTitle>istitleexampletypeboolean</IsTitle>
+  <IsTitle>__is-title__</IsTitle>
   <!--#elseif (ParameterType == "TextBox") -->
-  <MaxLength>maxlengthexampletypeinteger</MaxLength>
-  <Format>formatexampletypeformattype</Format>
+  <MaxLength>__max-length__</MaxLength>
+  <Format>__format__</Format>
   <!--#elseif (ParameterType == "Number") -->
-  <MinValue>minvalueexampletypedouble</MinValue>
-  <MaxValue>maxvalueexampletypedouble</MaxValue>
-  <Precision>precisionexampletypeinteger</Precision>
+  <MinValue>__min-value__</MinValue>
+  <MaxValue>__max-value__</MaxValue>
+  <Precision>__precision__</Precision>
   <!--#elseif (ParameterType == "QuickFormCollection") -->
-  <QuickForms>quickformsexampletypestring</QuickForms>
-  <ControlMode>controlmodeexampletypestring</ControlMode>
-  <ReferencePanelQuickFormCollectionIconUrl>referencepanelquickformcollectioniconurlexampletypestring</ReferencePanelQuickFormCollectionIconUrl>
-  <DisplayAsCustomer360Tile>displayascustomer360tileexampletypeboolean</DisplayAsCustomer360Tile>
+  <QuickForms>__quick-forms__</QuickForms>
+  <ControlMode>__control-mode__</ControlMode>
+  <ReferencePanelQuickFormCollectionIconUrl>__reference-panel-quick-form-collection-icon-url__</ReferencePanelQuickFormCollectionIconUrl>
+  <DisplayAsCustomer360Tile>__display-as-customer360-tile__</DisplayAsCustomer360Tile>
   <!--#endif -->
 
   

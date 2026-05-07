@@ -1,4 +1,4 @@
-$guidValue = "stageexampleid"
+$guidValue = "__stage-id__"
 
 $targetXamlFolderPath = (Resolve-Path 'SolutionDeclarationsRoot/Workflows').Path
 

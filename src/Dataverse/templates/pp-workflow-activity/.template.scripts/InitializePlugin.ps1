@@ -1,8 +1,8 @@
 # --- Input parameters (templated) ---
-$signingKey = "signingkeyfilepathexample"
+$signingKey = "__signing-key-file-path__"
 $outputDir = "../SolutionLogicalNameExample"
-$author = "examplepublisher"
-$company = "exampleсompany"
+$author = "__publisher-name__"
+$company = "__company__"
 
 # --- Resolve paths ---
 $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -11,7 +11,7 @@ if (-not $resolvedOutputDir) {
     $resolvedOutputDir = Join-Path (Get-Location) $outputDir
 }
 $resolvedOutputDir = $resolvedOutputDir.ToString()
-$useSigningKey = -not [string]::IsNullOrWhiteSpace($signingKey) -and $signingKey -ne "signingkeyfilepathexample"
+$useSigningKey = -not [string]::IsNullOrWhiteSpace($signingKey) -and $signingKey -ne "__signing-key-file-path__"
 
 # --- 1. Initialize project from PAC (plugin scaffold as base) ---
 $pacArgs = @("plugin", "init", "--outputDirectory", $resolvedOutputDir, "--author", $author)

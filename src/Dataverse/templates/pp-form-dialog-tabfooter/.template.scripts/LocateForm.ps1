@@ -1,4 +1,4 @@
-$formId = "{formguididexample}"
+$formId = "{__form-id__}"
 
 if ($formId -eq "unknownFormId") {
     $formDirectory = './SolutionDeclarationsRoot/Dialogs/'
@@ -15,7 +15,7 @@ if ($formId -eq "unknownFormId") {
     }
 }
 else {
-    $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Dialogs/{formguididexample}.xml').Path
+    $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Dialogs/{__form-id__}.xml').Path
 }
 
 if (-not $entityXmlPath) {

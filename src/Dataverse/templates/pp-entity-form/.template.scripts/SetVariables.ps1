@@ -1,16 +1,16 @@
-$dialogsRootPath = 'SolutionDeclarationsRoot/Dialogs\{formexampleId}.xml'
-$formName = 'formexamplename'
-$EntitySchemaName = 'ItemFolderName'
+$dialogsRootPath = 'SolutionDeclarationsRoot/Dialogs\{__form-id__}.xml'
+$formName = '__form-name__'
+$EntitySchemaName = '__entity-logical-name__'
 
 $uniqueNameFull
 
-if ("dialogexampleuniquename" -eq "unknown") {
+if ("__dialog-unique-name__" -eq "unknown") {
     $prefix = $EntitySchemaName.Split('_')[0]
     $UniqueName = $formName -replace '[^\w]', '' | ForEach-Object { $_.ToLower() }
     $uniqueNameFull =$prefix + "_" + $UniqueName + "dialog"
 }
 else {
-    $uniqueNameFull = "dialogexampleuniquename"
+    $uniqueNameFull = "__dialog-unique-name__"
 }
 
 

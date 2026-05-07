@@ -1,5 +1,5 @@
-$tabId = "tabexampleid"
-$tabNumber = "tabnumberexample"
+$tabId = "__tab-id__"
+$tabNumber = "__tab-index__"
 $entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
@@ -34,7 +34,7 @@ if (-not $targetTab) {
 }
 
 $newComponent = $entityXml.CreateElement("tabfooter")
-$newComponent.SetAttribute("id", '{tabfooterexampleid}')
+$newComponent.SetAttribute("id", '{__tab-footer-id__}')
 
 $null = $targetTab.AppendChild($newComponent)
 

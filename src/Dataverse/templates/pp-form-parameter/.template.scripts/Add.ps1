@@ -1,6 +1,6 @@
 $entityXmlPath = ./.template.scripts/LocateForm
-$paramName = "nameexample"
-$paramType = "typeexample"
+$paramName = "__parameter-logical-name__"
+$paramType = "__parameter-type__"
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 

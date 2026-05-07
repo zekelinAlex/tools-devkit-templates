@@ -12,13 +12,13 @@
   "sourceName": "examplecustomentityattribute",
   "preferNameDirectory": false,
   "symbols": {
-    "EntitySchemaName": {
+    "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampleentityname",
+      "replaces": "__entity-logical-name__",
       "isRequired": false,
       "defaultValue": "unknown",
-      "description": "Logical name of the entity for which the tab will be created"
+      "description": "Logical name of the entity for which the parameter will be created"
     },
     "SolutionRootPath": {
       "type": "parameter",
@@ -33,14 +33,14 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknownFormId",
-      "replaces": "formguididexample",
-      "description": "GUID of the specific form where the tab will be added"
+      "replaces": "__form-id__",
+      "description": "GUID of the specific form where the parameter will be added"
     },
     "FormType": {
       "type": "parameter",
       "datatype": "choice",
       "isRequired": false,
-      "replaces": "formtypeexample",
+      "replaces": "__form-type__",
       "defaultValue": "unknown",
       "choices": [
         {
@@ -62,14 +62,14 @@
       "type": "parameter",
       "datatype": "text",
       "isRequired": true,
-      "replaces": "nameexample",
+      "replaces": "__parameter-logical-name__",
       "description": "Logical name of the parameter"
     },
     "ParameterType": {
       "type": "parameter",
       "datatype": "choice",
       "isRequired": true,
-      "replaces": "typeexample",
+      "replaces": "__parameter-type__",
       "choices": [
         {
           "choice": "UniqueId"
@@ -105,11 +105,11 @@
       },
       "manualInstructions": [
         {
-          "text": "Adding new tab to form"
+          "text": "Adding new parameter to form"
         }
       ],
       "continueOnError": false,
-      "description": "Adding new tab to form"
+      "description": "Adding new parameter to form"
     },
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",

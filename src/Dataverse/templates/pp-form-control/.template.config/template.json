@@ -12,13 +12,13 @@
   "sourceName": "examplecustomentityattribute",
   "preferNameDirectory": false,
   "symbols": {
-    "EntitySchemaName": {
+    "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampleentityname",
+      "replaces": "__entity-logical-name__",
       "isRequired": false,
       "defaultValue": "unknown",
-      "description": "Schema name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
+      "description": "Logical name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
     },
     "SolutionRootPath": {
       "type": "parameter",
@@ -73,7 +73,7 @@
       "type": "parameter",
       "datatype": "choice",
       "defaultValue": "false",
-      "replaces": "isreadonlyexamplechoice",
+      "replaces": "__is-read-only__",
       "description": "Whether the control is read-only (True) or writable (False)",
       "choices": [
         {
@@ -89,14 +89,14 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknownFormId",
-      "replaces": "formguididexample",
+      "replaces": "__form-id__",
       "description": "GUID of the specific form where the cell will be added"
     },
     "FormType": {
       "type": "parameter",
       "datatype": "choice",
       "isRequired": false,
-      "replaces": "formtypeexample",
+      "replaces": "__form-type__",
       "defaultValue": "unknown",
       "choices": [
         {
@@ -165,7 +165,7 @@
     "controluniqueid": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "controluniqueidexample",
+      "replaces": "__controluniqueid__",
       "parameters": {
         "defaultFormat": "d"
       },
@@ -174,7 +174,7 @@
     "classid": {
       "type": "generated",
       "generator": "switch",
-      "replaces": "exampleclassid",
+      "replaces": "__classid__",
       "parameters": {
         "datatype": "string",
         "cases": [
@@ -230,14 +230,14 @@
       "type": "generated",
       "generator": "guid",
       "dataType": "string",
-      "replaces": "idexample",
+      "replaces": "__row-id__",
       "description": "Unique identifier for the row containing the cell (automatically generated GUID)"
     },
     "AttributeLogicalName": {
       "displayName": "Logical name",
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplecustomerow",
+      "replaces": "__attribute-logical-name__",
       "isRequired": true,
       "description": "Logical name of the entity attribute/field that the control will display"
     },
@@ -246,7 +246,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabexampleid",
+      "replaces": "__tab-id__",
       "description": "GUID of the specific tab where the control will be added"
     },
     "TabIndex": {
@@ -254,7 +254,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabnumberexample",
+      "replaces": "__tab-index__",
       "description": "Index number of the tab (1-based) where the control will be added"
     },
     "ColumnIndex": {
@@ -262,7 +262,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "columnnumberexample",
+      "replaces": "__column-index__",
       "description": "Index number of the column (1-based) within the tab where the control will be added"
     },
     "SectionIndex": {
@@ -270,7 +270,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "sectionnumberexample",
+      "replaces": "__section-index__",
       "description": "Index number of the section (1-based) within the column where the control will be added"
     },
     "RowIndex": {
@@ -278,7 +278,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "rownumberexample",
+      "replaces": "__row-index__",
       "description": "Index number of the row (1-based) within the section where the control will be added"
     },
     "SectionId": {
@@ -286,7 +286,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "sectionidexample",
+      "replaces": "__section-id__",
       "description": "GUID of the specific section where the control will be added"
     },
     "RowSpan": {
@@ -294,7 +294,7 @@
       "datatype": "string",
       "isRequired": "ControlType == \"SubGrid\"",
       "defaultValue": "unknown",
-      "replaces": "examplerowspanvalue",
+      "replaces": "__row-span__",
       "description": "Row span of the subgrid control (only for subgrid control)"
     },
     "ColumnSpan": {
@@ -302,7 +302,7 @@
       "datatype": "string",
       "isRequired": "ControlType == \"SubGrid\"",
       "defaultValue": "unknown",
-      "replaces": "examplecolspanvalue",
+      "replaces": "__column-span__",
       "description": "Column span of the subgrid control (only for subgrid control)"
     }
   },

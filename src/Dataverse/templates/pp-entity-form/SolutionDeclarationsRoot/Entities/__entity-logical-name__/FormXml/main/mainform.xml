@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid></formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="false" headerdensity="HighWithControls" showImage="false">
+      <tabs>
+        <tab verticallayout="true" id="{__1formexample-id__}" IsUserDefined="1" name="generaltab"
+          labelid="{__2formexample-id__}">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{__3formexample-id__}"
+                  labelid="{__4formexample-id__}" name="generalsection">
+                  <labels>
+                    <label description="GENERAL" languagecode="1033" />
+                  </labels>
+                  <rows>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{__7formexample-id__}" celllabelposition="Top" columns="111" labelwidth="115"
+        celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{__8formexample-id__}" showlabel="false" labelid="{__9formexample-id__}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{__10formexample-id__}" showlabel="false" labelid="{__11formexample-id__}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{__12formexample-id__}" showlabel="false" labelid="{__13formexample-id__}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{__14formexample-id__}" celllabelposition="Top" columns="111" labelwidth="115"
+        celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{__15formexample-id__}" showlabel="false" labelid="{__16formexample-id__}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{__17formexample-id__}" showlabel="false" labelid="{__18formexample-id__}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{__19formexample-id__}" showlabel="false" labelid="{__20formexample-id__}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="__form-name__" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Main form" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

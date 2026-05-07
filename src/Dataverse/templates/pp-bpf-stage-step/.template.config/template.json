@@ -36,33 +36,33 @@
     "FormId": {
       "type": "parameter",
       "generator": "text",
-      "replaces": "formguididexample",
-      "fileRename": "formguididexample"
+      "replaces": "__form-id__",
+      "fileRename": "__form-id__"
     },
     "BPFLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplebpfname",
-      "fileRename": "examplebpfname",
+      "replaces": "__bpf-logical-name__",
+      "fileRename": "__bpf-logical-name__",
       "isRequired": true
     },
-    "PrimaryEntity": {
+    "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "primaryentityexample",
-      "fileRename": "primaryentityexample"
+      "replaces": "__entity-logical-name__",
+      "fileRename": "__entity-logical-name__"
     },
     "StageName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "stageexamplename",
-      "fileRename": "stageexamplename"
+      "replaces": "__stage-name__",
+      "fileRename": "__stage-name__"
     },
     "StageExampleId": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "stageexampleid",
-      "fileRename": "stageexampleid",
+      "replaces": "__stage-example-id__",
+      "fileRename": "__stage-example-id__",
       "parameters": {
         "defaultFormat": "d"
       }
@@ -80,7 +80,7 @@
       "type": "parameter",
       "datatype": "choice",
       "description": "Select attribute type",
-      "replaces": "controldisplayexamplename",
+      "replaces": "__data-field__",
       "choices": [
         { "choice": "Created By" },
         { "choice": "Created On" },
@@ -94,7 +94,7 @@
     "classid": {
       "type": "generated",
       "generator": "switch",
-      "replaces": "classexampleid",
+      "replaces": "__classid__",
       "parameters": {
         "datatype": "string",
         "cases": [
@@ -132,7 +132,7 @@
     "ControlId": {
       "type": "generated",
       "generator": "switch",
-      "replaces": "controlexampleid",
+      "replaces": "__control-id__",
       "parameters": {
         "datatype": "string",
         "cases": [
@@ -170,8 +170,8 @@
     "ProcessStepId": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "processstepexampleid",
-      "fileRename": "processstepexampleid",
+      "replaces": "__process-step-id__",
+      "fileRename": "__process-step-id__",
       "parameters": {
         "defaultFormat": "d"
       }

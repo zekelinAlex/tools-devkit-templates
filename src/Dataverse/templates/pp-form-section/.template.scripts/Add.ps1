@@ -1,6 +1,6 @@
-$tabId = "tabexampleid"
-$tabNumber = "tabnumberexample"
-$columnNumber = "columnnumberexample"
+$tabId = "__tab-id__"
+$tabNumber = "__tab-index__"
+$columnNumber = "__column-index__"
 $entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 $sectionPath = (Resolve-Path './.template.temp/section.xml').Path

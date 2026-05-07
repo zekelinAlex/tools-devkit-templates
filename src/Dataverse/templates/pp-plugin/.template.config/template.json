@@ -28,14 +28,14 @@
     "PublisherName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplepublisher",
+      "replaces": "__publisher-name__",
       "isRequired": true,
       "description": "Publisher name for the plugin project (used as author in PAC CLI)"
     },
     "Company": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampleсompany",
+      "replaces": "__company__",
       "isRequired": true,
       "description": "Company name for the plugin project metadata"
     },
@@ -43,7 +43,7 @@
       "type": "parameter",
       "description": "Select the type of PluginBase class to use",
       "datatype": "choice",
-      "replaces": "pluginbasetypeexample",
+      "replaces": "__plugin-base-type__",
       "choices": [
         { "choice": "Microsoft" },
         { "choice": "TALXIS" }
@@ -54,7 +54,7 @@
       "type": "parameter",
       "datatype": "text",
       "isRequired": true,
-      "replaces": "signingkeyfilepathexample",
+      "replaces": "__signing-key-file-path__",
       "description": "Path to the signing key file for plugin assembly signing (optional)"
     }
   },

@@ -1,10 +1,10 @@
-$tabId = "tabexampleid"
-$tabNumber = "tabnumberexample"
-$columnNumber = "columnnumberexample"
-$sectionId = "sectionidexample"
-$sectionNumber = "sectionnumberexample"
-$rowNumber = "rownumberexample"
-$formType = "formtypeexample"
+$tabId = "__tab-id__"
+$tabNumber = "__tab-index__"
+$columnNumber = "__column-index__"
+$sectionId = "__section-id__"
+$sectionNumber = "__section-index__"
+$rowNumber = "__row-index__"
+$formType = "__form-type__"
 $entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 if ($formType -eq "unknown") {
@@ -179,8 +179,8 @@ $targetCell = $existingCells[0]
 <!--#if (ControlType == "SubGrid") -->
 
 # Add attributes to the existing cell
-$targetCell.SetAttribute("rowspan", "examplerowspanvalue")
-$targetCell.SetAttribute("colspan", "examplecolspanvalue")
+$targetCell.SetAttribute("rowspan", "__row-span__")
+$targetCell.SetAttribute("colspan", "__column-span__")
 $targetCell.SetAttribute("auto", "false")
 
 <!--#endif -->

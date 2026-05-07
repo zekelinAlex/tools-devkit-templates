@@ -23,7 +23,7 @@
         "CellId": {
             "type": "generated",
             "generator": "guid",
-            "replaces": "cellidexample",
+            "replaces": "__cell-id__",
             "parameters": {
                 "defaultFormat": "d"
             }
@@ -31,7 +31,7 @@
         "SubgridLabel": {
             "type": "parameter",
             "datatype": "text",
-            "replaces": "subgridlabelexample",
+            "replaces": "__subgrid-label__",
             "isRequired": true,
             "displayName": "Subgrid Label Text",
             "description": "Display name for the subgrid section"
@@ -39,7 +39,7 @@
         "ControlId": {
             "type": "generated",
             "generator": "guid",
-            "replaces": "controlidexample",
+            "replaces": "__control-id__",
             "parameters": {
                 "defaultFormat": "d"
             }
@@ -48,7 +48,7 @@
             "type": "parameter",
             "datatype": "choice",
             "isRequired": true,
-            "replaces": "formtypeexample",
+            "replaces": "__form-type__",
             "choices": [
                 {
                     "choice": "main"
@@ -64,13 +64,13 @@
             "datatype": "string",
             "isRequired": true,
             "defaultValue": "",
-            "replaces": "formguididexample",
+            "replaces": "__form-id__",
             "description": "GUID of the specific form where the subgrid will be added"
         },
         "TargetEntityLogicalName": {
             "type": "parameter",
             "datatype": "text",
-            "replaces": "targetentitytypeexample",
+            "replaces": "__target-entity-logical-name__",
             "isRequired": true,
             "displayName": "Target Entity Logical Name",
             "description": "Entity whose records will be displayed in the subgrid (Example: contact, opportunity, custom_entity)"
@@ -78,7 +78,7 @@
         "EntityLogicalName": {
             "type": "parameter",
             "datatype": "text",
-            "replaces": "entitytypeexample",
+            "replaces": "__entity-logical-name__",
             "isRequired": true,
             "displayName": "Entity Logical Name",
             "description": "Entity where the subgrid will be added (Example: account, contact, custom_entity)"
@@ -86,7 +86,7 @@
         "ViewId": {
             "type": "generated",
             "generator": "guid",
-            "replaces": "viewidexample",
+            "replaces": "__view-id__",
             "parameters": {
                 "defaultFormat": "d"
             }

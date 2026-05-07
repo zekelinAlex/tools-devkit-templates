@@ -1,7 +1,7 @@
-﻿# Resolve the relative path to an absolute path (to support other OSes)
+# Resolve the relative path to an absolute path (to support other OSes)
 # Try both naming conventions (with and without _managed suffix)
-$candidatePath = 'SolutionDeclarationsRoot/AppModules/appexamplename/AppModule.xml'
-$candidatePathManaged = 'SolutionDeclarationsRoot/AppModules/appexamplename/AppModule_managed.xml'
+$candidatePath = 'SolutionDeclarationsRoot/AppModules/__app-name__/AppModule.xml'
+$candidatePathManaged = 'SolutionDeclarationsRoot/AppModules/__app-name__/AppModule_managed.xml'
 if (Test-Path $candidatePath) {
     $solutionPath = Resolve-Path -Path $candidatePath
 } elseif (Test-Path $candidatePathManaged) {
@@ -16,13 +16,13 @@ if (Test-Path $candidatePath) {
 $rootComponents = $File.SelectSingleNode("//AppModuleComponents")
 
 $newComponent = $File.CreateElement("AppModuleComponent")
-$newComponent.SetAttribute("type", 'entitytypeexample')
+$newComponent.SetAttribute("type", '__entity-type-id__')
 
-if ( "entitytypeexample" -eq "1") {
-    $newComponent.SetAttribute("schemaName", 'entityexamplename')
+if ( "__entity-type-id__" -eq "1") {
+    $newComponent.SetAttribute("schemaName", '__entity-logical-name__')
 }
 else {
-    $newComponent.SetAttribute("id", '{appmodelcomponentidexample}')
+    $newComponent.SetAttribute("id", '{__component-id__}')
 }
 
 # Append the new component to the root components without writing output to console

@@ -1,6 +1,6 @@
 $entityXmlRelativePaths = @(
-    'SolutionDeclarationsRoot/AppModuleSiteMaps/appexamplename/AppModuleSiteMap.xml'
-    'SolutionDeclarationsRoot/AppModuleSiteMaps/appexamplename/AppModuleSiteMap_managed.xml'
+    'SolutionDeclarationsRoot/AppModuleSiteMaps/__app-name__/AppModuleSiteMap.xml'
+    'SolutionDeclarationsRoot/AppModuleSiteMaps/__app-name__/AppModuleSiteMap_managed.xml'
 )
 
 $entityXmlPath = $null
@@ -23,7 +23,7 @@ $groupPath = (Resolve-Path '.template.temp/group.xml').Path
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 [xml]$groupXml = Get-Content -Path $groupPath -Raw
 
-$areaNode = $entityXml.SelectSingleNode("//SiteMap/Area[@ResourceId='SitemapDesigner.areatitleexample']")
+$areaNode = $entityXml.SelectSingleNode("//SiteMap/Area[@ResourceId='SitemapDesigner.__area-title__']")
 
 if (-not $areaNode) {
     Write-Error "Could not find the Area node in the SiteMap XML."

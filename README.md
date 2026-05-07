@@ -258,6 +258,43 @@ dotnet new pp-entity-form `
 └──────────────────────────────────────────────────────────┘
 ```
 
+##### Composite shortcut: `pp-form-with-fields`
+
+Most forms follow the same pattern — one tab, one section, a list of fields stacked as rows. Building that with the seven separate templates above is repetitive. `pp-form-with-fields` does the whole thing in a single call: it scaffolds the form skeleton (tab → column → section), generates one row/cell/control per field you list, picks the right `classid` per type, and (if `Solution.xml` is present in the surrounding solution) registers the form as a root component.
+
+The generated `FormId` is printed at the end so you can capture it in scripts.
+
+```console
+dotnet new pp-form-with-fields `
+--output "src/Solutions.UI" `
+--EntityLogicalName "udpp_warehouseitem" `
+--FormType "main" `
+--FormName "Warehouse Item" `
+--Fields "udpp_name:Text:Name,udpp_availablequantity:WholeNumber:Available Quantity,udpp_packagetype:OptionSet:Package Type" `
+--SolutionRootPath "." `
+--allow-scripts Yes
+```
+
+Output goes to `<SolutionRootPath>/Entities/<EntityLogicalName>/FormXml/main/{<FormId>}.xml`.
+
+`--Fields` syntax is comma-separated `name:type[:displayName]`. Supported control types in this version: `Text`, `MultilineText`, `WholeNumber`, `Decimal`, `Float`, `Currency`, `DateTime`, `OptionSet`. If `displayName` is omitted, a Title-Case derivative of the logical name (with publisher prefix stripped) is used.
+
+For a dialog form, set `--FormType dialog`. The output then goes to `<SolutionRootPath>/Dialogs/{<FormId>}.xml`, the form is registered in `Customizations.xml`, and a `<UniqueName>` is synthesized as `<entity-prefix>_<sanitized-form-name>dialog` (override with `--DialogUniqueName`).
+
+```console
+dotnet new pp-form-with-fields `
+--output "src/Solutions.UI" `
+--EntityLogicalName "udpp_warehouseitem" `
+--FormType "dialog" `
+--FormName "Quick Edit Warehouse" `
+--Fields "udpp_name:Text:Name,udpp_packagetype:OptionSet:Package" `
+--SolutionRootPath "." `
+--allow-scripts Yes
+```
+
+If you need behaviour that the composite doesn't cover yet (`Lookup` / `SubGrid` / `Button` controls, multiple tabs/sections, parameter-rich controls), fall back to the granular templates below.
+
+##### Granular form templates
 
 Create a new tab in the form:
 ```console

@@ -12,13 +12,13 @@
   "sourceName": "examplecustomentityattribute",
   "preferNameDirectory": false,
   "symbols": {
-    "EntitySchemaName": {
+    "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampleentityname",
+      "replaces": "__entity-logical-name__",
       "isRequired": false,
       "defaultValue": "unknown",
-      "description": "Schema name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
+      "description": "Logical name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
     },
     "SolutionRootPath": {
       "type": "parameter",
@@ -33,14 +33,14 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknownFormId",
-      "replaces": "formguididexample",
+      "replaces": "__form-id__",
       "description": "GUID of the specific form where the section will be added"
     },
     "FormType": {
       "type": "parameter",
       "datatype": "choice",
       "isRequired": false,
-      "replaces": "formtypeexample",
+      "replaces": "__form-type__",
       "defaultValue": "unknown",
       "choices": [
         {
@@ -79,7 +79,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabexampleid",
+      "replaces": "__tab-id__",
       "description": "GUID of the specific tab where the section will be added"
     },
     "TabIndex": {
@@ -87,7 +87,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabnumberexample",
+      "replaces": "__tab-index__",
       "description": "Index number of the tab (1-based) where the section will be added"
     },
     "ColumnIndex": {
@@ -95,7 +95,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "columnnumberexample",
+      "replaces": "__column-index__",
       "description": "Index number of the column (1-based) within the tab where the section will be added"
     },
     "SectionName": {
@@ -103,7 +103,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "GENERAL",
-      "replaces": "sectionnameexample",
+      "replaces": "__section-name__",
       "description": "Display name for the section header"
     },
     "SectionId": {
@@ -111,14 +111,14 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "sectionidexample",
+      "replaces": "__section-id__",
       "description": "Unique identifier for the section (GUID format)"
     },
     "SectionLabelId": {
       "type": "generated",
       "generator": "guid",
       "isRequired": false,
-      "replaces": "sectionlabelexampleid",
+      "replaces": "__section-label-id__",
       "description": "Enter section label id",
       "parameters": {
         "defaultFormat": "d"

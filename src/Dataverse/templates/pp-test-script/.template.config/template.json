@@ -10,22 +10,22 @@
     "language": "C#",
     "type": "item"
   },
-  "sourceName": "examplescripttestprojectname",
+  "sourceName": "__script-test-project-name__",
   "preferNameDirectory": true,
   "symbols": {
     "ScriptTestProjectName": {
       "type": "parameter",
       "isRequired": true,
       "datatype": "text",
-      "replaces": "examplescripttestprojectname",
-      "fileRename": "examplescripttestprojectname",
+      "replaces": "__script-test-project-name__",
+      "fileRename": "__script-test-project-name__",
       "defaultValue": "Script.Tests",
       "description": "Name of the script test project (default: Script.Tests)"
     },
     "ScriptLibraryPath": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplescriptlibrarypath",
+      "replaces": "__script-library-path__",
       "isRequired": true,
       "description": "Path to the script library project file"
     }

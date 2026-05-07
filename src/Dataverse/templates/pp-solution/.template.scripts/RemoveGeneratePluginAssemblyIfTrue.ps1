@@ -1,4 +1,4 @@
-$generatePluginAssembly = "generateexamplepluginassembly"
+$generatePluginAssembly = "__generate-plugin-assembly__"
 
 if ($generatePluginAssembly -ne "true") { return }
 

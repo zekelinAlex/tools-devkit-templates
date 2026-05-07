@@ -1,5 +1,5 @@
-$filePath = "webresourcefilepathexample"
-$dataXmlFilePath = "SolutionDeclarationsRoot/WebResources\examplepublisher_fileexamplename.data.xml"
+$filePath = "__web-resource-item-path__"
+$dataXmlFilePath = "SolutionDeclarationsRoot/WebResources\__publisher-prefix___fileexamplename.data.xml"
 
 $extension = [System.IO.Path]::GetExtension($filePath).ToLower()
 

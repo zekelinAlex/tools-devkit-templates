@@ -4,7 +4,7 @@
     <UiScriptsDir>$([System.IO.Path]::GetDirectoryName('$(UiScriptsProject)'))\</UiScriptsDir>
     <UiScriptBuiltFile>$(UiScriptsDir)TS\build\libraryexamplename.js</UiScriptBuiltFile>
     <WebResourcesDir>$(SolutionRootPath)\WebResources\</WebResourcesDir>
-    <RenamedUiScript>$(WebResourcesDir)examplepublisher_libraryexamplename.js</RenamedUiScript>
+    <RenamedUiScript>$(WebResourcesDir)__publisher-prefix___libraryexamplename.js</RenamedUiScript>
   </PropertyGroup>
   <Target Name="BuildUiScriptsAndCopyUdppMain" BeforeTargets="CoreCompile" >
     <MSBuild Projects="$(UiScriptsProject)" Targets="Build" Properties="Configuration=$(Configuration)" />

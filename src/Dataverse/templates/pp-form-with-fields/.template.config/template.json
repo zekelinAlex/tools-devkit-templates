@@ -1,0 +1,257 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "NETWORG",
+  "identity": "TALXIS.DevKit.Templates.Dataverse.FormWithFields",
+  "name": "Power Platform: Form with Fields (composite)",
+  "shortName": "pp-form-with-fields",
+  "description": "Composite template that scaffolds a complete form for an existing entity in a single call: tab + section + rows + cells + controls. Replaces the 7-step pp-entity-form -> pp-form-tab -> pp-form-column -> pp-form-section -> pp-form-row -> pp-form-cell -> pp-form-control chain. Pass fields as 'name:type[:displayName]' separated by commas. The generated FormId is printed at the end of the run. Supports FormType main and dialog. First-version control types: Text, MultilineText, WholeNumber, Decimal, Float, Currency, DateTime, OptionSet.",
+  "classifications": ["Dataverse", "Power Platform"],
+  "tags": {
+    "language": "XML",
+    "type": "item"
+  },
+  "sourceName": "examplecustomentity",
+  "preferNameDirectory": false,
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!AddMainForm)",
+          "exclude": [
+            "SolutionDeclarationsRoot/Entities/__entity-logical-name__/FormXml/main/*"
+          ]
+        },
+        {
+          "condition": "(!AddDialogForm)",
+          "exclude": [
+            "SolutionDeclarationsRoot/Dialogs/*"
+          ]
+        }
+      ]
+    }
+  ],
+  "symbols": {
+    "SolutionRootPath": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": ".",
+      "replaces": "SolutionDeclarationsRoot",
+      "fileRename": "SolutionDeclarationsRoot",
+      "isRequired": false,
+      "description": "Path to the solution root directory (default: '.')"
+    },
+    "EntityLogicalName": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "__entity-logical-name__",
+      "fileRename": "__entity-logical-name__",
+      "description": "Logical name of the entity (e.g., udpp_warehouseitem)"
+    },
+    "FormType": {
+      "type": "parameter",
+      "datatype": "choice",
+      "isRequired": false,
+      "defaultValue": "main",
+      "replaces": "__form-type__",
+      "choices": [
+        { "choice": "main",   "description": "Main form" },
+        { "choice": "dialog", "description": "Dialog form" }
+      ],
+      "description": "Form type: main (entity main form) or dialog (custom dialog form)"
+    },
+    "FormName": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": false,
+      "defaultValue": "Generated Form",
+      "replaces": "__form-name__",
+      "description": "Display name of the form"
+    },
+    "DialogUniqueName": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": false,
+      "defaultValue": "unknown",
+      "replaces": "__dialog-unique-name__",
+      "description": "Unique name for dialog forms. If 'unknown', synthesized as '<entity-prefix>_<form-name>dialog'. Ignored for FormType=main."
+    },
+    "Fields": {
+      "type": "parameter",
+      "datatype": "text",
+      "isRequired": true,
+      "replaces": "__fields__",
+      "description": "Comma-separated list of fields in the form 'name:type[:displayName]'. Supported types: Text, MultilineText, WholeNumber, Decimal, Float, Currency, DateTime, OptionSet. Example: 'udpp_name:Text:Name,udpp_qty:WholeNumber:Quantity'."
+    },
+    "AddMainForm": {
+      "type": "computed",
+      "value": "(FormType == \"main\")",
+      "description": "Auto-computed: true when FormType is main"
+    },
+    "AddDialogForm": {
+      "type": "computed",
+      "value": "(FormType == \"dialog\")",
+      "description": "Auto-computed: true when FormType is dialog"
+    },
+    "FormId": {
+      "type": "parameter",
+      "generator": "guid",
+      "defaultValue": "unknown",
+      "replaces": "__form-id__",
+      "fileRename": "__form-id__",
+      "parameters": {
+        "defaultFormat": "d"
+      },
+      "description": "Unique identifier of the form (auto-generated GUID if omitted)"
+    },
+    "__1formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__1formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__2formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__2formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__3formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__3formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__4formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__4formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__7formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__7formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__8formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__8formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__9formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__9formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__10formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__10formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__11formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__11formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__12formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__12formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__13formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__13formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__14formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__14formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__15formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__15formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__16formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__16formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__17formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__17formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__18formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__18formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__19formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__19formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    },
+    "__20formexample-id__": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "__20formexample-id__",
+      "parameters": { "defaultFormat": "d" }
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/PopulateFormFields.ps1\"",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        { "text": "Populate fields into form skeleton" }
+      ],
+      "continueOnError": false,
+      "description": "Populate user-specified fields into the form skeleton"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/SetFormId.ps1\"",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        { "text": "Set form id and rename file" }
+      ],
+      "continueOnError": false,
+      "description": "Set form id, rename file, and register form in Solution.xml if present"
+    },
+    {
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "pwsh",
+        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Cleanup.ps1\"",
+        "redirectStandardOutput": "false"
+      },
+      "manualInstructions": [
+        { "text": "Removing scripts" }
+      ],
+      "continueOnError": false,
+      "description": "Removing scripts"
+    }
+  ]
+}

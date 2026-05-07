@@ -20,7 +20,7 @@ XmlDocument csprojDoc = new XmlDocument();
 csprojDoc.Load(csprojPath);
 string assemblyName = csprojDoc.SelectNodes("//Project/PropertyGroup/AssemblyName").Cast<XmlNode>().LastOrDefault()?.InnerText ?? csprojFileName;
 string fileVersion = csprojDoc.SelectNodes("//Project/PropertyGroup/FileVersion").Cast<XmlNode>().LastOrDefault()?.InnerText ?? "1.0.0.0";
-string xmlPath = Path.Combine(Directory.GetCurrentDirectory(), "SolutionDeclarationsRoot", "PluginAssemblies", $"{assemblyName}-{pluginAssemblyId.ToUpper()}", $"{assemblyName}.dll.data.xml");
+string xmlPath = Path.Combine(Directory.GetCurrentDirectory(), "SolutionDeclarationsRoot", "PluginAssemblies", $"{assemblyName}.dll.data.xml");
 
 string dllPath = Path.Combine(pluginRootPath, "bin", "Debug", "net462", "publish", $"{assemblyName}.dll");
 if (!File.Exists(dllPath)) throw new FileNotFoundException("Build not found", dllPath);
@@ -60,7 +60,7 @@ sourceType.InnerText = "0";
 root.AppendChild(sourceType);
 
 XmlElement fileName = pluginDoc.CreateElement("FileName");
-fileName.InnerText = $"/PluginAssemblies/{assemblyName}-{pluginAssemblyId.ToUpper()}/{assemblyName}.dll";
+fileName.InnerText = $"/PluginAssemblies/{assemblyName}.dll";
 root.AppendChild(fileName);
 
 XmlElement pluginTypes = pluginDoc.CreateElement("PluginTypes");

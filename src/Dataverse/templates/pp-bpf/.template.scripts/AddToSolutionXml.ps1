@@ -1,4 +1,4 @@
-﻿# Resolve the relative path to an absolute path (to support other OSes)
+# Resolve the relative path to an absolute path (to support other OSes)
 $solutionPath = Resolve-Path -Path 'SolutionDeclarationsRoot/Other/Solution.xml'
 
 $filePath = ".template.scripts\WorkflowsID.txt"
@@ -19,14 +19,14 @@ $null = $rootComponents.AppendChild($newComponent)
 
 $newComponent = $File.CreateElement("RootComponent")
 $newComponent.SetAttribute("type", '60')
-$newComponent.SetAttribute("id", '{mainFormIdexample}')
+$newComponent.SetAttribute("id", '{__form-id__}')
 $newComponent.SetAttribute("behavior", '0')
 
 $null = $rootComponents.AppendChild($newComponent)
 
 $newComponent2 = $File.CreateElement("RootComponent")
 $newComponent2.SetAttribute("type", '1')
-$newComponent2.SetAttribute("schemaName", 'examplepublisher_examplebpfname')
+$newComponent2.SetAttribute("schemaName", '__publisher-prefix_____bpf-name__')
 $newComponent2.SetAttribute("behavior", '0')
 
 $null = $rootComponents.AppendChild($newComponent2)

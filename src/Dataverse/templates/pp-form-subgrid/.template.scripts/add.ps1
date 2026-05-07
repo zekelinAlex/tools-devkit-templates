@@ -1,4 +1,4 @@
-$entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/entitytypeexample/FormXml/formtypeexample/{formguididexample}.xml').Path
+$entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/__entity-logical-name__/FormXml/__form-type__/{__form-id__}.xml').Path
 $rowPath = (Resolve-Path './.template.temp/subgrid.xml').Path
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw

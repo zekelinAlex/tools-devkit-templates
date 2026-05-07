@@ -1,13 +1,13 @@
 # Post-action script for pp-entity-view template.
 #
-# The template engine replaces "someexampleid" in the filename and XML content
-# with a generated GUID. The template uses {someexampleid} (with literal braces)
+# The template engine replaces "__view-id__" in the filename and XML content
+# with a generated GUID. The template uses {__view-id__} (with literal braces)
 # so the output already has {GUID}.xml filename and <savedqueryid>{GUID}</savedqueryid>.
 #
 # This script validates the result and falls back to adding braces if a view
 # file without them is found (e.g. older template engine behavior).
 
-$viewDir = Resolve-Path 'SolutionDeclarationsRoot/Entities/exampleexistingentity/SavedQueries'
+$viewDir = Resolve-Path 'SolutionDeclarationsRoot/Entities/__entity-logical-name__/SavedQueries'
 
 # Check for view files without braces (need fixing)
 $unbracedFile = Get-ChildItem -Path $viewDir -Filter "*.xml" -ErrorAction SilentlyContinue |

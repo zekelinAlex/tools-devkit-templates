@@ -16,17 +16,17 @@
       "type": "parameter",
       "datatype": "text",
       "description": "Publisher prefix for the app (Example: new, talxis) - used in naming conventions",
-      "isRequired": true,
-      "replaces": "userprefixexample",
-      "fileRename": "userprefixexample"
+      "defaultValue": "__publisher-prefix-default-value__",
+      "replaces": "__publisher-prefix__",
+      "fileRename": "__publisher-prefix__"
     },
     "LogicalName": {
       "type": "parameter",
       "datatype": "text",
       "description": "Logical name of the app without publisher prefix (e.g., warehouseapp). The prefix is added automatically.",
       "isRequired": true,
-      "replaces": "appexamplename",
-      "fileRename": "appexamplename"
+      "replaces": "__logical-name__",
+      "fileRename": "__logical-name__"
     },
     "SolutionRootPath": {
 			"type": "parameter",
@@ -48,6 +48,21 @@
     }
   ],
   "postActions": [
+    {
+			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+			"args": {
+				"executable": "pwsh",
+				"args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/Init.ps1\"",
+				"redirectStandardOutput": "false"
+			},
+			"manualInstructions": [
+				{
+					"text": "Set missing metadata values in template files and renaming files if necessary"
+				}
+			],
+			"condition": "(PublisherPrefix == \"__publisher-prefix-default-value__\")",
+			"description": "Setting missing metadata values in template files and renaming files if necessary"
+		},
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "args": {

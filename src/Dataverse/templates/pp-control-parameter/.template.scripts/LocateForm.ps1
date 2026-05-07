@@ -1,8 +1,8 @@
 $entitiesRootPath = './SolutionDeclarationsRoot/Entities'
 $dialogsRootPath = './SolutionDeclarationsRoot/Dialogs'
-$formId = "{formguididexample}"
+$formId = "{__form-id__}"
 
-if ( ('formtypeexample' -eq 'unknown') -and ('exampleentityname' -eq 'unknown') -and ('formguididexample' -eq 'unknownFormId') ) {
+if ( ('__form-type__' -eq 'unknown') -and ('__entity-schema-name__' -eq 'unknown') -and ('__form-id__' -eq 'unknownFormId') ) {
     $targetDirs = Get-ChildItem -Path $entitiesRootPath -Recurse -Directory -ErrorAction SilentlyContinue |
     Where-Object { $_.Name -in 'main', 'quickCreate' -and $_.Parent -and $_.Parent.Name -eq 'FormXml' }
 
@@ -26,7 +26,7 @@ if ( ('formtypeexample' -eq 'unknown') -and ('exampleentityname' -eq 'unknown') 
 
     $entityXmlPath = $latest.FullName
 }
-elseif ( ('formtypeexample' -eq 'unknown') -or ('exampleentityname' -eq 'unknown') ) {
+elseif ( ('__form-type__' -eq 'unknown') -or ('__entity-schema-name__' -eq 'unknown') ) {
     $targetName = if ([IO.Path]::GetExtension($formId) -ieq ".xml") { "$formId" } else { "$formId.xml" }
 
     #Entities
@@ -48,7 +48,7 @@ elseif ( ('formtypeexample' -eq 'unknown') -or ('exampleentityname' -eq 'unknown
     $entityXmlPath = $matches[0].FullName
 }
 elseif ($formId -eq "{unknownFormId}") {
-    $formDirectory = './SolutionDeclarationsRoot/Entities/exampleentityname/FormXml/formtypeexample/'
+    $formDirectory = './SolutionDeclarationsRoot/Entities/__entity-schema-name__/FormXml/__form-type__/'
 
     #Entities
     $collectedForms = Get-ChildItem -Path $formDirectory -Filter "*.xml"
@@ -67,12 +67,12 @@ elseif ($formId -eq "{unknownFormId}") {
     }
 }
 else {
-    if('formtypeexample' -eq 'dialog') 
+    if('__form-type__' -eq 'dialog') 
     {
-        $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Dialogs/{formguididexample}.xml').Path
+        $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Dialogs/{__form-id__}.xml').Path
     }
     else {
-        $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/exampleentityname/FormXml/formtypeexample/{formguididexample}.xml').Path
+        $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/__entity-schema-name__/FormXml/__form-type__/{__form-id__}.xml').Path
     }
 }
 

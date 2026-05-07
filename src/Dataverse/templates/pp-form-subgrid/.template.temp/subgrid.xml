@@ -1,10 +1,10 @@
 <row>
-    <cell locklevel="0" id="cellidexample" rowspan="4" colspan="1"
+    <cell locklevel="0" id="__cell-id__" rowspan="4" colspan="1"
         auto="false">
         <labels>
-            <label description="subgridlabelexample" languagecode="1033" />
+            <label description="__subgrid-label__" languagecode="1033" />
         </labels>
-        <control indicationOfSubgrid="true" id="controlidexample"
+        <control indicationOfSubgrid="true" id="__control-id__"
             classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
             <parameters>
                 <RecordsPerPage>4</RecordsPerPage>
@@ -13,9 +13,9 @@
                 <EnableViewPicker>false</EnableViewPicker>
                 <EnableChartPicker>true</EnableChartPicker>
                 <ChartGridMode>All</ChartGridMode>
-                <TargetEntityType>targetentitytypeexample</TargetEntityType>
-                <ViewId>viewidexample</ViewId>
-                <ViewIds>viewidexample</ViewIds>
+                <TargetEntityType>__target-entity-logical-name__</TargetEntityType>
+                <ViewId>__view-id__</ViewId>
+                <ViewIds>__view-id__</ViewIds>
             </parameters>
         </control>
     </cell>

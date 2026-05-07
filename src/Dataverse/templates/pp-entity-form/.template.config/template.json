@@ -16,13 +16,13 @@
 				{
 					"condition": "(!AddMainForm)",
 					"exclude": [
-						"SolutionDeclarationsRoot/Entities/ItemFolderName/FormXml/main/*"
+						"SolutionDeclarationsRoot/Entities/__entity-logical-name__/FormXml/main/*"
 					]
 				},
 				{
 					"condition": "(!AddQuickCreateForm)",
 					"exclude": [
-						"SolutionDeclarationsRoot/Entities/ItemFolderName/FormXml/quick/*"
+						"SolutionDeclarationsRoot/Entities/__entity-logical-name__/FormXml/quick/*"
 					]
 				},
 				{
@@ -39,7 +39,7 @@
 		"FormType": {
 			"type": "parameter",
 			"datatype": "choice",
-			"replaces": "formtypeexample",
+			"replaces": "__form-type__",
 			"isRequired": true,
 			"choices": [
 				{
@@ -65,21 +65,21 @@
 			"fileRename": "SolutionDeclarationsRoot",
 			"description": "Path to the solution root directory"
 		},
-		"EntitySchemaName": {
+		"EntityLogicalName": {
 			"type": "parameter",
 			"datatype": "text",
-			"defaultValue": "exampleentity",
+			"defaultValue": "__entity-logical-name__",
 			"isRequired": true,
-			"replaces": "ItemFolderName",
-			"fileRename": "ItemFolderName",
-			"description": "Schema name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
+			"replaces": "__entity-logical-name__",
+			"fileRename": "__entity-logical-name__",
+			"description": "Logical name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
 		},
 		"DialogUniqueName": {
 			"type": "parameter",
 			"datatype": "text",
 			"isRequired": false,
 			"defaultValue": "unknown",
-			"replaces": "dialogexampleuniquename",
+			"replaces": "__dialog-unique-name__",
 			"description": "Unique name for the dialog that will be shown to users"
 		},
 		"FormName": {
@@ -87,8 +87,8 @@
 			"datatype": "text",
 			"isRequired": false,
 			"defaultValue": "Generated Form",
-			"replaces": "formexamplename",
-			"fileRename": "formexamplename",
+			"replaces": "__form-name__",
+			"fileRename": "__form-name__",
 			"description": "Display name for the form that will be shown to users"
 		},
 		"AddMainForm": {
@@ -111,284 +111,284 @@
 			"type": "parameter",
 			"generator": "guid",
 			"defaultValue": "unknown",
-			"replaces": "formexampleId",
-			"fileRename": "formexampleId",
+			"replaces": "__form-id__",
+			"fileRename": "__form-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			},
 			"description": "Unique identifier for the form (automatically generated GUID)"
 		},
 		//Main Form IDs
-		"1formexampleId": {
+		"__1formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "1formexampleId",
+			"replaces": "__1formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			},
 			"description": "GUID for the main tab element (automatically generated)"
 		},
-		"2formexampleId": {
+		"__2formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "2formexampleId",
+			"replaces": "__2formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"3formexampleId": {
+		"__3formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "3formexampleId",
+			"replaces": "__3formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"4formexampleId": {
+		"__4formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "4formexampleId",
+			"replaces": "__4formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"5formexampleId": {
+		"__5formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "5formexampleId",
+			"replaces": "__5formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"6formexampleId": {
+		"__6formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "6formexampleId",
+			"replaces": "__6formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"7formexampleId": {
+		"__7formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "7formexampleId",
+			"replaces": "__7formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"8formexampleId": {
+		"__8formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "8formexampleId",
+			"replaces": "__8formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"9formexampleId": {
+		"__9formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "9formexampleId",
+			"replaces": "__9formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"10formexampleId": {
+		"__10formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "10formexampleId",
+			"replaces": "__10formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"11formexampleId": {
+		"__11formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "11formexampleId",
+			"replaces": "__11formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"12formexampleId": {
+		"__12formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "12formexampleId",
+			"replaces": "__12formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"13formexampleId": {
+		"__13formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "13formexampleId",
+			"replaces": "__13formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"14formexampleId": {
+		"__14formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "14formexampleId",
+			"replaces": "__14formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"15formexampleId": {
+		"__15formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "15formexampleId",
+			"replaces": "__15formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"16formexampleId": {
+		"__16formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "16formexampleId",
+			"replaces": "__16formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"17formexampleId": {
+		"__17formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "17formexampleId",
+			"replaces": "__17formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"18formexampleId": {
+		"__18formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "18formexampleId",
+			"replaces": "__18formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"19formexampleId": {
+		"__19formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "19formexampleId",
+			"replaces": "__19formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"20formexampleId": {
+		"__20formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "20formexampleId",
+			"replaces": "__20formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
 		//Quick Create Form IDs
-		"1formexampleId": {
+		"__1formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "1formexampleId",
+			"replaces": "__1formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"2formexampleId": {
+		"__2formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "2formexampleId",
+			"replaces": "__2formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"3formexampleId": {
+		"__3formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "3formexampleId",
+			"replaces": "__3formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"4formexampleId": {
+		"__4formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "4formexampleId",
+			"replaces": "__4formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"5formexampleId": {
+		"__5formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "5formexampleId",
+			"replaces": "__5formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"6formexampleId": {
+		"__6formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "6formexampleId",
+			"replaces": "__6formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"7formexampleId": {
+		"__7formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "7formexampleId",
+			"replaces": "__7formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"8formexampleId": {
+		"__8formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "8formexampleId",
+			"replaces": "__8formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"9formexampleId": {
+		"__9formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "9formexampleId",
+			"replaces": "__9formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"10formexampleId": {
+		"__10formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "10formexampleId",
+			"replaces": "__10formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"11formexampleId": {
+		"__11formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "11formexampleId",
+			"replaces": "__11formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"12formexampleId": {
+		"__12formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "12formexampleId",
+			"replaces": "__12formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"13formexampleId": {
+		"__13formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "13formexampleId",
+			"replaces": "__13formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}
 		},
-		"14formexampleId": {
+		"__14formexample-id__": {
 			"type": "generated",
 			"generator": "guid",
-			"replaces": "14formexampleId",
+			"replaces": "__14formexample-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}

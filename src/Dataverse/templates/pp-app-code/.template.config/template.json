@@ -15,12 +15,12 @@
     "DisplayName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "appexampleDisplayName"
+      "replaces": "__display-name__"
     },
     "AppId": {
       "type": "generated",
 			"generator": "guid",
-			"replaces": "appexampleId",
+			"replaces": "__app-id__",
 			"parameters": {
 				"defaultFormat": "d"
 			}

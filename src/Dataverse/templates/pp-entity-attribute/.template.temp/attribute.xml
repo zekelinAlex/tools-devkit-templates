@@ -1,5 +1,5 @@
 <attributes>
-<attribute PhysicalName="examplepublisherprefix_examplecustomentityattribute">
+<attribute PhysicalName="__publisher-prefix_____logical-name__">
     <!--#if (AttributeType == "Text" || AttributeType == "JsonText") -->
         <Type>ntext</Type>
     <!--#elseif (AttributeType == "MultilineText") -->
@@ -30,8 +30,8 @@
         <Type>picklist</Type>
     <!--#endif -->
 
-    <Name>examplepublisherprefix_examplecustomentityattribute</Name>
-    <LogicalName>examplepublisherprefix_examplecustomentityattribute</LogicalName>
+    <Name>__publisher-prefix_____logical-name__</Name>
+    <LogicalName>__publisher-prefix_____logical-name__</LogicalName>
     <RequiredLevel>attributerequiredlevel</RequiredLevel>
     <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
 
@@ -73,13 +73,13 @@
 
     <!--#if (AttributeType == "Boolean") -->
     <AppDefaultValue>0</AppDefaultValue>
-          <optionset Name="exampleexistingentity_examplepublisherprefix_examplecustomentityattribute">
+          <optionset Name="__entity-logical-name_____publisher-prefix_____logical-name__">
             <OptionSetType>bit</OptionSetType>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <IsCustomizable>1</IsCustomizable>
             <ExternalTypeName></ExternalTypeName>
             <displaynames>
-              <displayname description="ExampleEntityAttributeDisplayName" languagecode="1033" />
+              <displayname description="__display-name__" languagecode="1033" />
             </displaynames>
             <Descriptions>
               <Description description="" languagecode="1033" />
@@ -100,13 +100,13 @@
     <!--#endif -->
     <!--#if (AttributeType == "OptionSet(Local)") -->
     <AppDefaultValue>-1</AppDefaultValue>
-    <optionset Name="exampleexistingentity_examplepublisherprefix_examplecustomentityattribute">
+    <optionset Name="__entity-logical-name_____publisher-prefix_____logical-name__">
       <OptionSetType>picklist</OptionSetType>
       <IntroducedVersion>1.0</IntroducedVersion>
       <IsCustomizable>1</IsCustomizable>
       <ExternalTypeName></ExternalTypeName>
       <displaynames>
-        <displayname description="ExampleEntityAttributeDisplayName" languagecode="1033" />
+        <displayname description="__display-name__" languagecode="1033" />
       </displaynames>
       <Descriptions>
         <Description description="" languagecode="1033" />
@@ -119,7 +119,7 @@
 
     <!--#if (AttributeType == "OptionSet(Global)") -->
     <AppDefaultValue>-1</AppDefaultValue>
-    <OptionSetName>examplepublisherprefix_examplecustomentityattribute</OptionSetName>
+    <OptionSetName>__publisher-prefix_____logical-name__</OptionSetName>
     <!--#endif -->
 
     <!--#if (AttributeType == "Text") -->
@@ -167,17 +167,17 @@
     <!--#endif -->
 
     <displaynames>
-        <displayname description="ExampleEntityAttributeDisplayName" languagecode="1033" />
+        <displayname description="__display-name__" languagecode="1033" />
     </displaynames>
     <Descriptions>
         <Description description="" languagecode="1033" />
     </Descriptions>
 </attribute>
 <!--#if (AttributeType == "Currency") -->
-<attribute PhysicalName="examplepublisherprefix_examplecustomentityattribute_Base">
+<attribute PhysicalName="__publisher-prefix_____logical-name___Base">
           <Type>money</Type>
-          <Name>examplepublisherprefix_examplecustomentityattribute_base</Name>
-          <LogicalName>examplepublisherprefix_examplecustomentityattribute_base</LogicalName>
+          <Name>__publisher-prefix_____logical-name___base</Name>
+          <LogicalName>__publisher-prefix_____logical-name___base</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
           <ImeMode>disabled</ImeMode>
@@ -208,12 +208,12 @@
           <MaxValue>922337203685477</MaxValue>
           <Accuracy>2</Accuracy>
           <AccuracySource>2</AccuracySource>
-          <CalculationOf>examplepublisherprefix_examplecustomentityattribute</CalculationOf>
+          <CalculationOf>__publisher-prefix_____logical-name__</CalculationOf>
           <displaynames>
-            <displayname description="ExampleEntityAttributeDisplayName (Base)" languagecode="1033" />
+            <displayname description="__display-name__ (Base)" languagecode="1033" />
           </displaynames>
           <Descriptions>
-            <Description description="Value of the ExampleEntityAttributeDisplayName in base currency." languagecode="1033" />
+            <Description description="Value of the __display-name__ in base currency." languagecode="1033" />
           </Descriptions>
         </attribute>
 <!--#endif -->

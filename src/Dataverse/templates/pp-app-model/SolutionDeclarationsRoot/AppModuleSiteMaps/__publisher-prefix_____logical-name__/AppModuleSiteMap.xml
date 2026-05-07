@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>__publisher-prefix_____logical-name__</SiteMapUniqueName>
+  <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap IntroducedVersion="7.0.0.0">
+    
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="__logical-name__" languagecode="1033" />
+  </LocalizedNames>
+</AppModuleSiteMap>

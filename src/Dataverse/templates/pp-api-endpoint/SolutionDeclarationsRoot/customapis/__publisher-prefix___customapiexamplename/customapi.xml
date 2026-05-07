@@ -1,0 +1,18 @@
+<customapi uniquename="__publisher-prefix_____api-logical-name__">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <boundentitylogicalname />
+  <description default="__description__">
+    <label description="__description__" languagecode="1033" />
+  </description>
+  <displayname default="__display-name__">
+    <label description="__display-name__" languagecode="1033" />
+  </displayname>
+  <executeprivilegename />
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>__publisher-prefix_____api-logical-name__</name>
+  <plugintypeid />
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

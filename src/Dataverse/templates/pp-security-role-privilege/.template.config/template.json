@@ -24,14 +24,14 @@
       "type": "parameter",
 			"datatype": "text",
 			"defaultValue": ".",
-      "replaces": "entityexamplename",
+      "replaces": "__entity-logical-name__",
 			"description": "Logical name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
     },
     "RoleName": {
       "type": "parameter",
 			"datatype": "text",
 			"defaultValue": "eqweqweqwe",
-      "replaces": "securityrolenameexample",
+      "replaces": "__role-name__",
 			"description": "Name of the security role to which privileges will be added"
     },
     "PrivilegeTypeAndLevel": {

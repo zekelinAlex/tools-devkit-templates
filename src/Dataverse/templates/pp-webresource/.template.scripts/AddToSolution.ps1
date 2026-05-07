@@ -1,6 +1,6 @@
-﻿# Resolve the relative path to an absolute path (to support other OSes)
+# Resolve the relative path to an absolute path (to support other OSes)
 $solutionPath = Resolve-Path -Path 'SolutionDeclarationsRoot/Other/Solution.xml'
-$filePath = "webresourcefilepathexample"
+$filePath = "__web-resource-item-path__"
 
 #$fileDisplayName = [System.IO.Path]::GetFileNameWithoutExtension($filePath)
 #$fileName = $fileDisplayName -replace '[\p{P}\p{Zs}]', ''
@@ -13,7 +13,7 @@ $rootComponents = $File.SelectSingleNode("//RootComponents")
 
 $newComponent = $File.CreateElement("RootComponent")
 $newComponent.SetAttribute("type", '61')
-$newComponent.SetAttribute("schemaName", "examplepublisher_$fileName")
+$newComponent.SetAttribute("schemaName", "__publisher-prefix___$fileName")
 $newComponent.SetAttribute("behavior", '0')
 
 # Append the new component to the root components without writing output to console

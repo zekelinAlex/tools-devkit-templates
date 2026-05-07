@@ -28,7 +28,7 @@
     "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampleentityname",
+      "replaces": "__entity-logical-name__",
       "isRequired": false
     },
     "SolutionRootPath": {
@@ -42,7 +42,7 @@
       "type": "parameter",
       "datatype": "choice",
       "isRequired": false,
-      "replaces": "formtypeexample",
+      "replaces": "__form-type__",
       "defaultValue": "unknown",
       "choices": [
         {
@@ -65,20 +65,20 @@
       "datatype": "string",
       "isRequired": true,
       "defaultValue": "",
-      "replaces": "formguididexample",
+      "replaces": "__form-id__",
       "description": "Enter form Id"
     },
     "LibraryName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplelibraryname",
+      "replaces": "__library-name__",
       "isRequired": true,
       "description": "Enter library name (without .js extension)"
     },
     "LibraryUniqueId": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "examplelibraryuniqueid",
+      "replaces": "__library-unique-id__",
       "parameters": {
         "defaultFormat": "d"
       }
@@ -86,7 +86,7 @@
     "HandlerUniqueId": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "examplehandleruniqueid",
+      "replaces": "__handler-unique-id__",
       "parameters": {
         "defaultFormat": "d"
       }
@@ -95,7 +95,7 @@
       "type": "parameter",
       "datatype": "choice",
       "isRequired": true,
-      "replaces": "exampleeventname",
+      "replaces": "__event-type__",
       "description": "Select event type",
       "choices": [
         { "choice": "onload" },
@@ -107,7 +107,7 @@
     "FunctionName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplefunctionname",
+      "replaces": "__function-name__",
       "isRequired": true,
       "description": "Enter function name"
     },
@@ -115,14 +115,14 @@
       "type": "parameter",
       "datatype": "bool",
       "defaultValue": "true",
-      "replaces": "examplepassexecutioncontext",
+      "replaces": "__pass-execution-context__",
       "isRequired": false,
       "description": "Pass execution context to function (default: true)"
     },
     "AttributeName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampleattributename",
+      "replaces": "__attribute-name__",
       "isRequired": false,
       "description": "Enter attribute name (required for AttributeOnChange event type)"
     }

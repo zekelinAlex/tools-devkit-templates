@@ -1,10 +1,10 @@
-$tabId = "tabexampleid"
-$tabNumber = "tabnumberexample"
-$columnNumber = "columnnumberexample"
-$sectionId = "sectionidexample"
-$sectionNumber = "sectionnumberexample"
-$rowNumber = "rownumberexample"
-$formType = "formtypeexample"
+$tabId = "__tab-id__"
+$tabNumber = "__tab-index__"
+$columnNumber = "__column-index__"
+$sectionId = "__section-id__"
+$sectionNumber = "__section-index__"
+$rowNumber = "__row-index__"
+$formType = "__form-type__"
 $entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 if ($formType -eq "unknown") {

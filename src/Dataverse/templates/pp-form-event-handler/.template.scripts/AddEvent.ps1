@@ -1,4 +1,4 @@
-﻿$entityXmlPath = ./.template.scripts/LocateForm.ps1
+$entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 
@@ -9,8 +9,8 @@ if (-not $eventsNode) {
 }
 
 # If formLibraries already contains the library, skip adding it
-$eventName = 'exampleeventname'
-$attributeName = 'exampleattributename'
+$eventName = '__event-type__'
+$attributeName = '__attribute-name__'
 if ($eventname -eq "onchange") {
 	$eventNode = $eventsNode.SelectSingleNode("event[@name='$eventName']")
 }
@@ -36,11 +36,11 @@ if (-not $eventNode ) {
 
 # Create a new handler element
 $handlerNode = $entityXml.CreateElement('Handler')
-$handlerNode.SetAttribute('libraryName', '$webresource:examplelibraryname.js')
-$handlerNode.SetAttribute('functionName', 'examplefunctionname')
+$handlerNode.SetAttribute('libraryName', '$webresource:__library-name__.js')
+$handlerNode.SetAttribute('functionName', '__function-name__')
 $handlerNode.SetAttribute('passExecutionContext', 'true')
 $handlerNode.SetAttribute('enabled', 'true')
-$handlerNode.SetAttribute('handlerUniqueId', '{examplehandleruniqueid}')
+$handlerNode.SetAttribute('handlerUniqueId', '{__handler-unique-id__}')
 $handlerNode.SetAttribute('parameters', '')
 
 

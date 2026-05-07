@@ -1,8 +1,8 @@
 <row>
-    <cell id="{processstepexampleid}" showlabel="true" visible="true" labelid="{rowid2}">
+    <cell id="{__process-step-id__}" showlabel="true" visible="true" labelid="{rowid2}">
       <labels>
         <label description="examplerowdisplayname" languagecode="1033" />
       </labels>
-      <control id="bpf_primaryentityexample_examplebpfname:controlexampleid" classid="{classexampleid}" datafieldname="controlexampleid" disabled="false" relationship="bpf_primaryentityexample_examplebpfname" isrequired="false" />
+      <control id="bpf___entity-logical-name_____bpf-logical-name__:__control-id__" classid="{__classid__}" datafieldname="__control-id__" disabled="false" relationship="bpf___entity-logical-name_____bpf-logical-name__" isrequired="false" />
     </cell>
 </row>

@@ -28,22 +28,23 @@
     "PublisherName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "examplepublisher",
+      "replaces": "__publisher-name__",
       "isRequired": true,
       "description": "Publisher name for the workflow activities project (used as author in PAC CLI)"
     },
     "Company": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampleсompany",
+      "replaces": "__company__",
       "isRequired": true,
       "description": "Company name for the workflow activities project metadata"
     },
     "SigningKeyFilePath": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "signingkeyfilepathexample",
-      "description": "Path to the signing key file for assembly signing (optional)"
+      "isRequired": true,
+      "replaces": "__signing-key-file-path__",
+      "description": "Path to the signing key file for plugin assembly signing (optional)"
     }
   },
   "primaryOutputs": [

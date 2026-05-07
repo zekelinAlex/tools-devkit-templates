@@ -12,13 +12,13 @@
   "sourceName": "examplecustomentityattribute",
   "preferNameDirectory": false,
   "symbols": {
-    "EntitySchemaName": {
+    "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampleentityname",
+      "replaces": "__entity-logical-name__",
       "isRequired": false,
       "defaultValue": "unknown",
-      "description": "Schema name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
+      "description": "Logical name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
     },
     "SolutionRootPath": {
       "type": "parameter",
@@ -33,14 +33,14 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknownFormId",
-      "replaces": "formguididexample",
+      "replaces": "__form-id__",
       "description": "GUID of the specific form where the tab will be added"
     },
     "FormType": {
       "type": "parameter",
       "datatype": "choice",
       "isRequired": false,
-      "replaces": "formtypeexample",
+      "replaces": "__form-type__",
       "defaultValue": "unknown",
       "choices": [
         {
@@ -81,13 +81,13 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknownTabId",
-      "replaces": "tabexampleid",
+      "replaces": "__tab-id__",
       "description": "Unique identifier for the new tab (GUID format)"
     },
     "LabelId": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "labelexampleid",
+      "replaces": "__label-id__",
       "parameters": {
         "defaultFormat": "d"
       }
@@ -95,7 +95,7 @@
     "DisplayName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampletabdisplayname",
+      "replaces": "__display-name__",
       "defaultValue": "General",
       "isRequired": false,
       "description": "Display name that will be shown on the tab header"

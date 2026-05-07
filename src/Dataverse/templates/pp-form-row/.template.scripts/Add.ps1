@@ -1,8 +1,8 @@
-$tabId = "tabexampleid"
-$tabNumber = "tabnumberexample"
-$columnNumber = "columnnumberexample"
-$sectionId = "sectionidexample"
-$sectionNumber = "sectionnumberexample"
+$tabId = "__tab-id__"
+$tabNumber = "__tab-index__"
+$columnNumber = "__column-index__"
+$sectionId = "__section-id__"
+$sectionNumber = "__section-index__"
 $entityXmlPath = ./.template.scripts/LocateForm.ps1
 
 $rowPath = (Resolve-Path './.template.temp/row.xml').Path

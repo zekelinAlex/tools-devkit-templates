@@ -1,4 +1,4 @@
-$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot/AppModules/appexamplename/AppModule.xml').Path
+$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot/AppModules/__app-logical-name__/AppModule.xml').Path
 $privilegesPath = (Resolve-Path '.template.scripts/appaccess.xml').Path
 
 
@@ -10,16 +10,29 @@ if (-not $rootNode) {
     exit 1
 }
 
+$privilegesRaw = Get-Content -Path $privilegesPath -Raw
+$wrapped = "<AppModuleRoleMaps>$privilegesRaw</AppModuleRoleMaps>"
+[xml]$rolesXml = $wrapped
+
+
+$newRolesNode = $rolesXml.DocumentElement
+if (-not $newRolesNode -or $newRolesNode.LocalName -ne 'AppModuleRoleMaps') {
+    Write-Error "Failed to build <AppModuleRoleMaps> from $privilegesPath"
+    exit 1
+}
+
+$importedNode = $entityXml.ImportNode($newRolesNode, $true)
+if (-not $importedNode) {
+    Write-Error "ImportNode returned null for <AppModuleRoleMaps>"
+    exit 1
+}
+
+# Now it's safe to drop the old <AppModuleRoleMaps>, if any.
 $existingRolesNode = $rootNode.SelectSingleNode('AppModuleRoleMaps')
 if ($existingRolesNode) {
     $rootNode.RemoveChild($existingRolesNode) | Out-Null
 }
 
-$privilegesRaw = Get-Content -Path $privilegesPath -Raw
-$wrapped = "<AppModuleRoleMaps>$privilegesRaw</AppModuleRoleMaps>"
-[xml]$rolesXml = $wrapped
-
-$importedNode = $entityXml.ImportNode($rolesXml.AppModuleRoles, $true)
 $rootNode.AppendChild($importedNode) | Out-Null
 
 $settings = New-Object System.Xml.XmlWriterSettings

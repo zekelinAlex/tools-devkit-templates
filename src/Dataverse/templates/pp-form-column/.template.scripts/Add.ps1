@@ -1,5 +1,5 @@
-$tabId = "tabexampleid"
-$tabNumber = "tabnumberexample"
+$tabId = "__tab-id__"
+$tabNumber = "__tab-index__"
 $setToTabFooter = "settotabfooterchoice"
 $entityXmlPath = ./.template.scripts/LocateForm.ps1
 

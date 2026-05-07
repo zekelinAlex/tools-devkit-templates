@@ -27,7 +27,7 @@ $nsMgr.AddNamespace("mcwb", "clr-namespace:Microsoft.Crm.Workflow.BusinessEntiti
 $nsMgr.AddNamespace("x", "http://schemas.microsoft.com/winfx/2006/xaml")
 
 # Находим ActivityReference
-$activityRefNode = $targetXml.SelectSingleNode('//mxswa:ActivityReference[@DisplayName="StageStep3: stageexamplename"]', $nsMgr)
+$activityRefNode = $targetXml.SelectSingleNode('//mxswa:ActivityReference[@DisplayName="StageStep3: __stage-name__"]', $nsMgr)
 
 if (-not $activityRefNode) {
     Write-Error "ActivityReference with required DisplayName not found"

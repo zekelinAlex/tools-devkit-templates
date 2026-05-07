@@ -12,13 +12,13 @@
   "sourceName": "examplecustomentityattribute",
   "preferNameDirectory": false,
   "symbols": {
-    "EntitySchemaName": {
+    "EntityLogicalName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampleentityname",
+      "replaces": "__entity-logical-name__",
       "isRequired": false,
       "defaultValue": "unknown",
-      "description": "Schema name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
+      "description": "Logical name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
     },
     "SolutionRootPath": {
       "type": "parameter",
@@ -33,14 +33,14 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknownFormId",
-      "replaces": "formguididexample",
+      "replaces": "__form-id__",
       "description": "GUID of the specific form where the column will be added"
     },
     "FormType": {
       "type": "parameter",
       "datatype": "choice",
       "isRequired": false,
-      "replaces": "formtypeexample",
+      "replaces": "__form-type__",
       "defaultValue": "unknown",
       "choices": [
         {
@@ -79,7 +79,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabexampleid",
+      "replaces": "__tab-id__",
       "description": "GUID of the specific tab where the column will be added"
     },
     "TabIndex": {
@@ -87,7 +87,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabnumberexample",
+      "replaces": "__tab-index__",
       "description": "Index number of the tab (1-based) where the column will be added"
     },
     "ColumnWidth": {
@@ -95,7 +95,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "100",
-      "replaces": "columnwidthexample",
+      "replaces": "__column-width__",
       "description": "Width of the column as a percentage (Example: 50 for 50% width)"
     }
   },

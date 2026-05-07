@@ -23,7 +23,7 @@
     "EntitySchemaName": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "exampleentityname",
+      "replaces": "__entity-schema-name__",
       "isRequired": false,
       "defaultValue": "unknown",
       "description": "Logical name of the entity for which the control will be created"
@@ -32,7 +32,7 @@
       "type": "parameter",
       "datatype": "choice",
       "isRequired": true,
-      "replaces": "formtypeexample",
+      "replaces": "__form-type__",
       "defaultValue": "unknown",
       "choices": [
         {
@@ -52,7 +52,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknownFormId",
-      "replaces": "formguididexample",
+      "replaces": "__form-id__",
       "description": "GUID of the specific form where the parameters will be added"
     },
     "TabId": {
@@ -60,7 +60,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabexampleid",
+      "replaces": "__tab-id__",
       "description": "GUID of the specific tab where the parameters will be added"
     },
     "TabIndex": {
@@ -68,7 +68,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabnumberexample",
+      "replaces": "__tab-index__",
       "description": "Index number of the tab (1-based) where the parameters will be added"
     },
     "LookupType": {
@@ -90,7 +90,7 @@
     "TabFooterId": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "tabfooterexampleid",
+      "replaces": "__tab-footer-id__",
       "parameters": {
         "defaultFormat": "d"
       },
@@ -147,7 +147,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "columnnumberexample",
+      "replaces": "__column-index__",
       "description": "Index number of the column (1-based) within the tab where the parameters will be added"
     },
     "SectionIndex": {
@@ -155,7 +155,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "sectionnumberexample",
+      "replaces": "__section-index__",
       "description": "Index number of the section (1-based) within the column where the parameters will be added"
     },
     "SectionId": {
@@ -163,7 +163,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "sectionidexample",
+      "replaces": "__section-id__",
       "description": "GUID of the specific section where the parameters will be added"
     },
     "RowIndex": {
@@ -171,455 +171,455 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "rownumberexample",
+      "replaces": "__row-index__",
       "description": "Index number of the row (1-based) within the section where the parameters will be added"
     },
     "EntityLogicalName": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "entitylogicalnameexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__entity-logical-name__",
       "description": "Logical name of the entity including publisher prefix (e.g., udpp_warehouseitem)"
     },
     "DefaultViewId": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "defaultviewidexampletypeformguidtype",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__default-view-id__",
       "description": "Default view ID for the lookup control. (This parameter is applicable in bound and unbound lookups)"
     },
     "IsDeDupLookup": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "isdeduplookupexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__is-de-dup-lookup__",
       "description": "Enable duplicate detection for lookup. (This parameter is applicable in unbound lookups)"
     },
     "UnboundLookupStyle": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "unboundlookupstyleexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__unbound-lookup-style__",
       "description": "Style for unbound lookup control. (This parameter is applicable in unbound lookups)"
     },
     "IsInlineNewEnabled": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "isinlinenewenabledexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__is-inline-new-enabled__",
       "description": "Enable inline new record creation. (This parameter is applicable in bound and unbound lookups)"
     },
     "FilterRelationshipName": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "filterrelationshipnameexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__filter-relationship-name__",
       "description": "Relationship name for filtering lookup results. (This parameter is applicable in bound lookups)"
     },
     "DependentAttributeName": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "dependentattributenameexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__dependent-attribute-name__",
       "description": "Name of the dependent attribute for lookup filtering. (This parameter is applicable in bound lookups)"
     },
     "DependentAttributeType": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "dependentattributetypeexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__dependent-attribute-type__",
       "description": "Type of the dependent attribute for lookup filtering. (This parameter is applicable in bound lookups)"
     },
     "AutoResolve": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "autoresolveexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__auto-resolve__",
       "description": "Enable automatic resolution for lookup values. (This parameter is applicable in bound lookups)"
     },
     "ResolveEmailAddress": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "resolveemailaddressexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__resolve-email-address__",
       "description": "Enable email address resolution for lookup. (This parameter is applicable in bound lookups)"
     },
     "DefaultViewReadOnly": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "defaultviewreadonlyexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__default-view-read-only__",
       "description": "Make default view read-only. (This parameter is applicable in bound lookups)"
     },
     "ViewPickerReadOnly": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "viewpickerreadonlyexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__view-picker-read-only__",
       "description": "Make view picker read-only. (This parameter is applicable in bound lookups)"
     },
     "AllowFilterOff": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "allowfilteroffexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__allow-filter-off__",
       "description": "Allow turning off filters in lookup. (This parameter is applicable in bound lookups)"
     },
     "DisableMru": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "disablemruexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__disable-mru__",
       "description": "Disable most recently used items in lookup. (This parameter is applicable in bound lookups)"
     },
     "DisableQuickFind": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "disablequickfindexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__disable-quick-find__",
       "description": "Disable quick find functionality in lookup. (This parameter is applicable in bound lookups)"
     },
     "DisableViewPicker": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "disableViewpickerexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__disable-view-picker__",
       "description": "Disable view picker in lookup. (This parameter is applicable in bound lookups)"
     },
     "AvailableViewIds": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "availableviewidsexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__available-view-ids__",
       "description": "Available view IDs for lookup. (This parameter is applicable in bound lookups)"
     },
     "InlineViewIds": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "inlineviewidsexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__inline-view-ids__",
       "description": "Inline view IDs for lookup. (This parameter is applicable in bound lookups)"
     },
     "UnboundLookupTypes": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "unboundlookuptypesexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__unbound-lookup-types__",
       "description": "Types for unbound lookup. (This parameter is applicable in bound lookups)"
     },
     "UnboundLookupBrowse": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "unboundlookupbrowseexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__unbound-lookup-browse__",
       "description": "Enable browse functionality for unbound lookup. (This parameter is applicable in bound lookups)"
     },
     "UnboundLookupControlType": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "unboundlookupcontroltypeexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__unbound-lookup-control-type__",
       "description": "Control type for unbound lookup. (This parameter is applicable in bound lookups)"
     },
     "ShowAsBreadcrumbControl": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "showasbreadcrumbcontrolexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__show-as-breadcrumb-control__",
       "description": "Show as breadcrumb control. (This parameter is applicable in bound lookups)"
     },
     "DefaultValue": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "defaultvalueexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__default-value__",
       "description": "Default value for the control. (This parameter is applicable in OptionSet controls)"
     },
     "OptionSetName": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "optionsetnameexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__option-set-name__",
       "description": "Name of the option set. (This parameter is applicable in OptionSet controls)"
     },
     "OptionSetId": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "optionsetidexampletypeformguidtype",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__option-set-id__",
       "description": "ID of the option set. (This parameter is applicable in OptionSet controls)"
     },
     "RecordsPerPage": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "recordsperpageexampletypeinteger",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__records-per-page__",
       "description": "Number of records per page. (This parameter is applicable in SubGrid controls)"
     },
     "AutoExpand": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "autoexpandeexampletypegridresizetype",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__auto-expand__",
       "description": "Auto expand behavior for the grid. (This parameter is applicable in SubGrid controls)"
     },
     "EnableQuickFind": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "enablequickfindexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__enable-quick-find__",
       "description": "Enable quick find functionality. (This parameter is applicable in SubGrid controls)"
     },
     "EnableViewPicker": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "enableViewpickerexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__enable-view-picker__",
       "description": "Enable view picker functionality. (This parameter is applicable in SubGrid controls)"
     },
     "EnableChartPicker": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "enablechartpickerexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__enable-chart-picker__",
       "description": "Enable chart picker functionality. (This parameter is applicable in SubGrid controls)"
     },
     "ChartGridMode": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "chartgridmodeexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__chart-grid-mode__",
       "description": "Chart grid mode setting. (This parameter is applicable in SubGrid controls)"
     },
     "TargetEntityType": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "targetentitytypeexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__target-entity-type__",
       "description": "Target entity type for the control. (This parameter is applicable in SubGrid controls)"
     },
     "ViewId": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "viewidexampletypeformguidtype",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__view-id__",
       "description": "View ID for the control. (This parameter is applicable in SubGrid controls)"
     },
     "ViewIds": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "viewidexampletypeformguidtype",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__view-id__",
       "description": "View IDs for the control. (This parameter is applicable in SubGrid controls)"
     },
     "IsUserView": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "isuserviewexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__is-user-view__",
       "description": "Enable user view functionality. (This parameter is applicable in SubGrid controls)"
     },
     "IsUserChart": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "isuserchartexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__is-user-chart__",
       "description": "Enable user chart functionality. (This parameter is applicable in SubGrid controls)"
     },
     "RelationshipName": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "relationshipnameexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__relationship-name__",
       "description": "Relationship name for the control. (This parameter is applicable in SubGrid controls)"
     },
     "RelationshipRoleOrdinal": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "relationshiproleordinalexampletyperelationshiproleordinaltype",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__relationship-role-ordinal__",
       "description": "Relationship role ordinal for the control. (This parameter is applicable in SubGrid controls)"
     },
     "MaxRowsBeforeScroll": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "maxrowsbeforescrollexampletypeinteger",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__max-rows-before-scroll__",
       "description": "Maximum rows before scroll is enabled. (This parameter is applicable in SubGrid controls)"
     },
     "EnableJumpBar": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "enablejumpbarexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__enable-jump-bar__",
       "description": "Enable jump bar functionality. (This parameter is applicable in SubGrid controls)"
     },
     "VisualizationId": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "visualizationidexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__visualization-id__",
       "description": "Visualization ID for the control. (This parameter is applicable in SubGrid controls)"
     },
     "EnableContextualActions": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "enablecontextualactionsexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__enable-contextual-actions__",
       "description": "Enable contextual actions. (This parameter is applicable in SubGrid controls)"
     },
     "TeamTemplateId": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "teamtemplateidexampletypeformguidtype",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__team-template-id__",
       "description": "Team template ID for the control. (This parameter is applicable in SubGrid controls)"
     },
     "GridUIMode": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "griduimodeexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__grid-ui-mode__",
       "description": "Grid UI mode setting. (This parameter is applicable in SubGrid controls)"
     },
     "ReferencePanelSubgridIconUrl": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "referencepanelsubgridiconurlexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__reference-panel-subgrid-icon-url__",
       "description": "Reference panel subgrid icon URL. (This parameter is applicable in SubGrid controls)"
     },
     "HeaderColorCode": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "headercolorcodeexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__header-color-code__",
       "description": "Header color code for the control. (This parameter is applicable in SubGrid controls)"
     },
     "IsTitle": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "istitleexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__is-title__",
       "description": "Display as title. (This parameter is applicable in Label controls)"
     },
     "MaxLength": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "maxlengthexampletypeinteger",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__max-length__",
       "description": "Maximum length for text input. (This parameter is applicable in TextBox controls)"
     },
     "Format": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "formatexampletypeformattype",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__format__",
       "description": "Format for text input. (This parameter is applicable in TextBox controls)"
     },
     "MinValue": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "minvalueexampletypedouble",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__min-value__",
       "description": "Minimum value for number input. (This parameter is applicable in Number controls)"
     },
     "MaxValue": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "maxvalueexampletypedouble",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__max-value__",
       "description": "Maximum value for number input. (This parameter is applicable in Number controls)"
     },
     "Precision": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "precisionexampletypeinteger",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__precision__",
       "description": "Precision for number input. (This parameter is applicable in Number controls)"
     },
     "QuickForms": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "quickformsexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__quick-forms__",
       "description": "Quick forms configuration. (This parameter is applicable in QuickFormCollection controls)"
     },
     "ControlMode": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "controlmodeexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__control-mode__",
       "description": "Control mode setting. (This parameter is applicable in QuickFormCollection controls)"
     },
     "ReferencePanelQuickFormCollectionIconUrl": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "referencepanelquickformcollectioniconurlexampletypestring",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__reference-panel-quick-form-collection-icon-url__",
       "description": "Reference panel quick form collection icon URL. (This parameter is applicable in QuickFormCollection controls)"
     },
     "DisplayAsCustomer360Tile": {
       "type": "parameter",
       "datatype": "string",
       "isRequired": false,
-      "defaultValue": "defaultеtemplateexample",
-      "replaces": "displayascustomer360tileexampletypeboolean",
+      "defaultValue": "__resolve-email-address__",
+      "replaces": "__display-as-customer360-tile__",
       "description": "Display as customer 360 tile. (This parameter is applicable in QuickFormCollection controls)"
     }
   },

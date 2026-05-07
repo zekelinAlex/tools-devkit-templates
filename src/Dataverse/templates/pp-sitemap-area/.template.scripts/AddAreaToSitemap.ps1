@@ -1,6 +1,6 @@
 $entityXmlRelativePaths = @(
-    'SolutionDeclarationsRoot/AppModuleSiteMaps/appexamplename/AppModuleSiteMap.xml'
-    'SolutionDeclarationsRoot/AppModuleSiteMaps/appexamplename/AppModuleSiteMap_managed.xml'
+    'SolutionDeclarationsRoot/AppModuleSiteMaps/__app-name__/AppModuleSiteMap.xml'
+    'SolutionDeclarationsRoot/AppModuleSiteMaps/__app-name__/AppModuleSiteMap_managed.xml'
 )
 
 $entityXmlPath = $null

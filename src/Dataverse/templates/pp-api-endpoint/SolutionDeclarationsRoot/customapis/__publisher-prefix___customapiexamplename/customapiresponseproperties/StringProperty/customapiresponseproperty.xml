@@ -1,0 +1,12 @@
+<customapiresponseproperty uniquename="StringProperty">
+  <description default="The StringProperty response property for __display-name__">
+    <label description="The StringProperty response property for __display-name__" languagecode="1033" />
+  </description>
+  <displayname default="StringProperty">
+    <label description="StringProperty" languagecode="1033" />
+  </displayname>
+  <iscustomizable>0</iscustomizable>
+  <logicalentityname />
+  <name>__publisher-prefix_____api-logical-name__.StringProperty</name>
+  <type>10</type>
+</customapiresponseproperty>

@@ -25,7 +25,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknownFormId",
-      "replaces": "formguididexample",
+      "replaces": "__form-id__",
       "description": "GUID of the specific form where the tab footer will be added"
     },
     "TabId": {
@@ -33,7 +33,7 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabexampleid",
+      "replaces": "__tab-id__",
       "description": "GUID of the specific tab where the footer will be added"
     },
     "TabIndex": {
@@ -41,13 +41,13 @@
       "datatype": "string",
       "isRequired": false,
       "defaultValue": "unknown",
-      "replaces": "tabnumberexample",
+      "replaces": "__tab-index__",
       "description": "Index number of the tab (1-based) where the footer will be added"
     },
     "TabFooterId": {
       "type": "generated",
       "generator": "guid",
-      "replaces": "tabfooterexampleid",
+      "replaces": "__tab-footer-id__",
       "parameters": {
         "defaultFormat": "d"
       },

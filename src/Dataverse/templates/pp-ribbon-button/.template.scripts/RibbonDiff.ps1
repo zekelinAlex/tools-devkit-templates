@@ -1,4 +1,15 @@
-$ribbonXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/exampleentityname/RibbonDiff.xml').Path
+$ribbonXmlRelativePath = './SolutionDeclarationsRoot/Entities/__entity-logical-name__/RibbonDiff.xml'
+$ribbonXmlSeedPath     = './.template.temp/RibbonDiff.xml'
+
+if (-not (Test-Path $ribbonXmlRelativePath)) {
+    $ribbonDir = Split-Path $ribbonXmlRelativePath -Parent
+    if (-not (Test-Path $ribbonDir)) {
+        New-Item -ItemType Directory -Path $ribbonDir -Force | Out-Null
+    }
+    Copy-Item -Path $ribbonXmlSeedPath -Destination $ribbonXmlRelativePath
+}
+
+$ribbonXmlPath = (Resolve-Path $ribbonXmlRelativePath).Path
 $commanddefinitionPath = (Resolve-Path './.template.temp/commanddefinition.xml').Path
 $loclbelsPath = (Resolve-Path './.template.temp/loclbels.xml').Path
 $customactionPath = (Resolve-Path './.template.temp/customaction.xml').Path

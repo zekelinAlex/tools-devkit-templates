@@ -17,7 +17,7 @@
       "datatype": "text",
       "description": "Logical name of the entity including publisher prefix (e.g., udpp_warehouseitem)",
       "isRequired": true,
-      "replaces": "entityexamplename"
+      "replaces": "__entity-logical-name__"
     },
     "SolutionRootPath": {
 			"type": "parameter",
@@ -33,8 +33,8 @@
       "description": "Title of the group in the sitemap where the subarea will be added",
       "isRequired": true,
       "defaultValue": "NewTitle",
-      "replaces": "grouptitleexample",
-      "fileRename": "grouptitleexample"
+      "replaces": "__group-title__",
+      "fileRename": "__group-title__"
     },
     "AreaTitle": {
       "type": "parameter",
@@ -42,16 +42,16 @@
       "description": "Title of the area in the sitemap where the subarea will be added",
       "isRequired": true,
       "defaultValue": "NewTitle",
-      "replaces": "areatitleexample",
-      "fileRename": "areatitleexample"
+      "replaces": "__area-title__",
+      "fileRename": "__area-title__"
     },
     "AppName": {
       "type": "parameter",
       "datatype": "text",
       "description": "Name of the app module including publisher prefix (e.g., udpp_warehouseapp)",
       "isRequired": true,
-      "replaces": "appexamplename",
-      "fileRename": "appexamplename"
+      "replaces": "__app-name__",
+      "fileRename": "__app-name__"
     }
   },
   "sources": [

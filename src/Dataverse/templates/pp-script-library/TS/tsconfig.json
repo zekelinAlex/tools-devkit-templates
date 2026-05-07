@@ -1,8 +1,8 @@
-﻿{
+{
     "compileOnSave": true,
     "compilerOptions": {
         "outDir": "build",
-        "outFile": "build/examplelibraryname.js",
+        "outFile": "build/__library-name__.js",
         "target": "es6",
         "sourceMap": true,
         "moduleResolution": "Node",

@@ -1,11 +1,11 @@
-$formId = "formexampleId"
+$formId = "__form-id__"
 
 <!--#if (FormType == "dialog") -->
 $formIdNode = "//FormId"
 $formIdPath = (Resolve-Path './SolutionDeclarationsRoot/Dialogs/dialogform.xml').Path
 <!--#else -->
 $formIdNode = "//formid"
-$formIdPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/ItemFolderName/FormXml/formtypeexample/mainform.xml').Path
+$formIdPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/__entity-logical-name__/FormXml/__form-type__/mainform.xml').Path
 <!--#endif -->
 
 # Generate GUID if formId is "unknown"

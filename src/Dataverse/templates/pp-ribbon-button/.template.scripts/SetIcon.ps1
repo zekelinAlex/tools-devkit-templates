@@ -1,7 +1,7 @@
 $filePath = ".template.temp\customaction.xml"
 
-$icon16Path = "icon16pathexample"
-$icon32Path = "icon32pathexample"
+$icon16Path = "__image16by16__"
+$icon32Path = "__image32by32__"
 
 function Replace-ButtonIcon {
     param (

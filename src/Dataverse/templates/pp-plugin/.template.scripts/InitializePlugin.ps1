@@ -1,8 +1,8 @@
 # --- Input parameters ---
-$signingKey = "signingkeyfilepathexample"
+$signingKey = "__signing-key-file-path__"
 $outputDir = "../SolutionLogicalNameExample"
-$author = "examplepublisher"
-$company = "exampleсompany"
+$author = "__publisher-name__"
+$company = "__company__"
 
 # --- 1. Initialize the plugin project ---
 cd $outputDir
@@ -88,7 +88,7 @@ $propertyGroup.AppendChild($companyElement) | Out-Null
 $csproj.Save($ProjectPath)
 
 # --- 14. Copy the PluginBase.cs file to the project ---
-if ("pluginbasetypeexample" -eq "TALXIS") {
+if ("__plugin-base-type__" -eq "TALXIS") {
     Copy-Item ".template.temp/PluginBase.cs" -Destination . -Force
 }
 

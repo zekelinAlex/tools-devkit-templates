@@ -1,4 +1,4 @@
-﻿# Resolve the relative path to an absolute path (to support other OSes)
+# Resolve the relative path to an absolute path (to support other OSes)
 $solutionPath = Resolve-Path -Path 'SolutionDeclarationsRoot/Other/Solution.xml'
 
 # Load the XML file
@@ -7,7 +7,7 @@ $rootComponents = $File.SelectSingleNode("//RootComponents")
 
 $newComponent = $File.CreateElement("RootComponent")
 $newComponent.SetAttribute("type", '80')
-$newComponent.SetAttribute("schemaName", 'userprefixexample_appexamplename')
+$newComponent.SetAttribute("schemaName", '__publisher-prefix_____logical-name__')
 $newComponent.SetAttribute("behavior", '0')
 
 # Append the new component to the root components without writing output to console
