@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ImportExportXml version="9.1.0.643" SolutionPackageVersion="9.1" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
-    <UniqueName>SolutionLogicalNameExample</UniqueName>
+    <UniqueName>__talxis-solution-project__</UniqueName>
     <LocalizedNames>
-      <LocalizedName description="SolutionLogicalNameExample" languagecode="1033" />
+      <LocalizedName description="__talxis-solution-project__" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
     <Version>1.0</Version>
