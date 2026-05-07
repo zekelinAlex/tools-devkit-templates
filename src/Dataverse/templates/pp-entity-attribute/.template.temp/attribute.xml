@@ -8,7 +8,7 @@
         <Type>bit</Type>
     <!--#elseif (AttributeType == "WholeNumber") -->
         <Type>int</Type>
-    <!--#elseif (AttributeType == "FloatingPoint") -->
+    <!--#elseif (AttributeType == "Float") -->
         <Type>double</Type>
     <!--#elseif (AttributeType == "Decimal") -->
         <Type>decimal</Type>
@@ -135,7 +135,7 @@
         <Format>none</Format>
         <MinValue>0</MinValue>
         <MaxValue>1000000000</MaxValue>
-    <!--#elseif (AttributeType == "FloatingPoint") -->
+    <!--#elseif (AttributeType == "Float") -->
         <MinValue>0</MinValue>
         <MaxValue>1000000</MaxValue>
     <!--#elseif (AttributeType == "Decimal") -->
