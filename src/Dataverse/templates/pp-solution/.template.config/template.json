@@ -4,7 +4,7 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.Solution",
   "name": "Power Platform: Solution",
   "shortName": "pp-solution",
-  "description": "Creates a Dataverse solution project: .csproj (TALXIS.DevKit.Build.Sdk, ProjectType=Solution, PublisherName, PublisherPrefix, Version=1.0.0.0). Includes Solution.xml, Customizations.xml and Relationships.xml. A repo typically has multiple solution projects with separate concerns (data model, logic, security, UI). If a .sln/.slnx is found in the surrounding directory tree, the generated project is automatically added to it — no need to run 'dotnet sln add' afterwards.",
+  "description": "Creates a Dataverse solution project: .csproj (TALXIS.DevKit.Build.Sdk, ProjectType=Solution, PublisherName, PublisherPrefix, Version=1.0.0.0). Includes Solution.xml, Customizations.xml and Relationships.xml. A repo typically has multiple solution projects with separate concerns (data model, logic, security, UI). After the project is created, it is automatically added to the nearest .slnx solution found in the surrounding directory tree — no need to run 'dotnet sln add' afterwards.",
   "tags": {
     "language": "C#",
     "type": "project"
@@ -69,6 +69,20 @@
     }
   ],
   "postActions": [
+        {
+      "description": "Add generated project to .sln file",
+      "manualInstructions": [
+        {
+          "text": "Add generated project to .sln file"
+        }
+      ],
+      "args": {
+        "inRoot": true
+      },
+      "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
+      "continueOnError": true,
+      "primaryOutputIndexes": "0"
+    },
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "args": {
@@ -98,16 +112,6 @@
       ],
       "continueOnError": false,
       "description": "Ensure solution artifacts are initialized"
-    },
-    {
-      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-      "args": {
-        "executable": "pwsh",
-        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddToSolution.ps1\"",
-        "redirectStandardOutput": "false"
-      },
-      "continueOnError": true,
-      "description": "Announce solution wiring (purely informational)"
     },
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",

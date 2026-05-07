@@ -1,7 +1,11 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "NETWORG",
-  "classifications": [ "TALXIS", "Dataverse", "Script Library" ],
+  "classifications": [
+    "TALXIS",
+    "Dataverse",
+    "Script Library"
+  ],
   "identity": "TALXIS.DevKit.Templates.Dataverse.ScriptLibrary",
   "name": "Power Platform: Script Library",
   "shortName": "pp-script-library",
@@ -20,5 +24,26 @@
       "isRequired": true,
       "description": "Name of the script library"
     }
-  }
+  },
+  "primaryOutputs": [
+    {
+      "path": "examplesourcename.csproj"
+    }
+  ],
+  "postActions": [
+    {
+      "description": "Add generated project to .sln file",
+      "manualInstructions": [
+        {
+          "text": "Add generated project to .sln file"
+        }
+      ],
+      "args": {
+        "inRoot": true
+      },
+      "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
+      "continueOnError": true,
+      "primaryOutputIndexes": "0"
+    }
+  ]
 }

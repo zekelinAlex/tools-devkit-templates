@@ -65,6 +65,20 @@
   ],
   "postActions": [
     {
+      "description": "Add generated project to .sln file",
+      "manualInstructions": [
+        {
+          "text": "Add generated project to .sln file"
+        }
+      ],
+      "args": {
+        "inRoot": true
+      },
+      "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
+      "continueOnError": true,
+      "primaryOutputIndexes": "0"
+    },
+    {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "args": {
         "executable": "pwsh",

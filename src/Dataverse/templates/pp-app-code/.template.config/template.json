@@ -5,11 +5,14 @@
   "name": "Power Platform: Code App",
   "shortName": "pp-app-code",
   "description": "Creates a code-based Power App project: .csproj (net462, ProjectType=CodeApp) + power.config.json (appId, displayName, environment, build paths). Use when building a .NET code app for Power Platform.",
-  "classifications": ["Dataverse", "Power Platform"],
+  "classifications": [
+    "Dataverse",
+    "Power Platform"
+  ],
   "sourceName": "CodeAppExample",
   "tags": {
-		"language": "XML"
-	},
+    "language": "XML"
+  },
   "preferNameDirectory": true,
   "symbols": {
     "DisplayName": {
@@ -19,11 +22,32 @@
     },
     "AppId": {
       "type": "generated",
-			"generator": "guid",
-			"replaces": "__app-id__",
-			"parameters": {
-				"defaultFormat": "d"
-			}
-		}
-  }
+      "generator": "guid",
+      "replaces": "__app-id__",
+      "parameters": {
+        "defaultFormat": "d"
+      }
+    }
+  },
+  "primaryOutputs": [
+    {
+      "path": "CodeAppExample.csproj"
+    }
+  ],
+  "postActions": [
+    {
+      "description": "Add generated project to .sln file",
+      "manualInstructions": [
+        {
+          "text": "Add generated project to .sln file"
+        }
+      ],
+      "args": {
+        "inRoot": true
+      },
+      "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
+      "continueOnError": true,
+      "primaryOutputIndexes": "0"
+    }
+  ]
 }

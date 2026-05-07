@@ -64,6 +64,20 @@
         "inRoot": true
       },
       "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
+      "continueOnError": true,
+      "primaryOutputIndexes": "0"
+    },
+    {
+      "description": "Add generated project to .sln file",
+      "manualInstructions": [
+        {
+          "text": "Add generated project to .sln file"
+        }
+      ],
+      "args": {
+        "inRoot": true
+      },
+      "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
       "continueOnError": false,
       "primaryOutputIndexes": "0"
     }

@@ -4,15 +4,34 @@
   "identity": "TALXIS.DevKit.Templates.Dataverse.PackageDeployerPackage",
   "name": "Power Platform: Package Deployer Package",
   "shortName": "pp-package",
-  "description": "Scaffolds a Package Deployer project. Script-only \u2014 generates PkgAssets/ with ImportConfig.xml (solution import order) + manifest.ppkg.json. Use when packaging multiple solutions for deployment. If a .sln/.slnx is found in the surrounding directory tree, the generated project is automatically added to it \u2014 no need to run 'dotnet sln add' afterwards.",
+  "description": "Scaffolds a Package Deployer project. Script-only \u2014 generates PkgAssets/ with ImportConfig.xml (solution import order) + manifest.ppkg.json. Use when packaging multiple solutions for deployment. After the project is created, it is automatically added to the nearest .slnx solution found in the surrounding directory tree \u2014 no need to run 'dotnet sln add' afterwards.",
   "classifications": ["Dataverse", "Power Platform"],
   "tags": {
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "packagenameexample",
+  "sourceName": "__talxis-pd-package-name__",
   "preferNameDirectory": true,
+  "primaryOutputs": [
+    {
+      "path": "__talxis-pd-package-name__.csproj"
+    }
+  ],
   "postActions": [
+            {
+      "description": "Add generated project to .sln file",
+      "manualInstructions": [
+        {
+          "text": "Add generated project to .sln file"
+        }
+      ],
+      "args": {
+        "inRoot": true
+      },
+      "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
+      "continueOnError": true,
+      "primaryOutputIndexes": "0"
+    },
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "args": {
@@ -25,21 +44,6 @@
         }
       ],
       "description": "Create package"
-    },
-    {
-      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-      "args": {
-        "executable": "pwsh",
-        "args": "-noprofile -executionpolicy bypass -File \"./.template.scripts/AddToSolution.ps1\"",
-        "redirectStandardOutput": "false"
-      },
-      "manualInstructions": [
-        {
-          "text": "Add generated project to the nearest .slnx/.sln file: dotnet sln <path-to-sln> add <path-to-csproj>"
-        }
-      ],
-      "continueOnError": true,
-      "description": "Add generated project to .slnx/.sln (best-effort)"
     },
     {
 			"actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
