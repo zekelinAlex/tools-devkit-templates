@@ -18,11 +18,7 @@ $attributeXmlPath
 $options = "__option-set-options__"
 $options = $options.Split(',', [System.StringSplitOptions]::RemoveEmptyEntries) | ForEach-Object { $_.Replace('{', '').Replace('}', '') }
 
-if ($options.Count -lt 2) {
-    Remove-Item .template.scripts -Recurse -Force
-    Remove-Item .template.temp -Recurse -Force
-    throw "At least 2 options are required."
-}
+
 
 $optionsNode = $attributeXml.SelectSingleNode("//options")
 if ($optionsNode -eq $null) {
