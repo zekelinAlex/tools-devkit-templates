@@ -1,5 +1,5 @@
 <section showlabel="true" showbar="false" IsUserDefined="0" id="{__section-id__}"
-  labelid="{__section-label-id__}" name="examplesectionname">
+  labelid="{__section-label-id__}" name="__talxis-section-name__">
   <labels>
     <label description="__section-name__" languagecode="1033" />
   </labels>

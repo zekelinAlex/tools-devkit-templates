@@ -1,7 +1,7 @@
-﻿using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk;
 using System;
 
-namespace SolutionLogicalNameExample
+namespace __talxis-solution-logical-name__
 {
     /// <summary>
     /// Base implementation for a plug-in. 

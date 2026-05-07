@@ -2,8 +2,8 @@
   <PropertyGroup>
     <ProjectType>PDPackage</ProjectType>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyTitle>pdpackageexamplename</AssemblyTitle>
-    <Product>pdpackageexamplename</Product>
+    <AssemblyTitle>__talxis-pd-package-name__</AssemblyTitle>
+    <Product>__talxis-pd-package-name__</Product>
     <Copyright>Copyright © 2026</Copyright>
   </PropertyGroup>
   <ItemGroup>

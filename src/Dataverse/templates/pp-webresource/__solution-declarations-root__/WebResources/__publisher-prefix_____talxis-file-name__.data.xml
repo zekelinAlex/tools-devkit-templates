@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <WebResourceId>{wridexample}</WebResourceId>
-  <Name>__publisher-prefix___fileexamplename</Name>
-  <DisplayName>fileexampledisplayname</DisplayName>
-  <WebResourceType>wrtypeexample</WebResourceType>
+  <WebResourceId>{__talxis-web-resource-id__}</WebResourceId>
+  <Name>__publisher-prefix_____talxis-file-name__</Name>
+  <DisplayName>__talxis-file-display-name__</DisplayName>
+  <WebResourceType>__talxis-web-resource-type__</WebResourceType>
   <IntroducedVersion>1.0.0.0</IntroducedVersion>
   <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
   <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
   <IsCustomizable>1</IsCustomizable>
   <CanBeDeleted>1</CanBeDeleted>
   <IsHidden>0</IsHidden>
-  <FileName>/WebResources/__publisher-prefix___fileexamplenamewridexamplecapital</FileName>
+  <FileName>/WebResources/__publisher-prefix_____talxis-file-name____talxis-wr-id-capital__</FileName>
 </WebResource>

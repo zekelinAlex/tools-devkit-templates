@@ -1,17 +1,17 @@
 <CustomActions>
   <CustomAction
-    Id="tom.__publisher-prefix__.__entity-logical-name__.Button.examplebuttonlogicalname.CustomAction"
+    Id="tom.__publisher-prefix__.__entity-logical-name__.Button.__talxis-button-logical-name__.CustomAction"
     Location="Mscrm.HomepageGrid.udpp_warehousetransaction.MainTab.Management.Controls._children"
     Sequence="10">
     <CommandUIDefinition>
       <Button
-        Alt="$LocLabels:__publisher-prefix__.__entity-logical-name__.Button.examplebuttonlogicalname.Alt"
+        Alt="$LocLabels:__publisher-prefix__.__entity-logical-name__.Button.__talxis-button-logical-name__.Alt"
         Command="__publisher-prefix__.__entity-logical-name__.Command.__function-name____library-logical-name__"
-        Id="__publisher-prefix__.__entity-logical-name__.Button.examplebuttonlogicalname" exampleicon16 exampleicon32
-        LabelText="$LocLabels:__publisher-prefix__.__entity-logical-name__.Button.examplebuttonlogicalname.LabelText"
+        Id="__publisher-prefix__.__entity-logical-name__.Button.__talxis-button-logical-name__" __talxis-icon-16__ __talxis-icon-32__
+        LabelText="$LocLabels:__publisher-prefix__.__entity-logical-name__.Button.__talxis-button-logical-name__.LabelText"
         Sequence="10" TemplateAlias="o1"
-        ToolTipTitle="$LocLabels:__publisher-prefix__.__entity-logical-name__.Button.examplebuttonlogicalname.ToolTipTitle"
-        ToolTipDescription="$LocLabels:__publisher-prefix__.__entity-logical-name__.Button.examplebuttonlogicalname.ToolTipDescription" />
+        ToolTipTitle="$LocLabels:__publisher-prefix__.__entity-logical-name__.Button.__talxis-button-logical-name__.ToolTipTitle"
+        ToolTipDescription="$LocLabels:__publisher-prefix__.__entity-logical-name__.Button.__talxis-button-logical-name__.ToolTipDescription" />
     </CommandUIDefinition>
   </CustomAction>
 </CustomActions>

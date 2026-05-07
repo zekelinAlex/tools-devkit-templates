@@ -43,8 +43,8 @@
 			"type": "parameter",
 			"datatype": "text",
 			"defaultValue": ".",
-			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot",
+			"replaces": "__solution-declarations-root__",
+			"fileRename": "__solution-declarations-root__",
 			"description": "Folder under the project folder where solution components will be placed. Use the folder name only, not the full path. Use '.' if you want to place components directly in the project folder."
 		},
     "GeneratePluginAssembly": {
@@ -78,11 +78,11 @@
       },
       "manualInstructions": [
         {
-          "text": "Flatten SolutionDeclarationsRoot if SolutionRootPath is '.'"
+          "text": "Flatten __solution-declarations-root__ if SolutionRootPath is '.'"
         }
       ],
       "continueOnError": false,
-      "description": "Flatten SolutionDeclarationsRoot into project root when SolutionRootPath is '.'"
+      "description": "Flatten __solution-declarations-root__ into project root when SolutionRootPath is '.'"
     },
     {
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",

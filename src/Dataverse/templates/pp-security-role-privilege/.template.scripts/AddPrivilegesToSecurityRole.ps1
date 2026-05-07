@@ -1,4 +1,4 @@
-$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot/Roles/__role-name__.xml').Path
+$entityXmlPath = (Resolve-Path '__solution-declarations-root__/Roles/__role-name__.xml').Path
 $privilegesPath = (Resolve-Path '.template.scripts/privileges.xml').Path
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw

@@ -1,7 +1,7 @@
 # Resolve the relative path to an absolute path (to support other OSes)
 # Try both naming conventions (with and without _managed suffix)
-$candidatePath = 'SolutionDeclarationsRoot/AppModules/__app-name__/AppModule.xml'
-$candidatePathManaged = 'SolutionDeclarationsRoot/AppModules/__app-name__/AppModule_managed.xml'
+$candidatePath = '__solution-declarations-root__/AppModules/__app-name__/AppModule.xml'
+$candidatePathManaged = '__solution-declarations-root__/AppModules/__app-name__/AppModule_managed.xml'
 if (Test-Path $candidatePath) {
     $solutionPath = Resolve-Path -Path $candidatePath
 } elseif (Test-Path $candidatePathManaged) {

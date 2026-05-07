@@ -1,5 +1,5 @@
 $action = ".template.temp\customactionstohide.xml"
-$ribbonXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/__entity-logical-name__/RibbonDiff.xml').Path
+$ribbonXmlPath = (Resolve-Path './__solution-declarations-root__/Entities/__entity-logical-name__/RibbonDiff.xml').Path
 
 [xml]$ribbonXml = Get-Content $ribbonXmlPath -Raw
 [xml]$actionXml = Get-Content $action -Raw

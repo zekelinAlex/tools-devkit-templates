@@ -1,6 +1,6 @@
-<option value="exampleoptionnumber" ExternalValue="" IsHidden="0">
+<option value="__talxis-option-number__" ExternalValue="" IsHidden="0">
     <labels>
-      <label description="exampleoptionname" languagecode="1033" />
+      <label description="__talxis-option-name__" languagecode="1033" />
     </labels>
     <Descriptions>
       <Description description="" languagecode="1033" />

@@ -23,7 +23,7 @@
     "SolutionRootPath": {
       "type": "parameter",
       "datatype": "text",
-      "replaces": "SolutionDeclarationsRoot",
+      "replaces": "__solution-declarations-root__",
       "defaultValue": ".",
       "isRequired": false,
       "description": "Path to the solution root directory"

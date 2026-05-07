@@ -25,8 +25,8 @@
       "type": "parameter",
       "datatype": "text",
       "defaultValue": ".",
-      "replaces": "SolutionDeclarationsRoot",
-      "fileRename": "SolutionDeclarationsRoot",
+      "replaces": "__solution-declarations-root__",
+      "fileRename": "__solution-declarations-root__",
       "isRequired": false,
       "description": "Path to the solution root directory"
     },

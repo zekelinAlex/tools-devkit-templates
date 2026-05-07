@@ -17,7 +17,7 @@
       "triggers": {
         "manual": {
           "metadata": {
-            "operationMetadataId": "EXAMPLEFLOWWORKFLOWID"
+            "operationMetadataId": "__talxis-flow-workflow-id__"
           },
           "type": "Request",
           "kind": "Button",

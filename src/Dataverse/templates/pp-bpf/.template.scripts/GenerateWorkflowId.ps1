@@ -1,4 +1,4 @@
-$targetDir = "SolutionDeclarationsRoot/Workflows"  
+$targetDir = "__solution-declarations-root__/Workflows"  
 
 $guid = [guid]::NewGuid().ToString()
 $guidUpper = $guid.ToUpperInvariant()
@@ -6,25 +6,25 @@ $guidLower = $guid.ToLowerInvariant()
 $guidNoDashes = $guid -replace '-', ''
 
 $files = Get-ChildItem -Path $targetDir -Recurse -File | Where-Object {
-    (Get-Content $_.FullName -Raw) -match 'exampleworkflowuniqueidcapital|exampleworkflowuniqueid' -or
-    $_.Name -like '*exampleworkflowuniqueidcapital*'
+    (Get-Content $_.FullName -Raw) -match '__talxis-workflow-unique-id-capital__|__talxis-workflow-unique-id__' -or
+    $_.Name -like '*__talxis-workflow-unique-id-capital__*'
 }
 
 foreach ($file in $files) {
     $content = Get-Content $file.FullName -Raw
 
-    $content = $content -replace 'exampleworkflowuniqueidcapital', $guidUpper
+    $content = $content -replace '__talxis-workflow-unique-id-capital__', $guidUpper
 
-    $content = $content -replace 'exampleworkflowuniqueid', $guidLower
+    $content = $content -replace '__talxis-workflow-unique-id__', $guidLower
 
-    $content = $content -replace '_exampleworkflowNoDashesid_', $guidNoDashes
+    $content = $content -replace '___talxis-workflow-no-dashes-id___', $guidNoDashes
 
     Set-Content -Path $file.FullName -Value $content
 }
 
-$filesToRename = Get-ChildItem -Path $targetDir -Recurse -File | Where-Object { $_.Name -like '*exampleworkflowuniqueidcapital*' }
+$filesToRename = Get-ChildItem -Path $targetDir -Recurse -File | Where-Object { $_.Name -like '*__talxis-workflow-unique-id-capital__*' }
 foreach ($file in $filesToRename) {
-    $newName = $file.Name -replace 'exampleworkflowuniqueidcapital', $guidUpper
+    $newName = $file.Name -replace '__talxis-workflow-unique-id-capital__', $guidUpper
     $newPath = Join-Path $file.DirectoryName $newName
     Rename-Item -Path $file.FullName -NewName $newName
 }

@@ -1,4 +1,4 @@
-<Group Id="group_groupidexample" ResourceId="SitemapDesigner.__group-title__" DescriptionResourceId="SitemapDesigner.__group-title__" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+<Group Id="group___talxis-group-id__" ResourceId="SitemapDesigner.__group-title__" DescriptionResourceId="SitemapDesigner.__group-title__" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
     <Titles>
         <Title LCID="1033" Title="__group-display-name__" />
       </Titles>

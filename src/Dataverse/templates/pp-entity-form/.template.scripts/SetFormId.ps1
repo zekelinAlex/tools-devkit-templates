@@ -2,10 +2,10 @@ $formId = "__form-id__"
 
 <!--#if (FormType == "dialog") -->
 $formIdNode = "//FormId"
-$formIdPath = (Resolve-Path './SolutionDeclarationsRoot/Dialogs/dialogform.xml').Path
+$formIdPath = (Resolve-Path './__solution-declarations-root__/Dialogs/dialogform.xml').Path
 <!--#else -->
 $formIdNode = "//formid"
-$formIdPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/__entity-logical-name__/FormXml/__form-type__/mainform.xml').Path
+$formIdPath = (Resolve-Path './__solution-declarations-root__/Entities/__entity-logical-name__/FormXml/__form-type__/mainform.xml').Path
 <!--#endif -->
 
 # Generate GUID if formId is "unknown"
@@ -30,7 +30,7 @@ $newFilePath = Join-Path $directory $newFileName
 # Load the XML file
 [xml]$formXml = Get-Content $formIdPath -Raw
 
-# Find and replace formguididexample with the actual form ID
+# Find and replace __talxis-form-guid-id__ with the actual form ID
 $formGuidNode = $formXml.SelectSingleNode($formIdNode)
 if ($formGuidNode) {
     $formGuidNode.InnerText = $formId

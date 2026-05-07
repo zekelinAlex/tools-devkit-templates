@@ -1,7 +1,7 @@
 $entityXmlPath = ./.template.scripts/LocateForm.ps1
-$controlDescriptionId = "controlDescriptionIdexample"
-$customControlFormFactor="customcontrolformfactorexample"
-$customControlName="customcontrolnameexample"
+$controlDescriptionId = "__talxis-control-description-id__"
+$customControlFormFactor="__talxis-custom-control-form-factor__"
+$customControlName="__talxis-custom-control-name__"
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw
 

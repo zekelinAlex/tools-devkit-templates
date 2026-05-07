@@ -1,4 +1,4 @@
-$folder  = (Resolve-Path 'SolutionDeclarationsRoot/Workflows').Path
+$folder  = (Resolve-Path '__solution-declarations-root__/Workflows').Path
 
 $xamlFile = Get-ChildItem -Path $folder -Filter *.xaml | Select-Object -First 1
 

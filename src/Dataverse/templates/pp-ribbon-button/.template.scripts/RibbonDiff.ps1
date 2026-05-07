@@ -1,4 +1,4 @@
-$ribbonXmlRelativePath = './SolutionDeclarationsRoot/Entities/__entity-logical-name__/RibbonDiff.xml'
+$ribbonXmlRelativePath = './__solution-declarations-root__/Entities/__entity-logical-name__/RibbonDiff.xml'
 $ribbonXmlSeedPath     = './.template.temp/RibbonDiff.xml'
 
 if (-not (Test-Path $ribbonXmlRelativePath)) {

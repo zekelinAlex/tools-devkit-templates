@@ -5,7 +5,7 @@ $optionNumber = (Get-Random -Minimum 10000 -Maximum 99999) * 10000
 
 $attributeXmlPath 
 
-$attributeXmlPath = "SolutionDeclarationsRoot/OptionSets/__publisher-prefix_____logical-name__.xml"
+$attributeXmlPath = "__solution-declarations-root__/OptionSets/__publisher-prefix_____logical-name__.xml"
 
 [xml]$attributeXml = Get-Content -Path $attributeXmlPath -Raw
 
@@ -33,8 +33,8 @@ foreach ($option in $options) {
     
     $optionXmlString = $newOptionNode.OuterXml
     
-    $optionXmlString = $optionXmlString -replace "exampleoptionnumber", $optionNumber
-    $optionXmlString = $optionXmlString -replace "exampleoptionname", $option
+    $optionXmlString = $optionXmlString -replace "__talxis-option-number__", $optionNumber
+    $optionXmlString = $optionXmlString -replace "__talxis-option-name__", $option
     
     
     [xml]$updatedOptionXml = $optionXmlString
@@ -57,7 +57,7 @@ $attributeXml.Save($writer)
 $writer.Close()
 
 # Resolve the relative path to an absolute path (to support other OSes)
-$solutionPath = Resolve-Path -Path 'SolutionDeclarationsRoot/Other/Solution.xml'
+$solutionPath = Resolve-Path -Path '__solution-declarations-root__/Other/Solution.xml'
 
 # Load the XML file
 [XML]$File = Get-Content -Path $solutionPath -Raw

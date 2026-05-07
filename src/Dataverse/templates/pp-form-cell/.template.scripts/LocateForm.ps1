@@ -1,5 +1,5 @@
-$entitiesRootPath = './SolutionDeclarationsRoot/Entities'
-$dialogsRootPath = './SolutionDeclarationsRoot/Dialogs'
+$entitiesRootPath = './__solution-declarations-root__/Entities'
+$dialogsRootPath = './__solution-declarations-root__/Dialogs'
 $formId = "{__form-id__}"
 
 if ( ('__form-type__' -eq 'unknown') -and ('__entity-logical-name__' -eq 'unknown') -and ('__form-id__' -eq 'unknownFormId') ) {
@@ -48,7 +48,7 @@ elseif ( ('__form-type__' -eq 'unknown') -or ('__entity-logical-name__' -eq 'unk
     $entityXmlPath = $matches[0].FullName
 }
 elseif ($formId -eq "{unknownFormId}") {
-    $formDirectory = './SolutionDeclarationsRoot/Entities/__entity-logical-name__/FormXml/__form-type__/'
+    $formDirectory = './__solution-declarations-root__/Entities/__entity-logical-name__/FormXml/__form-type__/'
 
     #Entities
     $collectedForms = Get-ChildItem -Path $formDirectory -Filter "*.xml"
@@ -69,10 +69,10 @@ elseif ($formId -eq "{unknownFormId}") {
 else {
     if('__form-type__' -eq 'dialog') 
     {
-        $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Dialogs/{__form-id__}.xml').Path
+        $entityXmlPath = (Resolve-Path './__solution-declarations-root__/Dialogs/{__form-id__}.xml').Path
     }
     else {
-        $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/__entity-logical-name__/FormXml/__form-type__/{__form-id__}.xml').Path
+        $entityXmlPath = (Resolve-Path './__solution-declarations-root__/Entities/__entity-logical-name__/FormXml/__form-type__/{__form-id__}.xml').Path
     }
 }
 

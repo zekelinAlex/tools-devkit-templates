@@ -16,17 +16,17 @@ function Replace-ButtonIcon {
 }
 
 if ($icon16Path -eq "icon16pathdefault") {
-    Replace-ButtonIcon -FilePath $filePath -replaseString "exampleicon16" -iconPath ""
+    Replace-ButtonIcon -FilePath $filePath -replaseString "__talxis-icon-16__" -iconPath ""
 } else {
     $path16 = 'Image16by16="$webresource:' + $icon16Path + '"'
-    Replace-ButtonIcon -FilePath $filePath -replaseString "exampleicon16" -iconPath $path16
+    Replace-ButtonIcon -FilePath $filePath -replaseString "__talxis-icon-16__" -iconPath $path16
 }
 
 if ($icon32Path -eq "icon32pathdefault") {
-    Replace-ButtonIcon -FilePath $filePath -replaseString "exampleicon32" -iconPath ""
+    Replace-ButtonIcon -FilePath $filePath -replaseString "__talxis-icon-32__" -iconPath ""
 } else {
     $path32 = 'Image32by32="$webresource:' + $icon32Path + '"'
-    Replace-ButtonIcon -FilePath $filePath -replaseString "exampleicon32" -iconPath $path32
+    Replace-ButtonIcon -FilePath $filePath -replaseString "__talxis-icon-32__" -iconPath $path32
 }
 
 

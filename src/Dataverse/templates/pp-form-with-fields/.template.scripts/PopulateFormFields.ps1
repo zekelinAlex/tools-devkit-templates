@@ -2,9 +2,9 @@ $fieldsRaw = "__fields__"
 $formType  = "__form-type__"
 
 if ($formType -eq "dialog") {
-    $formPath = (Resolve-Path './SolutionDeclarationsRoot/Dialogs/dialogform.xml').Path
+    $formPath = (Resolve-Path './__solution-declarations-root__/Dialogs/dialogform.xml').Path
 } else {
-    $formPath = (Resolve-Path './SolutionDeclarationsRoot/Entities/__entity-logical-name__/FormXml/main/mainform.xml').Path
+    $formPath = (Resolve-Path './__solution-declarations-root__/Entities/__entity-logical-name__/FormXml/main/mainform.xml').Path
 }
 
 [xml]$xml = Get-Content -Path $formPath -Raw

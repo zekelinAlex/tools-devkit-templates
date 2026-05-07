@@ -10,5 +10,5 @@ $processedName = $name.ToLower() -replace '[^a-z0-9]', ''
 
 $tabXmlContent = Get-Content -Path $tabXmlPath -Raw
 $tabXmlContent = $tabXmlContent -replace '__section-id__', $tabId
-$tabXmlContent = $tabXmlContent -replace 'examplesectionname', $processedName
+$tabXmlContent = $tabXmlContent -replace '__talxis-section-name__', $processedName
 Set-Content -Path $tabXmlPath -Value $tabXmlContent

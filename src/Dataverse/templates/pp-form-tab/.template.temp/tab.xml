@@ -1,4 +1,4 @@
-<tab verticallayout="true" id="{__tab-id__}" IsUserDefined="1" name="exampletabname" labelid="{__label-id__}">
+<tab verticallayout="true" id="{__tab-id__}" IsUserDefined="1" name="__talxis-tab-name__" labelid="{__label-id__}">
   <labels>
     <label description="__display-name__" languagecode="1033" />
   </labels>

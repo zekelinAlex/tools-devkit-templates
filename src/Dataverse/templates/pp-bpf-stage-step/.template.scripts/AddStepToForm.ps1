@@ -1,6 +1,6 @@
 $TabName = "__stage-name__"
 
-$entityXmlPath=(Resolve-Path './SolutionDeclarationsRoot/Entities/__bpf-logical-name__/FormXml/main/{__form-id__}.xml').Path
+$entityXmlPath=(Resolve-Path './__solution-declarations-root__/Entities/__bpf-logical-name__/FormXml/main/{__form-id__}.xml').Path
 $rowPath = (Resolve-Path './.template.temp/row.xml').Path
 
 [xml]$entityXml = Get-Content -Path $entityXmlPath -Raw

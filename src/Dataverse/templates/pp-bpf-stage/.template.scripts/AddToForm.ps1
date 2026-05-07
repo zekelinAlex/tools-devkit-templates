@@ -1,4 +1,4 @@
-$targetXmlPath = (Resolve-Path 'SolutionDeclarationsRoot/Entities\__bpf-logical-name__\FormXml\main\{__form-id__}.xml').Path
+$targetXmlPath = (Resolve-Path '__solution-declarations-root__/Entities\__bpf-logical-name__\FormXml\main\{__form-id__}.xml').Path
 $stageFormPath = (Resolve-Path '.template.temp\stageForm.xml').Path
 
 [xml]$targetXml = Get-Content -Path $targetXmlPath -Raw

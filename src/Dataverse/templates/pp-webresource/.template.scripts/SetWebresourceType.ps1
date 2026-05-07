@@ -1,5 +1,5 @@
 $filePath = "__web-resource-item-path__"
-$dataXmlFilePath = "SolutionDeclarationsRoot/WebResources\__publisher-prefix___fileexamplename.data.xml"
+$dataXmlFilePath = "__solution-declarations-root__/WebResources\__publisher-prefix_____talxis-file-name__.data.xml"
 
 $extension = [System.IO.Path]::GetExtension($filePath).ToLower()
 
@@ -28,5 +28,5 @@ switch ($extension) {
 
 
 $content = Get-Content -Path $dataXmlFilePath -Raw
-$content = $content -replace "wrtypeexample", $type
+$content = $content -replace "__talxis-web-resource-type__", $type
 Set-Content -Path $dataXmlFilePath -Value $content

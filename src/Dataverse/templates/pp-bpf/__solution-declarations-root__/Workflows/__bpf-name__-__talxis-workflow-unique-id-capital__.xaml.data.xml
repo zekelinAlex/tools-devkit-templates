@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Workflow WorkflowId="{exampleworkflowuniqueid}" Name="__bpf-name__" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <XamlFileName>/Workflows/__bpf-name__-exampleworkflowuniqueidcapital.xaml</XamlFileName>
+<Workflow WorkflowId="{__talxis-workflow-unique-id__}" Name="__bpf-name__" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/__bpf-name__-__talxis-workflow-unique-id-capital__.xaml</XamlFileName>
   <Type>1</Type>
   <Subprocess>0</Subprocess>
   <Category>4</Category>

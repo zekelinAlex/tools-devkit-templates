@@ -20,10 +20,10 @@ $entitySchemaName  = "__entity-logical-name__"
 $dialogUniqueName  = "__dialog-unique-name__"
 
 if ($formType -eq "dialog") {
-    $formIdPath  = (Resolve-Path './SolutionDeclarationsRoot/Dialogs/dialogform.xml').Path
+    $formIdPath  = (Resolve-Path './__solution-declarations-root__/Dialogs/dialogform.xml').Path
     $formIdXPath = "//FormId"
 } else {
-    $formIdPath  = (Resolve-Path './SolutionDeclarationsRoot/Entities/__entity-logical-name__/FormXml/main/mainform.xml').Path
+    $formIdPath  = (Resolve-Path './__solution-declarations-root__/Entities/__entity-logical-name__/FormXml/main/mainform.xml').Path
     $formIdXPath = "//formid"
 }
 
@@ -78,7 +78,7 @@ if ($formIdPath -ne $newFilePath) {
 
 # Register the form in Solution.xml as RootComponent type=60 — only if a
 # Solution.xml exists in the surrounding solution declarations root.
-$solutionPath = './SolutionDeclarationsRoot/Other/Solution.xml'
+$solutionPath = './__solution-declarations-root__/Other/Solution.xml'
 if (Test-Path $solutionPath) {
     & "./.template.scripts/AddFormToSolutionXml.ps1" -formId $formIdBraced -formType $formType
 }

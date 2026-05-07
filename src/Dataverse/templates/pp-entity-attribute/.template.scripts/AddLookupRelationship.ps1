@@ -1,6 +1,6 @@
 # File Paths
-$referencedEntityRelationshipFilePathRaw = 'SolutionDeclarationsRoot/Other/Relationships/__referenced-entity-name__.xml'
-$relationshipsFilePathRaw = 'SolutionDeclarationsRoot/Other/Relationships.xml'
+$referencedEntityRelationshipFilePathRaw = '__solution-declarations-root__/Other/Relationships/__referenced-entity-name__.xml'
+$relationshipsFilePathRaw = '__solution-declarations-root__/Other/Relationships.xml'
 $relationshipTemplateFilePathRaw = '.template.temp/LookupRelationship.xml'
 
 # Ensure directories exist

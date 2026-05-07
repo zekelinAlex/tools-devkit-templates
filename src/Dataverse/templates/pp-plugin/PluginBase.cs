@@ -5,7 +5,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.ServiceModel;
 
-namespace SolutionLogicalNameExample
+namespace __talxis-solution-logical-name__
 {
     /// <summary>
     /// Base class for all plug-in classes.

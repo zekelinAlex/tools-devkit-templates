@@ -1,6 +1,6 @@
 $guidValue = "__stage-id__"
 
-$targetXamlFolderPath = (Resolve-Path 'SolutionDeclarationsRoot/Workflows').Path
+$targetXamlFolderPath = (Resolve-Path '__solution-declarations-root__/Workflows').Path
 
 $targetXamlFile = Get-ChildItem -Path $targetXamlFolderPath -Recurse -Filter *.xaml | Select-Object -First 1
 

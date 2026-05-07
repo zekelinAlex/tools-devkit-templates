@@ -1,7 +1,7 @@
 $formId = "{__form-id__}"
 
 if ($formId -eq "unknownFormId") {
-    $formDirectory = './SolutionDeclarationsRoot/Dialogs/'
+    $formDirectory = './__solution-declarations-root__/Dialogs/'
 
     $latestForm = Get-ChildItem -Path $formDirectory -Filter "*.xml" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
 
@@ -15,7 +15,7 @@ if ($formId -eq "unknownFormId") {
     }
 }
 else {
-    $entityXmlPath = (Resolve-Path './SolutionDeclarationsRoot/Dialogs/{__form-id__}.xml').Path
+    $entityXmlPath = (Resolve-Path './__solution-declarations-root__/Dialogs/{__form-id__}.xml').Path
 }
 
 if (-not $entityXmlPath) {

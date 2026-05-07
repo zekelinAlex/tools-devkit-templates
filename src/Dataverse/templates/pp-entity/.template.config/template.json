@@ -16,48 +16,48 @@
 				{
 					"condition": "(Behavior == \"New\")",
 					"exclude": [
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{customViewId}.xml"
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{customViewId}.xml"
 					]
 				},
 				{
 					"condition": "(Behavior == \"Existing\")",
 					"exclude": [
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{defaultViewId}.xml",
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{quickFindViewId}.xml",
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{myRecordsViewId}.xml",
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{lookupViewId}.xml",
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{advancedFindViewId}.xml",
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{associatedViewId}.xml"
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{defaultViewId}.xml",
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{quickFindViewId}.xml",
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{myRecordsViewId}.xml",
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{lookupViewId}.xml",
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{advancedFindViewId}.xml",
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{associatedViewId}.xml"
 					]
 				},
 				{
 					"condition": "(!AddMainForm)",
 					"exclude": [
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/FormXml/main/*"
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/FormXml/main/*"
 					]
 				},
 				{
 					"condition": "(!AddQuickForm)",
 					"exclude": [
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/FormXml/quick/*"
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/FormXml/quick/*"
 					]
 				},
 				{
 					"condition": "(!AddCardForm)",
 					"exclude": [
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/FormXml/card/*"
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/FormXml/card/*"
 					]
 				},
 				{
 					"condition": "(!AddQuickCreateForm)",
 					"exclude": [
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/FormXml/quickCreate/*"
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/FormXml/quickCreate/*"
 					]
 				},
 				{
 					"condition": "(!AddCustomView)",
 					"exclude": [
-						"SolutionDeclarationsRoot/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{customViewId}.xml"
+						"__solution-declarations-root__/Entities/examplepublisherprefix_examplecustomentity/SavedQueries/{customViewId}.xml"
 					]
 				}
 			]
@@ -70,8 +70,8 @@
 			"type": "parameter",
 			"datatype": "text",
 			"defaultValue": ".",
-			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot",
+			"replaces": "__solution-declarations-root__",
+			"fileRename": "__solution-declarations-root__",
 			"description": "Folder under the project folder where solution components will be placed. Use the folder name only, not the full path. Use '.' if you want to place components directly in the project folder."
 		},
 		"IsSystemEntity": {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Workflow WorkflowId="{exampleflowworkflowid}" Name="__publisher-prefix_____logical-name__" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <JsonFileName>/Workflows/__logical-name__-EXAMPLEFLOWWORKFLOWID.json</JsonFileName>
+<Workflow WorkflowId="{__talxis-flow-workflow-id__}" Name="__publisher-prefix_____logical-name__" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JsonFileName>/Workflows/__logical-name__-__talxis-flow-workflow-id__.json</JsonFileName>
   <Type>1</Type>
   <Subprocess>0</Subprocess>
   <Category>5</Category>

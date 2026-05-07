@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization.Metadata;
 using System.Xml.Linq;
 
 if (args.Length < 2)
@@ -212,8 +213,10 @@ foreach (var a in attrs)
         var colorArr = new JsonArray();
         foreach (var (v, l) in a.Options)
         {
-            enumArr.Add(l);
-            valArr.Add(v);
+            // JsonValue.Create(...) uses primitive overloads — avoids
+            // reflection-based JSON which `dotnet run --file` disables on .NET 10.
+            enumArr.Add(JsonValue.Create(l));
+            valArr.Add(JsonValue.Create(v));
             colorArr.Add((JsonNode)null);
         }
         prop["enum"] = enumArr;
@@ -316,7 +319,7 @@ foreach (var kvp in properties)
 
 var reqArr = new JsonArray();
 foreach (var r in requiredFields)
-    reqArr.Add(r);
+    reqArr.Add(JsonValue.Create(r));
 
 var itemsObj = new JsonObject
 {
@@ -357,7 +360,13 @@ if (underscoreIdx >= 0)
 
 var outputFile = Path.Combine(outputPath, noPrefixName + ".Schema.json");
 
-var options = new JsonSerializerOptions { WriteIndented = true };
+// .NET 10 single-file scripts disable reflection-based serialization by
+// default; explicit DefaultJsonTypeInfoResolver re-enables it for ToJsonString.
+var options = new JsonSerializerOptions
+{
+    WriteIndented = true,
+    TypeInfoResolver = new DefaultJsonTypeInfoResolver()
+};
 var json = root.ToJsonString(options);
 File.WriteAllText(outputFile, json);
 Console.WriteLine($"Generated: {outputFile}");

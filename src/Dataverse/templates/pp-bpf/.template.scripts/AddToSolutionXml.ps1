@@ -1,5 +1,5 @@
 # Resolve the relative path to an absolute path (to support other OSes)
-$solutionPath = Resolve-Path -Path 'SolutionDeclarationsRoot/Other/Solution.xml'
+$solutionPath = Resolve-Path -Path '__solution-declarations-root__/Other/Solution.xml'
 
 $filePath = ".template.scripts\WorkflowsID.txt"
 

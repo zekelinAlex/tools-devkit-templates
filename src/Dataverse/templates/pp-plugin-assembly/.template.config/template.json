@@ -27,8 +27,8 @@
 			"type": "parameter",
 			"datatype": "text",
 			"defaultValue": ".",
-			"replaces": "SolutionDeclarationsRoot",
-			"fileRename": "SolutionDeclarationsRoot",
+			"replaces": "__solution-declarations-root__",
+			"fileRename": "__solution-declarations-root__",
 			"description": "Folder under the project folder where solution components will be placed. Use the folder name only, not the full path. Use '.' if you want to place components directly in the project folder."
 		}
   },

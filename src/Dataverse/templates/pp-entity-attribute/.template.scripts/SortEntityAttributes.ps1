@@ -1,4 +1,4 @@
-$entityXmlPaths = Get-ChildItem -Path "SolutionDeclarationsRoot/Entities" -Recurse -File -Filter "Entity.xml" -ErrorAction SilentlyContinue
+$entityXmlPaths = Get-ChildItem -Path "__solution-declarations-root__/Entities" -Recurse -File -Filter "Entity.xml" -ErrorAction SilentlyContinue
 if (-not $entityXmlPaths) { exit 0 }
 
 foreach ($entityXmlFile in $entityXmlPaths) {

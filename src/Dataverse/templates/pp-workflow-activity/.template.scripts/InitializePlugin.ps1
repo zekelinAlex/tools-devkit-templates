@@ -1,6 +1,6 @@
 # --- Input parameters (templated) ---
 $signingKey = "__signing-key-file-path__"
-$outputDir = "../SolutionLogicalNameExample"
+$outputDir = "../__talxis-solution-logical-name__"
 $author = "__publisher-name__"
 $company = "__company__"
 

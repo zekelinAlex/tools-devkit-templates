@@ -13,13 +13,17 @@ if (-not (Test-Path $targetIndexTs))
     Copy-Item (Join-Path ".template.temp" "index.ts") -Destination $targetGenerated -Force
 }
 
-& (Join-Path $PSScriptRoot 'ReplacePlaceholder.ps1') -FilePath (Join-Path "src" "generated" "services" "capitalizedentitylogicalnameexamplesService.ts") -Placeholder "lowercaseentitylogicalnameexample" -Replacement $lowercasename
-& (Join-Path $PSScriptRoot 'ReplacePlaceholder.ps1') -FilePath (Join-Path "src" "generated" "services" "capitalizedentitylogicalnameexamplesService.ts") -Placeholder "capitalizedentitylogicalnameexample" -Replacement $capitalizedname
+& (Join-Path $PSScriptRoot 'ReplacePlaceholder.ps1') -FilePath (Join-Path "src" "generated" "services" "__capitalized-entity-logical-name__sService.ts") -Placeholder "__lowercase-entity-logical-name__" -Replacement $lowercasename
+& (Join-Path $PSScriptRoot 'ReplacePlaceholder.ps1') -FilePath (Join-Path "src" "generated" "services" "__capitalized-entity-logical-name__sService.ts") -Placeholder "__capitalized-entity-logical-name__" -Replacement $capitalizedname
 
 $generateModelScript = Join-Path $PSScriptRoot "GenerateModel.cs"
 $generatedModelsPath = Join-Path "src" "generated" "models"
-$proc = Start-Process dotnet -ArgumentList "run --file `"$generateModelScript`" -- `"$modelSolutionPath`" `"__entity-logical-name__`" `"$generatedModelsPath`"" -NoNewWindow -Wait -PassThru
-if ($proc.ExitCode -ne 0) { Write-Error "GenerateModel.cs failed (exit code $($proc.ExitCode))"; exit 1 }
+
+$genModelOutput = & dotnet run --file $generateModelScript -- $modelSolutionPath "__entity-logical-name__" $generatedModelsPath 2>&1
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "GenerateModel.cs failed (exit code $LASTEXITCODE). Output: $genModelOutput"
+    exit 1
+}
 
 $modelIndexString = "export * as "+ $capitalizedname + "sModel from './models/"+ $capitalizedname + "sModel';"
 $serviceIndexString = "export * from './services/" + $capitalizedname + "sService';"
@@ -34,5 +38,9 @@ $generatedIndexTs = Join-Path "src" "generated" "index.ts"
 
 $generateSchemaScript = Join-Path $PSScriptRoot "GenerateSchema.cs"
 $dataverseSchemasPath = Join-Path ".power" "schemas" "dataverse"
-$proc = Start-Process dotnet -ArgumentList "run --file `"$generateSchemaScript`" -- `"$modelSolutionPath`" `"__entity-logical-name__`" `"$dataverseSchemasPath`"" -NoNewWindow -Wait -PassThru
-if ($proc.ExitCode -ne 0) { Write-Error "GenerateSchema.cs failed (exit code $($proc.ExitCode))"; exit 1 }
+
+$genSchemaOutput = & dotnet run --file $generateSchemaScript -- $modelSolutionPath "__entity-logical-name__" $dataverseSchemasPath 2>&1
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "GenerateSchema.cs failed (exit code $LASTEXITCODE). Output: $genSchemaOutput"
+    exit 1
+}

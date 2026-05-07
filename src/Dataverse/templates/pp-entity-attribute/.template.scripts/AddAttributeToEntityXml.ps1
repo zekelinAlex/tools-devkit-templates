@@ -1,5 +1,5 @@
 # Resolve the relative path to an absolute path (to support other OSes)
-$entityXmlPath = (Resolve-Path 'SolutionDeclarationsRoot/Entities/__entity-logical-name__/Entity.xml').Path
+$entityXmlPath = (Resolve-Path '__solution-declarations-root__/Entities/__entity-logical-name__/Entity.xml').Path
 $attributeXmlPath = (Resolve-Path '.template.temp/attribute.xml').Path
 
 [XML]$entityXmlFile = Get-Content -Path $entityXmlPath -Raw

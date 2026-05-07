@@ -1,4 +1,4 @@
-$baseDir = "SolutionDeclarationsRoot/AppModuleSiteMaps"
+$baseDir = "__solution-declarations-root__/AppModuleSiteMaps"
 
 # Try both naming conventions (with and without _managed suffix)
 $file = Get-ChildItem -Path $baseDir -Filter "AppModuleSiteMap.xml" -Recurse -File | Select-Object -First 1
@@ -15,9 +15,9 @@ $siteMapPath = $file.FullName
 [XML]$File = Get-Content -Path $siteMapPath -Raw
 
 $XmlText = $File.OuterXml
-$modifiedXmlText = $XmlText -replace [Regex]::Escape("areaidexample"), ([guid]::NewGuid().ToString() -split '-')[0]
-$modifiedXmlText = $modifiedXmlText -replace [Regex]::Escape("groupidexample"), ([guid]::NewGuid().ToString() -split '-')[0]
-$modifiedXmlText = $modifiedXmlText -replace [Regex]::Escape("subareaidexample"), ([guid]::NewGuid().ToString() -split '-')[0]
+$modifiedXmlText = $XmlText -replace [Regex]::Escape("__talxis-area-id__"), ([guid]::NewGuid().ToString() -split '-')[0]
+$modifiedXmlText = $modifiedXmlText -replace [Regex]::Escape("__talxis-group-id__"), ([guid]::NewGuid().ToString() -split '-')[0]
+$modifiedXmlText = $modifiedXmlText -replace [Regex]::Escape("__talxis-subarea-id__"), ([guid]::NewGuid().ToString() -split '-')[0]
 
 [XML]$File = $ModifiedXmlText
 

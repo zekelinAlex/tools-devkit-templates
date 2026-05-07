@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.ComponentModel.Composition;
 using Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase;
 
-namespace pdpackageexamplename
+namespace __talxis-pd-package-name__
 {
     /// <summary>
     /// Import package starter frame.
@@ -21,17 +21,17 @@ namespace pdpackageexamplename
         /// Name of the Import Package to Use
         /// </summary>
         /// <param name="plural">if true, return plural version</param>
-        public override string GetNameOfImport(bool plural) => "pdpackageexamplename";
+        public override string GetNameOfImport(bool plural) => "__talxis-pd-package-name__";
 
         /// <summary>
         /// Long name of the Import Package.
         /// </summary>
-        public override string GetLongNameOfImport => "pdpackageexamplename";
+        public override string GetLongNameOfImport => "__talxis-pd-package-name__";
 
         /// <summary>
         /// Description of the package, used in the package selection UI
         /// </summary>
-        public override string GetImportPackageDescriptionText => "pdpackageexamplename";
+        public override string GetImportPackageDescriptionText => "__talxis-pd-package-name__";
 
         #endregion
 

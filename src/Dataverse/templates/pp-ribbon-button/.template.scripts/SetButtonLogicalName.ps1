@@ -12,6 +12,6 @@ $files = @($commanddefinitionPath, $loclbelsPath, $customactionPath)
 
 foreach ($file in $files) {
     $content = Get-Content -Path $file -Raw
-    $content = $content -replace 'examplebuttonlogicalname', $logicalName
+    $content = $content -replace '__talxis-button-logical-name__', $logicalName
     Set-Content -Path $file -Value $content
 }
