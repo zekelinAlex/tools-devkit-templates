@@ -387,6 +387,32 @@ dotnet new pp-form-cell-control  `
 --allow-scripts yes
 ```
 
+### Dashboards & charts
+
+Scaffold an empty system dashboard skeleton:
+```console
+dotnet new pp-dashboard `
+--output "src/Solutions.UI" `
+--SolutionRootPath "Declarations" `
+--DashboardName "Warehouse Overview" `
+--allow-scripts yes
+```
+
+A fresh GUID is generated for the dashboard FormId, the file is renamed to `Dashboards/{guid}.xml`, and a `<RootComponent type="60">` is appended to `Other/Solution.xml`. Pass `--DashboardId` to fix a specific GUID.
+
+Scaffold a chart (savedqueryvisualization) for an entity:
+```console
+dotnet new pp-chart `
+--output "src/Solutions.DataModel" `
+--SolutionRootPath "Declarations" `
+--EntitySchemaName "tom_warehouseitem" `
+--ChartName "Items by State" `
+--ChartType "Column" `
+--allow-scripts yes
+```
+
+`--ChartType` accepts `Bar`, `Column`, `Line`, `Pie`, or `Funnel` — the value flows directly into `<Series ChartType="…" />`. The chart is written to `Entities/<EntitySchemaName>/Visualizations/{GUID}.xml` with a starter fetch (count by `statecode`) that you can adjust afterwards. Charts ride into the solution with their parent entity, so no separate registration is needed. Pass `--ChartId` to fix a specific GUID.
+
 ### Security roles
 
 Create a security role:
